@@ -1,6 +1,6 @@
 .city-nav {
   height: 390px;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("map.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url("map.jpg");
   background-size: cover;
 }
 
@@ -61,19 +61,19 @@
 
 .bar-1 {
   height: 47px;
-  background-image: url("bar_1.png");
+  background-image: image-url("bar_1.png");
   background-position: center;
 }
 
 .bar-2 {
   height: 8px;
   background-position: center;
-  background-image: url("bar_2.png");
+  background-image: image-url("bar_2.png");
 }
 
 .browse-category {
   height: 450px;
-  background-image: url("browse_category_2.jpg");
+  background-image: image-url("browse_category_2.jpg");
   background-color: rgb(6, 17, 35);
   // position: relative;
   // height: 100%;
