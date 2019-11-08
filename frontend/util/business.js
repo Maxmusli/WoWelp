@@ -13,7 +13,6 @@ export const fetchBusiness = id => (
   $.ajax({
     url: `/api/businesses/${id}`,
     method: 'get',
-    data
   })
   
 )

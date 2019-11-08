@@ -6,4 +6,11 @@ class Api::BusinessesController < ApplicationController
     
     render :index
   end
+
+  def show
+    @business = Business.find(params[:id])
+    if @business
+      render :show
+    end
+  end
 end

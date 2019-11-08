@@ -10,9 +10,9 @@ const businessesReducer = (state = {}, action) => {
       return action.businesses;
     case RECEIVE_BUSINESS:
       // payload?
-      business = action.payload.business
+      // let business = action.payload.business
       return Object.assign(
-        {}, state, { [business.id]: business }
+        {}, state, { [action.business.id]: action.business }
       )
     default:
       return state;

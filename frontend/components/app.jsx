@@ -6,6 +6,7 @@ import Home from './home/home';
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import SearchContainer from './search/search_container';
+import BusinessShowContainer from './business/business_show_container';
 
 export default () => {
   
@@ -14,6 +15,7 @@ export default () => {
       <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <Route exact path="/search/:businessId" component={BusinessShowContainer} />
         <Route exact path="/search" component={SearchContainer} />
         <Route exact path="/" component={Home} />
       </Switch>
