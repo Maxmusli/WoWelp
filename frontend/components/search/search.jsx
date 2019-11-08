@@ -17,7 +17,7 @@ export default class Search extends React.Component {
         <div>
           <SubNavContainer />
         </div>
-        <div className="not working">
+        <div>
           <BusinessIndex businesses={businesses} />
         </div>
         <div>

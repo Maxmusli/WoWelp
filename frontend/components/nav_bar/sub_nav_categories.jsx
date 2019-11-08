@@ -86,7 +86,6 @@ export default class SubNavCategories extends Component {
 
     return (
       <div className="sub-nav-categories">
-        {/* {test} */}
         <div className="wrapper">
           <div className="container">
             <div className="category">
