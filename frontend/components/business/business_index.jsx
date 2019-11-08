@@ -19,6 +19,7 @@ export default class BusinessIndex extends React.Component {
   render() {
     
     const { businesses } = this.props
+  
     return (
       <div>
         {businesses.map(business => (

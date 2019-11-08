@@ -1,68 +1,53 @@
 import React, { Component } from 'react'
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 export default class SubNavCategories extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
-    // this.handleEnter = this.handleEnter.bind(this);
-    // this.handleLeave = this.handleLeave.bind(this);
+    this.state = {
+      dropdownOpen: false,
+    }
+
+    this.toggle = this.toggle.bind(this);
+    this.onMouseEnter = this.onMouseEnter.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
   }
 
-  handleEnter(e) {
-    // e.preventDefault();
-
-    // const restaurantsNav = document.querySelector('.restaurants-nav');
-    // const servicesNav = document.querySelector('.services-nav');
-    // const citiesNav = document.querySelector('.cities-nav');
-    // const moreNav = document.querySelector('.more-nav');
-
-    // if ($(".category").hasClass("restaurants")) {
-    //   restaurantsNav.addEventListener("show")
-    // }
-    // if ($(".category").hasClass("services")) {
-    //   servicesNav.addEventListener("show")
-    // }
-    // if ($(".category").hasClass("cities")) {
-    //   citiesNav.addEventListener("show")
-    // }
-    // if ($(".category").hasClass("more")) {
-    //   moreNav.addEventListener("show")
-    // }
-    
+  toggle(e) {
+    e.preventDefault();
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }));
   }
 
-  handleLeave(e) {
-    // e.preventDefault();
+  onMouseEnter(e) {
+    e.preventDefault();
+    this.setState({ dropdownOpen: true });
+  }
 
-    // const restaurantsNav = document.querySelector('.restaurants-nav');
-    // const servicesNav = document.querySelector('.services-nav');
-    // const citiesNav = document.querySelector('.cities-nav');
-    // const moreNav = document.querySelector('.more-nav');
-
-    // if ($(".category").hasClass("restaurants")) {
-    //   restaurantsNav.removeEventListener("show")
-    // } else if ($(".category").hasClass("services")) {
-    //   servicesNav.removeEventListener("show")
-    // } else if ($(".category").hasClass("cities")) {
-    //   citiesNav.removeEventListener("show")
-    // } else if ($(".category").hasClass("more")) {
-    //   moreNav.removeEventListener("show")
-    // }
+  onMouseLeave(e) {
+    e.preventDefault();
+    this.setState({ dropdownOpen: false });
   }
 
   render() {
     const restaurantsDropDown = (
-      <div className="sub-nav-drop-down">
-        <ul className="restaurants-nav">
-          <li>
-            <a href="">restaurants</a>
-          </li>
-        </ul>
-      </div>
+      <DropdownMenu className="sub-nav-drop-down">
+        <DropdownItem>
+          TEST
+        </DropdownItem>
+      </DropdownMenu>
     )
 
     const servicesDropDown = (
-      <div className="sub-nav-drop-down">
+      <div
+        className="sub-nav-drop-down"
+        onMouseOver={this.onMouseEnter}
+        onMouseLeave={this.onMouseLeave}
+        isOpen={this.state.dropdownOpen}
+        toggle={this.toggle}
+      >
         <ul className="services-nav">
           <li>
             <a href="">services</a>
@@ -72,7 +57,7 @@ export default class SubNavCategories extends Component {
     )
 
     const citiesDropDown = (
-      <div className="sub-nav-drop-down">
+      <div>
         <ul className="cities-nav">
           <li>
             <a href="">cities</a>
@@ -82,7 +67,13 @@ export default class SubNavCategories extends Component {
     )
 
     const moreDropDown = (
-      <div className="sub-nav-drop-down">
+      <div
+        className="sub-nav-drop-down"
+        onMouseOver={this.onMouseEnter}
+        onMouseLeave={this.onMouseLeave}
+        isOpen={this.state.dropdownOpen}
+        toggle={this.toggle}
+      >
         <ul className="more-nav">
           <li>
             <a href="">more</a>
@@ -91,29 +82,25 @@ export default class SubNavCategories extends Component {
       </div>
     )
 
+    
+
     return (
       <div className="sub-nav-categories">
+        {/* {test} */}
         <div className="wrapper">
           <div className="container">
-            <div className="category restaurants" onPointerEnter={
-              (e) => { this.handleEnter(e) }
-            } onPointerLeave={
-              (e) => { this.handleLeave(e) }
-            }>
-              <a href="">
+            <div className="category">
+              < a href="" >
                 <div className="header-wrapper">
                   <i className="fas fa-utensils"></i>
                   <h3>Restaurants</h3>
                   <i className="fas fa-caret-down"></i>
                 </div>
-              </a>
-              {/* {restaurantsDropDown} */}
+              </a >
+              {/* {servicesDropDown} */}
             </div>
-            <div className="category services" onPointerEnter={
-              (e) => { this.handleEnter(e) }
-            } onPointerLeave={
-              (e) => { this.handleLeave(e) }
-            }>
+            
+            <div className="category">
               <a href="">
                 <div className="header-wrapper">
                   <i className="fas fa-hammer"></i>
@@ -123,11 +110,7 @@ export default class SubNavCategories extends Component {
               </a>
               {/* {servicesDropDown} */}
             </div>
-            <div className="category cities" onPointerEnter={
-              (e) => { this.handleEnter(e) }
-            } onPointerLeave={
-              (e) => { this.handleLeave(e) }
-            }>
+            <div className="category">
               <a href="">
                 <div className="header-wrapper">
                   <i className="fas fa-chess-rook"></i>
@@ -137,11 +120,7 @@ export default class SubNavCategories extends Component {
               </a>
               {/* {citiesDropDown} */}
             </div>
-            <div className="category " onPointerEnter={
-              (e) => { this.handleEnter(e) }
-            } onPointerLeave={
-              (e) => { this.handleLeave(e) }
-            }>
+            <div className="category">
               <a href="">
                 <div className="header-wrapper">
                   <h3>More</h3>
