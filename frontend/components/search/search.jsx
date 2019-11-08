@@ -1,5 +1,5 @@
 import React from 'react';
-import BusinessIndex from './business_index';
+import BusinessIndex from '../business/business_index';
 import SubNavContainer from '../nav_bar/sub_nav_container';
 import Footer from '../home/footer'
 
@@ -14,7 +14,7 @@ export default class Search extends React.Component {
         <div>
           <SubNavContainer />
         </div>
-        <div>
+        <div className="not working">
           <BusinessIndex businesses={businesses} />
         </div>
         <div>

@@ -17,7 +17,7 @@ class BusinessIndexItem extends React.Component {
       description, picture, name, phone, category, sub_category, 
       price_range, reservation, take_out, address
     } = this.props.business
-  
+    debugger
     return (
       <div className="business-container">
         <div className="business-img">

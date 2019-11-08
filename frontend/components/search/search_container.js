@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchBusinesses: () => dispatch(fetchBusinesses()),
+  fetchBusinesses: (filter) => dispatch(fetchBusinesses(filter)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
