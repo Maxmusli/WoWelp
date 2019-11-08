@@ -66,7 +66,7 @@ export default class SessionForm extends Component {
             <p>Facebook</p>
           </button>
           <button className="google-btn">
-            <img src="google_icon.jpg" />
+            <img src="https://i.imgur.com/4KIne8b.jpg" />
             <p>Google</p>
           </button>
         </div>
@@ -116,7 +116,7 @@ export default class SessionForm extends Component {
               <p>Facebook</p>
             </button>
             <button className="google-btn">
-              <img src="google_icon.jpg" />
+              <img src="https://i.imgur.com/4KIne8b.jpg" />
               <p>Google</p>
             </button>
           </div>
@@ -186,7 +186,7 @@ export default class SessionForm extends Component {
         <div className="session-page">
           <div className="homepage-redirect">
             <Link className="btn-home" to='/'>WoWelp</Link>
-            <img src="wow_logo.jpg" />
+            <img src="https://i.imgur.com/4n3wSAR.png" />
           </div>
           <div className="session-form">
             <div className="form">

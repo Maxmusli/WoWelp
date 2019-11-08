@@ -87,7 +87,7 @@ export default class NavBar extends React.Component {
           <div className="midbar">
             <div className="header">
               WoWelp
-              <img src="wow_logo.jpg" />
+              <img src="https://i.imgur.com/4n3wSAR.png" />
             </div>
           </div>
           <form className="search-filter">

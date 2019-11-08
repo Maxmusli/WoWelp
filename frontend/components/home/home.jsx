@@ -19,19 +19,19 @@ export default () => (
           <ul className="city-themes">
             <li className="city">
               <a href="">
-                <img src="dalaran.jpg" alt=""/>
+                <img src="https://i.imgur.com/MvRlnQH.jpg" alt=""/>
                 <h3>Dalaran</h3>
               </a>
             </li>
             <li className="city">
               <a href="">
-                <img src="orgrimmar-logo.jpg" alt="" />
+                <img src="https://i.imgur.com/kRHOAxB.jpg" alt="" />
                 <h3>Orgrimmar</h3>
               </a>
             </li>
             <li className="city">
               <a href="">
-                <img src="stormwind.jpg" alt="" />
+                <img src="https://i.imgur.com/ydHGkt3.jpg" alt="" />
                 <h3>Stormwind</h3>
               </a>
             </li>

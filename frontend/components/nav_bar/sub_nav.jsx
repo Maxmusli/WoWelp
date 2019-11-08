@@ -68,7 +68,7 @@ export default class NavBar extends React.Component {
               <div className="header">
                 <Link className="btn-home" to="/">
                   WoWelp
-                  <img src="wow_logo.jpg" />
+                  <img src="https://i.imgur.com/4n3wSAR.png" />
                 </Link>
               </div>
             </div>

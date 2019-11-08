@@ -12,25 +12,25 @@ export default class BrowseCategory extends React.Component {
           <ul className="browse-categories level-1">
             <li className="browse-nav-category">
               <a href="">
-                <img src="restaurant_icon.png" alt="" />
+                <img src="https://i.imgur.com/2HCTLcU.png" alt="" />
                 <h3>Restaurants</h3>
               </a>
             </li>
             <li className="browse-nav-category">
               <a href="">
-                <img src="blacksmithing_icon.png" alt="" />
+                <img src="https://i.imgur.com/xQHZCsP.png" alt="" />
                 <h3>Blacksmithing</h3>
               </a>
             </li>
             <li className="browse-nav-category">
               <a href="">
-                <img src="barber_icon.png" alt="" />
+                <img src="https://i.imgur.com/Hs6T4to.png" alt="" />
                 <h3>Beauty & Barber</h3>
               </a>
             </li>
             <li className="browse-nav-category">
               <a href="">
-                <img src="beer_icon.png" alt="" />
+                <img src="https://i.imgur.com/Mwtuz2p.png" alt="" />
                 <h3>Bars</h3>
               </a>
             </li>
@@ -38,19 +38,19 @@ export default class BrowseCategory extends React.Component {
           <ul className="browse-categories level-2">
             <li className="browse-nav-category">
               <a href="">
-                <img src="mechanic_icon.png" alt="" />
+                <img src="https://i.imgur.com/TdKKEKn.png" alt="" />
                 <h3>Mechanic</h3>
               </a>
             </li>
             <li className="browse-nav-category">
               <a href="">
-                <img src="jewelry_icon.png" alt="" />
+                <img src="https://i.imgur.com/Lhrytji.png" alt="" />
                 <h3>Jewelry Shops</h3>
               </a>
             </li>
             <li className="browse-nav-category">
               <a href="">
-                <img src="tailoring_icon.png" alt="" />
+                <img src="https://i.imgur.com/geQLRuc.png" alt="" />
                 <h3>Tailoring</h3>
               </a>
             </li>
