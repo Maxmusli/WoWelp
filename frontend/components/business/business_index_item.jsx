@@ -17,7 +17,7 @@ class BusinessIndexItem extends React.Component {
       description, picture, name, phone, category, sub_category, 
       price_range, reservation, take_out, address
     } = this.props.business
-
+  
     return (
       <div className="business-container">
         <div className="business-img">
@@ -28,15 +28,15 @@ class BusinessIndexItem extends React.Component {
           <div className="top-section">
             <div className="left-section">
               <div className="business-name">
-                {/* {name} */}
+                {name}
               </div>
               <div className="business-rating">
                 no reviews yet
               </div>
               <div className="business-category">
-                {/* {price_range} */}
-                {/* {category} */}
-                {/* {sub_category} */}
+                {price_range}
+                {category}
+                {sub_category}
               </div>
             </div>
             <div className="right-section">
@@ -61,12 +61,12 @@ class BusinessIndexItem extends React.Component {
             </div>
             <div className="business-reservation">
               <label>Reservation:
-                {/* {reservation} */}
+                {reservation}
               </label>
             </div>
             <div className="business-takeout">
               <label>Takeout:
-                {/* {take_out} */}
+                {take_out}
               </label>
             </div>
           </div>

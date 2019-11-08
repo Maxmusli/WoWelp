@@ -10,25 +10,17 @@ export default class NavBar extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    // Select document items
+
     const menuNav = document.querySelector('.menu-nav');
     const navItems = document.querySelectorAll('.nav-item');
 
-    // Set initial state of menu
-
-    // let showMenu = false;
-
-    // menuBtn.addEventListener('click', toggleMenu);
-
-    // function toggleMenu() {
-      if (!$(".menu-nav").hasClass("show")) {
-        menuNav.classList.add('show');
-        navItems.forEach(item => item.classList.add('show'));
-      } else {
-        menuNav.classList.remove('show');
-        navItems.forEach(item => item.classList.remove('show'));
-      }
-    // }
+    if (!$(".menu-nav").hasClass("show")) {
+      menuNav.classList.add('show');
+      navItems.forEach(item => item.classList.add('show'));
+    } else {
+      menuNav.classList.remove('show');
+      navItems.forEach(item => item.classList.remove('show'));
+    }
   }
 
   render() {

@@ -1,3 +1,5 @@
+@import "config";
+
 .sub-nav-categories {
   background-image: image-url("footer_background.jpg");
   
@@ -39,5 +41,55 @@
 
   .business {
     border-right: 1px solid rgba(190, 197, 204, 0.5)
+  }
+}
+
+.sub-nav-drop-down {
+  position: absolute;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  overflow: hidden;
+  border: solid 1px rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  cursor: pointer;
+  width: 150px;
+  list-style: none;
+
+}
+
+.sub-nav-drop-down > li {
+  border: none;
+  border-top: solid 1px rgba(255, 255, 255, 0.08);
+  background: #261812;
+  width: 180px;
+  padding: 0 20px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.sub-nav-drop-down-btn {
+  font-size: 16px;
+  font-family: BlizQuadrataWeb, serif;
+  background: none;
+  color: #f8b700;
+  border: none;
+  
+
+  &:hover {
+    cursor: pointer;
+    color: white;
+    @include easeOut();
+  }
+}
+
+.restaurants-nav .services-nav .cities-nav .more-nav {
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
   }
 }

@@ -48,7 +48,7 @@ export default class SessionForm extends Component {
   guestLogin(e) {
     e.preventDefault();
     const user = Object.assign({}, {
-      email: 'guest_user@gmail.com',
+      email: 'guest123@gmail.com',
       fname: 'Guest',
       lname: 'Guest',
       password: 'password'

@@ -8,7 +8,7 @@ import SignupFormContainer from "./session/signup_form_container";
 import SearchContainer from './search/search_container';
 
 export default () => {
-
+  
   return (
     <div>
       <Switch>
