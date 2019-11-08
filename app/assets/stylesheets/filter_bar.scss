@@ -1,0 +1,51 @@
+@import "config";
+
+.filter-bar-wrapper {
+  margin-top: 30px;
+}
+
+.filter-bar-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.filter-bar {
+  margin: 12px 0 12px 0;
+  display: flex;
+}
+
+.filter-btn {
+  margin-right: 6px;
+  padding: 8.5px 11px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.price-range {
+  margin: 0;
+  margin-right: 6px;
+
+  button {
+    padding: 8.5px 11px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  #first {
+    border-radius: 4px 0 0 4px;
+  }
+
+  #second {
+    border-left: none;
+  }
+
+  #third {
+    border-left: none;
+    border-right: none;
+  }
+
+  #last {
+    border-radius: 0 4px 4px 0;
+  }
+}

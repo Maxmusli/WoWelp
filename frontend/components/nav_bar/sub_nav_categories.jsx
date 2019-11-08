@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 export default class SubNavCategories extends Component {
   constructor(props) {
@@ -31,58 +30,7 @@ export default class SubNavCategories extends Component {
     this.setState({ dropdownOpen: false });
   }
 
-  render() {
-    const restaurantsDropDown = (
-      <DropdownMenu className="sub-nav-drop-down">
-        <DropdownItem>
-          TEST
-        </DropdownItem>
-      </DropdownMenu>
-    )
-
-    const servicesDropDown = (
-      <div
-        className="sub-nav-drop-down"
-        onMouseOver={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-        isOpen={this.state.dropdownOpen}
-        toggle={this.toggle}
-      >
-        <ul className="services-nav">
-          <li>
-            <a href="">services</a>
-          </li>
-        </ul>
-      </div>
-    )
-
-    const citiesDropDown = (
-      <div>
-        <ul className="cities-nav">
-          <li>
-            <a href="">cities</a>
-          </li>
-        </ul>
-      </div>
-    )
-
-    const moreDropDown = (
-      <div
-        className="sub-nav-drop-down"
-        onMouseOver={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-        isOpen={this.state.dropdownOpen}
-        toggle={this.toggle}
-      >
-        <ul className="more-nav">
-          <li>
-            <a href="">more</a>
-          </li>
-        </ul>
-      </div>
-    )
-
-    
+  render() { 
 
     return (
       <div className="sub-nav-categories">
@@ -96,7 +44,6 @@ export default class SubNavCategories extends Component {
                   <i className="fas fa-caret-down"></i>
                 </div>
               </a >
-              {/* {servicesDropDown} */}
             </div>
             
             <div className="category">
@@ -107,7 +54,6 @@ export default class SubNavCategories extends Component {
                   <i className="fas fa-caret-down"></i>
                 </div>
               </a>
-              {/* {servicesDropDown} */}
             </div>
             <div className="category">
               <a href="">
@@ -117,7 +63,6 @@ export default class SubNavCategories extends Component {
                   <i className="fas fa-caret-down"></i>
                 </div>
               </a>
-              {/* {citiesDropDown} */}
             </div>
             <div className="category">
               <a href="">
@@ -126,7 +71,6 @@ export default class SubNavCategories extends Component {
                   <i className="fas fa-caret-down"></i>
                 </div>
               </a>
-              {/* {moreDropDown} */}
             </div>
 
             <div className="blink">

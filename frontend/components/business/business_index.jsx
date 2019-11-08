@@ -21,7 +21,7 @@ export default class BusinessIndex extends React.Component {
     const { businesses } = this.props
   
     return (
-      <div>
+      <div className="business-info-wrapper">
         {businesses.map(business => (
           <BusinessIndexItem
           business={business}

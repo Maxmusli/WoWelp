@@ -7,12 +7,13 @@ export const fetchBusinesses = (data) => {
     })
   )
 }
-// export const fetchBusinesses = (data) => (
 
-//   $.ajax({
-//     url: '/api/businesses',
-//     method: 'get',
-//     data
-//   })
+export const fetchBusiness = id => (
+
+  $.ajax({
+    url: `/api/businesses/${id}`,
+    method: 'get',
+    data
+  })
   
-// )
+)

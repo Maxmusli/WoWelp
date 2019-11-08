@@ -9,14 +9,26 @@
 Business.delete_all
 User.delete_all
 
-business1 = Business.create!(
+business_1 = Business.create!(
   name: "test",
   address: "123 debugger", 
   city: "Orgrimmar", 
   state: "Kalimodor", 
   zipcode: "123123", 
   category: "Inn", 
-  phone: "123123123"
+  phone: "123123123",
+  description: "Best Place in Orgrimmar"
+)
+
+business_2 = Business.create!(
+  name: "test2",
+  address: "456 debugger", 
+  city: "Stormwind", 
+  state: "Eastern Kingdom", 
+  zipcode: "123123", 
+  category: "Bar", 
+  phone: "123123123",
+  description: "Best Place in Storwind"
 )
 
 demo_user = User.create!(

@@ -23,6 +23,7 @@ class BusinessIndexItem extends React.Component {
       <div className="business-container">
         <div className="business-img">
           <img src="" alt=""/>
+          picture
         </div>
 
         <div className="business-info">

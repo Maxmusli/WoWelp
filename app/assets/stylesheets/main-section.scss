@@ -1,0 +1,36 @@
+@import "config";
+
+.main-section-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.business-info-wrapper {
+  display: block;
+  width: 65%;
+}
+
+.business-container {
+  display: flex;
+  padding: 18px 0 18px 0;
+
+  .business-img {
+    margin-right: 18px;
+    width: 210px;
+    height: 210px;
+    border-radius: 4px;
+    border: 1px solid black;
+  }
+
+  .business-info {
+    width: 402px;
+    height: 210px;
+    border: 1px solid black;
+  }
+
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+  }
+}
