@@ -1,0 +1,43 @@
+.sub-nav-categories {
+  background-image: url("footer_background.jpg");
+  
+  .wrapper {
+    max-width: 1000px !important;
+    margin: 0 auto;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .blink {
+    display: block;
+    width: 110px;
+    border-left: 1px solid rgba(190, 197, 204, 0.5);
+  }
+  
+  a {
+    display: block;
+    border-left: 1px solid rgba(190, 197, 204, 0.5);
+    text-decoration: none;
+  }
+
+  .header-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 8px 12px 8px 12px;
+    color: rgb(213, 221, 230);
+    font-size: 20px;
+
+    h3 {
+      font-size: 18px;
+      margin: 0 12px 0 12px;
+    }
+  }
+
+  .business {
+    border-right: 1px solid rgba(190, 197, 204, 0.5)
+  }
+}

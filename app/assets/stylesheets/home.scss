@@ -1,0 +1,153 @@
+.city-nav {
+  height: 390px;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("map.jpg");
+  background-size: cover;
+}
+
+.cities-wrapper {
+  padding-top: 50px;
+  width: 100%;
+  text-align: center;
+  
+}
+
+.cities-title {
+  display: block;
+  font-weight: 700;
+  font-size: 25px;
+  font-family: BlizQuadrataWeb, serif;
+  color: rgb(247, 177, 10);
+}
+
+.city-themes {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 20px 0;
+
+  .city {
+    display: flex;
+    padding: 0 20px;
+    
+    a {
+      text-decoration: none;
+
+      &:hover {
+        box-shadow: 1px 1px 5px 5px rgb(145, 145, 145);
+        border-radius: 4px;
+      }
+    }
+
+    img {
+      height: 174px;
+      width: 310px;
+      border-radius: 4px 4px 0 0;
+      border: 1px solid rgba(247, 177, 10, 0.7);
+      border-bottom: none;
+    }
+
+    h3 {
+      border: 1px solid rgba(247, 177, 10, 0.7);
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+      padding: 12px 0 12px 0;
+      color: #EBDEC2;
+      font-family: BlizQuadrataWeb, serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: -3px;
+    }
+  }
+}
+
+.bar-1 {
+  height: 47px;
+  background-image: url("bar_1.png");
+  background-position: center;
+}
+
+.bar-2 {
+  height: 8px;
+  background-position: center;
+  background-image: url("bar_2.png");
+}
+
+.browse-category {
+  height: 450px;
+  background-image: url("browse_category_2.jpg");
+  background-color: rgb(6, 17, 35);
+  // position: relative;
+  // height: 100%;
+  // width: 100%;
+  background-size: 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.browse-category-wrapper {
+  padding-top: 30px;
+  width: 100%;
+  text-align: center;
+  // height: 220px;
+}
+
+.browse-category-title {
+  display: block;
+  font-weight: 700;
+  font-size: 25px;
+  font-family: BlizQuadrataWeb, serif;
+  color: rgb(247, 177, 10);
+}
+
+.browse-categories {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin: 35px 0 35px 0;
+
+  .browse-nav-category {
+    display: flex;
+    padding: 0 8px;
+  
+    a {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0 20px 0;
+      border-radius: 4px;
+      border: 1px solid rgba(80, 80, 80, 0.7);
+      margin: 0 15px 0 15px;
+      width: 217.5px;
+      height: 90px;
+      background: rgba(221,221,221,0.25);
+      
+      &:hover {
+        box-shadow: 1px 1px 5px 5px rgb(145, 145, 145);
+        border-radius: 4px;
+      }
+    }
+
+    img {
+      height: 72px;
+      width: 72px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+
+    .fas {
+      font-size: 50px;
+      color: rgba(216, 216, 216, 0.7);
+      padding: 16px 0;
+    }
+
+    h3 {
+      color: rgb(255, 245, 225);
+      font-family: BlizQuadrataWeb, serif;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+}
+
+.footer-background {
+  background: #140C08;
+}
