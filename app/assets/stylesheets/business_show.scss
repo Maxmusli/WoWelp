@@ -25,19 +25,64 @@
 
 .main-section-wrapper {
   margin-top: 18px !important;
+  max-width: 960px;
 }
 
 .main-section {
-  max-width: 960px;
   margin: 0 auto;
   display: flex;
+  width: 100%;
 
   .left-section {
-    border: 1px solid black;
+    // border: 1px solid gray;
+    margin-right: 36px;
+    width: 66%;
   }
 
   .right-section {
-    border: 1px solid black;
+    border: 1px solid gray;
+    width: 33%;
+  }
+
+  .business-info {
+    margin-bottom: 18px;
+    background-color: gray;
+
+    .business-name {
+      margin-bottom: 6px;
+      font-size: 30px;
+      font-weight: 700;
+      padding-top: 6px;
+      line-height: 1.2em;
+    }
+
+    .business-rating {
+      margin-bottom: 6px;
+      min-width: 100%;
+    }
+  }
+
+  .functionalities {
+    min-width: 100%;
+
+    .function-btn {
+      margin: 0 6px 0 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+
+      div {
+        padding: 5px 8px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.5em;
+      }
+    }
+  }
+
+  .about-business {
+    margin-top: 24px;
+    border-top: 1px solid #ccc;
+    padding-top: 24px;
   }
 }
 

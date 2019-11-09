@@ -37,16 +37,24 @@ export default class BusinessDetail extends Component {
 
                 <div className="functionalities">
                   <button className="function-btn">
-                    <h3>Write a Review</h3>
+                    <div>
+                      <h3>Write a Review</h3>
+                    </div>
                   </button>
                   <button className="function-btn">
-                    <h3>Add Photo</h3>
+                    <div>
+                      <h3>Add Photo</h3>
+                    </div>
                   </button>
                   <button className="function-btn">
-                    <h3>Share</h3>
+                    <div>
+                      <h3>Share</h3>
+                    </div>  
                   </button>
                   <button className="function-btn">
-                    <h3>Save</h3>
+                    <div>
+                      <h3>Save</h3>
+                    </div>  
                   </button>
                 </div>
 
