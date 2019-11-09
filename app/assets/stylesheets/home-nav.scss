@@ -233,7 +233,6 @@
   justify-content: center;
   float: left;
   overflow: hidden;
-  border: solid 1px rgba(255, 255, 255, 0.08);
   text-decoration: none;
   cursor: pointer;
   width: 150px;
@@ -262,7 +261,7 @@
   background: none;
   color: #f8b700;
   border: none;
-  
+  z-index: 1;
 
   &:hover {
     cursor: pointer;
