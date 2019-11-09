@@ -17,9 +17,9 @@ export default class BusinessDetail extends Component {
           <div>picture4</div>
         </div>
 
-        <div className="main-wrapper">
-          <div className="main-section-wrapper">
-            <div className="main-section">
+        <div className="main-show-wrapper">
+          <div className="main-show-section-wrapper">
+            <div className="main-show-section">
               <div className="left-section">
                 <div className="business-info">
                   <div className="business-name">

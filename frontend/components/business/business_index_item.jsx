@@ -30,7 +30,9 @@ class BusinessIndexItem extends React.Component {
           <div className="top-section">
             <div className="left-section">
               <div className="business-name">
-                {name}
+                <a href="">
+                  {name}
+                </a>
               </div>
               <div className="business-rating">
                 no reviews yet
@@ -59,7 +61,7 @@ class BusinessIndexItem extends React.Component {
 
           <div className="bottom-section">
             <div className="business-write-review">
-              write a review
+              <a href="">write a review</a>
             </div>
             <div className="business-reservation">
               <label>Reservation:

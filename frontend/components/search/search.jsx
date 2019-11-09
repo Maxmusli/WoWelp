@@ -22,7 +22,7 @@ export default class Search extends React.Component {
           <FilterBar />
         </div>
         <div>
-          <div className="main-section-wrapper">
+          <div className="business-index-wrapper">
             <BusinessIndex businesses={businesses} />
             <div>
               map

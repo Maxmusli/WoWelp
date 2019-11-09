@@ -3,6 +3,7 @@
 .business-show-container {
   min-width: 1020px;
   position: relative;
+  // background: ;
 }
 
 .business-show-img {
@@ -19,16 +20,17 @@
   }
 }
 
-.main-wrapper {
+.main-show-wrapper {
   min-width: 1020px;
 }
 
-.main-section-wrapper {
+.main-show-section-wrapper {
+  margin: 0 auto;
   margin-top: 18px !important;
   max-width: 960px;
 }
 
-.main-section {
+.main-show-section {
   margin: 0 auto;
   display: flex;
   width: 100%;
@@ -81,6 +83,12 @@
 
   .about-business {
     margin-top: 24px;
+    border-top: 1px solid #ccc;
+    padding-top: 24px;
+  }
+
+  .reviews {
+    margin: 24px 0 46px 0;
     border-top: 1px solid #ccc;
     padding-top: 24px;
   }

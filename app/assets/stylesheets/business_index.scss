@@ -1,0 +1,107 @@
+@import "config";
+
+.business-index-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.business-info-wrapper {
+  display: block;
+  width: 65%;
+}
+
+.business-container {
+  display: flex;
+  padding: 18px 0 18px 0;
+
+  .business-img {
+    margin-right: 18px;
+    width: 210px;
+    height: 210px;
+    border-radius: 4px;
+    border: 1px solid black;
+  }
+
+  .business-info {
+    width: 402px;
+    height: 210px;
+    border: 1px solid black;
+  }
+
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+
+    .left-section {
+      width: 62.5%;
+      display: block;
+      border: 1px solid black;
+
+      .business-name {
+        font-weight: 700;
+        margin-bottom: 6px;
+        font-size: 16px;
+        line-height: 1.3125em;
+
+        a {
+          font-size: 18px;
+          text-decoration: none;
+        }
+      }
+
+      .business-rating {
+        margin-top: 5px;
+      }
+
+      .business-category {
+        display: block;
+        line-height: 21px;
+        margin: 5px 0 0;
+      }
+    }
+
+    .right-section {
+      width: 37.5%;
+      display: block;
+      text-align: right;
+      padding: 4px 0 0 12px;
+      border: black solid 1px;
+    }
+  }
+}
+
+.mid-section {
+  margin: 12px 0 12px 0;
+}
+
+.bottom-section {
+  margin-top: 6px;
+  padding: 6px;
+  display: flex;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  align-items: center;
+
+  .business-write-review {
+    margin: 0 3px 0 3px;
+
+    a {
+      display: block;
+      text-decoration: none;
+      padding: 6px 18px;
+      border: 1px solid gray;
+      border-radius: 4px;
+    }
+  }
+
+  .business-reservation {
+    margin: 0 3px 0 3px;
+    padding: 0 6px;
+  }
+
+  .business-takeout {
+    margin: 0 3px 0 3px;
+    padding: 0 6px;
+  }
+}
