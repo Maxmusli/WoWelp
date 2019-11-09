@@ -4,10 +4,10 @@ import { selectBusiness } from '../../reducers/selectors';
 import BusinessShow from './business_show';
 
 const mapStateToProps = (state={}, ownProps) => {
-  debugger
+  
   return ({
     businessId: ownProps.match.params.businessId,
-    business: selectBusiness(state.entities, ownProps.match.params.businessId),
+    business: selectBusiness(state.entities, parseInt(ownProps.match.params.businessId)),
     // business: state.entities[ownProps.match.params.businessId],
   })
 };

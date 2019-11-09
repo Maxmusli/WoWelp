@@ -10,7 +10,8 @@ export default class BusinessShow extends Component {
 
   render() {
     const { business } = this.props
-    // debugger
+    
+    if (!business) return null;
     return (
       <div>
         <div>

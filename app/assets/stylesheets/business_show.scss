@@ -1,0 +1,43 @@
+@import "config";
+
+.business-show-container {
+  min-width: 1020px;
+  position: relative;
+}
+
+.business-show-img {
+  width: 100%;
+  max-width: 1922px;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  
+  div  {
+    width: 25%;
+    height: 16.667vw;
+    border: 1px solid black
+  }
+}
+
+.main-wrapper {
+  min-width: 1020px;
+}
+
+.main-section-wrapper {
+  margin-top: 18px !important;
+}
+
+.main-section {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+
+  .left-section {
+    border: 1px solid black;
+  }
+
+  .right-section {
+    border: 1px solid black;
+  }
+}
+
