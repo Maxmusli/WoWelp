@@ -8,7 +8,6 @@ const mapStateToProps = (state={}, ownProps) => {
   return ({
     businessId: ownProps.match.params.businessId,
     business: selectBusiness(state.entities, parseInt(ownProps.match.params.businessId)),
-    // business: state.entities[ownProps.match.params.businessId],
   })
 };
 

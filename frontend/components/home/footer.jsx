@@ -16,7 +16,7 @@ export default class Footer extends Component {
             <a href="#!">
               <i className="fab fa-linkedin fa-2x"></i>
             </a>
-            <a href="#!">
+            <a href="https://github.com/Maxmusli/WoWelp">
               <i className="fab fa-github fa-2x"></i>
             </a>
           </div>
