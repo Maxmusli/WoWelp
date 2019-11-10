@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container'
 import BrowseCategory from './browse_category';
-import Footer from './footer';
+import Footer from '../nav_bar/footer_nav';
 
 export default () => (
   <div>

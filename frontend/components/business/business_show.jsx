@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SubNavContainer from '../nav_bar/sub_nav_container';
-import Footer from '../home/footer';
+import Footer from '../nav_bar/footer_nav';
 import BusinessDetail from './business_detail'
 
 export default class BusinessShow extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import Footer from '../home/footer';
+import Footer from '../nav_bar/footer_nav';
 
 export default class SessionForm extends Component {
   constructor(props) {
