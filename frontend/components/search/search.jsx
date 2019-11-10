@@ -16,9 +16,9 @@ class Search extends React.Component {
   handleRestaurants(e) {
     e.preventDefault();
 
-    this.props.filters('near', 'Orgrimmar')
+    this.props.changeFilter('near', 'Orgrimmar')
       .then(() => {
-        this.props.filters('find', 'Restaurants')
+        this.props.changeFilter('find', 'Restaurants')
           .then(() => {this.props.history.push('/search?find=restaurants&near=orgrimmar')})
       });
   };

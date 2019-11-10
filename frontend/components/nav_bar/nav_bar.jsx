@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import SearchContainer from '../search/search_container';
 
 export default class NavBar extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.handleClick = this.handleClick.bind(this)
   }
@@ -82,41 +83,7 @@ export default class NavBar extends React.Component {
               <img src="https://i.imgur.com/4n3wSAR.png" />
             </div>
           </div>
-          <form className="search-filter">
-            <div className="search">
-              <span className="input-title">Find</span>
-              <span className="input-body">
-                beer, ramen, blacksmith, action house...
-              </span>
-              <div className="split-line"></div>
-            </div>
-            <div className="filter">
-              <span className="input-title">Near</span>
-            </div>
-            <div className="search-btn-wrapper">
-              <button className="search-btn">
-                <i className="fas fa-search"></i>
-              </button>
-            </div>
-          </form>
-          <ul className="nav-categories">
-            <li className="nav-category">
-              <i className="fas fa-utensils"></i>
-              <a href="">Restaurants</a>
-            </li>
-            <li className="nav-category">
-              <i className="fas fa-hammer"></i>
-              <a href="">Blacksmith</a>
-            </li>
-            <li className="nav-category">
-              <i className="fas fa-cut"></i>
-              <a href="">Barber Shops</a>
-            </li>
-            <li className="nav-category">
-              <i className="fas fa-cocktail"></i>
-              <a href="">Bars</a>
-            </li>
-          </ul>
+          <SearchContainer />
         </div>
       </header>
     );

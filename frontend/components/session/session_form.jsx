@@ -180,7 +180,7 @@ export default class SessionForm extends Component {
           </form>
         </div>
       )
-
+  
     return (
       <div className="background">
         <div className="session-page">
