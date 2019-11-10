@@ -15,7 +15,7 @@ business_1 = Business.create!(
   city: "Orgrimmar", 
   state: "Kalimodor", 
   zipcode: "123123", 
-  category: "Inn", 
+  category: "Restaurant", 
   phone: "123123123",
   description: "Best Place in Orgrimmar"
 )
@@ -30,6 +30,7 @@ business_2 = Business.create!(
   phone: "123123123",
   description: "Best Place in Storwind"
 )
+
 
 demo_user = User.create!(
   email: "guest123@gmail.com",
