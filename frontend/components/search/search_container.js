@@ -6,6 +6,7 @@ import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
   businesses: asArray(state.entities),
+   
 })
 
 const mapDispatchToProps = dispatch => ({
