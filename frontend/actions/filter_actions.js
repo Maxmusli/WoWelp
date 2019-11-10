@@ -10,5 +10,5 @@ const updateFilter = (find, near) => ({
 
 export const changeFilter = (filter, value) => (dispatch, getState) => {
   dispatch(updateFilter(filter, value));
-  return fetchBusinesses(getState().ui.filters)(dispatch);
+  return fetchBusinesses(getState().filters)(dispatch);
 };

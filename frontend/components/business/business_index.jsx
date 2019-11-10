@@ -11,7 +11,7 @@ export default class BusinessIndex extends React.Component {
   // }
 
   render() {
-    debugger
+    
     const { businesses } = this.props
   
     return (
