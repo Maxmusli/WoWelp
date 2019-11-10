@@ -18,8 +18,8 @@ export const clearBusinesses = () => ({
   type: CLEAR_BUSINESSES
 })
 
-export const fetchBusinesses = (filter) => dispatch => {
-  return APIUtil.fetchBusinesses(filter)
+export const fetchBusinesses = (filters) => dispatch => {
+  return APIUtil.fetchBusinesses(filters)
     .then(businesses => dispatch(receiveBusinesses(businesses)))
 };
 

@@ -19,7 +19,7 @@ class Search extends React.Component {
     this.props.changeFilter('near', 'Orgrimmar')
       .then(() => {
         this.props.changeFilter('find', 'Restaurant')
-          .then(() => {this.props.history.push('/search?find=restaurant&near=orgrimmar')})
+          .then(() => {this.props.history.push('/search?find=Restaurant&near=Orgrimmar')})
       });
   };
 
