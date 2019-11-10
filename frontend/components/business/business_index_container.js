@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateFilter } from '../../actions/filter_actions';
+import { changeFilter } from '../../actions/filter_actions';
 import BusinessIndex from './business_index';
 
 const mapStateToProps = state => ({
@@ -9,8 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateFilter: (filter, value) => dispatch(
-    updateFilter(filter, value)
+  changeFilter: (filter, value) => dispatch(
+    changeFilter(filter, value)
   )
 });
 

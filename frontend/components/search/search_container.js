@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
 
 import Search from './search';
-import { fetchBusinesses } from '../../actions/business_actions'
-import { asArray } from '../../reducers/selectors';
+import { changeFilter } from '../../actions/filter_actions'
 
 const mapStateToProps = state => ({
-  businesses: asArray(state.entities),
-   
+  find: state.filters.find,
+  near: state.filters.near,   
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchBusinesses: (filter) => dispatch(fetchBusinesses(filter)),
+  changeFilter: (filter, value) => dispatch(changeFilter(filter, value)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default connect(
+  mapStateToProps, 
+  mapDispatchToProps
+)(Search);

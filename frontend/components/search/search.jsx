@@ -1,13 +1,27 @@
 import React from 'react';
-import BusinessIndex from '../business/business_index';
-import SubNavContainer from '../nav_bar/sub_nav_container';
-import Footer from '../nav_bar/footer_nav'
-import FilterBar from './filter_bar';
+import { withRouter } from 'react-router-dom';
 
-export default class Search extends React.Component {
-  componentDidMount() {
-    this.props.fetchBusinesses();
+class Search extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      find: "",
+      near: this.props.near,
+    };
+
+    this.handleRestaurants = this.handleRestaurants.bind(this);
   }
+
+  handleRestaurants(e) {
+    e.preventDefault();
+
+    this.props.filters('near', 'Orgrimmar')
+      .then(() => {
+        this.props.filters('find', 'Restaurants')
+          .then(() => {this.props.history.push('/search?find=restaurants&near=orgrimmar')})
+      });
+  };
 
   render() {
     
@@ -33,7 +47,7 @@ export default class Search extends React.Component {
         <ul className="nav-categories">
           <li className="nav-category">
             <i className="fas fa-utensils"></i>
-            <a href="">Restaurants</a>
+            <a onClick={this.handleRestaurants}>Restaurants</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-hammer"></i>
@@ -52,3 +66,5 @@ export default class Search extends React.Component {
     );
   }
 }
+
+export default withRouter(Search);

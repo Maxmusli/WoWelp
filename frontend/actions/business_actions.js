@@ -2,16 +2,21 @@ import * as APIUtil from '../util/business';
 
 export const RECEIVE_BUSINESSES = 'RECEIVE_BUSINESSES';
 export const RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
+export const CLEAR_BUSINESSES = 'CLEAR_BUSINESSES'
 
-const receiveBusinesses = businesses => ({
+export const receiveBusinesses = businesses => ({
   type: RECEIVE_BUSINESSES,
   businesses
 });
 
-const receiveBusiness = business => ({
+export const receiveBusiness = business => ({
   type: RECEIVE_BUSINESS,
   business
 });
+
+export const clearBusinesses = () => ({
+  type: CLEAR_BUSINESSES
+})
 
 export const fetchBusinesses = (filters) => dispatch => {
   return APIUtil.fetchBusinesses(filters)

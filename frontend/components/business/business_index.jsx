@@ -5,9 +5,13 @@ import FooterNav from '../nav_bar/footer_nav';
 import FilterBar from '../search/filter_bar';
 
 export default class BusinessIndex extends React.Component {
+  
+  // componentDidMount() {
+  //   this.props.fetchBusinesses();
+  // }
 
   render() {
-    
+    debugger
     const { businesses } = this.props
   
     return (
