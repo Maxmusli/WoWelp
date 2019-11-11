@@ -42,6 +42,17 @@ business_3 = Business.create!(
   description: "Best Bar in town!"
 )
 
+business_4 = Business.create!(
+  name: "test4",
+  address: "111 debugger", 
+  city: "Stormwind", 
+  state: "Eastern Kingdom", 
+  zipcode: "123123", 
+  category: "Restaurant", 
+  phone: "123123123",
+  description: "Best Restaurant in Stormwind!"
+)
+
 
 demo_user = User.create!(
   email: "guest123@gmail.com",

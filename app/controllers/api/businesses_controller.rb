@@ -6,14 +6,17 @@ class Api::BusinessesController < ApplicationController
     near = params[:filters][:near]
     find = params[:filters][:find]
    
-    cookies[:near] = params[:filters][:near]
-    cookies[:find] = params[:filters][:find]
+    # cookies[:near] = params[:filters][:near]
+    # cookies[:find] = params[:filters][:find]
 
-    if near != ""
+    if near != "" && find != ""
+      @matches = Business.find_business(find)
+      @businesses = Business.near_location(near).select { |business| @matches.include?(business) }
+    elsif find == ""
       @businesses = Business.near_location(near)
-      # @matches = Business.find_business(find)
-      # @businesses = Business.select { |business| @matches.include?(business) }
-    
+    elsif near == ""
+      @matches = Business.find_business(find)
+      @businesses = Business.select { |business| @matches.include?(business) }
     end
     
     render :index
