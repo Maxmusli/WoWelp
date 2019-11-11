@@ -27,6 +27,8 @@ class Business < ApplicationRecord
   validates :name, :address, :city, :state, :zipcode, 
     :category, :phone, presence: true
 
+  has_many :reviews
+
   def self.near_location(location)
     Business.where(
       "city LIKE ? or address LIKE ?", 
@@ -45,6 +47,6 @@ class Business < ApplicationRecord
   end
 
   def average_rating
-    # reviews.average(:rating)
+    reviews.average(:rating)
   end
 end

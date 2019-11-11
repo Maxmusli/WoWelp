@@ -11,6 +11,7 @@ class Search extends React.Component {
       near: this.props.near,
     };
 
+    // this.handleSubmit = this.handleSubmit.bind(this);
     this.handleRestaurants = this.handleRestaurants.bind(this);
   }
 
@@ -19,6 +20,12 @@ class Search extends React.Component {
       this.setState({ [type]: e.target.value })
     }
   }
+
+  // handleSubmit(e) {
+  //   e.preventDefault();
+
+  //   this.props.changeFilter()
+  // }
 
   handleRestaurants(e) {
     e.preventDefault();
@@ -58,7 +65,7 @@ class Search extends React.Component {
             </div>
           </div>
           <div className="search-btn-wrapper">
-            <button className="search-btn">
+            <button className="search-btn" type="submit">
               <i className="fas fa-search"></i>
             </button>
           </div>
