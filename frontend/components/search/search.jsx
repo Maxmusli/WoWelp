@@ -49,6 +49,13 @@ class Search extends React.Component {
           </div>
           <div className="filter">
             <span className="input-title">Near</span>
+            <div>
+              <input className="input-body"
+                type="text"
+                onChange={this.handleInput('near')}
+                value={this.state.near}
+              />
+            </div>
           </div>
           <div className="search-btn-wrapper">
             <button className="search-btn">

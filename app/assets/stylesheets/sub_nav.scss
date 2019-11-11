@@ -79,6 +79,8 @@
     font-size: 14px;
     width: 50%;
     line-height: 25px;
+    display: flex;
+    align-content: center;
   }
 
   .filter {
@@ -104,10 +106,12 @@
   }
 
   .input-body {
-    position: absolute;
     font-weight: 400;
     color: #D79D0E;
     font-size: 15px;
+    padding: 0;
+    height: 25px;
+    top: 6px;
   }
 
   .split-line {

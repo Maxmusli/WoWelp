@@ -3,10 +3,22 @@ import { Link } from 'react-router-dom'
 import SubNavCategories from './sub_nav_categories';
 
 export default class NavBar extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      searchBody: "",
+      find: "",
+      near: this.props.near,
+    };
 
     this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleInput(type) {
+    return (e) => {
+      this.setState({ [type]: e.target.value })
+    }
   }
 
   handleClick(e) {
@@ -75,13 +87,25 @@ export default class NavBar extends React.Component {
             <form className="sub-search-filter">
               <div className="search">
                 <span className="input-title">Find</span>
-                <span className="input-body">
-                  beer, ramen, blacksmith, action house...
-                </span>
+                <div>
+                  <input className="input-body"
+                    type="text"
+                    onChange={this.handleInput('searchBody')}
+                    value={this.state.searchBody}
+                    placeholder="beer, ramen, blacksmith, action house..."
+                  />
+                </div>
                 <div className="split-line"></div>
               </div>
               <div className="filter">
                 <span className="input-title">Near</span>
+                <div>
+                  <input className="input-body"
+                    type="text"
+                    onChange={this.handleInput('searchBody')}
+                    value={this.state.searchBody}
+                  />
+                </div>
               </div>
               <div className="search-btn-wrapper">
                 <button className="search-btn">
