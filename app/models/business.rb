@@ -28,10 +28,10 @@ class Business < ApplicationRecord
     :category, :phone, presence: true
 
   def self.near_location(location)
-    Business.where('city LIKE ? or address LIKE ?', "%#{location}%", "%#{location}%")
+    Business.where("city LIKE ? or address LIKE ?", "%#{location}%", "%#{location}%")
   end
 
   def self.find_business(category)
-    Business.where('category LIKE ? or sub_category LIKE ? or name LIKE ?', "%#{category}%", "%#{category}%", "%#{category}%")
+    Business.where("category LIKE ? or sub_category LIKE ? or name LIKE ?", "%#{category}%", "%#{category}%", "%#{category}%")
   end
 end
