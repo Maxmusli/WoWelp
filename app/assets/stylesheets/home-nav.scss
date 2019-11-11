@@ -132,7 +132,8 @@
     border-radius: 4px 0 0 4px;
     padding: 16px;
     background: rgba(12, 8, 5, 0.7);
-    display: block;
+    display: flex;
+    align-content: center;
     box-sizing: border-box;
     font-size: 18px;
     width: 50%;
@@ -160,12 +161,21 @@
   background-size: 1em 2.7em;
   color: #f8b700;
   cursor: default;
+  
 }
 
 .input-body {
   position: absolute;
   font-weight: 400;
   color: #D79D0E;
+  background: transparent;
+  width: 80%;
+  border: none;
+  font-size: 18px;
+  padding: 0;
+  top: 0px;
+  bottom: 1px;
+
 }
 
 .split-line {

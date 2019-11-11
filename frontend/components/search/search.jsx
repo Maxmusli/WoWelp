@@ -6,11 +6,18 @@ class Search extends React.Component {
     super(props);
 
     this.state = {
+      searchBody: "",
       find: "",
       near: this.props.near,
     };
 
     this.handleRestaurants = this.handleRestaurants.bind(this);
+  }
+
+  handleInput(type) {
+    return (e) => {
+      this.setState({ [type]: e.target.value })
+    }
   }
 
   handleRestaurants(e) {
@@ -29,10 +36,15 @@ class Search extends React.Component {
       <div>
         <form className="search-filter">
           <div className="search">
-            <span className="input-title">Find</span>
-            <span className="input-body">
-              beer, ramen, blacksmith, action house...
-              </span>
+            <div className="input-title">Find</div>
+            <div>
+              <input className="input-body" 
+                type="text"
+                onChange={this.handleInput('searchBody')}
+                value={this.state.searchBody}
+                placeholder= "beer, ramen, blacksmith, action house..."
+              />
+            </div>
             <div className="split-line"></div>
           </div>
           <div className="filter">
