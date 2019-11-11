@@ -1,13 +1,11 @@
 import { connect } from 'react-redux';
 import { fetchBusiness } from '../../actions/business_actions';
-import { selectBusiness } from '../../reducers/selectors';
 import BusinessShow from './business_show';
 
 const mapStateToProps = (state={}, ownProps) => {
   
   return ({
-    businessId: ownProps.match.params.businessId,
-    business: selectBusiness(state.entities, parseInt(ownProps.match.params.businessId)),
+    business: state.entities.businesses[ownProps.match.params.businessId],
   })
 };
 

@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 
 export default class FilterBar extends Component {
 
-  // handleChange = (filter, updateFilter) => e => (
-  //   updateFilter(filter, e.currentTarget.value)
-  // );
 
   render() {
     return (

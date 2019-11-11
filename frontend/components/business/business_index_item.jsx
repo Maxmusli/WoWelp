@@ -5,12 +5,12 @@ class BusinessIndexItem extends React.Component {
   constructor(props) {
     super(props);
     
-
+    this.handleClick = this.handleClick.bind(this);
   }
-
+  
   handleClick() {
-    const businessId = this.props.entities.business.id;
-    this.props.histroy.push(`/businesses/${businessId}`)
+    const businessId = this.props.business.id;
+    this.props.history.push(`/search/${businessId}`)
   }
 
   render() {
@@ -30,7 +30,7 @@ class BusinessIndexItem extends React.Component {
           <div className="top-section">
             <div className="left-section">
               <div className="business-name">
-                <a href="">
+                <a onClick={this.handleClick}>
                   {name}
                 </a>
               </div>
