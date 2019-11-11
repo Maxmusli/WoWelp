@@ -15,7 +15,7 @@ class Search extends React.Component {
 
   handleRestaurants(e) {
     e.preventDefault();
-
+    // debugger
     this.props.changeFilter('near', 'Orgrimmar')
       .then(() => {
         this.props.changeFilter('find', 'Restaurant')

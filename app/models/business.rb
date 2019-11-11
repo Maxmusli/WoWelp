@@ -27,11 +27,24 @@ class Business < ApplicationRecord
   validates :name, :address, :city, :state, :zipcode, 
     :category, :phone, presence: true
 
-  # def self.near_location(location)
-  #   Business.where("city LIKE ? or address LIKE ?", "%#{location}%", "%#{location}%")
-  # end
+  def self.near_location(location)
+    Business.where(
+      "city LIKE ? or address LIKE ?", 
+      "%#{location}%", 
+      ""
+    )
+  end
 
-  # def self.find_business(category)
-  #   Business.where("category LIKE ? or sub_category LIKE ? or name LIKE ?", "%#{category}%", "%#{category}%", "%#{category}%")
-  # end
+  def self.find_business(category)
+    Business.where(
+      "category LIKE ? or sub_category LIKE ? or name LIKE ?",
+      "", 
+      "", 
+      ""
+    )
+  end
+
+  def average_rating
+    # reviews.average(:rating)
+  end
 end

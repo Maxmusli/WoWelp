@@ -2,17 +2,18 @@ class Api::BusinessesController < ApplicationController
   before_action :require_logged_in, only: [:create]
 
   def index
+    # debugger
+    near = params[:near]
+    find = params[:find]
     
-    # near = params[:filters][:near]
-    # find = params[:filters][:find]
+    if near != "" 
+      @businesses = Business.near_location(near)
+      # @matches = Business.find_business(find)
+      # @businesses = Business.select { |business| @matches.include?(business) }
     
-    # if near != "" && find != ""
-    #   @businesses = Business.near_location(near)
-    #   @matches = Business.find_business(find)
-    #   @businesses = Business.select { |business| @matches.include?(business) }
-    # end
+    end
 
-    @businesses = Business.all
+    # @businesses = Business.all
     
     render :index
   end
@@ -23,4 +24,5 @@ class Api::BusinessesController < ApplicationController
       render :show
     end
   end
+
 end
