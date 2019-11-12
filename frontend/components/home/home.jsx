@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container'
-import BrowseCategory from './browse_category';
+import BrowseCategoryContainer from './browse_category';
 import Footer from '../nav_bar/footer_nav';
 
 export default () => (
@@ -41,7 +41,9 @@ export default () => (
     
       <div className="bar-2"></div>
 
-      <BrowseCategory />
+      <BrowseCategoryContainer 
+        
+      />
 
       <div className="bar-2"></div>
 

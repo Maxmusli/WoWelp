@@ -71,7 +71,7 @@ export default class NavBar extends React.Component {
           </Link>
         </div>
       );
-
+    
     return (
       <div>
         <div className="sub-nav-wrapper">
@@ -102,8 +102,8 @@ export default class NavBar extends React.Component {
                 <div>
                   <input className="input-body"
                     type="text"
-                    onChange={this.handleInput('searchBody')}
-                    value={this.state.searchBody}
+                    onChange={this.handleInput('near')}
+                    value={this.state.near}
                   />
                 </div>
               </div>
@@ -120,7 +120,9 @@ export default class NavBar extends React.Component {
         </div>
 
         <div>
-          <SubNavCategories />
+          <SubNavCategories 
+            changeFilter={this.props.changeFilter}
+          />
         </div>
       </div>
     );

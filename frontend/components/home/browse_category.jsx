@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { changeFilter } from '../../actions/filter_actions'
 
-export default class BrowseCategory extends React.Component {
+class BrowseCategory extends React.Component {
 
   render () {
     return (
@@ -66,3 +68,12 @@ export default class BrowseCategory extends React.Component {
     )
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  changeFilter: (filter, value) => dispatch(changeFilter(filter, value))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(BrowseCategory);

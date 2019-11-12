@@ -11,6 +11,7 @@ export default class SubNavCategories extends Component {
     this.toggle = this.toggle.bind(this);
     this.onMouseEnter = this.onMouseEnter.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.handleRestaurants = this.handleRestaurants.bind(this);
   }
 
   toggle(e) {
@@ -30,6 +31,16 @@ export default class SubNavCategories extends Component {
     this.setState({ dropdownOpen: false });
   }
 
+  handleRestaurants(e) {
+    e.preventDefault();
+
+    this.props.changeFilter('near', 'Orgrimmar')
+      .then(() => {
+        this.props.changeFilter('find', 'Restaurant')
+          // .then(() => { this.props.history.push('/search?find=Restaurant&near=Orgrimmar') })
+      });
+  };
+
   render() { 
 
     return (
@@ -37,7 +48,10 @@ export default class SubNavCategories extends Component {
         <div className="wrapper">
           <div className="container">
             <div className="dropdown">
-              <a href="" className="dropbtn">
+              <a href=""
+                className="dropbtn"
+                onClick={this.handleRestaurants}
+              >
                 <div className="header-wrapper">
                   <i className="fas fa-utensils"></i>
                   <h3>Restaurants</h3>
