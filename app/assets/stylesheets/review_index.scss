@@ -1,0 +1,29 @@
+@import "config";
+
+.reviews > h3 {
+  margin-bottom: 18px;
+}
+
+.review-wrapper {
+  margin-bottom: 18px;
+  display: flex;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #ccc;
+  min-width: 605px;
+  min-height: 130px;
+}
+
+.author-info-wrapper {
+  margin-right: 6px;
+  width: 222px;
+  display: flex;
+}
+
+.review-info-wrapper {
+  margin-left: 6px;
+}
+
+.review-rating {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
