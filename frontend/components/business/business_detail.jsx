@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ReviewFormContainer from '../reviews/review_form_container';
+
 
 export default class BusinessDetail extends Component {
   
@@ -36,11 +38,9 @@ export default class BusinessDetail extends Component {
                 </div>
 
                 <div className="functionalities">
-                  <button className="function-btn">
-                    <div>
+                  <Link className="function-btn" to="/review">
                       <h3>Write a Review</h3>
-                    </div>
-                  </button>
+                  </Link>
                   <button className="function-btn">
                     <div>
                       <h3>Add Photo</h3>
