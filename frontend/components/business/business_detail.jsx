@@ -19,15 +19,15 @@ class BusinessDetail extends Component {
       average_rating, reviews
     } = this.props.business
     
-    const reviewList = (reviews) => {
-      reviews.map(review => {
+    const reviewList = (reviews) => (
+      reviews.map(review => (
         <ReviewListContainer
           review={review}
-          // key={review.id}
+          key={review.id}
         />
-      })
-    }
-    
+      ))
+    )
+
     return (
       <div className="business-show-container">
         <div className="business-show-img">

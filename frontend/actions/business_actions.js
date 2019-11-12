@@ -9,10 +9,14 @@ export const receiveBusinesses = businesses => ({
   businesses
 });
 
-export const receiveBusiness = business => ({
+export const receiveBusiness = business => {
+  return ({
   type: RECEIVE_BUSINESS,
-  business
-});
+  business,
+  reviews: business.reviews,
+  author: business.author,
+})
+};
 
 export const clearBusinesses = () => ({
   type: CLEAR_BUSINESSES

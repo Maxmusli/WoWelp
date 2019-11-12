@@ -17,6 +17,5 @@ class Review < ApplicationRecord
   belongs_to :business
   
   belongs_to :author,
-    foreign_key: :author_id,
     class_name: :User
 end
