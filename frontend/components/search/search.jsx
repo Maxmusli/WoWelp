@@ -21,7 +21,7 @@ class Search extends React.Component {
     }
   }
 
-  componentDidMount
+  // componentDidMount
 
   // handleSubmit(e) {
   //   e.preventDefault();
@@ -41,21 +41,21 @@ class Search extends React.Component {
   //     });
   // };
 
-  handleRestaurants = (e) => (value) => {
+  handleRestaurants(e) {
     e.preventDefault();
 
-    this.props.changeFilter('near', this.props.near)
+    this.props.changeFilter('near', 'Orgrimmar')
       .then(() => {
-        this.props.changeFilter('find', value)
+        this.props.changeFilter('find', 'Restaurant')
           .then(() => {
-            this.props.history.push(`/search?find=${value}&near=${this.props.near}`)
+            this.props.history.push(`/search?find=Restaurant&near=Orgrimmar`)
           })
       });
   }
 
   render() {
     // if(!business)
-    debugger
+    
     return (
       <div>
         <form className="search-filter">
@@ -90,7 +90,7 @@ class Search extends React.Component {
         <ul className="nav-categories">
           <li className="nav-category">
             <i className="fas fa-utensils"></i>
-            <a onClick={this.handleRestaurants("Restaurant")}>Restaurants</a>
+            <a onClick={this.handleRestaurants}>Restaurants</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-hammer"></i>
