@@ -7,8 +7,8 @@ import FilterBar from '../search/filter_bar';
 export default class BusinessIndex extends React.Component {
   
   componentDidMount() {
-    if (!this.props.businesses) {
-      this.props.fetchBusinesses();
+    
+    if (this.props.businesses.length === 0) {
       this.props.changeFilter('near', this.props.near)
       .then(() => {
         this.props.changeFilter('find', this.props.find)
@@ -24,7 +24,7 @@ export default class BusinessIndex extends React.Component {
     const { businesses } = this.props
 
     if(!businesses) return null;
-    debugger
+    
     return (
       <div>
         <div>

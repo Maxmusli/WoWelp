@@ -29,6 +29,8 @@ class Business < ApplicationRecord
 
   has_many :reviews
 
+  has_one_attached :picture
+
   def self.near_location(location)
     Business.where(
       "city LIKE ? or address LIKE ?", 

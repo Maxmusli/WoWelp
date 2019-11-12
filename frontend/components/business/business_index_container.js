@@ -13,7 +13,7 @@ const mapDispatchToProps = dispatch => ({
   changeFilter: (filter, value) => dispatch(
     changeFilter(filter, value)
   ),
-  fetchBusinesses: () => dispatch(fetchBusinesses())
+  // fetchBusinesses: (filters) => dispatch(fetchBusinesses(filters))
 });
 
 export default connect(
