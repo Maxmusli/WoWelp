@@ -23,6 +23,8 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
 
   # association
+  has_many :reviews,
+    foreign_key: :author_id
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

@@ -9,6 +9,8 @@ class ReviewForm extends React.Component {
       rating: 5,
       body: ''
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   redirectToShow() {
@@ -18,8 +20,8 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
-    const businessId = this.props.x.businessId;
+    
+    const businessId = this.props.match.params.businessId;
     const review = Object.assign({}, this.state, { business_id: businessId });
     this.props.createReview(review);
     this.redirectToShow();
