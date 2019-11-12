@@ -6,14 +6,25 @@ import FilterBar from '../search/filter_bar';
 
 export default class BusinessIndex extends React.Component {
   
-  // componentDidMount() {
-  //   this.props.fetchBusinesses();
-  // }
+  componentDidMount() {
+    if (!this.props.businesses) {
+      this.props.fetchBusinesses();
+      this.props.changeFilter('near', this.props.near)
+      .then(() => {
+        this.props.changeFilter('find', this.props.find)
+          // .then(() => {
+          //   this.props.history.push(`/search?find=${this.props.filters.find}&near=${this.props.filters.near}`)
+          // })
+      });
+    }
+  }
 
   render() {
     
     const { businesses } = this.props
-  
+
+    if(!businesses) return null;
+    debugger
     return (
       <div>
         <div>
