@@ -45,29 +45,29 @@ class BusinessDetail extends Component {
                 </div>
 
                 <div className="functionalities">
-                  <ReviewLink 
-                    className="function-btn"
-                    to={`/search/${id}/review`}
-                    component={ReviewFormContainer}
-                    label="Write a Review"
-                  >
-                    {/* <h3>Write a Review</h3> */}
-                  </ReviewLink>
-                  <button className="function-btn">
-                    <div>
-                      <h3>Add Photo</h3>
-                    </div>
-                  </button>
-                  <button className="function-btn">
-                    <div>
-                      <h3>Share</h3>
-                    </div>  
-                  </button>
-                  <button className="function-btn">
-                    <div>
-                      <h3>Save</h3>
-                    </div>  
-                  </button>
+                  <div className="function-btn">
+                    <ReviewLink 
+                      to={`/search/${id}/review`}
+                      component={ReviewFormContainer}
+                      label="Write a Review"
+                    >
+                    </ReviewLink>
+                  </div>
+                  <div className="function-btn">
+                    <a>
+                      Add Photo
+                    </a>
+                  </div>
+                  <div className="function-btn">
+                    <a>
+                      Share
+                    </a>  
+                  </div>
+                  <div className="function-btn">
+                    <a>
+                      Save
+                    </a>  
+                  </div>
                 </div>
 
                 <div className="about-business">

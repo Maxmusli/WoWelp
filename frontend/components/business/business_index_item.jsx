@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import ReviewFormContainer from '../reviews/review_form_container';
+import { ReviewLink } from '../../util/link_util';
 
 class BusinessIndexItem extends React.Component {
   constructor(props) {
@@ -16,7 +18,8 @@ class BusinessIndexItem extends React.Component {
   render() {
     const { 
       description, picture, name, phone, category, sub_category, 
-      price_range, reservation, take_out, address
+      price_range, reservation, take_out, address, average_rating,
+      id
     } = this.props.business
     
     return (
@@ -35,7 +38,7 @@ class BusinessIndexItem extends React.Component {
                 </a>
               </div>
               <div className="business-rating">
-                no reviews yet
+                {average_rating || 'no reviews yet'}
               </div>
               <div className="business-category">
                 {price_range}
@@ -61,7 +64,11 @@ class BusinessIndexItem extends React.Component {
 
           <div className="bottom-section">
             <div className="business-write-review">
-              <a href="">write a review</a>
+              <ReviewLink
+                to={`/search/${id}/review`}
+                component={ReviewFormContainer}
+                label="Write a Review"
+              />
             </div>
             <div className="business-reservation">
               <label>Reservation:

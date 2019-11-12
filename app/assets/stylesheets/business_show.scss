@@ -67,17 +67,21 @@
 
   .functionalities {
     min-width: 100%;
+    display: flex;
+    
 
     .function-btn {
       margin: 0 6px 0 6px;
       border: 1px solid #ccc;
       border-radius: 4px;
 
-      div {
-        padding: 5px 8px;
-        font-size: 12px;
+      a {
+        display: block;
+        padding: 6px 8px;
+        font-size: 15px;
         font-weight: 700;
         line-height: 1.5em;
+        text-decoration: none;
       }
     }
   }
