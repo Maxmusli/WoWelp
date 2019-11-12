@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 const Review = ({ review, author }) => {
   const { rating, body } = review;
+  
   return (
     <div className="review-wrapper">
       <div className="author-info-wrapper">
@@ -10,7 +11,7 @@ const Review = ({ review, author }) => {
           picture
         </div>
         <div>
-          {author.fname}
+          {review.username}
         </div>
       </div>
       <div className="review-info-wrapper">

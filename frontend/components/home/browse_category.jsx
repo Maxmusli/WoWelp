@@ -1,8 +1,22 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { changeFilter } from '../../actions/filter_actions'
+import { withRouter } from 'react-router-dom';
 
 class BrowseCategory extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleRestaurants = this.handleRestaurants.bind(this);
+  }
+
+  handleRestaurants(e) {
+    e.preventDefault();
+
+    this.props.changeFilter('near', 'Orgrimmar')
+      .then(() => {
+        this.props.changeFilter('find', 'Restaurant')
+          .then(() => { this.props.history.push('/search?find=Restaurant&near=Orgrimmar') })
+      });
+  };
 
   render () {
     return (
@@ -13,7 +27,7 @@ class BrowseCategory extends React.Component {
             </div>
           <ul className="browse-categories level-1">
             <li className="browse-nav-category">
-              <a href="">
+              <a onClick={this.handleRestaurants}>
                 <img src="https://i.imgur.com/2HCTLcU.png" alt="" />
                 <h3>Restaurants</h3>
               </a>
@@ -69,11 +83,4 @@ class BrowseCategory extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  changeFilter: (filter, value) => dispatch(changeFilter(filter, value))
-});
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(BrowseCategory);
+export default withRouter(BrowseCategory);

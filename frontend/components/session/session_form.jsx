@@ -24,7 +24,7 @@ export default class SessionForm extends Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-      // .then(() => this.props.histroy.push())
+      .then(() => this.props.history.push())
   }
 
   renderErrors() {
@@ -180,7 +180,7 @@ export default class SessionForm extends Component {
           </form>
         </div>
       )
-  
+    
     return (
       <div className="background">
         <div className="session-page">

@@ -1,9 +1,17 @@
 <% if logged_in? %>
   <script type="text/javascript">
+    
     window.currentUser = <%= render(
       "api/users/user.json.jbuilder",
       user: current_user
     ).html_safe %>
+  </script>
+<% end %>
+<% if check_cookie? %>
+  <script type="text/javascript">
+  
+    window.near = "<%= (cookies[:near]).html_safe  %>"
+    window.match = "<%= (cookies[:find]).html_safe  %>"
   </script>
 <% end %>
 

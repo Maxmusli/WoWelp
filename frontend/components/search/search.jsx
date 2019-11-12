@@ -21,24 +21,41 @@ class Search extends React.Component {
     }
   }
 
+  componentDidMount
+
   // handleSubmit(e) {
   //   e.preventDefault();
 
   //   this.props.changeFilter()
   // }
 
-  handleRestaurants(e) {
-    e.preventDefault();
+  // handleRestaurants(e) {
+  //   e.preventDefault();
     
-    this.props.changeFilter('near', 'Orgrimmar')
+  //   this.props.changeFilter('near', this.props.filters.near)
+  //     .then(() => {
+  //       this.props.changeFilter('find', this.props.filters.find)
+  //         .then(() => {
+  //           this.props.history.push(`/search?find=${this.props.filters.find}&near=${this.props.filters.near}`)
+  //         })
+  //     });
+  // };
+
+  handleRestaurants = (e) => (value) => {
+    e.preventDefault();
+
+    this.props.changeFilter('near', this.props.near)
       .then(() => {
-        this.props.changeFilter('find', 'Restaurant')
-          .then(() => {this.props.history.push('/search?find=Restaurant&near=Orgrimmar')})
+        this.props.changeFilter('find', value)
+          .then(() => {
+            this.props.history.push(`/search?find=${value}&near=${this.props.near}`)
+          })
       });
-  };
+  }
 
   render() {
-    
+    // if(!business)
+    debugger
     return (
       <div>
         <form className="search-filter">
@@ -73,7 +90,7 @@ class Search extends React.Component {
         <ul className="nav-categories">
           <li className="nav-category">
             <i className="fas fa-utensils"></i>
-            <a onClick={this.handleRestaurants}>Restaurants</a>
+            <a onClick={this.handleRestaurants("Restaurant")}>Restaurants</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-hammer"></i>

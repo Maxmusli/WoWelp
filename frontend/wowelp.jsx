@@ -6,20 +6,28 @@ import Root from './components/root';
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   // window.getState = store.getState;
+  
   let store;
+  let preloadedState = {};
   if (window.currentUser) {
-    const preloadedState = {
+    preloadedState = {
       entities: {
         users: { [window.currentUser.id]: window.currentUser }
       },
-      session: { id: window.currentUser.id }
+      session: { id: window.currentUser.id },
+      filters: {}
     };
-    store = configureStore(preloadedState);
     delete window.currentUser;
-  } else {
-
-    store = configureStore();
+  } 
+  if (window.near || window.match) {
+    
+    preloadedState.filters.near = window.near
+    preloadedState.filters.find = window.match
+    delete window.near
+    delete window.match
   }
+
+  store = configureStore(preloadedState);
   window.getState = store.getState;
   ReactDOM.render(<Root store={store} />, root)
 })
