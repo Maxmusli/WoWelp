@@ -5,17 +5,28 @@ import { ReviewLink } from '../../util/link_util';
 import { fetchBusiness } from '../../actions/business_actions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
+import ReviewListContainer from '../reviews/review_list_container'
 
 class BusinessDetail extends Component {
   componentDidMount() {
     fetchBusiness(this.props.match.params.businessId)
   }
+
   render() {
     const {
       description, picture, name, phone, category, sub_category,
       price_range, reservation, take_out, address, city, state, id,
-      average_rating
+      average_rating, reviews
     } = this.props.business
+    
+    const reviewList = (reviews) => {
+      reviews.map(review => {
+        <ReviewListContainer
+          review={review}
+          // key={review.id}
+        />
+      })
+    }
     
     return (
       <div className="business-show-container">
@@ -76,7 +87,10 @@ class BusinessDetail extends Component {
                 </div>
 
                 <div className="reviews">
-                  Reviews
+                  <h3>Recommended Reviews</h3>
+                  <div>
+                    {reviewList(this.props.reviews)}
+                  </div>
                 </div>
               </div>
 

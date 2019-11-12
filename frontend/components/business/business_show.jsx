@@ -9,7 +9,7 @@ export default class BusinessShow extends Component {
   }
 
   render() {
-    const { business } = this.props
+    const { business, reviews } = this.props
     
     if (!business) return null;
     
@@ -21,7 +21,7 @@ export default class BusinessShow extends Component {
         <div>
           <BusinessDetail
             business={business}
-            id={business.id}
+            reviews={reviews}
           />
         </div>
         <div>
