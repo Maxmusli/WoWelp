@@ -14,6 +14,7 @@ class BusinessDetail extends Component {
     const {
       description, picture, name, phone, category, sub_category,
       price_range, reservation, take_out, address, city, state, id,
+      average_rating
     } = this.props.business
     
     return (
@@ -34,7 +35,7 @@ class BusinessDetail extends Component {
                     {name}
                   </div>
                   <div className="business-rating">
-                    no reviews yet
+                    {average_rating || 'no review yet'}
                   </div>
                   <div className="business-category">
                     {price_range}
