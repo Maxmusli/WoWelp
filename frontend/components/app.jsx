@@ -7,12 +7,15 @@ import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import BusinessShowContainer from './business/business_show_container';
 import BusinessIndexContainer from './business/business_index_container'
+import ReviewFormContainer from './reviews/review_form_container';
 
 export default () => {
   
   return (
     <div>
       <Switch>
+        <ProtectedRoute
+          path="/search/:businessId/review" component={ReviewFormContainer}/>
         <Route exact path="/search/:businessId" component={BusinessShowContainer} />
         <Route exact path="/search" component={BusinessIndexContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />

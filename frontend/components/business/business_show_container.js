@@ -1,11 +1,17 @@
 import { connect } from 'react-redux';
 import { fetchBusiness } from '../../actions/business_actions';
 import BusinessShow from './business_show';
+import { selectReviewsForBusiness, selectBusiness } from '../../reducers/selectors';
 
-const mapStateToProps = (state={}, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
   
+  const businessId = parseInt(ownProps.match.params.businessId);
+  const business = selectBusiness(state.entities, businessId);
+  const reviews = selectReviewsForBusiness(state.entities, business)
   return ({
-    business: state.entities.businesses[ownProps.match.params.businessId],
+    businessId,
+    business,
+    reviews,
   })
 };
 

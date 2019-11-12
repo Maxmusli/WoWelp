@@ -1,15 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ReviewFormContainer from '../reviews/review_form_container';
+import { ReviewLink } from '../../util/link_util';
+import { fetchBusiness } from '../../actions/business_actions';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 
-
-export default class BusinessDetail extends Component {
-  
+class BusinessDetail extends Component {
+  componentDidMount() {
+    fetchBusiness(this.props.match.params.businessId)
+  }
   render() {
     const {
       description, picture, name, phone, category, sub_category,
-      price_range, reservation, take_out, address, city, state,
+      price_range, reservation, take_out, address, city, state, id,
     } = this.props.business
-
+    
     return (
       <div className="business-show-container">
         <div className="business-show-img">
@@ -38,9 +44,14 @@ export default class BusinessDetail extends Component {
                 </div>
 
                 <div className="functionalities">
-                  <Link className="function-btn" to="/review">
-                      <h3>Write a Review</h3>
-                  </Link>
+                  <ReviewLink 
+                    className="function-btn"
+                    to={`/search/${id}/review`}
+                    component={ReviewFormContainer}
+                    label="Write a Review"
+                  >
+                    {/* <h3>Write a Review</h3> */}
+                  </ReviewLink>
                   <button className="function-btn">
                     <div>
                       <h3>Add Photo</h3>
@@ -96,3 +107,5 @@ export default class BusinessDetail extends Component {
     )
   }
 }
+
+export default withRouter(BusinessDetail)

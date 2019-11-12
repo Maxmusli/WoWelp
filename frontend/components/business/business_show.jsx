@@ -12,6 +12,7 @@ export default class BusinessShow extends Component {
     const { business } = this.props
     
     if (!business) return null;
+    
     return (
       <div>
         <div>
@@ -20,6 +21,7 @@ export default class BusinessShow extends Component {
         <div>
           <BusinessDetail
             business={business}
+            id={business.id}
           />
         </div>
         <div>

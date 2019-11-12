@@ -19,7 +19,7 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const businessId = this.props.match.params.businessId;
+    const businessId = this.props.x.businessId;
     const review = Object.assign({}, this.state, { business_id: businessId });
     this.props.createReview(review);
     this.redirectToShow();

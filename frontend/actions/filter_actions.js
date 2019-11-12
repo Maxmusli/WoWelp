@@ -9,7 +9,7 @@ const updateFilter = (filter, value) => ({
 });
 
 export const changeFilter = (filter, value) => (dispatch, getState) => {
-  // debugger
+  
   dispatch(updateFilter(filter, value));
   return fetchBusinesses(getState().filters)(dispatch);
 };
