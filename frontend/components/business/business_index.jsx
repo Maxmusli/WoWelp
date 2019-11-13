@@ -12,9 +12,6 @@ export default class BusinessIndex extends React.Component {
       this.props.changeFilter('near', this.props.near)
       .then(() => {
         this.props.changeFilter('find', this.props.find)
-          // .then(() => {
-          //   this.props.history.push(`/search?find=${this.props.filters.find}&near=${this.props.filters.near}`)
-          // })
       });
     }
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 
-export default class SubNavCategories extends Component {
+class SubNavCategories extends Component {
   constructor(props) {
     super(props);
 
@@ -33,16 +34,16 @@ export default class SubNavCategories extends Component {
 
   handleRestaurants(e) {
     e.preventDefault();
-
+    
     this.props.changeFilter('near', 'Orgrimmar')
       .then(() => {
         this.props.changeFilter('find', 'Restaurant')
-          // .then(() => { this.props.history.push('/search?find=Restaurant&near=Orgrimmar') })
+          .then(() => { this.props.history.push('/search?find=Restaurant&near=Orgrimmar') })
       });
   };
 
   render() { 
-
+    
     return (
       <div className="sub-nav-categories">
         <div className="wrapper">
@@ -132,3 +133,5 @@ export default class SubNavCategories extends Component {
     )
   }
 }
+
+export default withRouter(SubNavCategories)
