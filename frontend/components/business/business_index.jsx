@@ -31,7 +31,10 @@ export default class BusinessIndex extends React.Component {
           <SubNavContainer />
         </div>
         <div>
-          <FilterBar />
+          <FilterBar 
+            find={this.props.find}
+            near={this.props.near}
+          />
         </div>
         <div>
           <div className="business-index-wrapper">

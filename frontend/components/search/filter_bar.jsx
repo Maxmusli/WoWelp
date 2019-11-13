@@ -4,11 +4,20 @@ export default class FilterBar extends Component {
 
 
   render() {
+    
     return (
       <div className="filter-bar-wrapper">
         <div className="filter-bar-container">
-          <div className="city">
-            Dalaran
+          <div className="filter-bar-info">
+            <div>
+              {this.props.near}
+            </div>
+            <div>
+              >
+            </div>
+            <div>
+              {this.props.find}
+            </div>
           </div>
           <div className="filter-bar">
             <div className="all-filter">
