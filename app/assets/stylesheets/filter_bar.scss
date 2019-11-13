@@ -1,9 +1,5 @@
 @import "config";
 
-.filter-bar-wrapper {
-  margin-top: 30px;
-}
-
 .filter-bar-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -20,6 +16,15 @@
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
+  background-color: #581C10;
+  color: #f8b700;
+  border: 1px solid #8f1a1a;
+
+  &:hover {
+    background-color: rgb(143, 30, 13);
+    color: white;
+    @include easeOut();
+  }
 }
 
 .price-range {
@@ -30,6 +35,15 @@
     padding: 8.5px 11px;
     font-size: 14px;
     cursor: pointer;
+    background-color: #581C10;
+    color: #f8b700;
+    border: 1px solid #8f1a1a;
+
+    &:hover {
+      background-color: rgb(143, 30, 13);
+      color: white;
+      @include easeOut();
+    }
   }
 
   #first {

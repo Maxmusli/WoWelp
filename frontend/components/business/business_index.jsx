@@ -28,24 +28,26 @@ export default class BusinessIndex extends React.Component {
           <SubNavContainer />
         </div>
         <div className="bar-2"></div>
-        <div>
-          <FilterBar 
-            find={this.props.find}
-            near={this.props.near}
-          />
-        </div>
-        <div>
-          <div className="business-index-wrapper">
-            <div className="business-info-wrapper">
-              {businesses.map(business => (
-                <BusinessIndexItem
-                business={business}
-                key={business.id}
-                />
-              ))}
-            </div>
-            <div>
-              map
+        <div className="index-main-section">
+          <div>
+            <FilterBar 
+              find={this.props.find}
+              near={this.props.near}
+            />
+          </div>
+          <div>
+            <div className="business-index-wrapper">
+              <div className="business-info-wrapper">
+                {businesses.map(business => (
+                  <BusinessIndexItem
+                  business={business}
+                  key={business.id}
+                  />
+                ))}
+              </div>
+              <div>
+                map
+              </div>
             </div>
           </div>
         </div>

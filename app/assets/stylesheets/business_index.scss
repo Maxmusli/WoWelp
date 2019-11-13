@@ -81,7 +81,6 @@
   padding: 6px;
   display: flex;
   border-radius: 4px;
-  background-color: #f5f5f5;
   align-items: center;
 
   .business-write-review {
@@ -91,8 +90,16 @@
       display: block;
       text-decoration: none;
       padding: 6px 18px;
-      border: 1px solid gray;
+      border: 1px solid #8f1a1a;
       border-radius: 4px;
+      background-color: #581C10;
+      color: #f8b700;
+
+      &:hover {
+        background-color: rgb(143, 30, 13);
+        color: white;
+        @include easeOut();
+      }
     }
   }
 
@@ -105,4 +112,11 @@
     margin: 0 3px 0 3px;
     padding: 0 6px;
   }
+}
+
+.index-main-section {
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url("map.jpg");
+  background-size: cover;
+  padding-top: 30px;
+  color: #f8b700;
 }
