@@ -137,8 +137,14 @@
   }
 }
 
+.review-form-container {
+  background-image: url('review_bg.jpg');
+  background-position: 65% 0%;
+  padding-top: 30px;
+}
+
 .review-form-wrapper {
-  min-height: calc(100vh - 64px);
+  min-height: calc(70vh - 64px);
   max-width: 1000px;
   margin: 0 auto;
 
@@ -147,7 +153,26 @@
     border-radius: 4px;
     padding: 18px;
     max-width: 630px;
-    margin-top: 30px;
+  }
+
+  .select-rating {
+    margin-bottom: 10px;
+  }
+
+  .write-review {
+
+    textarea {
+      font-size: 18px;
+      line-height: 1.33333em;
+      font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+      line-height: 1.44em;
+      border: 0;
+      outline: none;
+      padding: 0;
+      resize: none;
+      width: 100%;
+      min-height: 258px;
+    }
   }
 
   .post-review {

@@ -3,7 +3,8 @@
 .business-show-container {
   min-width: 1020px;
   position: relative;
-  // background: ;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url("map.jpg");
+  background-size: cover;
 }
 
 .business-show-img {
@@ -12,7 +13,6 @@
   position: relative;
   margin: 0 auto;
   display: flex;
-  z-index: -1;
   
   div  {
     width: 25%;

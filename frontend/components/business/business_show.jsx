@@ -18,12 +18,14 @@ export default class BusinessShow extends Component {
         <div>
           <SubNavContainer />
         </div>
+        <div className="bar-2"></div>
         <div>
           <BusinessDetail
             business={business}
             reviews={reviews}
           />
         </div>
+        <div className="bar-2"></div>
         <div>
           <Footer />
         </div>

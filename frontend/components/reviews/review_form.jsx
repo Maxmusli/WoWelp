@@ -88,36 +88,39 @@ class ReviewForm extends React.Component {
             </div>
           </div>
         </div>
-
-        <div className="review-form-wrapper">
-          <div>
+        <div className="bar-2"></div>
+        <div className="review-form-container">
+          <div className="review-form-wrapper">
+            <div>
+            </div>
+            <form onSubmit={this.handleSubmit}>
+              <div className="text-box">
+                <div className="select-rating">
+                  <input
+                    type="number" 
+                    value={this.state.rating}
+                    onChange={this.handleInput('rating')}
+                  />
+                  <label>Select your rating</label>
+                </div>
+                <div className="write-review">
+                  <textarea
+                    className="" 
+                    cols="30" 
+                    rows="10"
+                    value={this.state.body} 
+                    onChange={this.handleInput('body')}
+                    placeholder="Your review helps others learn about great local businesses. Please don’t review this business if you received a freebie for writing this review, or if you’re connected in any way to the owner or employees."
+                  />
+                </div>
+              </div>
+              <div className="post-review">
+                <input type="submit" value="Post Review" className="btn" />
+              </div>
+            </form>
           </div>
-          <form onSubmit={this.handleSubmit}>
-            <div className="text-box">
-              <div className="select-rating">
-                <input
-                  type="number" 
-                  value={this.state.rating}
-                  onChange={this.handleInput('rating')}
-                />
-                <label>Select your rating</label>
-              </div>
-              <div className="write-review">
-                <textarea
-                  className="" 
-                  cols="30" 
-                  rows="10"
-                  value={this.state.body} 
-                  onChange={this.handleInput('body')}
-                />
-              </div>
-            </div>
-            <div className="post-review">
-              <input type="submit" value="Post Review" className="btn" />
-            </div>
-          </form>
         </div>
-
+        <div className="bar-2"></div>
         <FooterNav />
       </div>
     )

@@ -54,6 +54,7 @@ export default class SessionForm extends Component {
       password: 'password'
     })
     this.props.login(user)
+      .then(() => this.props.history.goBack());
   }
 
   render() {

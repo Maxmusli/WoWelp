@@ -27,6 +27,7 @@ export default class BusinessIndex extends React.Component {
         <div>
           <SubNavContainer />
         </div>
+        <div className="bar-2"></div>
         <div>
           <FilterBar 
             find={this.props.find}
@@ -48,6 +49,7 @@ export default class BusinessIndex extends React.Component {
             </div>
           </div>
         </div>
+        <div className="bar-2"></div>
         <div>
           <FooterNav />
         </div>
