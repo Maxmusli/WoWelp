@@ -1,5 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+import FooterNav from '../nav_bar/footer_nav';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -35,24 +36,89 @@ class ReviewForm extends React.Component {
   }
 
   render() {
+    const { currentUser, logout } = this.props;
+
+    const display = currentUser ? (
+      <div>
+        <div className="user-display">
+          <p>Greetings, {currentUser.fname}</p>
+          <button className="menu-btn"
+            onClick={(e) => { this.handleClick(e) }}
+          ><i className="far fa-caret-square-down"></i></button>
+        </div>
+        <ul className="menu-nav">
+          <li>
+            {/* <Link>About Me</Link> */}
+            <p className="menu-nav-btn">About Me</p>
+          </li>
+          <li>
+            {/* <Link>My Reviews</Link> */}
+            <p className="menu-nav-btn">My Reviews</p>
+          </li>
+          <li>
+            <button className="menu-nav-btn" onClick={logout}>Log Out</button>
+          </li>
+        </ul>
+      </div>
+    ) : (
+        <div className="headernav">
+          <Link className="btn-login" to="/login">
+            <h3>Log In</h3>
+          </Link>
+          <Link className="btn-signup" to="/signup">
+            <h3>Sign Up</h3>
+          </Link>
+        </div>
+      );
+    
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="number" 
-            value={this.state.rating}
-            onChange={this.handleInput('rating')}
-          />
-          <label>Select your rating</label>
-          <textarea
-            className="" 
-            cols="30" 
-            rows="10"
-            value={this.state.body} 
-            onChange={this.handleInput('body')}
-          />
-          <input type="submit" value="Post Review" />
-        </form>
+        <div className="sub-nav-wrapper">
+          <div className="review-sub-top-bar">
+            <div className="sub-logo">
+              <div className="header">
+                <Link className="btn-home" to="/">
+                  WoWelp
+                  <img src="https://i.imgur.com/4n3wSAR.png" />
+                </Link>
+              </div>
+            </div>
+            <div className="sub-user-display">
+              {display}
+            </div>
+          </div>
+        </div>
+
+        <div className="review-form-wrapper">
+          <div>
+          </div>
+          <form onSubmit={this.handleSubmit}>
+            <div className="text-box">
+              <div className="select-rating">
+                <input
+                  type="number" 
+                  value={this.state.rating}
+                  onChange={this.handleInput('rating')}
+                />
+                <label>Select your rating</label>
+              </div>
+              <div className="write-review">
+                <textarea
+                  className="" 
+                  cols="30" 
+                  rows="10"
+                  value={this.state.body} 
+                  onChange={this.handleInput('body')}
+                />
+              </div>
+            </div>
+            <div className="post-review">
+              <input type="submit" value="Post Review" className="btn" />
+            </div>
+          </form>
+        </div>
+
+        <FooterNav />
       </div>
     )
   }

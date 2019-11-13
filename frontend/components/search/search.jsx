@@ -44,11 +44,11 @@ class Search extends React.Component {
   handleRestaurants(e) {
     e.preventDefault();
 
-    this.props.changeFilter('near', 'Orgrimmar')
+    this.props.changeFilter('near', 'Dalaran')
       .then(() => {
         this.props.changeFilter('find', 'Restaurant')
           .then(() => {
-            this.props.history.push(`/search?find=Restaurant&near=Orgrimmar`)
+            this.props.history.push(`/search?find=Restaurant&near=Dalaran`)
           })
       });
   }

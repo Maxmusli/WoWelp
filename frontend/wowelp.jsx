@@ -20,7 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
     delete window.currentUser;
   } 
   if (window.near || window.match) {
-    
+    if (preloadedState.filters === undefined) {
+      preloadedState = {
+        filters: {}
+      }
+    }
     preloadedState.filters.near = window.near
     preloadedState.filters.find = window.match
     delete window.near

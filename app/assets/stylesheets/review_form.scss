@@ -1,0 +1,188 @@
+@import "config";
+
+.review-sub-top-bar {
+  display: flex;
+  padding: 12px 15px;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: space-between;
+
+  .headernav {
+      display: flex;
+      
+      border-spacing: 6px 0;
+
+      .btn-signup {
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        min-width: 50px;
+        color: white;
+        font-weight: 700;
+        font-family: BlizQuadrataWeb, serif;
+        font-size: 14px;
+        border: 1px solid #f8b700;
+        border-radius: 4px;
+        margin: 0px 3px 0 3px;
+        padding: 12px;
+        // background: transparent;
+        box-shadow: none;
+        background-color: #d39b00;
+
+        &:hover {
+          color: white;
+          @include easeOut();
+        }
+      }
+
+      .btn-login {
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        min-width: 50px;
+        color: rgb(247, 177, 10);
+        font-weight: 700;
+        font-family: BlizQuadrataWeb, serif;
+        font-size: 14px;
+        border: 1px solid rgba(247, 177, 10, 1);
+        border-radius: 4px;
+        margin: 0px 3px 0 3px;
+        padding: 12px;
+
+        &:hover {
+          background-color: #9c7301;
+          color: white;
+          @include easeOut();
+        }
+      }
+  }
+}
+
+.sub-search-filter {
+  display: flex;
+  width: 100%;
+  height: 44px;
+
+  .search {
+    position: relative;
+    border-radius: 4px 0 0 4px;
+    padding: 8px 12px;
+    background: rgba(12, 8, 5, 0.7);
+    box-sizing: border-box;
+    font-size: 14px;
+    width: 50%;
+    line-height: 25px;
+    display: flex;
+    align-content: center;
+  }
+
+  .filter {
+    position: relative;
+    padding: 8px 12px;
+    background: rgba(12, 8, 5, 0.7);
+    box-sizing: border-box;
+    font-size: 14px;
+    width: 42%;
+    line-height: 25px;
+  }
+
+  .input-title {
+    margin-right: 12px;
+    font-family: Semplicita Pro,Open Sans,Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(top,#efd100,#e2a233 19%,#f0c328 30%,#fff1a3 43%,#ffe13e 50%,#fff 51%,#fff);
+    background-size: 1em 2.7em;
+    color: #f8b700;
+    cursor: default;
+  }
+
+  .input-body {
+    font-weight: 400;
+    color: #D79D0E;
+    font-size: 15px;
+    padding: 0;
+    height: 25px;
+    top: 6px;
+  }
+
+  .split-line {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    bottom: 8px;
+    width: 1px;
+    background-color: #ccc;
+  }
+
+  .search-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
+    // padding: 14px 20px 13px;
+    background-color: #D79D0E;
+    width: 8%;
+    margin-right: 12px;;
+
+    .search-btn {
+      background-color: #D79D0E;
+      border: none;
+      font-size: 18px;
+      color: rgba(12, 8, 5, 0.7);
+
+    }
+  }
+}
+
+.review-form-wrapper {
+  min-height: calc(100vh - 64px);
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .text-box {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 18px;
+    max-width: 630px;
+    margin-top: 30px;
+  }
+
+  .post-review {
+    margin-top: 24px;
+    padding-bottom: 36px;
+    position: relative;
+
+    .btn {
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+      margin-top: 5px;
+      margin-bottom: 6px;
+      padding: 9px 30px;
+      font-size: 20px;
+      line-height: 20px;
+      height: 40px;
+      color: #EFC02C;
+      background: #581C10;
+      border: 1px solid #d32323;
+      background-image: none;
+      background-repeat: no-repeat;
+      transition: all 0.6s;
+      transition-property: background-color, background-position, background-size, border-color;
+      background-position: 50% 50%;
+      background-size: 15000px 15000px;
+      box-sizing: border-box;
+      border-radius: 3px;
+      font-family: BlizQuadrataWeb, serif;
+      font-weight: 400;
+
+      &:hover {
+        background-color: rgb(143, 30, 13);
+        @include easeOut();
+      }
+    }
+  }
+}

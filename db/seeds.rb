@@ -23,12 +23,12 @@ business_1 = Business.create!(
 business_2 = Business.create!(
   name: "test2",
   address: "456 debugger", 
-  city: "Stormwind", 
+  city: "Dalaran", 
   state: "Eastern Kingdom", 
   zipcode: "123123", 
-  category: "Bar", 
+  category: "Restaurant", 
   phone: "123123123",
-  description: "Best Place in Storwind"
+  description: "Best Place in Dalaran"
 )
 
 business_3 = Business.create!(
@@ -45,12 +45,12 @@ business_3 = Business.create!(
 business_4 = Business.create!(
   name: "test4",
   address: "111 debugger", 
-  city: "Stormwind", 
+  city: "Dalaran", 
   state: "Eastern Kingdom", 
   zipcode: "123123", 
   category: "Restaurant", 
   phone: "123123123",
-  description: "Best Restaurant in Stormwind!"
+  description: "Best Restaurant in Dalaran!"
 )
 
 
