@@ -20,7 +20,7 @@ business_1 = Business.create!(
   state: "Northrend", 
   zipcode: "123123", 
   category: "Bar", 
-  sub_category: "Alliance"
+  sub_category: "Alliance",
   phone: "(512)359-8640",
   parking: "Yes",
   take_out: "Yes",
@@ -168,15 +168,17 @@ business_10 = Business.create!(
   description: "The Burning Anvil is a blacksmithing shop found in the Valley of Honor in Orgrimmar. There is an Anvil inside and an Anvil & Forge on the outside to the right."
 )
 
-file1 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome_01.jpg')
-file2 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome_02.jpg')
-file3 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome_03.jpg')
-file4 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome_04.jpg')
+file1 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome.jpg')
+file2 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome_01.jpg')
+file3 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome_02.jpg')
+file4 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome_03.jpg')
+file5 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome_04.jpg')
 
-business_1.avatar.attach(io: file1, filename: 'aheroswelcome_01.jpg')
-business_1.avatar.attach(io: file2, filename: 'aheroswelcome_02.jpg')
-business_1.avatar.attach(io: file3, filename: 'aheroswelcome_03.jpg')
-business_1.avatar.attach(io: file4, filename: 'aheroswelcome_04.jpg')
+business_2.pictures.attach(io: file1, filename: 'aheroswelcome.jpg')
+business_2.pictures.attach(io: file2, filename: 'aheroswelcome_01.jpg')
+business_2.pictures.attach(io: file3, filename: 'aheroswelcome_02.jpg')
+business_2.pictures.attach(io: file4, filename: 'aheroswelcome_03.jpg')
+business_2.pictures.attach(io: file5, filename: 'aheroswelcome_04.jpg')
 
 demo_user = User.create!(
   email: "guest123@gmail.com",

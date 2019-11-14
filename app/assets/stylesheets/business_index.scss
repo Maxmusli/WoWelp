@@ -18,16 +18,25 @@
 
   .business-img {
     margin-right: 18px;
+    border-radius: 4px;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     width: 210px;
     height: 210px;
-    border-radius: 4px;
-    border: 1px solid black;
+
+    img {
+      
+      min-width: 100%;
+      min-height: 100%;
+    }
   }
 
   .business-info {
     width: 402px;
-    height: 210px;
-    border: 1px solid black;
+    // height: 210px;
+    // border: 1px solid black;
   }
 
   .top-section {
@@ -37,17 +46,23 @@
     .left-section {
       width: 62.5%;
       display: block;
-      border: 1px solid black;
+      // border: 1px solid black;
 
       .business-name {
         font-weight: 700;
         margin-bottom: 6px;
         font-size: 16px;
         line-height: 1.3125em;
+        color: #FFFFFF;
 
         a {
           font-size: 18px;
           text-decoration: none;
+          cursor: pointer;
+
+          &:hover {
+            color: #f8b700;
+          }
         }
       }
 
@@ -56,24 +71,43 @@
       }
 
       .business-category {
-        display: block;
+        display: flex;
         line-height: 21px;
         margin: 5px 0 0;
+
+        div {
+          margin-right: 15px;
+          color: rgb(235, 222, 194);
+        }
       }
     }
 
     .right-section {
-      width: 37.5%;
+      width: 50%;
       display: block;
       text-align: right;
       padding: 4px 0 0 12px;
-      border: black solid 1px;
+      
+      .business-phone {
+        color: white;
+        margin-bottom: 6px;
+      }
+
+      .business-address {
+        color: rgb(235, 222, 194);
+      }
     }
   }
 }
 
 .mid-section {
   margin: 12px 0 12px 0;
+
+  div {
+    font-size: 15px;
+    line-height: 1.38462em;
+    color: #D5DDE6;
+  }
 }
 
 .bottom-section {
@@ -106,16 +140,30 @@
   .business-reservation {
     margin: 0 3px 0 3px;
     padding: 0 6px;
+    display: flex;
+    color: rgb(235, 222, 194);
+
+    label {
+      margin-right: 10px;
+      color: white;
+    }
   }
 
   .business-takeout {
     margin: 0 3px 0 3px;
     padding: 0 6px;
+    display: flex;
+    color: rgb(235, 222, 194);
+
+    label {
+      margin-right: 10px;
+      color: white;
+    }
   }
 }
 
 .index-main-section {
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url("map.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), image-url("map.jpg");
   background-size: cover;
   padding-top: 30px;
   color: #f8b700;

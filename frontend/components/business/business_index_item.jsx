@@ -17,7 +17,7 @@ class BusinessIndexItem extends React.Component {
 
   render() {
     const { 
-      description, picture, name, phone, category, sub_category, 
+      description, pictureUrls, name, phone, category, sub_category, 
       price_range, reservation, take_out, address, average_rating,
       id
     } = this.props.business
@@ -25,8 +25,8 @@ class BusinessIndexItem extends React.Component {
     return (
       <div className="business-container">
         <div className="business-img">
-          <img src="" alt=""/>
-          picture
+          <img src={pictureUrls[0]} />
+          
         </div>
 
         <div className="business-info">
@@ -41,9 +41,15 @@ class BusinessIndexItem extends React.Component {
                 {average_rating || 'no reviews yet'}
               </div>
               <div className="business-category">
-                {price_range}
-                {category}
-                {sub_category}
+                <div>
+                  {price_range}
+                </div>
+                <div>
+                  {category}
+                </div>
+                <div>
+                  {sub_category}
+                </div>
               </div>
             </div>
             <div className="right-section">
@@ -71,14 +77,12 @@ class BusinessIndexItem extends React.Component {
               />
             </div>
             <div className="business-reservation">
-              <label>Reservation:
-                {reservation}
-              </label>
+              <label>Reservation:</label>
+              <div>{reservation}</div>
             </div>
             <div className="business-takeout">
-              <label>Takeout:
-                {take_out}
-              </label>
+              <label>Takeout:</label>
+              <div>{take_out}</div>
             </div>
           </div>
         </div>
