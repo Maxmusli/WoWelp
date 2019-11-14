@@ -10,8 +10,8 @@
 <% if check_cookie? %>
   <script type="text/javascript">
   
-    window.near = "<%= (cookies[:near]).html_safe  %>"
-    window.match = "<%= (cookies[:find]).html_safe  %>"
+    window.near = "<%= cookies[:near] %>"
+    window.match = "<%= cookies[:find]  %>"
   </script>
 <% end %>
 
