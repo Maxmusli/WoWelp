@@ -5,21 +5,43 @@ class CityNav extends React.Component {
   constructor(props) {
     super(props);
 
-
+    this.handleDalaran = this.handleDalaran.bind(this);
+    this.handleOrgrimmar = this.handleOrgrimmar.bind(this);
+    this.handleStormwind = this.handleStormwind.bind(this);
   }
 
-  handleRestaurants(e) {
+  handleDalaran(e) {
     e.preventDefault();
 
     this.props.changeFilter('near', 'Dalaran')
       .then(() => {
-        this.props.changeFilter('find', 'Restaurant')
-          .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
+        this.props.changeFilter('find', '')
+          .then(() => { this.props.history.push('/search?near=Dalaran') })
+      });
+  };
+
+  handleOrgrimmar(e) {
+    e.preventDefault();
+
+    this.props.changeFilter('near', 'Orgrimmar')
+      .then(() => {
+        this.props.changeFilter('find', '')
+          .then(() => { this.props.history.push('/search?near=Orgrimmar') })
+      });
+  };
+
+  handleStormwind(e) {
+    e.preventDefault();
+
+    this.props.changeFilter('near', 'Stormwind')
+      .then(() => {
+        this.props.changeFilter('find', '')
+          .then(() => { this.props.history.push('/search?near=Stormwind') })
       });
   };
 
   render() {
-
+    
     return (
       <div className="city-nav">
         <div className="cities-wrapper">
@@ -28,19 +50,19 @@ class CityNav extends React.Component {
               </div>
           <ul className="city-themes">
             <li className="city">
-              <a href="">
+              <a onClick={this.handleDalaran}>
                 <img src="https://i.imgur.com/MvRlnQH.jpg" alt="" />
                 <h3>Dalaran</h3>
               </a>
             </li>
             <li className="city">
-              <a href="">
+              <a onClick={this.handleOrgrimmar}>
                 <img src="https://i.imgur.com/kRHOAxB.jpg" alt="" />
                 <h3>Orgrimmar</h3>
               </a>
             </li>
             <li className="city">
-              <a href="">
+              <a onClick={this.handleStormwind}>
                 <img src="https://i.imgur.com/ydHGkt3.jpg" alt="" />
                 <h3>Stormwind</h3>
               </a>

@@ -13,6 +13,9 @@ class Search extends React.Component {
 
     // this.handleSubmit = this.handleSubmit.bind(this);
     this.handleRestaurants = this.handleRestaurants.bind(this);
+    this.handleBlacksmith = this.handleBlacksmith.bind(this);
+    this.handleBarber = this.handleBarber.bind(this);
+    this.handleBars = this.handleBars.bind(this);
   }
 
   handleInput(type) {
@@ -29,18 +32,6 @@ class Search extends React.Component {
   //   this.props.changeFilter()
   // }
 
-  // handleRestaurants(e) {
-  //   e.preventDefault();
-    
-  //   this.props.changeFilter('near', this.props.filters.near)
-  //     .then(() => {
-  //       this.props.changeFilter('find', this.props.filters.find)
-  //         .then(() => {
-  //           this.props.history.push(`/search?find=${this.props.filters.find}&near=${this.props.filters.near}`)
-  //         })
-  //     });
-  // };
-
   handleRestaurants(e) {
     e.preventDefault();
 
@@ -53,8 +44,43 @@ class Search extends React.Component {
       });
   }
 
+  handleBlacksmith(e) {
+    e.preventDefault();
+
+    this.props.changeFilter('near', 'Dalaran')
+      .then(() => {
+        this.props.changeFilter('find', 'Blacksmithing')
+          .then(() => {
+            this.props.history.push(`/search?find=Blacksmithing&near=Dalaran`)
+          })
+      });
+  }
+
+  handleBarber(e) {
+    e.preventDefault();
+
+    this.props.changeFilter('near', 'Dalaran')
+      .then(() => {
+        this.props.changeFilter('find', 'Barber')
+          .then(() => {
+            this.props.history.push(`/search?find=Barber&near=Dalaran`)
+          })
+      });
+  }
+
+  handleBars(e) {
+    e.preventDefault();
+
+    this.props.changeFilter('near', 'Dalaran')
+      .then(() => {
+        this.props.changeFilter('find', 'Bars')
+          .then(() => {
+            this.props.history.push(`/search?find=Bars&near=Dalaran`)
+          })
+      });
+  }
+
   render() {
-    // if(!business)
     
     return (
       <div>
@@ -94,15 +120,15 @@ class Search extends React.Component {
           </li>
           <li className="nav-category">
             <i className="fas fa-hammer"></i>
-            <a href="">Blacksmithing</a>
+            <a onClick={this.handleBlacksmith}>Blacksmithing</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-cut"></i>
-            <a href="">Barber Shops</a>
+            <a onClick={this.handleBarber}>Barber Shops</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-cocktail"></i>
-            <a href="">Bars</a>
+            <a onClick={this.handleBars}>Bars</a>
           </li>
         </ul>
       </div>
