@@ -14,7 +14,7 @@ class BusinessDetail extends Component {
 
   render() {
     const {
-      description, picture, name, phone, category, sub_category,
+      description, pictureUrls, name, phone, category, sub_category,
       price_range, reservation, take_out, address, city, state, id,
       average_rating, reviews
     } = this.props.business
@@ -27,12 +27,13 @@ class BusinessDetail extends Component {
         />
       ))
     )
+    
 
     return (
       <div className="business-show-container">
         <div className="business-show-img">
-          <div>picture1</div>
-          <div>picture2</div>
+          <div><img  alt=""/></div>
+          <div><img  alt=""/></div>
           <div>picture3</div>
           <div>picture4</div>
         </div>
