@@ -7,6 +7,8 @@ import { changeFilter } from '../../actions/filter_actions'
 
 const mapStateToProps = state => ({
   currentUser: state.entities.users[state.session.id],
+  find: state.filters.find,
+  near: state.filters.near
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -12,7 +12,7 @@ class Search extends React.Component {
     };
 
     // this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleRestaurants = this.handleRestaurants.bind(this);
+    // this.handleRestaurants = this.handleRestaurants.bind(this);
     this.handleBlacksmith = this.handleBlacksmith.bind(this);
     this.handleBarber = this.handleBarber.bind(this);
     this.handleBars = this.handleBars.bind(this);
@@ -32,40 +32,17 @@ class Search extends React.Component {
   //   this.props.changeFilter()
   // }
 
-  handleRestaurants(e) {
-    e.preventDefault();
-
-    this.props.changeFilter('near', 'Dalaran')
-      .then(() => {
-        this.props.changeFilter('find', 'Restaurant')
-          .then(() => {
-            this.props.history.push(`/search?find=Restaurant&near=Dalaran`)
-          })
-      });
-  }
-
-  handleBlacksmith(e) {
-    e.preventDefault();
-
-    this.props.changeFilter('near', 'Dalaran')
-      .then(() => {
-        this.props.changeFilter('find', 'Blacksmithing')
-          .then(() => {
-            this.props.history.push(`/search?find=Blacksmithing&near=Dalaran`)
-          })
-      });
-  }
-
-  handleBarber(e) {
-    e.preventDefault();
-
-    this.props.changeFilter('near', 'Dalaran')
-      .then(() => {
-        this.props.changeFilter('find', 'Barber')
-          .then(() => {
-            this.props.history.push(`/search?find=Barber&near=Dalaran`)
-          })
-      });
+  componentDidUpdate(prevProps) {
+    
+    if (prevProps.near !== this.state.near || prevProps.find !== this.state.find) {
+      this.props.changeFilter('near', this.state.near)
+        .then(() => {
+          this.props.changeFilter('find', this.state.find)
+            .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
+        });
+    } else {
+      this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`)
+    }
   }
 
   handleBars(e) {
@@ -116,19 +93,19 @@ class Search extends React.Component {
         <ul className="nav-categories">
           <li className="nav-category">
             <i className="fas fa-utensils"></i>
-            <a onClick={this.handleRestaurants}>Restaurants</a>
+            <a onClick={() => this.setState({ find: 'Restaurant' })}>Restaurants</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-hammer"></i>
-            <a onClick={this.handleBlacksmith}>Blacksmithing</a>
+            <a onClick={() => this.setState({ find: 'Blacksmithing' })}>Blacksmithing</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-cut"></i>
-            <a onClick={this.handleBarber}>Barber Shops</a>
+            <a onClick={() => this.setState({ find: 'Barber Shops' })}>Barber Shops</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-cocktail"></i>
-            <a onClick={this.handleBars}>Bars</a>
+            <a onClick={() => this.setState({ find: 'Bars' })}>Bars</a>
           </li>
         </ul>
       </div>

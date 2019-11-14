@@ -7,6 +7,8 @@ class SubNavCategories extends Component {
 
     this.state = {
       dropdownOpen: false,
+      // find: this.props.find,
+      // near: this.props.near,
     }
 
     this.toggle = this.toggle.bind(this);
@@ -34,13 +36,41 @@ class SubNavCategories extends Component {
 
   handleRestaurants(e) {
     e.preventDefault();
+
+    if (!this.props.near) {
+      this.props.near = 'Dalaran';
+    }   
     
-    this.props.changeFilter('near', 'Dalaran')
+    this.props.changeFilter('near', this.props.near)
       .then(() => {
         this.props.changeFilter('find', 'Restaurant')
           .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
       });
   };
+
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.near !== this.props.near || prevProps.find !== this.props.find) {
+  //     this.props.changeFilter('near', this.props.near)
+  //       .then(() => {
+  //         this.props.changeFilter('find', 'Restaurant')
+  //           .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
+  //       });
+  //   }
+  // }
+  
+  // handleRestaurants = (e) => (value) => {
+  //   e.preventDefault();
+
+  //   if (!this.props.near) {
+  //     this.props.near = 'Dalaran';
+  //   }   
+    
+  //   this.props.changeFilter('near', this.props.near)
+  //     .then(() => {
+  //       this.props.changeFilter('find', 'Restaurant')
+  //         .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
+  //     });
+  // };
 
   render() { 
     
@@ -60,9 +90,14 @@ class SubNavCategories extends Component {
                 </div>
               </a >
               <div className="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a href="#">
+                  <i class="fas fa-beer"></i>
+                  <p>Bars</p> 
+                </a>
+                <a href="#">
+                  <i class="fas fa-home"></i>
+                  <p>Inn</p> 
+                </a>
               </div>
             </div>
             
@@ -75,9 +110,11 @@ class SubNavCategories extends Component {
                 </div>
               </a>
               <div className="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a href="#">Blacksmithing</a>
+                <a href="#">Jewelcrafting</a>
+                <a href="#">Mechanic</a>
+                <a href="#">Barber</a>
+                <a href="#">Tailoring</a>
               </div>
             </div>
             <div className="dropdown">
@@ -89,9 +126,11 @@ class SubNavCategories extends Component {
                 </div>
               </a>
               <div className="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a >
+                  Orgrimmar
+                </a>
+                <a href="#">Dalaran</a>
+                <a href="#">Stormwind</a>
               </div>
             </div>
             <div className="dropdown">
@@ -102,9 +141,12 @@ class SubNavCategories extends Component {
                 </div>
               </a>
               <div className="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a href="#">
+                  Horde
+                </a>
+                <a href="#">
+                  Alliance
+                </a>
               </div>
             </div>
 
