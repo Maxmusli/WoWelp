@@ -8,6 +8,7 @@ import SignupFormContainer from "./session/signup_form_container";
 import BusinessShowContainer from './business/business_show_container';
 import BusinessIndexContainer from './business/business_index_container'
 import ReviewFormContainer from './reviews/review_form_container';
+import UnderConstruction from './home/under_contruction';
 
 export default () => {
   
@@ -19,6 +20,7 @@ export default () => {
         <Route exact path="/search" component={BusinessIndexContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <Route path="/underconstruction" component={UnderConstruction} />
         <Route exact path="/" component={Home} />
       </Switch>
     </div>
