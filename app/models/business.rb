@@ -29,7 +29,7 @@ class Business < ApplicationRecord
 
   has_many :reviews
 
-  has_one_attached :picture
+  has_many_attached :pictures
 
   def self.near_location(location)
     Business.where(

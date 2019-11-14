@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 Business.delete_all
 User.delete_all
 
@@ -163,10 +165,18 @@ business_10 = Business.create!(
   take_out: "No",
   reservation: "No",
   price_range: "$$",
-  description: "The Burning Anvil is a blacksmith shop found in the Valley of Honor in Orgrimmar. There is an Anvil inside and an Anvil & Forge on the outside to the right."
+  description: "The Burning Anvil is a blacksmithing shop found in the Valley of Honor in Orgrimmar. There is an Anvil inside and an Anvil & Forge on the outside to the right."
 )
 
+file1 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome_01.jpg')
+file2 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome_02.jpg')
+file3 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome_03.jpg')
+file4 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome_04.jpg')
 
+business_1.avatar.attach(io: file1, filename: 'aheroswelcome_01.jpg')
+business_1.avatar.attach(io: file2, filename: 'aheroswelcome_02.jpg')
+business_1.avatar.attach(io: file3, filename: 'aheroswelcome_03.jpg')
+business_1.avatar.attach(io: file4, filename: 'aheroswelcome_04.jpg')
 
 demo_user = User.create!(
   email: "guest123@gmail.com",

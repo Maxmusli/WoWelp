@@ -66,7 +66,7 @@ class Search extends React.Component {
                 type="text"
                 onChange={this.handleInput('searchBody')}
                 value={this.state.searchBody}
-                placeholder= "beer, ramen, blacksmith, action house..."
+                placeholder= "beer, ramen, blacksmithing, action house..."
               />
             </div>
             <div className="split-line"></div>
@@ -94,7 +94,7 @@ class Search extends React.Component {
           </li>
           <li className="nav-category">
             <i className="fas fa-hammer"></i>
-            <a href="">Blacksmith</a>
+            <a href="">Blacksmithing</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-cut"></i>

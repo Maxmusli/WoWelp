@@ -93,7 +93,7 @@ class NavBar extends React.Component {
                     type="text"
                     onChange={this.handleInput('searchBody')}
                     value={this.state.searchBody}
-                    placeholder="beer, ramen, blacksmith, action house..."
+                    placeholder="beer, ramen, blacksmithing, action house..."
                   />
                 </div>
                 <div className="split-line"></div>
