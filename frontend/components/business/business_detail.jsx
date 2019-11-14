@@ -28,17 +28,21 @@ class BusinessDetail extends Component {
       ))
     )
     
-    // if (!this.props.business) return null;
-
+    if (!this.props.business.name) return null;
+        
     return (
       <div className="business-show-container">
         <div className="business-show-img">
-          <div><img  alt=""/></div>
-          <div><img  alt=""/></div>
-          <div>picture3</div>
-          <div>picture4</div>
+          <div className="first-pic">
+            <img src={pictureUrls[1]} alt=""/>
+          </div>
+          <div><img src={pictureUrls[2]} alt=""/></div>
+          <div><img src={pictureUrls[3]} alt="" /></div>
+          <div className="last-pic">
+            <img src={pictureUrls[4]} alt="" />
+          </div>
         </div>
-
+        <div className="bar-2"></div>
         <div className="main-show-wrapper">
           <div className="main-show-section-wrapper">
             <div className="main-show-section">

@@ -15,9 +15,21 @@
   display: flex;
   
   div  {
-    width: 25%;
+    width: 24.9%;
     height: 16.667vw;
-    border: 1px solid black
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-right: 2px solid #5E5F5A;
+
+    img {
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  .last-pic {
+    border: none;
   }
 }
 

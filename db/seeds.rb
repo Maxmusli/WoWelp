@@ -180,6 +180,68 @@ business_2.pictures.attach(io: file3, filename: 'aheroswelcome_02.jpg')
 business_2.pictures.attach(io: file4, filename: 'aheroswelcome_03.jpg')
 business_2.pictures.attach(io: file5, filename: 'aheroswelcome_04.jpg')
 
+file6 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/bar/bar_01.jpg')
+file7 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/bar/bar_02.jpg')
+file8 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/bar/bar_03.jpg')
+file9 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/bar/bar_04.jpg')
+
+business_1.pictures.attach(io: file6, filename: 'bar_01.jpg')
+business_1.pictures.attach(io: file7, filename: 'bar_02.jpg')
+business_1.pictures.attach(io: file8, filename: 'bar_03.jpg')
+business_1.pictures.attach(io: file9, filename: 'bar_04.jpg')
+
+file10 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/thefilthyanimal_04.jpg')
+file11 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/thefilthyanimal_01.jpg')
+file12 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/thefilthyanimal_02.jpg')
+file13 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/thefilthyanimal_03.jpg')
+
+business_3.pictures.attach(io: file10, filename: 'thefilthyanimal_04.jpg')
+business_3.pictures.attach(io: file11, filename: 'thefilthyanimal_01.jpg')
+business_3.pictures.attach(io: file12, filename: 'thefilthyanimal_02.jpg')
+business_3.pictures.attach(io: file13, filename: 'thefilthyanimal_03.jpg')
+
+file14 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmithing/tanksforeverthing_02.jpg')
+file15 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmithing/tanksforeverthing_01.jpg')
+file16 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmithing/tanksforeverthing_03.jpg')
+
+business_4.pictures.attach(io: file14, filename: 'tanksforeverthing_02.jpg')
+business_4.pictures.attach(io: file15, filename: 'tanksforeverthing_01.jpg')
+business_4.pictures.attach(io: file16, filename: 'tanksforeverthing_03.jpg')
+
+file17 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/barber/barbershop_dalaran.jpg')
+file18 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/barber/barbershop_dalaran_02.jpg')
+file19 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/barber/barbershop_dalaran_03.jpg')
+
+business_5.pictures.attach(io: file17, filename: 'barbershop_dalaran.jpg')
+business_5.pictures.attach(io: file18, filename: 'barbershop_dalaran_02.jpg')
+business_5.pictures.attach(io: file19, filename: 'barbershop_dalaran_03.jpg')
+
+file20 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/mechanic/Like_Clockwork_01.jpg')
+
+business_6.pictures.attach(io: file20, filename: 'Like_Clockwork_01.jpg')
+
+file21 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/jewelry/Cartier_Jewelry_01.jpg')
+
+business_7.pictures.attach(io: file21, filename: 'Cartier_Jewelry_01.jpg')
+
+file22 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/tailoring/Talismanic_Textiles_01.jpg')
+
+business_8.pictures.attach(io: file22, filename: 'Talismanic_Textiles_01.jpg')
+
+file23 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/blacksmithing/The_Burning_Anvil_02.jpg')
+file24 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/blacksmithing/The_Burning_Anvil_01.jpg')
+file25 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/blacksmithing/Saru_Steelfury.jpg')
+
+business_10.pictures.attach(io: file23, filename: 'The_Burning_Anvil_02.jpg')
+business_10.pictures.attach(io: file24, filename: 'The_Burning_Anvil_01.jpg')
+business_10.pictures.attach(io: file25, filename: 'Saru_Steelfury.jpg')
+
+file26 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/bar/The_Broken_Tusk_01.jpg')
+file27 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/bar/The_Broken_Tusk_Interior_02.jpg')
+
+business_9.pictures.attach(io: file26, filename: 'The_Broken_Tusk_01.jpg')
+business_9.pictures.attach(io: file27, filename: 'The_Broken_Tusk_Interior_02.jpg')
+
 demo_user = User.create!(
   email: "guest123@gmail.com",
   fname: "Guest",
