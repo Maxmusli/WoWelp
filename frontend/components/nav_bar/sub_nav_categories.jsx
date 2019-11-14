@@ -7,14 +7,14 @@ class SubNavCategories extends Component {
 
     this.state = {
       dropdownOpen: false,
-      // find: this.props.find,
-      // near: this.props.near,
+      find: this.props.find,
+      near: this.props.near,
     }
 
     this.toggle = this.toggle.bind(this);
     this.onMouseEnter = this.onMouseEnter.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
-    this.handleRestaurants = this.handleRestaurants.bind(this);
+    // this.handleRestaurants = this.handleRestaurants.bind(this);
   }
 
   toggle(e) {
@@ -34,31 +34,7 @@ class SubNavCategories extends Component {
     this.setState({ dropdownOpen: false });
   }
 
-  handleRestaurants(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.props.near = 'Dalaran';
-    }   
-    
-    this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Restaurant')
-          .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
-      });
-  };
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.near !== this.props.near || prevProps.find !== this.props.find) {
-  //     this.props.changeFilter('near', this.props.near)
-  //       .then(() => {
-  //         this.props.changeFilter('find', 'Restaurant')
-  //           .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
-  //       });
-  //   }
-  // }
-  
-  // handleRestaurants = (e) => (value) => {
+  // handleRestaurants(e) {
   //   e.preventDefault();
 
   //   if (!this.props.near) {
@@ -72,6 +48,17 @@ class SubNavCategories extends Component {
   //     });
   // };
 
+  componentDidUpdate(prevProps) {
+
+    if (prevProps.near !== this.state.near || prevProps.find !== this.state.find) {
+      this.props.changeFilter('near', this.state.near)
+        .then(() => {
+          this.props.changeFilter('find', this.state.find)
+            .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
+        });
+    } 
+  }
+
   render() { 
     
     return (
@@ -81,7 +68,7 @@ class SubNavCategories extends Component {
             <div className="dropdown">
               <a href=""
                 className="dropbtn"
-                onClick={this.handleRestaurants}
+                onClick={() => this.setState({ find: 'Restaurant' })}
               >
                 <div className="header-wrapper">
                   <i className="fas fa-utensils"></i>
@@ -91,11 +78,11 @@ class SubNavCategories extends Component {
               </a >
               <div className="dropdown-content">
                 <a href="#">
-                  <i class="fas fa-beer"></i>
+                  <i className="fas fa-beer"></i>
                   <p>Bars</p> 
                 </a>
                 <a href="#">
-                  <i class="fas fa-home"></i>
+                  <i className="fas fa-home"></i>
                   <p>Inn</p> 
                 </a>
               </div>

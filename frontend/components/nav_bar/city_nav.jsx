@@ -5,40 +5,25 @@ class CityNav extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleDalaran = this.handleDalaran.bind(this);
-    this.handleOrgrimmar = this.handleOrgrimmar.bind(this);
-    this.handleStormwind = this.handleStormwind.bind(this);
+    this.state = {
+      find: '',
+      near: this.props.near,
+    }
+
   }
 
-  handleDalaran(e) {
-    e.preventDefault();
+  componentDidUpdate(prevProps) {
 
-    this.props.changeFilter('near', 'Dalaran')
-      .then(() => {
-        this.props.changeFilter('find', '')
-          .then(() => { this.props.history.push('/search?near=Dalaran') })
-      });
-  };
-
-  handleOrgrimmar(e) {
-    e.preventDefault();
-
-    this.props.changeFilter('near', 'Orgrimmar')
-      .then(() => {
-        this.props.changeFilter('find', '')
-          .then(() => { this.props.history.push('/search?near=Orgrimmar') })
-      });
-  };
-
-  handleStormwind(e) {
-    e.preventDefault();
-
-    this.props.changeFilter('near', 'Stormwind')
-      .then(() => {
-        this.props.changeFilter('find', '')
-          .then(() => { this.props.history.push('/search?near=Stormwind') })
-      });
-  };
+    if (prevProps.near !== this.state.near || prevProps.find !== this.state.find) {
+      this.props.changeFilter('near', this.state.near)
+        .then(() => {
+          this.props.changeFilter('find', this.state.find)
+            .then(() => { this.props.history.push(`/search?near=${this.state.near}`) })
+        });
+    } else {
+      this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`)
+    }
+  }
 
   render() {
     
@@ -50,19 +35,19 @@ class CityNav extends React.Component {
               </div>
           <ul className="city-themes">
             <li className="city">
-              <a onClick={this.handleDalaran}>
+              <a onClick={() => this.setState({ near: 'Dalaran' })}>
                 <img src="https://i.imgur.com/MvRlnQH.jpg" alt="" />
                 <h3>Dalaran</h3>
               </a>
             </li>
             <li className="city">
-              <a onClick={this.handleOrgrimmar}>
+              <a onClick={() => this.setState({ near: 'Orgrimmar' })}>
                 <img src="https://i.imgur.com/kRHOAxB.jpg" alt="" />
                 <h3>Orgrimmar</h3>
               </a>
             </li>
             <li className="city">
-              <a onClick={this.handleStormwind}>
+              <a onClick={() => this.setState({ near: 'Stormwind' })}>
                 <img src="https://i.imgur.com/ydHGkt3.jpg" alt="" />
                 <h3>Stormwind</h3>
               </a>

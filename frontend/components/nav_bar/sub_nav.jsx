@@ -123,6 +123,8 @@ class NavBar extends React.Component {
         <div>
           <SubNavCategories 
             changeFilter={this.props.changeFilter}
+            find={this.props.find}
+            near={this.props.near}
           />
         </div>
       </div>

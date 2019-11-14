@@ -12,10 +12,6 @@ class Search extends React.Component {
     };
 
     // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleRestaurants = this.handleRestaurants.bind(this);
-    this.handleBlacksmith = this.handleBlacksmith.bind(this);
-    this.handleBarber = this.handleBarber.bind(this);
-    this.handleBars = this.handleBars.bind(this);
   }
 
   handleInput(type) {
@@ -38,23 +34,11 @@ class Search extends React.Component {
       this.props.changeFilter('near', this.state.near)
         .then(() => {
           this.props.changeFilter('find', this.state.find)
-            .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
+            .then(() => { this.props.history.push(`/search?find=${tihs.state.find}&near=${this.state.near}`) })
         });
     } else {
       this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`)
     }
-  }
-
-  handleBars(e) {
-    e.preventDefault();
-
-    this.props.changeFilter('near', 'Dalaran')
-      .then(() => {
-        this.props.changeFilter('find', 'Bars')
-          .then(() => {
-            this.props.history.push(`/search?find=Bars&near=Dalaran`)
-          })
-      });
   }
 
   render() {
@@ -101,7 +85,7 @@ class Search extends React.Component {
           </li>
           <li className="nav-category">
             <i className="fas fa-cut"></i>
-            <a onClick={() => this.setState({ find: 'Barber Shops' })}>Barber Shops</a>
+            <a onClick={() => this.setState({ find: 'Barber' })}>Barber Shops</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-cocktail"></i>
