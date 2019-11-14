@@ -32,6 +32,6 @@ class ApplicationController < ActionController::Base
 
   def check_cookie?
     
-    cookies[:find] || cookie[:near]
+    cookies[:find] || cookies[:near]
   end
 end

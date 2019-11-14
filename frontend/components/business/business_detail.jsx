@@ -28,6 +28,7 @@ class BusinessDetail extends Component {
       ))
     )
     
+    // if (!this.props.business) return null;
 
     return (
       <div className="business-show-container">
