@@ -1,3 +1,5 @@
+@import "config";
+
 .under-const-wrapper {
   background: url("under_construction_bg.jpg");
   position: relative;
@@ -7,8 +9,107 @@
   height: 960px;
   background-repeat: no-repeat;
   background-position: center top;
+  
+}
+
+.under-const-container {
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  max-width: 1600px;
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  margin: 0px auto;
+  padding: 0px;
 }
 
 .under-const-message {
-  
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  text-align: center;
+  max-width: 600px;
+  position: relative;
+  padding: 0px 60px;
+  margin: 270px 0px 0px;
+  color: white;
+
+  p {
+    letter-spacing: 2px;
+    margin: 10px 0;
+    font-size: 40px;
+    font-family: Semplicita Pro,Open Sans,Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(top, #efd100, #e2a233 19%, #f0c328 30%, #fff1a3 43%, #ffe13e 50%, #fff 51%, #fff);
+    background-size: 1em 2.7em;
+    line-height: 1.5em;
+    color: #f8b700;
+    text-transform: uppercase;
+  }
+
+  button {
+    cursor: pointer;
+    color: rgb(247, 177, 10);
+    min-width: 180px;
+    max-width: 250px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: BlizQuadrataWeb, serif;
+    letter-spacing: 1px;
+    text-shadow: rgba(0, 0, 0, 0.7) 0px 1px 7px, rgba(0, 0, 0, 0.7) 0px 1px 7px;
+    line-height: 1.2em;
+    font-size: 16px;
+    transition: border-image 0.2s ease 0s, color 0.2s ease 0s;
+    background: transparent;
+    border-width: 30px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/YG5XN3AWU0DZ1555957771296.png) 25 50 30 fill / 30px 50px / 0 repeat round;
+    padding: 2px 60px 10px;
+    margin-top: 10px;
+    margin: 0 auto;
+  }
+}
+
+.const-homepage-redirect {
+  padding: 12px 0;
+  background: linear-gradient(180deg, rgba(1, 1, 2, 0.97), rgba(21, 13, 6, 0.97));  position: relative;
+  z-index: 1012!important;
+  display: flex;
+  justify-content: center;
+  padding: 14px;
+  align-items: center;
+  margin-left: -18px;
+  margin-right: -18px;
+  border-collapse: separate;
+  border-spacing: 18px 0;
+
+  .btn-home {
+    display: block;
+    // max-width: 960px;
+    // margin: 0 auto;
+    padding: 0 5px;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(247, 177, 10);
+    font-family: BlizQuadrataWeb, serif;
+    font-weight: 700;
+
+    &:hover {
+      color: white;
+      @include easeOut();
+    }
+  }
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
 }
