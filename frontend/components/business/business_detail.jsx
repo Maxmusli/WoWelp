@@ -49,9 +49,15 @@ class BusinessDetail extends Component {
                     {average_rating || 'no review yet'}
                   </div>
                   <div className="business-category">
-                    {price_range}
-                    {category}
-                    {sub_category}
+                    <div>
+                      {price_range}
+                    </div>
+                    <div>
+                      {category}
+                    </div>
+                    <div>
+                      {sub_category}
+                    </div>
                   </div>
                 </div>
 

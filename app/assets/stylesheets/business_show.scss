@@ -3,7 +3,7 @@
 .business-show-container {
   min-width: 1020px;
   position: relative;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url("map.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), image-url("map.jpg");
   background-size: cover;
 }
 
@@ -49,7 +49,6 @@
 
   .business-info {
     margin-bottom: 18px;
-    background-color: gray;
 
     .business-name {
       margin-bottom: 6px;
@@ -57,11 +56,23 @@
       font-weight: 700;
       padding-top: 6px;
       line-height: 1.2em;
+      color: #ebdec2;
     }
 
     .business-rating {
       margin-bottom: 6px;
       min-width: 100%;
+    }
+
+    .business-category {
+      display: flex;
+      color: rgb(230, 230, 230);
+      font-size: 16px;
+      line-height: 24px;
+
+      div {
+        margin-right: 6px;
+      }
     }
   }
 
@@ -97,13 +108,26 @@
 
   .about-business {
     margin-top: 24px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid rgba(204, 204, 204, 0.4);
     padding-top: 24px;
+    color: #ccc;
+
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+      font-size: 14px;
+      line-height: 1.28571em;
+    }
   }
 
   .reviews {
     margin: 24px 0 46px 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid rgba(204, 204, 204, 0.4);
     padding-top: 24px;
   }
 }

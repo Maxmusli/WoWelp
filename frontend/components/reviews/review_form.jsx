@@ -15,6 +15,10 @@ class ReviewForm extends React.Component {
     this.redirectToShow = this.redirectToShow.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchBusiness(this.props.match.params.businessId)
+  }
+
   redirectToShow() {
     const url = `/search/${this.props.match.params.businessId}`
     this.props.history.push(url);
@@ -91,7 +95,8 @@ class ReviewForm extends React.Component {
         <div className="bar-2"></div>
         <div className="review-form-container">
           <div className="review-form-wrapper">
-            <div>
+            <div className="review-form-title">
+              {this.props.business.name}
             </div>
             <form onSubmit={this.handleSubmit}>
               <div className="text-box">

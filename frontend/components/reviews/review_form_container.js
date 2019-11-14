@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { createReview } from '../../actions/review_actions';
 import ReviewForm from './review_form';
 import { selectBusiness } from '../../reducers/selectors';
+import { fetchBusiness } from '../../actions/business_actions'
 
 
 
@@ -17,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   createReview: review => dispatch(createReview(review)),
-  // fetchBusiness: id => dispatch(fetchBusiness(id))
+  fetchBusiness: id => dispatch(fetchBusiness(id))
 });
 
 export default connect(
