@@ -149,14 +149,25 @@
   margin: 0 auto;
 
   .text-box {
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     border-radius: 4px;
     padding: 18px;
     max-width: 630px;
+    background: #261812ad;
+
   }
 
   .select-rating {
     margin-bottom: 10px;
+    color: #f8b700;
+    font-size: 18px;
+
+    input {
+      background: transparent;
+      color: #f8b700;
+      border: none;
+      font-size: 18px;
+    }
   }
 
   .write-review {
@@ -172,6 +183,8 @@
       resize: none;
       width: 100%;
       min-height: 258px;
+      background: transparent;
+
     }
   }
 
@@ -182,36 +195,36 @@
 
     .btn {
       cursor: pointer;
-      display: block;
-      text-decoration: none;
-      margin-top: 5px;
-      margin-bottom: 6px;
-      padding: 9px 30px;
-      font-size: 20px;
-      line-height: 20px;
-      height: 40px;
-      color: #EFC02C;
-      background: #581C10;
-      border: 1px solid #d32323;
-      background-image: none;
-      background-repeat: no-repeat;
-      transition: all 0.6s;
-      transition-property: background-color, background-position, background-size, border-color;
-      background-position: 50% 50%;
-      background-size: 15000px 15000px;
-      box-sizing: border-box;
-      border-radius: 3px;
-      font-family: BlizQuadrataWeb, serif;
+      color: rgb(247, 177, 10);
+      min-width: 180px;
+      text-transform: uppercase;
       font-weight: 400;
-
-      &:hover {
-        background-color: rgb(143, 30, 13);
-        @include easeOut();
-      }
+      font-family: BlizQuadrataWeb, serif;
+      letter-spacing: 1px;
+      text-shadow: rgba(0, 0, 0, 0.7) 0px 1px 7px, rgba(0, 0, 0, 0.7) 0px 1px 7px;
+      line-height: 1.2em;
+      font-size: 16px;
+      transition: border-image 0.2s ease 0s, color 0.2s ease 0s;
+      background: transparent;
+      border-width: 30px;
+      border-style: solid;
+      border-color: transparent;
+      border-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/YG5XN3AWU0DZ1555957771296.png) 25 50 30 fill / 30px 50px / 0 repeat round;
+      padding: 2px 60px 10px;
+      // &:hover {
+      //   background-color: rgb(143, 30, 13);
+      //   @include easeOut();
+      // }
     }
   }
 }
 
 .review-form-title {
   max-width: calc(100% - 48px);
+  font-size: 36px;
+  font-family: BlizQuadrataWeb, serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.5em;
+  color: #f8b700;
 }
