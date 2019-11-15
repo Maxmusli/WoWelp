@@ -37,6 +37,7 @@ business_2 = Business.create!(
   zipcode: "123123", 
   category: "Inn", 
   sub_category: "Restaurant",
+  faction: "Alliance",
   phone: "(512)359-7532",
   parking: "Yes",
   take_out: "No",
@@ -53,6 +54,7 @@ business_3 = Business.create!(
   zipcode: "123123", 
   category: "Inn", 
   sub_category: "Restaurant",
+  faction: "Horde",
   phone: "(512)432-1103",
   parking: "Yes",
   take_out: "Yes",
@@ -145,6 +147,7 @@ business_9 = Business.create!(
   state: "Kalimdor", 
   zipcode: "123123", 
   category: "Bars", 
+  sub_category: "Horde",
   phone: "(412)694-3624",
   parking: "No",
   take_out: "No",
@@ -160,12 +163,30 @@ business_10 = Business.create!(
   state: "Kalimdor", 
   zipcode: "123123", 
   category: "Blacksmithing", 
+  sub_category: "Horde",
   phone: "(412)253-3524",
   parking: "Yes",
   take_out: "No",
   reservation: "No",
   price_range: "$$",
   description: "The Burning Anvil is a blacksmithing shop found in the Valley of Honor in Orgrimmar. There is an Anvil inside and an Anvil & Forge on the outside to the right."
+)
+
+business_11 = Business.create!(
+  name: "Golden Keg",
+  address: "111 Dwarven District", 
+  city: "Stormwind", 
+  state: "Eastern Kingdom", 
+  zipcode: "123123", 
+  category: "Inn", 
+  sub_category: "Restaurant",
+  faction: "Alliance",
+  phone: "(855)334-1002",
+  parking: "Yes",
+  take_out: "No",
+  reservation: "Yes",
+  price_range: "$$",
+  description: "The Golden Keg is the inn and tavern located in the Dwarven District of Stormwind City."
 )
 
 file1 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome.jpg')
@@ -184,29 +205,37 @@ file6 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/bar/bar_01
 file7 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/bar/bar_02.jpg')
 file8 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/bar/bar_03.jpg')
 file9 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/bar/bar_04.jpg')
+file_busi01_05 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/bar/bar_05.jpeg')
 
 business_1.pictures.attach(io: file6, filename: 'bar_01.jpg')
 business_1.pictures.attach(io: file7, filename: 'bar_02.jpg')
 business_1.pictures.attach(io: file8, filename: 'bar_03.jpg')
 business_1.pictures.attach(io: file9, filename: 'bar_04.jpg')
+business_1.pictures.attach(io: file_busi01_05, filename: 'bar_05.jpeg')
 
 file10 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/thefilthyanimal_04.jpg')
 file11 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/thefilthyanimal_01.jpg')
 file12 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/thefilthyanimal_02.jpg')
 file13 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/thefilthyanimal_03.jpg')
+file_busi03_05 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/thefilthyanimal_05.jpg')
 
 business_3.pictures.attach(io: file10, filename: 'thefilthyanimal_04.jpg')
 business_3.pictures.attach(io: file11, filename: 'thefilthyanimal_01.jpg')
 business_3.pictures.attach(io: file12, filename: 'thefilthyanimal_02.jpg')
 business_3.pictures.attach(io: file13, filename: 'thefilthyanimal_03.jpg')
+business_3.pictures.attach(io: file_busi03_05, filename: 'thefilthyanimal_05.jpg')
 
 file14 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmithing/tanksforeverthing_02.jpg')
 file15 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmithing/tanksforeverthing_01.jpg')
 file16 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmithing/tanksforeverthing_03.jpg')
+file_busi04_04 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmithing/tanksforeverthing_04.jpg')
+file_busi04_05 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmithing/tanksforeverthing_05.jpg')
 
 business_4.pictures.attach(io: file14, filename: 'tanksforeverthing_02.jpg')
 business_4.pictures.attach(io: file15, filename: 'tanksforeverthing_01.jpg')
 business_4.pictures.attach(io: file16, filename: 'tanksforeverthing_03.jpg')
+business_4.pictures.attach(io: file_busi04_04, filename: 'tanksforeverthing_04.jpg')
+business_4.pictures.attach(io: file_busi04_05, filename: 'tanksforeverthing_05.jpg')
 
 file17 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/barber/barbershop_dalaran.jpg')
 file18 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/barber/barbershop_dalaran_02.jpg')
@@ -230,17 +259,33 @@ business_8.pictures.attach(io: file22, filename: 'Talismanic_Textiles_01.jpg')
 
 file23 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/blacksmithing/The_Burning_Anvil_02.jpg')
 file24 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/blacksmithing/The_Burning_Anvil_01.jpg')
-file25 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/blacksmithing/Saru_Steelfury.jpg')
+file25 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/blacksmithing/The_Burning_Anvil_03.png')
+file_busi10_04 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/blacksmithing/The_Burning_Anvil_04.png')
+file_busi10_05 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/blacksmithing/The_Burning_Anvil_06.jpg')
 
 business_10.pictures.attach(io: file23, filename: 'The_Burning_Anvil_02.jpg')
 business_10.pictures.attach(io: file24, filename: 'The_Burning_Anvil_01.jpg')
-business_10.pictures.attach(io: file25, filename: 'Saru_Steelfury.jpg')
+business_10.pictures.attach(io: file25, filename: 'The_Burning_Anvil_03.png')
+business_10.pictures.attach(io: file_busi10_04, filename: 'The_Burning_Anvil_04.png')
+business_10.pictures.attach(io: file_busi10_05, filename: 'The_Burning_Anvil_06.jpg')
 
 file26 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/bar/The_Broken_Tusk_01.jpg')
 file27 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/bar/The_Broken_Tusk_Interior_02.jpg')
 
 business_9.pictures.attach(io: file26, filename: 'The_Broken_Tusk_01.jpg')
 business_9.pictures.attach(io: file27, filename: 'The_Broken_Tusk_Interior_02.jpg')
+
+file_busi11_01 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/Inn/golden_keg_01.jpg')
+file_busi11_02 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/Inn/golden_keg_02.jpg')
+file_busi11_03 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/Inn/golden_keg_03.jpg')
+file_busi11_04 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/Inn/golden_keg_04.png')
+file_busi11_05 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/Inn/golden_keg_05.jpg')
+
+business_11.pictures.attach(io: file_busi11_01, filename: 'golden_keg_01.jpg')
+business_11.pictures.attach(io: file_busi11_02, filename: 'golden_keg_02.jpg')
+business_11.pictures.attach(io: file_busi11_03, filename: 'golden_keg_03.jpg')
+business_11.pictures.attach(io: file_busi11_04, filename: 'golden_keg_04.png')
+business_11.pictures.attach(io: file_busi11_05, filename: 'golden_keg_05.jpg')
 
 demo_user = User.create!(
   email: "guest123@gmail.com",

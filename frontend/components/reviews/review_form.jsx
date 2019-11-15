@@ -13,6 +13,22 @@ class ReviewForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.redirectToShow = this.redirectToShow.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+
+    const menuNav = document.querySelector('.menu-nav');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    if (!$(".menu-nav").hasClass("show")) {
+      menuNav.classList.add('show');
+      navItems.forEach(item => item.classList.add('show'));
+    } else {
+      menuNav.classList.remove('show');
+      navItems.forEach(item => item.classList.remove('show'));
+    }
   }
 
   componentDidMount() {

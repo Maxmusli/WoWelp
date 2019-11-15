@@ -23,6 +23,7 @@
     border-right: 2px solid #5E5F5A;
 
     img {
+      object-fit: cover;
       min-width: 100%;
       min-height: 100%;
     }
@@ -55,8 +56,35 @@
   }
 
   .right-section {
-    border: 1px solid gray;
     width: 33%;
+
+    .info {
+      border: 1px solid gray;
+      border-radius: 4px;
+      padding: 6px;
+      font-size: 16px;
+
+      div {
+        padding: 14px 11px 11px;
+        border-bottom: 1px solid gray;
+        color: rgb(230, 230, 230);
+      }
+
+      .address {
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+      }
+
+      .business-index {
+        border: none;
+
+        a {
+          text-decoration: none;
+          color: #f8b700;
+        }
+      }
+    }
   }
 
   .business-info {
@@ -153,4 +181,16 @@
     }
   }
 }
+
+.map {
+  display: block;
+  border-radius: 4px;
+  border: 1px solid gray;
+  height: 300px;
+  background: url('map.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 18px;
+}
+
 

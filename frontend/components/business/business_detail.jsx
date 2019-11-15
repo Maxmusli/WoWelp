@@ -108,18 +108,18 @@ class BusinessDetail extends Component {
 
               <div className="right-section">
                 <div className="map">
-                  map
+
                 </div>
 
                 <div className="info">
                   <div>
-                    <div>{phone}</div>
+                    <span>{phone}</span>
                   </div>
 
-                  <div>
-                    <div>{address}</div>
-                    <div>{city}</div>
-                    <div>{state}</div>
+                  <div className="address">
+                    <span>{address}</span>
+                    <span>{city}</span>
+                    <span>{state}</span>
                   </div>
 
                   <div className="business-index">

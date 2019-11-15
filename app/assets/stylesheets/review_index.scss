@@ -17,6 +17,18 @@
   margin-right: 6px;
   width: 222px;
   display: flex;
+
+  .profile-pic {
+    border: 1px solid gray;
+    border-radius: 4px;
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+  }
+
+  .username {
+    color: #0B86CA;
+  }
 }
 
 .review-info-wrapper {
@@ -26,5 +38,5 @@
 .review-rating {
   margin-top: 6px;
   margin-bottom: 6px;
-
+  color: #f8b700;
 }

@@ -8,10 +8,10 @@ const Review = ({ review, author }) => {
   return (
     <div className="review-wrapper">
       <div className="author-info-wrapper">
-        <div>
+        <div className="profile-pic">
           picture
         </div>
-        <div>
+        <div className="username">
           {review.username}
         </div>
       </div>

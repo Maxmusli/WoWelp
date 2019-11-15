@@ -48,8 +48,8 @@ export default class BusinessIndex extends React.Component {
                   />
                 ))}
               </div>
-              <div>
-                map
+              <div className="map">
+                
               </div>
             </div>
           </div>
