@@ -17,6 +17,7 @@ class CreateBusinesses < ActiveRecord::Migration[5.2]
       t.string :take_out
       t.string :reservation
       t.string :price_range
+      t.string :faction
 
       t.timestamps
     end

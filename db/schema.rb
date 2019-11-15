@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_11_12_220111) do
     t.string "take_out"
     t.string "reservation"
     t.string "price_range"
+    t.string "faction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address"], name: "index_businesses_on_address", unique: true

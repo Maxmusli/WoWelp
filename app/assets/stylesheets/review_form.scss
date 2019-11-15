@@ -211,20 +211,23 @@
       border-color: transparent;
       border-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/YG5XN3AWU0DZ1555957771296.png) 25 50 30 fill / 30px 50px / 0 repeat round;
       padding: 2px 60px 10px;
-      // &:hover {
-      //   background-color: rgb(143, 30, 13);
-      //   @include easeOut();
-      // }
+
+      &:hover {
+        color: white;       
+        @include easeOut();
+      }
     }
   }
 }
 
 .review-form-title {
   max-width: calc(100% - 48px);
-  font-size: 36px;
+  margin-bottom: 10px;
+  line-height: 1.2;
   font-family: BlizQuadrataWeb, serif;
-  font-weight: 700;
+  font-weight: 400;
+  text-shadow: rgb(0, 0, 0) 0px 2px 2px;
+  font-size: 36px;
   letter-spacing: 2px;
-  line-height: 1.5em;
-  color: #f8b700;
+  color: rgb(255, 255, 255);
 }

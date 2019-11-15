@@ -229,13 +229,13 @@ file14 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmit
 file15 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmithing/tanksforeverthing_01.jpg')
 file16 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmithing/tanksforeverthing_03.jpg')
 file_busi04_04 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmithing/tanksforeverthing_04.jpg')
-file_busi04_05 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmithing/tanksforeverthing_05.jpg')
+file_busi04_05 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/blacksmithing/tanksforeverthing_05.png')
 
 business_4.pictures.attach(io: file14, filename: 'tanksforeverthing_02.jpg')
 business_4.pictures.attach(io: file15, filename: 'tanksforeverthing_01.jpg')
 business_4.pictures.attach(io: file16, filename: 'tanksforeverthing_03.jpg')
 business_4.pictures.attach(io: file_busi04_04, filename: 'tanksforeverthing_04.jpg')
-business_4.pictures.attach(io: file_busi04_05, filename: 'tanksforeverthing_05.jpg')
+business_4.pictures.attach(io: file_busi04_05, filename: 'tanksforeverthing_05.png')
 
 file17 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/barber/barbershop_dalaran.jpg')
 file18 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/barber/barbershop_dalaran_02.jpg')
