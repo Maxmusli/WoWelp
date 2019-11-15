@@ -7,7 +7,7 @@ import FilterBar from '../search/filter_bar';
 export default class BusinessIndex extends React.Component {
   
   componentDidMount() {
-    
+    window.scrollTo(0, 0);
     if (this.props.businesses.length === 0) {
       this.props.changeFilter('near', this.props.near)
       .then(() => {

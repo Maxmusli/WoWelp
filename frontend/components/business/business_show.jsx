@@ -5,6 +5,7 @@ import BusinessDetail from './business_detail'
 
 export default class BusinessShow extends Component {
   componentDidMount() {
+    window.scrollTo(0, 0)
     this.props.fetchBusiness(this.props.match.params.businessId)
   }
 

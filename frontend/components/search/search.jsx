@@ -12,6 +12,10 @@ class Search extends React.Component {
     };
 
     // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleRestaurants = this.handleRestaurants.bind(this);
+    this.handleBlacksmithing = this.handleBlacksmithing.bind(this);
+    this.handleBarber = this.handleBarber.bind(this);
+    this.handleBars = this.handleBars.bind(this);
   }
 
   handleInput(type) {
@@ -28,18 +32,75 @@ class Search extends React.Component {
   //   this.props.changeFilter()
   // }
 
-  componentDidUpdate(prevProps) {
+  // componentDidUpdate(prevProps) {
     
-    if (prevProps.near !== this.state.near || prevProps.find !== this.state.find) {
-      this.props.changeFilter('near', this.state.near)
-        .then(() => {
-          this.props.changeFilter('find', this.state.find)
-            .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
-        });
-    } else {
-      this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`)
+  //   if (prevProps.near !== this.state.near || prevProps.find !== this.state.find) {
+  //     this.props.changeFilter('near', this.state.near)
+  //       .then(() => {
+  //         this.props.changeFilter('find', this.state.find)
+  //           .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
+  //       });
+  //   } else {
+  //     this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`)
+  //   }
+  // }
+
+
+  handleRestaurants(e) {
+    e.preventDefault();
+
+    if (!this.props.near) {
+      this.state.near = 'Dalaran';
     }
-  }
+
+    this.props.changeFilter('near', this.state.near)
+      .then(() => {
+        this.props.changeFilter('find', 'Restaurant')
+          .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
+      });
+  };
+
+  handleBlacksmithing(e) {
+    e.preventDefault();
+
+    if (!this.props.near) {
+      this.state.near = 'Dalaran';
+    }
+
+    this.props.changeFilter('near', this.state.near)
+      .then(() => {
+        this.props.changeFilter('find', 'Blacksmithing')
+          .then(() => { this.props.history.push('/search?find=Blacksmithing&near=Dalaran') })
+      });
+  };
+
+  handleBarber(e) {
+    e.preventDefault();
+
+    if (!this.props.near) {
+      this.state.near = 'Dalaran';
+    }
+
+    this.props.changeFilter('near', this.state.near)
+      .then(() => {
+        this.props.changeFilter('find', 'Barber')
+          .then(() => { this.props.history.push('/search?find=Barber&near=Dalaran') })
+      });
+  };
+
+  handleBars(e) {
+    e.preventDefault();
+
+    if (!this.props.near) {
+      this.state.near = 'Dalaran';
+    }
+
+    this.props.changeFilter('near', this.state.near)
+      .then(() => {
+        this.props.changeFilter('find', 'Bars')
+          .then(() => { this.props.history.push('/search?find=Bars&near=Dalaran') })
+      });
+  };
 
   render() {
     
@@ -77,19 +138,19 @@ class Search extends React.Component {
         <ul className="nav-categories">
           <li className="nav-category">
             <i className="fas fa-utensils"></i>
-            <a onClick={() => this.setState({ find: 'Restaurant' })}>Restaurants</a>
+            <a onClick={this.handleRestaurants}>Restaurants</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-hammer"></i>
-            <a onClick={() => this.setState({ find: 'Blacksmithing' })}>Blacksmithing</a>
+            <a onClick={this.handleBlacksmithing}>Blacksmithing</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-cut"></i>
-            <a onClick={() => this.setState({ find: 'Barber' })}>Barber Shops</a>
+            <a onClick={this.handleBarber}>Barber Shops</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-cocktail"></i>
-            <a onClick={() => this.setState({ find: 'Bars' })}>Bars</a>
+            <a onClick={this.handleBars}>Bars</a>
           </li>
         </ul>
       </div>

@@ -16,6 +16,10 @@ export default class SessionForm extends Component {
     this.guestLogin = this.guestLogin.bind(this);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   componentWillUnmount() {
     this.props.clearErrors();
   }
