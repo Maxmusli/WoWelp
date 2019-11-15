@@ -34,7 +34,7 @@ class Search extends React.Component {
       this.props.changeFilter('near', this.state.near)
         .then(() => {
           this.props.changeFilter('find', this.state.find)
-            .then(() => { this.props.history.push(`/search?find=${tihs.state.find}&near=${this.state.near}`) })
+            .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
         });
     } else {
       this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`)

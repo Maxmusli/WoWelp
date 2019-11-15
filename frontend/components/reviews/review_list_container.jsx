@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { deleteReview } from '../../actions/review_actions'
 
 const Review = ({ review, author }) => {
   const { rating, body } = review;
@@ -32,4 +33,8 @@ const mapStateToProps = ({ entities: { users } }, { review }) => {
   };
 };
 
-export default connect(mapStateToProps)(Review);
+const mapDispatchToProps = dispatch => ({
+  deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Review);

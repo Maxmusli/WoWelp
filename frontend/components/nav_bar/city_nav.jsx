@@ -7,14 +7,14 @@ class CityNav extends React.Component {
 
     this.state = {
       find: '',
-      near: this.props.near,
+      near: '',
     }
 
   }
 
   componentDidUpdate(prevProps) {
 
-    if (prevProps.near !== this.state.near || prevProps.find !== this.state.find) {
+    if (prevProps.near !== this.state.near) {
       this.props.changeFilter('near', this.state.near)
         .then(() => {
           this.props.changeFilter('find', this.state.find)
