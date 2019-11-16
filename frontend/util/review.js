@@ -9,6 +9,6 @@ export const createReview = review => (
 export const removeReview = reviewId => (
   $.ajax({
     method: 'delete',
-    url: `api/reviews/${reviewId}`
+    url: `api/reviews/${reviewId}`,
   })
 )

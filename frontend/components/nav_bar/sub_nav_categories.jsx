@@ -64,10 +64,12 @@ class SubNavCategories extends Component {
     if (!this.props.near) {
       this.state.near = 'Dalaran';
     }   
+    this.state.find = 'Restaurant'
+
     this.props.changeFilter('near', this.props.near)
       .then(() => {
         this.props.changeFilter('find', 'Restaurant')
-          .then(() => { this.props.history.push(`/search?find=Restaurant&near=${this.state.near}`) })
+          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
       });
   };
 
@@ -77,36 +79,12 @@ class SubNavCategories extends Component {
     if (!this.props.near) {
       this.state.near = 'Dalaran';
     }   
+    this.state.find = 'Bars'
+
     this.props.changeFilter('near', this.props.near)
       .then(() => {
         this.props.changeFilter('find', 'Bars')
-          .then(() => { this.props.history.push(`/search?find=Bars&near=${this.state.near}`) })
-      });
-  };
-
-  handleRestaurants(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }   
-    this.props.changeFilter('near', this.state.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Restaurant')
-          .then(() => { this.props.history.push(`/search?find=Restaurant&near=${this.state.near}`) })
-      });
-  };
-
-  handleRestaurants(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }   
-    this.props.changeFilter('near', this.state.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Restaurant')
-          .then(() => { this.props.history.push(`/search?find=Restaurant&near=${this.state.near}`) })
+          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
       });
   };
 
@@ -116,10 +94,12 @@ class SubNavCategories extends Component {
     if (!this.props.near) {
       this.state.near = 'Dalaran';
     }   
+    this.state.find = 'Inn'
+
     this.props.changeFilter('near', this.state.near)
       .then(() => {
         this.props.changeFilter('find', 'Inn')
-          .then(() => { this.props.history.push(`/search?find=Inn&near=${this.state.near}`) })
+          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
       });
   };
 
@@ -129,10 +109,12 @@ class SubNavCategories extends Component {
     if (!this.props.near) {
       this.state.near = 'Dalaran';
     }   
+    this.state.find = 'Blacksmithing'
+
     this.props.changeFilter('near', this.state.near)
       .then(() => {
         this.props.changeFilter('find', 'Blacksmithing')
-          .then(() => { this.props.history.push(`/search?find=Blacksmithing&near=${this.state.near}`) })
+          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
       });
   };
 
@@ -142,10 +124,12 @@ class SubNavCategories extends Component {
     if (!this.props.near) {
       this.state.near = 'Dalaran';
     }   
+    this.state.find = 'Jewelcrafting'
+
     this.props.changeFilter('near', this.state.near)
       .then(() => {
         this.props.changeFilter('find', 'Jewelry Shop')
-          .then(() => { this.props.history.push(`/search?find=Jewelry Shop&near=${this.state.near}`) })
+          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
       });
   };
 
@@ -154,11 +138,13 @@ class SubNavCategories extends Component {
 
     if (!this.props.near) {
       this.state.near = 'Dalaran';
-    }   
+    }  
+    this.state.find = 'Mechanic'
+ 
     this.props.changeFilter('near', this.state.near)
       .then(() => {
         this.props.changeFilter('find', 'Mechanic')
-          .then(() => { this.props.history.push(`/search?find=Mechanic&near=${this.state.near}`) })
+          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
       });
   };
 
@@ -168,10 +154,12 @@ class SubNavCategories extends Component {
     if (!this.props.near) {
       this.state.near = 'Dalaran';
     }   
+    this.state.find = 'Barber'
+
     this.props.changeFilter('near', this.state.near)
       .then(() => {
         this.props.changeFilter('find', 'Barber')
-          .then(() => { this.props.history.push(`/search?find=Barber&near=${this.state.near}`) })
+          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
       });
   };
 
@@ -180,11 +168,13 @@ class SubNavCategories extends Component {
 
     if (!this.props.near) {
       this.state.near = 'Dalaran';
-    }   
+    }
+    this.state.find = 'Tailoring'
+
     this.props.changeFilter('near', this.state.near)
       .then(() => {
-        this.props.changeFilter('find', 'Tailoring')
-          .then(() => { this.props.history.push(`/search?find=Tailoring&near=${this.state.near}`) })
+        this.props.changeFilter('find', this.state.find)
+          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
       });
   };
 

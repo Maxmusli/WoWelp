@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { deleteReview } from '../../actions/review_actions'
 
-const Review = ({ review, author }) => {
-  const { rating, body } = review;
-  
+const Review = ({ review, author, deleteReview }) => {
+  const { rating, body, id } = review;
+  debugger
   return (
     <div className="review-wrapper">
       <div className="author-info-wrapper">
@@ -21,6 +20,12 @@ const Review = ({ review, author }) => {
         </div>
         <div className="review-body">
           {body}
+        </div>
+        <div>
+          <button>Edit Review</button>
+        </div>
+        <div>
+          <button onClick={() => deleteReview(id)}>Delete Review</button>
         </div>
       </div>
     </div>

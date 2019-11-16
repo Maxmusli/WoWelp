@@ -24,12 +24,13 @@ class BusinessDetail extends Component {
         <ReviewListContainer
           review={review}
           key={review.id}
+          deleteReview={this.props.deleteReview}
         />
       ))
     )
     
     if (!this.props.business.name) return null;
-        
+     
     return (
       <div className="business-show-container">
         <div className="business-show-img">

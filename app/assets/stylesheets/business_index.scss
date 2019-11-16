@@ -5,11 +5,15 @@
   margin: 0 auto;
   display: flex;
   min-height: 450px;
+  flex-direction: row;
 
   .map {
+    display: block;
+    position: sticky;
     border: 1px solid gray;
     border-radius: 4px;
     width: 35%;
+    margin-left: 5px;
   }
 }
 
@@ -21,6 +25,7 @@
 .business-container {
   display: flex;
   padding: 18px 0 18px 0;
+  border-bottom: 1px solid gray;
 
   .business-img {
     margin-right: 18px;
@@ -175,3 +180,4 @@
   padding-top: 30px;
   color: #f8b700;
 }
+
