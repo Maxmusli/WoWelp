@@ -5,7 +5,6 @@ import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  // window.getState = store.getState;
   
   let store;
   let preloadedState = {};
