@@ -62,65 +62,6 @@ class SubNavCategories extends Component {
       });
   };
 
-  handleDalaran(e) {
-    e.preventDefault();
-
-    this.state.near = 'Dalaran'
-    this.props.changeFilter('near', 'Dalaran')
-      .then(() => {
-        this.props.changeFilter('find', this.state.find)
-          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=Dalaran`) })
-      });
-  };
-
-  handleOrgrimmar(e) {
-    e.preventDefault();
-
-    this.state.near = 'Orgrimmar'
-    this.props.changeFilter('near', 'Orgrimmar')
-      .then(() => {
-        this.props.changeFilter('find', this.state.find)
-          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=Orgrimmar`) })
-      });
-  };
-
-  handleStormwind(e) {
-    e.preventDefault();
-
-    this.state.near = 'Stormwind'
-    this.props.changeFilter('near', 'Stormwind')
-      .then(() => {
-        this.props.changeFilter('find', this.state.find)
-          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=Stormwind`) })
-      });
-  };
-
-  handleHorde(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }   
-    this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Horde')
-          .then(() => { this.props.history.push(`/search?find=Horde&near=${this.state.near}`) })
-      });
-  };
-  
-  handleAlliance(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }   
-    this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Alliance')
-          .then(() => { this.props.history.push(`/search?find=Alliance&near=${this.state.near}`) })
-      });
-  };
-
   render() { 
     
     return (
