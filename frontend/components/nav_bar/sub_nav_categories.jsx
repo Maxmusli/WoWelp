@@ -15,19 +15,8 @@ class SubNavCategories extends Component {
     this.onMouseEnter = this.onMouseEnter.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
 
-    this.handleRestaurants = this.handleRestaurants.bind(this);
-    this.handleBars = this.handleBars.bind(this);
-    this.handleInn = this.handleInn.bind(this);
-    this.handleBlacksmithing = this.handleBlacksmithing.bind(this);
-    this.handleJewelcrafting = this.handleJewelcrafting.bind(this);
-    this.handleMechanic = this.handleMechanic.bind(this);
-    this.handleBarber = this.handleBarber.bind(this);
-    this.handleTailoring = this.handleTailoring.bind(this);
-    this.handleOrgrimmar = this.handleOrgrimmar.bind(this);
-    this.handleDalaran = this.handleDalaran.bind(this);
-    this.handleStormwind = this.handleStormwind.bind(this);
-    this.handleHorde = this.handleHorde.bind(this);
-    this.handleAlliance = this.handleAlliance.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
+    this.handleCity = this.handleCity.bind(this);
   }
 
   toggle(e) {
@@ -47,134 +36,29 @@ class SubNavCategories extends Component {
     this.setState({ dropdownOpen: false });
   }
 
-  // componentDidUpdate(prevProps) {
-    
-    //   if (prevProps.near !== this.state.near || prevProps.find !== this.state.find) {
-      //     this.props.changeFilter('near', this.state.near)
-      //       .then(() => {
-        //         this.props.changeFilter('find', this.state.find)
-        //           .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
-        //       });
-        //   } 
-  // }
-  
-  handleRestaurants(e) {
+  handleFilter(e, filter) {
     e.preventDefault();
 
     if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }   
-    this.state.find = 'Restaurant'
-
-    this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Restaurant')
-          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
-      });
-  };
-
-  handleBars(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }   
-    this.state.find = 'Bars'
-
-    this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Bars')
-          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
-      });
-  };
-
-  handleInn(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }   
-    this.state.find = 'Inn'
-
-    this.props.changeFilter('near', this.state.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Inn')
-          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
-      });
-  };
-
-  handleBlacksmithing(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }   
-    this.state.find = 'Blacksmithing'
-
-    this.props.changeFilter('near', this.state.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Blacksmithing')
-          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
-      });
-  };
-
-  handleJewelcrafting(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }   
-    this.state.find = 'Jewelcrafting'
-
-    this.props.changeFilter('near', this.state.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Jewelry Shop')
-          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
-      });
-  };
-
-  handleMechanic(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }  
-    this.state.find = 'Mechanic'
- 
-    this.props.changeFilter('near', this.state.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Mechanic')
-          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
-      });
-  };
-
-  handleBarber(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }   
-    this.state.find = 'Barber'
-
-    this.props.changeFilter('near', this.state.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Barber')
-          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
-      });
-  };
-
-  handleTailoring(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
+      this.props.near = 'Dalaran';
     }
-    this.state.find = 'Tailoring'
+    this.state.find = filter
 
-    this.props.changeFilter('near', this.state.near)
+    this.props.changeFilter('near', this.props.near)
+      .then(() => {
+        this.props.changeFilter('find', filter)
+          .then(() => { this.props.history.push(`/search?find=${filter}&near=${this.props.near}`) })
+      });
+  };
+
+  handleCity(e, city) {
+    e.preventDefault();
+
+    this.state.near = city
+    this.props.changeFilter('near', city)
       .then(() => {
         this.props.changeFilter('find', this.state.find)
-          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
+          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${city}`) })
       });
   };
 
@@ -246,7 +130,7 @@ class SubNavCategories extends Component {
             <div className="dropdown">
               <a href=""
                 className="dropbtn"
-                onClick={this.handleRestaurants}
+                onClick={e => this.handleFilter(e, 'Restaurant')}
               >
                 <div className="header-wrapper">
                   <i className="fas fa-utensils"></i>
@@ -255,11 +139,11 @@ class SubNavCategories extends Component {
                 </div>
               </a >
               <div className="dropdown-content">
-                <a onClick={this.handleBars}>
+                <a onClick={e => this.handleFilter(e, 'Bars')}>
                   <i className="fas fa-beer"></i>
                   <p>Bars</p> 
                 </a>
-                <a onClick={this.handleInn}>
+                <a onClick={e => this.handleFilter(e, 'Inn')}>
                   <i className="fas fa-home"></i>
                   <p>Inn</p> 
                 </a>
@@ -275,11 +159,11 @@ class SubNavCategories extends Component {
                 </div>
               </a>
               <div className="dropdown-content">
-                <a onClick={this.handleBlacksmithing}>Blacksmithing</a>
-                <a onClick={this.handleJewelcrafting}>Jewelcrafting</a>
-                <a onClick={this.handleMechanic}>Mechanic</a>
-                <a onClick={this.handleBarber}>Barber</a>
-                <a onClick={this.handleTailoring}>Tailoring</a>
+                <a onClick={e => this.handleFilter(e, 'Blacksmithing')}>Blacksmithing</a>
+                <a onClick={e => this.handleFilter(e, 'Jewelry Shop')}>Jewelcrafting</a>
+                <a onClick={e => this.handleFilter(e, 'Mechanic')}>Mechanic</a>
+                <a onClick={e => this.handleFilter(e, 'Barber')}>Barber</a>
+                <a onClick={e => this.handleFilter(e, 'Tailoring')}>Tailoring</a>
               </div>
             </div>
             <div className="dropdown">
@@ -291,11 +175,15 @@ class SubNavCategories extends Component {
                 </div>
               </a>
               <div className="dropdown-content">
-                <a onClick={this.handleOrgrimmar}>
+                <a onClick={e => this.handleCity(e, 'Orgrimmar')}>
                   Orgrimmar
                 </a>
-                <a onClick={this.handleDalaran}>Dalaran</a>
-                <a onClick={this.handleStormwind}>Stormwind</a>
+                <a onClick={e => this.handleCity(e, 'Dalaran')}>
+                  Dalaran
+                </a>
+                <a onClick={e => this.handleCity(e, 'Stormwind')}>
+                  Stormwind
+                </a>
               </div>
             </div>
             <div className="dropdown">
@@ -306,10 +194,10 @@ class SubNavCategories extends Component {
                 </div>
               </a>
               <div className="dropdown-content">
-                <a onClick={this.handleHorde}>
+                <a onClick={e => this.handleFilter(e, 'Horde')}>
                   Horde
                 </a>
-                <a onClick={this.handleAlliance}>
+                <a onClick={e => this.handleFilter(e, 'Alliance')}>
                   Alliance
                 </a>
               </div>

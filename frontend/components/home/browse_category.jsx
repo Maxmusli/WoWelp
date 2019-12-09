@@ -21,19 +21,6 @@ class BrowseCategory extends React.Component {
           .then(() => { this.props.history.push(`/search?find=${filter}&near=${this.props.near}`) })
       });
   };
-  // handleRestaurants(e) {
-  //   e.preventDefault();
-    
-  //   if (!this.props.near) {
-  //     this.props.near = 'Dalaran';
-  //   }
-    
-  //   this.props.changeFilter('near', this.props.near)
-  //     .then(() => {
-  //       this.props.changeFilter('find', 'Restaurant')
-  //         .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
-  //     });
-  // };
 
   render () {
     

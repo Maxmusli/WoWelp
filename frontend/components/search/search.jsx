@@ -12,10 +12,11 @@ class Search extends React.Component {
     };
 
     // this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleRestaurants = this.handleRestaurants.bind(this);
     this.handleBlacksmithing = this.handleBlacksmithing.bind(this);
     this.handleBarber = this.handleBarber.bind(this);
     this.handleBars = this.handleBars.bind(this);
+
+    this.handleFilter = this.handleFilter.bind(this);
   }
 
   handleInput(type) {
@@ -24,39 +25,17 @@ class Search extends React.Component {
     }
   }
 
-  // componentDidMount
-
-  // handleSubmit(e) {
-  //   e.preventDefault();
-
-  //   this.props.changeFilter()
-  // }
-
-  // componentDidUpdate(prevProps) {
-    
-  //   if (prevProps.near !== this.state.near || prevProps.find !== this.state.find) {
-  //     this.props.changeFilter('near', this.state.near)
-  //       .then(() => {
-  //         this.props.changeFilter('find', this.state.find)
-  //           .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`) })
-  //       });
-  //   } else {
-  //     this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`)
-  //   }
-  // }
-
-
-  handleRestaurants(e) {
+  handleFilter(e, filter) {
     e.preventDefault();
 
     if (!this.props.near) {
-      this.state.near = 'Dalaran';
+      this.props.near = 'Dalaran';
     }
 
-    this.props.changeFilter('near', this.state.near)
+    this.props.changeFilter('near', this.props.near)
       .then(() => {
-        this.props.changeFilter('find', 'Restaurant')
-          .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
+        this.props.changeFilter('find', filter)
+          .then(() => { this.props.history.push(`/search?find=${filter}&near=${this.props.near}`) })
       });
   };
 
@@ -138,19 +117,19 @@ class Search extends React.Component {
         <ul className="nav-categories">
           <li className="nav-category">
             <i className="fas fa-utensils"></i>
-            <a onClick={this.handleRestaurants}>Restaurants</a>
+            <a onClick={e => this.handleFilter(e, 'Restaurant')}>Restaurants</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-hammer"></i>
-            <a onClick={this.handleBlacksmithing}>Blacksmithing</a>
+            <a onClick={e => this.handleFilter(e, 'Blacksmithing')}>Blacksmithing</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-cut"></i>
-            <a onClick={this.handleBarber}>Barber Shops</a>
+            <a onClick={e => this.handleFilter(e, 'Barber')}>Barber Shops</a>
           </li>
           <li className="nav-category">
             <i className="fas fa-cocktail"></i>
-            <a onClick={this.handleBars}>Bars</a>
+            <a onClick={e => this.handleFilter(e, 'Bars')}>Bars</a>
           </li>
         </ul>
       </div>
