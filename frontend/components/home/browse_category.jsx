@@ -5,16 +5,10 @@ class BrowseCategory extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleRestaurants = this.handleRestaurants.bind(this);
-    this.handleBlacksmith = this.handleBlacksmith.bind(this);
-    this.handleBarber = this.handleBarber.bind(this);
-    this.handleBars = this.handleBars.bind(this);
-    this.handleMechanic = this.handleMechanic.bind(this);
-    this.handleJewelry = this.handleJewelry.bind(this);
-    this.handleTailoring = this.handleTailoring.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
   }
 
-  handleRestaurants(e) {
+  handleFilter(e, filter) {
     e.preventDefault();
     
     if (!this.props.near) {
@@ -23,94 +17,23 @@ class BrowseCategory extends React.Component {
     
     this.props.changeFilter('near', this.props.near)
       .then(() => {
-        this.props.changeFilter('find', 'Restaurant')
-          .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
+        this.props.changeFilter('find', filter)
+          .then(() => { this.props.history.push(`/search?find=${filter}&near=${this.props.near}`) })
       });
   };
-  
-  handleBlacksmith(e) {
-    e.preventDefault();
+  // handleRestaurants(e) {
+  //   e.preventDefault();
     
-    if (!this.props.near) {
-      this.props.near = 'Dalaran';
-    }
+  //   if (!this.props.near) {
+  //     this.props.near = 'Dalaran';
+  //   }
     
-    this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Blacksmithing')
-          .then(() => { this.props.history.push('/search?find=Blacksmithing&near=Dalaran') })
-      });
-  };
-  
-  handleBarber(e) {
-    e.preventDefault();
-    
-    if (!this.props.near) {
-      this.props.near = 'Dalaran';
-    }
-    
-    this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Barber')
-          .then(() => { this.props.history.push('/search?find=Barber&near=Dalaran') })
-      });
-  };
-  
-  handleBars(e) {
-    e.preventDefault();
-    
-    if (!this.props.near) {
-      this.props.near = 'Dalaran';
-    }
-    
-    this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Bars')
-          .then(() => { this.props.history.push('/search?find=Bars&near=Dalaran') })
-      });
-  };
-  
-  handleMechanic(e) {
-    e.preventDefault();
-    
-    if (!this.props.near) {
-      this.props.near = 'Dalaran';
-    }
-    
-    this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Mechanic')
-          .then(() => { this.props.history.push('/search?find=Mechanic&near=Dalaran') })
-      });
-  };
-  
-  handleJewelry(e) {
-    e.preventDefault();
-    
-    if (!this.props.near) {
-      this.props.near = 'Dalaran';
-    }
-    
-    this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Jewelry Shop')
-          .then(() => { this.props.history.push('/search?find=Jewelry Shop&near=Dalaran') })
-      });
-  };
-  
-  handleTailoring(e) {
-    e.preventDefault();
-    
-    if (!this.props.near) {
-      this.props.near = 'Dalaran';
-    }
-    
-    this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Tailoring')
-          .then(() => { this.props.history.push('/search?find=Tailoring&near=Dalaran') })
-      });
-  };
+  //   this.props.changeFilter('near', this.props.near)
+  //     .then(() => {
+  //       this.props.changeFilter('find', 'Restaurant')
+  //         .then(() => { this.props.history.push('/search?find=Restaurant&near=Dalaran') })
+  //     });
+  // };
 
   render () {
     
@@ -122,25 +45,25 @@ class BrowseCategory extends React.Component {
             </div>
           <ul className="browse-categories level-1">
             <li className="browse-nav-category">
-              <a onClick={this.handleRestaurants}>
+              <a onClick={(e) => this.handleFilter(e, 'Restaurant')}>
                 <img src="https://i.imgur.com/2HCTLcU.png" alt="" />
                 <h3>Restaurants</h3>
               </a>
             </li>
             <li className="browse-nav-category">
-              <a onClick={this.handleBlacksmith}>
+              <a onClick={(e) => this.handleFilter(e, 'Blacksmithing')}>
                 <img src="https://i.imgur.com/xQHZCsP.png" alt="" />
                 <h3>Blacksmithing</h3>
               </a>
             </li>
             <li className="browse-nav-category">
-              <a onClick={this.handleBarber}>
+              <a onClick={(e) => this.handleFilter(e, 'Barber')}>
                 <img src="https://i.imgur.com/Hs6T4to.png" alt="" />
                 <h3>Beauty & Barber</h3>
               </a>
             </li>
             <li className="browse-nav-category">
-              <a onClick={this.handleBars}>
+              <a onClick={(e) => this.handleFilter(e, 'Bars')}>
                 <img src="https://i.imgur.com/Mwtuz2p.png" alt="" />
                 <h3>Bars</h3>
               </a>
@@ -148,19 +71,19 @@ class BrowseCategory extends React.Component {
           </ul>
           <ul className="browse-categories level-2">
             <li className="browse-nav-category">
-              <a onClick={this.handleMechanic}>
+              <a onClick={(e) => this.handleFilter(e, 'Mechanic')}>
                 <img src="https://i.imgur.com/TdKKEKn.png" alt="" />
                 <h3>Mechanic</h3>
               </a>
             </li>
             <li className="browse-nav-category">
-              <a onClick={this.handleJewelry}>
+              <a onClick={(e) => this.handleFilter(e, 'Jewelry Shop')}>
                 <img src="https://i.imgur.com/Lhrytji.png" alt="" />
                 <h3>Jewelry Shops</h3>
               </a>
             </li>
             <li className="browse-nav-category">
-              <a onClick={this.handleTailoring}>
+              <a onClick={(e) => this.handleFilter(e, 'Tailoring')}>
                 <img src="https://i.imgur.com/geQLRuc.png" alt="" />
                 <h3>Tailoring</h3>
               </a>

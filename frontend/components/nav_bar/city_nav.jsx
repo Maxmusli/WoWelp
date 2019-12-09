@@ -10,51 +10,18 @@ class CityNav extends React.Component {
     //   near: '',
     // }
 
-    this.handleDalaran = this.handleDalaran.bind(this);
-    this.handleOrgrimmar = this.handleOrgrimmar.bind(this);
-    this.handleStormwind = this.handleStormwind.bind(this);
+    this.handleCity = this.handleCity.bind(this);
   }
 
-  // componentDidUpdate(prevProps) {
+  handleCity(e, city) {
+    e.preventDefault();
 
-  //   if (prevProps.near !== this.state.near) {
-  //     this.props.changeFilter('near', this.state.near)
-  //       .then(() => {
-  //         this.props.changeFilter('find', this.state.find)
-  //           .then(() => { this.props.history.push(`/search?near=${this.state.near}`) })
-  //       });
-  //   } else {
-  //     this.props.history.push(`/search?find=${this.state.find}&near=${this.state.near}`)
-  //   }
-  // }
-
-  handleDalaran(e) {
-    e.preventDefault(); 
-
-    this.props.changeFilter('near', 'Dalaran')
-      .then(() => { 
+    this.props.changeFilter('near', city)
+      .then(() => {
         this.props.changeFilter('find', '')
-          .then(() => { this.props.history.push('/search?near=Dalaran') })
+          .then(() => { this.props.history.push(`/search?near=${city}`) })
       })
-  };
-
-  handleOrgrimmar(e) {
-    e.preventDefault(); 
-
-    this.props.changeFilter('near', 'Orgrimmar')
-      .then(() => {
-        this.props.changeFilter('find', '')
-          .then(() => { this.props.history.push('/search?near=Orgrimmar') })
-      })  };
-
-  handleStormwind(e) {
-    e.preventDefault(); 
-
-    this.props.changeFilter('near', 'Stormwind')
-      .then(() => {
-        this.props.changeFilter('find', '')
-          .then(() => { this.props.history.push('/search?near=Stormwind') })
-      })  };
+  }
 
   render() {
     
@@ -66,19 +33,19 @@ class CityNav extends React.Component {
               </div>
           <ul className="city-themes">
             <li className="city">
-              <a onClick={this.handleDalaran}>
+              <a onClick={e => this.handleCity(e, 'Dalaran')}>
                 <img src="https://i.imgur.com/MvRlnQH.jpg" alt="" />
                 <h3>Dalaran</h3>
               </a>
             </li>
             <li className="city">
-              <a onClick={this.handleOrgrimmar}>
+              <a onClick={e => this.handleCity(e, 'Orgrimmar')}>
                 <img src="https://i.imgur.com/kRHOAxB.jpg" alt="" />
                 <h3>Orgrimmar</h3>
               </a>
             </li>
             <li className="city">
-              <a onClick={this.handleStormwind}>
+              <a onClick={e => this.handleCity(e, 'Stormwind')}>
                 <img src="https://i.imgur.com/ydHGkt3.jpg" alt="" />
                 <h3>Stormwind</h3>
               </a>
