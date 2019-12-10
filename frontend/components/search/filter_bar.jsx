@@ -1,7 +1,23 @@
 import React, { Component } from 'react'
 
 export default class FilterBar extends Component {
+  constructor(props) {
+    super(props)
 
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(e, type) {
+    e.preventDefault();
+
+    const priceTag = document.querySelector('.price-tag')
+
+    if (!$('.price-tage').hasClass('toggled')) {
+      priceTag.classList.add('toggled')
+    } else {
+      priceTag.classList.remove('toggled')
+    }
+  }
 
   render() {
     
@@ -26,17 +42,29 @@ export default class FilterBar extends Component {
               </button>
             </div>
             <div className="price-range">
- 
-                <button id="first">
+                <button 
+                  className="price-tag"
+                  id="cheap"
+                  onClick={e => this.handleClick(e, '$')}
+                >
                   $
                 </button>
-                <button id="second">
+                <button 
+                  className="price-tag"
+                  id="medium"
+                >
                   $$
                 </button>
-                <button id="third">
+                <button
+                  className="price-tag"
+                  id="expensive"
+                >
                   $$$
                 </button>
-                <button id="last">
+                <button 
+                  className="price-tag"
+                  id="luxury"
+                >
                   $$$$
                 </button>
          

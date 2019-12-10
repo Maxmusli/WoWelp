@@ -46,20 +46,27 @@
     }
   }
 
-  #first {
+  .price-tag {
+    &.toggled {
+      background-color: rgb(143, 30, 13);
+      color: white;
+    }
+  }
+
+  #cheap {
     border-radius: 4px 0 0 4px;
   }
 
-  #second {
+  #medium {
     border-left: none;
   }
 
-  #third {
+  #expensive {
     border-left: none;
     border-right: none;
   }
 
-  #last {
+  #luxury {
     border-radius: 0 4px 4px 0;
   }
 }

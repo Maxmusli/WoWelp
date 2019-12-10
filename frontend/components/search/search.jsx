@@ -11,11 +11,6 @@ class Search extends React.Component {
       near: this.props.near,
     };
 
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleBlacksmithing = this.handleBlacksmithing.bind(this);
-    this.handleBarber = this.handleBarber.bind(this);
-    this.handleBars = this.handleBars.bind(this);
-
     this.handleFilter = this.handleFilter.bind(this);
   }
 
@@ -36,48 +31,6 @@ class Search extends React.Component {
       .then(() => {
         this.props.changeFilter('find', filter)
           .then(() => { this.props.history.push(`/search?find=${filter}&near=${this.props.near}`) })
-      });
-  };
-
-  handleBlacksmithing(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }
-
-    this.props.changeFilter('near', this.state.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Blacksmithing')
-          .then(() => { this.props.history.push('/search?find=Blacksmithing&near=Dalaran') })
-      });
-  };
-
-  handleBarber(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }
-
-    this.props.changeFilter('near', this.state.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Barber')
-          .then(() => { this.props.history.push('/search?find=Barber&near=Dalaran') })
-      });
-  };
-
-  handleBars(e) {
-    e.preventDefault();
-
-    if (!this.props.near) {
-      this.state.near = 'Dalaran';
-    }
-
-    this.props.changeFilter('near', this.state.near)
-      .then(() => {
-        this.props.changeFilter('find', 'Bars')
-          .then(() => { this.props.history.push('/search?find=Bars&near=Dalaran') })
       });
   };
 

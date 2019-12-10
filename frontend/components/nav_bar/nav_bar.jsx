@@ -18,7 +18,7 @@ export default class NavBar extends React.Component {
     if (!$(".menu-nav").hasClass("show")) {
       menuNav.classList.add('show');
       navItems.forEach(item => item.classList.add('show'));
-    } else {gi
+    } else {
       menuNav.classList.remove('show');
       navItems.forEach(item => item.classList.remove('show'));
     }
