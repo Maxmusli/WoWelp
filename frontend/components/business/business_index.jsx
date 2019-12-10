@@ -36,6 +36,7 @@ export default class BusinessIndex extends React.Component {
             <FilterBar 
               find={this.props.find}
               near={this.props.near}
+              businesses={this.props.businesses}
             />
           </div>
           <div>

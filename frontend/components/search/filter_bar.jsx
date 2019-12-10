@@ -4,15 +4,20 @@ export default class FilterBar extends Component {
   constructor(props) {
     super(props)
 
-    this.handleClick = this.handleClick.bind(this)
+    this.state = {
+      businesses = this.props.businesses
+      
+    }
+
+    this.handlePrice = this.handlePrice.bind(this)
   }
 
-  handleClick(e, type) {
+  handlePrice(e, type) {
     e.preventDefault();
-
+    debugger
     const priceTag = document.querySelector('.price-tag')
 
-    if (!$('.price-tage').hasClass('toggled')) {
+    if (!$('.price-tag').hasClass('toggled')) {
       priceTag.classList.add('toggled')
     } else {
       priceTag.classList.remove('toggled')
@@ -45,25 +50,28 @@ export default class FilterBar extends Component {
                 <button 
                   className="price-tag"
                   id="cheap"
-                  onClick={e => this.handleClick(e, '$')}
+                  onClick={e => this.handlePrice(e, '$')}
                 >
                   $
                 </button>
                 <button 
                   className="price-tag"
                   id="medium"
+                  onClick={e => this.handlePrice(e, '$$')}
                 >
                   $$
                 </button>
                 <button
                   className="price-tag"
                   id="expensive"
+                  onClick={e => this.handlePrice(e, '$$$')}
                 >
                   $$$
                 </button>
                 <button 
                   className="price-tag"
                   id="luxury"
+                  onClick={e => this.handlePrice(e, '$$$$')}
                 >
                   $$$$
                 </button>
