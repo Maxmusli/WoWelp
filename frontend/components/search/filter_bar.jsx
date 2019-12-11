@@ -5,8 +5,8 @@ export default class FilterBar extends Component {
     super(props)
 
     this.state = {
-      businesses = this.props.businesses
-      
+      businesses: this.props.businesses,
+      filtered: []
     }
 
     this.handlePrice = this.handlePrice.bind(this)
@@ -14,13 +14,29 @@ export default class FilterBar extends Component {
 
   handlePrice(e, type) {
     e.preventDefault();
-    debugger
-    const priceTag = document.querySelector('.price-tag')
 
-    if (!$('.price-tag').hasClass('toggled')) {
+    let addBusi = this.props.businesses.filter(business => {
+      return business.price_range === type
+    })
+
+    let removeBusi = this.state.filtered.filter(business => {
+      return !addBusi.includes(business)
+    })
+    
+    const priceTag = document.querySelector(`.${type}`)
+
+    if (!$(`.${type}`).hasClass('toggled')) {
       priceTag.classList.add('toggled')
+
+      this.setState({
+        filtered: this.state.filtered.concat(addBusi)
+      })
     } else {
       priceTag.classList.remove('toggled')
+
+      this.setState({
+        filtered: removeBusi
+      })
     }
   }
 
@@ -48,30 +64,26 @@ export default class FilterBar extends Component {
             </div>
             <div className="price-range">
                 <button 
-                  className="price-tag"
-                  id="cheap"
-                  onClick={e => this.handlePrice(e, '$')}
+                  className="cheap"
+                  onClick={e => this.handlePrice(e, 'cheap')}
                 >
                   $
                 </button>
                 <button 
-                  className="price-tag"
-                  id="medium"
-                  onClick={e => this.handlePrice(e, '$$')}
+                  className="medium"
+                  onClick={e => this.handlePrice(e, 'medium')}
                 >
                   $$
                 </button>
                 <button
-                  className="price-tag"
-                  id="expensive"
-                  onClick={e => this.handlePrice(e, '$$$')}
+                  className="expensive"
+                  onClick={e => this.handlePrice(e, 'expensive')}
                 >
                   $$$
                 </button>
                 <button 
-                  className="price-tag"
-                  id="luxury"
-                  onClick={e => this.handlePrice(e, '$$$$')}
+                  className="luxury"
+                  onClick={e => this.handlePrice(e, 'luxury')}
                 >
                   $$$$
                 </button>

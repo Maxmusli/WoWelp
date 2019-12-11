@@ -46,28 +46,45 @@
     }
   }
 
-  .price-tag {
+  .cheap {
+    border-radius: 4px 0 0 4px;
+
     &.toggled {
       background-color: rgb(143, 30, 13);
+      border: #f8b700 1px solid;
       color: white;
     }
   }
 
-  #cheap {
-    border-radius: 4px 0 0 4px;
-  }
-
-  #medium {
+  .medium {
     border-left: none;
+
+    &.toggled {
+      background-color: rgb(143, 30, 13);
+      border: #f8b700 1px solid;
+      color: white;
+    }
   }
 
-  #expensive {
+  .expensive {
     border-left: none;
     border-right: none;
+
+    &.toggled {
+      background-color: rgb(143, 30, 13);
+      border: #f8b700 1px solid;
+      color: white;
+    }
   }
 
-  #luxury {
+  .luxury {
     border-radius: 0 4px 4px 0;
+
+    &.toggled {
+      background-color: rgb(143, 30, 13);
+      border: #f8b700 1px solid;
+      color: white;
+    }
   }
 }
 
