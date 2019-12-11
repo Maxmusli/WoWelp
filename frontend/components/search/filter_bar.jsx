@@ -1,44 +1,6 @@
 import React, { Component } from 'react'
 
 export default class FilterBar extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      businesses: this.props.businesses,
-      filtered: []
-    }
-
-    this.handlePrice = this.handlePrice.bind(this)
-  }
-
-  handlePrice(e, type) {
-    e.preventDefault();
-
-    let addBusi = this.props.businesses.filter(business => {
-      return business.price_range === type
-    })
-
-    let removeBusi = this.state.filtered.filter(business => {
-      return !addBusi.includes(business)
-    })
-    
-    const priceTag = document.querySelector(`.${type}`)
-
-    if (!$(`.${type}`).hasClass('toggled')) {
-      priceTag.classList.add('toggled')
-
-      this.setState({
-        filtered: this.state.filtered.concat(addBusi)
-      })
-    } else {
-      priceTag.classList.remove('toggled')
-
-      this.setState({
-        filtered: removeBusi
-      })
-    }
-  }
 
   render() {
     
@@ -52,9 +14,9 @@ export default class FilterBar extends Component {
             <div>
               >
             </div>
-            <div>
+            {/* <div>
               {this.props.find}
-            </div>
+            </div> */}
           </div>
           <div className="filter-bar">
             <div className="all-filter">
