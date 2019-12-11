@@ -25,7 +25,7 @@ business_1 = Business.create!(
   parking: "Yes",
   take_out: "Yes",
   reservation: "No",
-  price_range: "$$",
+  price_range: "medium",
   description: "The Beer Garden is a tranquil area for the alliance members of Dalaran to sit down, have a drink of the greatest beer, or just find some peace from other players. As such, it is strictly Alliance territory in Dalaran, and all members of the Horde will be teleported out if they manage to find a way into the garden."
 )
 
@@ -42,7 +42,7 @@ business_2 = Business.create!(
   parking: "Yes",
   take_out: "No",
   reservation: "Yes",
-  price_range: "$$$",
+  price_range: "expensive",
   description: "A Hero's Welcome is an inn located at the Silver Enclave of Dalaran. Isirami Fairwind is the innkeeper here, and Caliel Brightwillow is assistant innkeeper. Inzi and Marcella are the bar maidens that serve drinks to the patrons inside. Katherine and Derek are the chefs of the inn and cook food for hungry people."
 )
 
@@ -59,7 +59,7 @@ business_3 = Business.create!(
   parking: "Yes",
   take_out: "Yes",
   reservation: "No",
-  price_range: "$$$",
+  price_range: "expensive",
   description: "The Filthy Animal is the Horde inn, located within the Sunreaver's Sanctuary district, in Dalaran. Uda the Beast is the innkeeper and she has two wolves, Nargut and Rhukah."
 )
 
@@ -74,7 +74,7 @@ business_4 = Business.create!(
   parking: "Yes",
   take_out: "No",
   reservation: "Yes",
-  price_range: "$$$",
+  price_range: "expensive",
   description: "Tanks for Everything is a blacksmithing shop found in the Magus Commerce Exchange in Dalaran. The proprietor is Alard Schmied. On its sign there is a raven, indicating the shop is an entrance to the Uncrowned's Hall of Shadows."
 )
 
@@ -89,7 +89,7 @@ business_5 = Business.create!(
   parking: "Yes",
   take_out: "No",
   reservation: "Yes",
-  price_range: "$$",
+  price_range: "medium",
   description: "Kizi's Hair Salon is the finest and ONLY barber/beauty shop in town. YOU DON'T GET TO CHOOSE!"
 )
 
@@ -104,7 +104,7 @@ business_6 = Business.create!(
   parking: "Yes",
   take_out: "No",
   reservation: "Yes",
-  price_range: "$$$",
+  price_range: "expensive",
   description: "Like Clockwork is an engineering shop found in the Magus Commerce Exchange in Dalaran."
 )
 
@@ -119,7 +119,7 @@ business_7 = Business.create!(
   parking: "Yes",
   take_out: "No",
   reservation: "No",
-  price_range: "$$$$",
+  price_range: "luxury",
   description: "Cartier & Co. Fine Jewelry ('Co.' being short for Company) is a jewelry shop found in the Magus Commerce Exchange in the city of Dalaran. It also serves as a place where jewelcrafters go to learn new cuts."
 )
 
@@ -134,7 +134,7 @@ business_8 = Business.create!(
   parking: "Yes",
   take_out: "No",
   reservation: "Yes",
-  price_range: "$$$",
+  price_range: "expensive",
   description: "Talismanic Textiles is a tailoring shop found in the Magus Commerce Exchange in Dalaran the proprietor is Charles Worth."
 )
 
@@ -152,7 +152,7 @@ business_9 = Business.create!(
   parking: "No",
   take_out: "No",
   reservation: "No",
-  price_range: "$",
+  price_range: "cheap",
   description: "The Broken Tusk is the one of several inns of Orgrimmar, this one located within the Valley of Strength near the Orgrimmar General Store and Auction House. Its most famous resident is Gamon, long beset by members of his own faction due to his formerly low level."
 )
 
@@ -168,7 +168,7 @@ business_10 = Business.create!(
   parking: "Yes",
   take_out: "No",
   reservation: "No",
-  price_range: "$$",
+  price_range: "medium",
   description: "The Burning Anvil is a blacksmithing shop found in the Valley of Honor in Orgrimmar. There is an Anvil inside and an Anvil & Forge on the outside to the right."
 )
 
@@ -185,7 +185,7 @@ business_11 = Business.create!(
   parking: "Yes",
   take_out: "No",
   reservation: "Yes",
-  price_range: "$$",
+  price_range: "medium",
   description: "The Golden Keg is the inn and tavern located in the Dwarven District of Stormwind City."
 )
 
