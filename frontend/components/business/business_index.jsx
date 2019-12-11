@@ -22,7 +22,6 @@ export default class BusinessIndex extends React.Component {
     let addBusi = this.props.businesses.filter(business => {
       return business.price_range === type
     })
-
     let removeBusi = this.state.filtered.filter(business => {
       return !addBusi.includes(business)
     })
@@ -56,9 +55,18 @@ export default class BusinessIndex extends React.Component {
 
   render() {
     
-    const { businesses } = this.props
+    const { businesses } = this.props;
 
     if(!businesses) return null;
+
+    let selectedBusinesses;
+
+    if (this.state.filtered.length > 0) {
+      selectedBusinesses = this.state.filtered;
+    } else {
+      selectedBusinesses = businesses;
+    }
+
     
     return (
       <div>
@@ -136,7 +144,7 @@ export default class BusinessIndex extends React.Component {
           <div>
             <div className="business-index-wrapper">
               <div className="business-info-wrapper">
-                {businesses.map(business => (
+                {selectedBusinesses.map(business => (
                   <BusinessIndexItem
                   business={business}
                   key={business.id}
