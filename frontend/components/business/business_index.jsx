@@ -9,8 +9,8 @@ export default class BusinessIndex extends React.Component {
     super(props)
 
     this.state = {
-      businesses: this.props.businesses,
-      filtered: []
+      filtered: [],
+      priceArr: []
     }
 
     this.handlePrice = this.handlePrice.bind(this)
@@ -32,13 +32,15 @@ export default class BusinessIndex extends React.Component {
       priceTag.classList.add('toggled')
 
       this.setState({
-        filtered: this.state.filtered.concat(addBusi)
+        filtered: this.state.filtered.concat(addBusi),
+        priceArr: this.state.priceArr.concat(type)
       })
     } else {
       priceTag.classList.remove('toggled')
 
       this.setState({
-        filtered: removeBusi
+        filtered: removeBusi,
+        priceArr: this.state.priceArr.slice(0, -1)
       })
     }
   }
@@ -61,7 +63,7 @@ export default class BusinessIndex extends React.Component {
 
     let selectedBusinesses;
 
-    if (this.state.filtered.length > 0) {
+    if (this.state.priceArr.length > 0) {
       selectedBusinesses = this.state.filtered;
     } else {
       selectedBusinesses = businesses;
