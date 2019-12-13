@@ -21,10 +21,27 @@ export default class BusinessIndex extends React.Component {
 
   handlePrice(e, type) {
     e.preventDefault();
+    let that = this;
+    let addBusi;
 
-    let addBusi = this.props.businesses.filter(business => {
-      return business.price_range === type
-    })
+    if (
+      that.state.reservation === 'active' || 
+      that.state.take_out === 'active' ||
+      that.state.parking === 'active'
+    ) {
+      addBusi = that.state.filtered.filter(business => {
+        return business.price_range === type;
+      })
+    } else {
+      addBusi = this.props.businesses.filter(business => {
+        return business.price_range === type;
+      }) 
+    }
+    // let addBusi = this.props.businesses.filter(business => {
+    //   return business.price_range === type;
+    // })
+
+
     let removeBusi = this.state.filtered.filter(business => {
       return !addBusi.includes(business)
     })
@@ -50,16 +67,40 @@ export default class BusinessIndex extends React.Component {
 
   handleFilter(e, type) {
     e.preventDefault();
+    let that = this;
+    let addBusi;
 
-    let addBusi = this.props.businesses.filter(business => {
-      if (type === 'reservation') {
-        return business.reservation === 'Yes';
-      } else if (type === 'take_out') {
-        return business.take_out === 'Yes';
-      } else if (type === 'parking') {
-        return business.parking === 'Yes';
-      }
-    })
+    if (that.state.priceArr.length > 0) {
+      addBusi = that.state.filtered.filter(business => {
+        if (type === 'reservation') {
+          return business.reservation === 'Yes';
+        } else if (type === 'take_out') {
+          return business.take_out === 'Yes';
+        } else if (type === 'parking') {
+          return business.parking === 'Yes';
+        }
+      })
+    } else {
+      addBusi = this.props.businesses.filter(business => {
+        if (type === 'reservation') {
+          return business.reservation === 'Yes';
+        } else if (type === 'take_out') {
+          return business.take_out === 'Yes';
+        } else if (type === 'parking') {
+          return business.parking === 'Yes';
+        }
+      })
+    }
+    // let addBusi = this.props.businesses.filter(business => {
+    //   if (type === 'reservation') {
+    //     return business.reservation === 'Yes';
+    //   } else if (type === 'take_out') {
+    //     return business.take_out === 'Yes';
+    //   } else if (type === 'parking') {
+    //     return business.parking === 'Yes';
+    //   }
+    // })
+    
     let removeBusi = this.state.filtered.filter(business => {
       return !addBusi.includes(business);
     })
@@ -68,41 +109,33 @@ export default class BusinessIndex extends React.Component {
 
     if (!$(`.${type}`).hasClass('toggled')) {
       priceTag.classList.add('toggled')
-
+      // let that = this;
+      
       if (type === 'reservation') {
-        let newFiltered;
-        addBusi.forEach(business => {
-          if (!this.state.filtered.includes(business)) {
-            newFiltered = this.state.filtered.push(business)
-          }
+        addBusi.filter(business => {
+          return !that.state.filtered.includes(business)
         })
 
         this.setState({
-          filtered: newFiltered,
+          filtered: addBusi,
           reservation: 'active'
         })
       } else if (type === 'take_out') {
-        let newFiltered;
-        addBusi.forEach(business => {
-          if (!this.state.filtered.includes(business)) {
-            newFiltered = this.state.filtered.push(business)
-          }
+        addBusi.filter(business => {
+          return !that.state.filtered.includes(business)
         })
 
         this.setState({
-          filtered: newFiltered,
+          filtered: addBusi,
           take_out: 'active'
         })
       } else if (type === 'parking') {
-        let newFiltered;
-        addBusi.forEach(business => {
-          if (!this.state.filtered.includes(business)) {
-            newFiltered = this.state.filtered.push(business)
-          }
+        addBusi.filter(business => {
+          return !that.state.filtered.includes(business)
         })
 
         this.setState({
-          filtered: newFiltered,
+          filtered: addBusi,
           parking: 'active'
         })
       }
@@ -151,6 +184,7 @@ export default class BusinessIndex extends React.Component {
       this.state.take_out === 'active' ||
       this.state.parking === 'active'
     ) {
+      
       selectedBusinesses = this.state.filtered;
     } else {
       selectedBusinesses = businesses;
