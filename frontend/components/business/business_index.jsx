@@ -50,9 +50,12 @@ export default class BusinessIndex extends React.Component {
 
     if (!$(`.${type}`).hasClass('toggled')) {
       priceTag.classList.add('toggled')
+      let addFilter = addBusi.filter(business => {
+        return !that.state.filtered.includes(business)
+      })
 
       this.setState({
-        filtered: this.state.filtered.concat(addBusi),
+        filtered: this.state.filtered.concat(addFilter),
         priceArr: this.state.priceArr.concat(type)
       })
     } else {
@@ -112,9 +115,9 @@ export default class BusinessIndex extends React.Component {
       // let that = this;
       
       if (type === 'reservation') {
-        addBusi.filter(business => {
-          return !that.state.filtered.includes(business)
-        })
+        // addBusi.filter(business => {
+        //   return !that.state.filtered.includes(business)
+        // })
 
         this.setState({
           filtered: addBusi,
