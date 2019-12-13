@@ -20,7 +20,15 @@ export default class BusinessIndex extends React.Component {
     e.preventDefault();
 
     let addBusi = this.props.businesses.filter(business => {
-      return business.price_range === type
+      if (type === 'reservation') {
+        return business.reservation === 'Yes'
+      } else if (type === 'takeout') {
+        return business.take_out === 'Yes'
+      } else if (type === 'parking') {
+        return business.parking === 'Yes'
+      } else {
+        return business.price_range === type
+      }
     })
     let removeBusi = this.state.filtered.filter(business => {
       return !addBusi.includes(business)
@@ -125,18 +133,18 @@ export default class BusinessIndex extends React.Component {
                     $$$$
                   </button>
                 </div>
-                <div className="reservation">
-                  <button className="filter-btn">
+                <div>
+                  <button className="reservation">
                     Reservation
                   </button>
                 </div>
-                <div className="takeout">
-                  <button className="filter-btn">
+                <div>
+                  <button className="take_out">
                     Takeout
                   </button>
                 </div>
-                <div className="stable">
-                  <button className="filter-btn">
+                <div>
+                  <button className="parking">
                     Stable
                   </button>
                 </div>
