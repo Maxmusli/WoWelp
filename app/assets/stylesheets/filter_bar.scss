@@ -25,6 +25,12 @@
     color: white;
     @include easeOut();
   }
+
+  &.toggled {
+    background-color: rgb(143, 30, 13);
+    border: #f8b700 1px solid;
+    color: white;
+  }
 }
 
 .price-range {
