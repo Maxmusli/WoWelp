@@ -94,15 +94,6 @@ export default class BusinessIndex extends React.Component {
         }
       })
     }
-    // let addBusi = this.props.businesses.filter(business => {
-    //   if (type === 'reservation') {
-    //     return business.reservation === 'Yes';
-    //   } else if (type === 'take_out') {
-    //     return business.take_out === 'Yes';
-    //   } else if (type === 'parking') {
-    //     return business.parking === 'Yes';
-    //   }
-    // })
     
     let removeBusi = this.state.filtered.filter(business => {
       return !addBusi.includes(business);
