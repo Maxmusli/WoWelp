@@ -96,7 +96,7 @@ export default class BusinessIndex extends React.Component {
       } else if (type === 'parking') {
         let newFiltered;
         addBusi.forEach(business => {
-          if (!filtered.includes(business)) {
+          if (!this.state.filtered.includes(business)) {
             newFiltered = this.state.filtered.push(business)
           }
         })
