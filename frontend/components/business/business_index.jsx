@@ -15,7 +15,8 @@ export default class BusinessIndex extends React.Component {
       parking: 'inactive',
     }
 
-    this.handlePrice = this.handlePrice.bind(this)
+    this.handlePrice = this.handlePrice.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
   }
 
   handlePrice(e, type) {
@@ -52,18 +53,18 @@ export default class BusinessIndex extends React.Component {
 
     let addBusi = this.props.businesses.filter(business => {
       if (type === 'reservation') {
-        return business.reservation === 'Yes'
+        return business.reservation === 'Yes';
       } else if (type === 'take_out') {
-        return business.take_out === 'Yes'
+        return business.take_out === 'Yes';
       } else if (type === 'parking') {
-        return business.parking === 'Yes'
+        return business.parking === 'Yes';
       }
     })
     let removeBusi = this.state.filtered.filter(business => {
-      return !addBusi.includes(business)
+      return !addBusi.includes(business);
     })
 
-    const priceTag = document.querySelector(`.${type}`)
+    const priceTag = document.querySelector(`.${type}`);
 
     if (!$(`.${type}`).hasClass('toggled')) {
       priceTag.classList.add('toggled')
@@ -71,7 +72,7 @@ export default class BusinessIndex extends React.Component {
       if (type === 'reservation') {
         let newFiltered;
         addBusi.forEach(business => {
-          if (!filtered.includes(business)) {
+          if (!this.state.filtered.includes(business)) {
             newFiltered = this.state.filtered.push(business)
           }
         })
@@ -83,7 +84,7 @@ export default class BusinessIndex extends React.Component {
       } else if (type === 'take_out') {
         let newFiltered;
         addBusi.forEach(business => {
-          if (!filtered.includes(business)) {
+          if (!this.state.filtered.includes(business)) {
             newFiltered = this.state.filtered.push(business)
           }
         })
@@ -144,13 +145,17 @@ export default class BusinessIndex extends React.Component {
 
     let selectedBusinesses;
 
-    if (this.state.priceArr.length > 0) {
+    if (
+      this.state.priceArr.length > 0 || 
+      this.state.reservation === 'active' || 
+      this.state.take_out === 'active' ||
+      this.state.parking === 'active'
+    ) {
       selectedBusinesses = this.state.filtered;
     } else {
       selectedBusinesses = businesses;
     }
 
-    
     return (
       <div>
         <div>
@@ -209,7 +214,7 @@ export default class BusinessIndex extends React.Component {
                 <div>
                   <button 
                     className="reservation"
-                    // onClick={e => this.handlePrice(e, 'reservation')}
+                    onClick={e => this.handleFilter(e, 'reservation')}
                   >
                     Reservation
                   </button>
@@ -217,7 +222,7 @@ export default class BusinessIndex extends React.Component {
                 <div>
                   <button 
                     className="take_out" 
-                    // onClick={e => this.handlePrice(e, 'take_out')}
+                    onClick={e => this.handleFilter(e, 'take_out')}
                   >
                     Takeout
                   </button>
@@ -225,7 +230,7 @@ export default class BusinessIndex extends React.Component {
                 <div>
                   <button 
                     className="parking"
-                    // onClick={e => this.handlePrice(e, 'parking')}
+                    onClick={e => this.handleFilter(e, 'parking')}
                   >
                     Stable
                   </button>
