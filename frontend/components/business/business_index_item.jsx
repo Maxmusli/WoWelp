@@ -15,6 +15,18 @@ class BusinessIndexItem extends React.Component {
     this.props.history.push(`/search/${businessId}`)
   }
 
+  handlePrice() {
+    if (this.props.business.price_range === 'cheap') {
+      return '$';
+    } else if (this.props.business.price_range === 'medium') {
+      return '$$';
+    } else if (this.props.business.price_range === 'expensive') {
+      return '$$$';
+    } else if (this.props.business.price_range === 'luxury') {
+      return '$$$$';
+    }
+  }
+
   render() {
     const { 
       description, pictureUrls, name, phone, category, sub_category, 
@@ -42,7 +54,7 @@ class BusinessIndexItem extends React.Component {
               </div>
               <div className="business-category">
                 <div>
-                  {price_range}
+                  {this.handlePrice()}
                 </div>
                 <div>
                   {category}

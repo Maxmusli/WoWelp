@@ -12,6 +12,18 @@ class BusinessDetail extends Component {
     fetchBusiness(this.props.match.params.businessId)
   }
 
+  handlePrice() {
+    if (this.props.business.price_range === 'cheap') {
+      return '$';
+    } else if (this.props.business.price_range === 'medium') {
+      return '$$';
+    } else if (this.props.business.price_range === 'expensive') {
+      return '$$$';
+    } else if (this.props.business.price_range === 'luxury') {
+      return '$$$$';
+    }
+  }
+
   render() {
     const {
       description, pictureUrls, name, phone, category, sub_category,
@@ -57,7 +69,7 @@ class BusinessDetail extends Component {
                   </div>
                   <div className="business-category">
                     <div>
-                      {price_range}
+                      {this.handlePrice()}
                     </div>
                     <div>
                       {category}
