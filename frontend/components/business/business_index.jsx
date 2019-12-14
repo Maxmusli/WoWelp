@@ -47,20 +47,23 @@ export default class BusinessIndex extends React.Component {
     })
 
     const priceTag = document.querySelector(`.${type}`)
-
+    console.log(this.state.filtered)
     if (!$(`.${type}`).hasClass('toggled')) {
       priceTag.classList.add('toggled')
       let addFilter = addBusi.filter(business => {
-        return !that.state.filtered.includes(business)
+        // debugger
+        // return !that.state.filtered.includes(business)
+        return business.price_range === type
       })
-
+      console.log(addFilter)
+      console.log(type)
       this.setState({
-        filtered: this.state.filtered.concat(addFilter),
+        filtered: addFilter,
         priceArr: this.state.priceArr.concat(type)
       })
     } else {
       priceTag.classList.remove('toggled')
-
+      console.log(addBusi)
       this.setState({
         filtered: removeBusi,
         priceArr: this.state.priceArr.slice(0, -1)
@@ -94,6 +97,7 @@ export default class BusinessIndex extends React.Component {
         }
       })
     }
+    console.log(addBusi)
     
     let removeBusi = this.state.filtered.filter(business => {
       return !addBusi.includes(business);
