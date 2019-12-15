@@ -37,12 +37,9 @@ export default class BusinessIndex extends React.Component {
         return business.price_range === type;
       }) 
     }
-    // let addBusi = this.props.businesses.filter(business => {
-    //   return business.price_range === type;
-    // })
 
 
-    let removeBusi = this.state.filtered.filter(business => {
+    let removeBusi = this.state.filtered.filter(business => {``
       return !addBusi.includes(business)
     })
 
