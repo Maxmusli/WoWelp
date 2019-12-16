@@ -48,8 +48,6 @@ export default class BusinessIndex extends React.Component {
     if (!$(`.${type}`).hasClass('toggled')) {
       priceTag.classList.add('toggled')
       let addFilter = addBusi.filter(business => {
-        // debugger
-        // return !that.state.filtered.includes(business)
         return business.price_range === type
       })
       console.log(addFilter)
@@ -107,9 +105,6 @@ export default class BusinessIndex extends React.Component {
       // let that = this;
       
       if (type === 'reservation') {
-        // addBusi.filter(business => {
-        //   return !that.state.filtered.includes(business)
-        // })
 
         this.setState({
           filtered: addBusi,
