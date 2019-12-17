@@ -68,17 +68,17 @@ export default class BusinessIndex extends React.Component {
     this.props.businesses.map(business => {
       if (filterAttrs.every(
         sub => {
-          if (sub === 'cheap') {
-            business[price_rang] === 'cheap'
-          } else if (sub === 'medium') {
-            business[price_rang] === 'medium'
-          } else if (sub === 'expensive') {
-            business[price_rang] === 'expensive'
-          } else if (sub === 'luxury') {
-            business[price_rang] === 'luxury'
-          } else {
+          // if (sub === 'cheap') {
+          //   business['price_range'] === sub
+          // } else if (sub === 'medium') {
+          //   business['price_range'] === sub
+          // } else if (sub === 'expensive') {
+          //   business['price_range'] === sub
+          // } else if (sub === 'luxury') {
+          //   business['price_range'] === sub
+          // } else {
             business[sub] === 'Yes'
-          }
+          // }
         })) {
         selectedBusinesses.push(business)
       }
@@ -257,10 +257,7 @@ export default class BusinessIndex extends React.Component {
     let selectedBusinesses;
 
     if (
-      this.state.priceArr.length > 0 || 
-      this.state.reservation === 'active' || 
-      this.state.take_out === 'active' ||
-      this.state.parking === 'active'
+      this.state.attrs.length > 0
     ) {
       
       selectedBusinesses = this.state.filtered;
