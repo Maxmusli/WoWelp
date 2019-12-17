@@ -61,7 +61,7 @@ export default class BusinessIndex extends React.Component {
 
   handleFilter(e, type) {
     e.preventDefault();
-    
+    debugger
     let selectedBusinesses = [];
     let filterAttrs = this.state.attrs.concat(type);
 
