@@ -13,47 +13,100 @@ export default class BusinessIndex extends React.Component {
       reservation: 'inactive',
       take_out: 'inactive',
       parking: 'inactive',
+      attrs: []
     }
 
     this.handlePrice = this.handlePrice.bind(this);
     this.handleFilter = this.handleFilter.bind(this);
   }
 
+  // handleFilter(e, type) {
+  //   e.preventDefault();
+    
+  //   let addBuz;
+  //   let businesses;
+  //   let that = this;
+
+  //   if (localStorage.getItem('first') === null) {
+  //     businesses = that.props.busniesses;
+  //   } else if (localStorage.getItem('second') === null) {
+  //     businesses = JSON.parse(localStorage.getItem('first'))
+  //   } else if (localStorage.getItem('third') === null) {
+  //     businesses = JSON.parse(localStorage.getItem('second'))
+  //   } else if (localStorage.getItem('fourth') === null) {
+  //     businesses = JSON.parse(localStorage.getItem('fourth'))
+  //   } else if (localStorage.getItem('fifth') === null) {
+  //     businesses = JSON.parse(localStorage.getItem('fifth'))
+  //   } else if (localStorage.getItem('sixth') === null) {
+  //     businesses = JSON.parse(localStorage.getItem('sixth'))
+  //   } else if (localStorage.getItem('seventh') === null) {
+  //     businesses = JSON.parse(localStorage.getItem('seventh'))
+  //   }
+
+  //   if (
+  //     type === 'cheap' || 
+  //     type === 'medium' || 
+  //     type === 'expensive' || 
+  //     type === 'luxury'
+  //   ) {
+  //     addBuz = this.props.businesses.filter(business => {
+  //       return business.price_range === type;
+  //     })
+  //   } else {
+  //     addBuz = this.props.businesses.filter(business => {
+  //       return business.type === 'Yes';
+  //     })
+  //   }
+  // }
+
   handleFilter(e, type) {
     e.preventDefault();
     
-    let addBuz;
-    let businesses;
-    let that = this;
+    let selectedBusinesses = [];
+    let filterAttrs = this.state.attrs.concat(type);
 
-    if (localStorage.getItem('first') === null) {
-      businesses = that.props.busniesses;
-    } else if (localStorage.getItem('second') === null) {
-      businesses = JSON.parse(localStorage.getItem('first'))
-    } else if (localStorage.getItem('third') === null) {
-      businesses = JSON.parse(localStorage.getItem('second'))
-    } else if (localStorage.getItem('fourth') === null) {
-      businesses = JSON.parse(localStorage.getItem('fourth'))
-    } else if (localStorage.getItem('fifth') === null) {
-      businesses = JSON.parse(localStorage.getItem('fifth'))
-    } else if (localStorage.getItem('sixth') === null) {
-      businesses = JSON.parse(localStorage.getItem('sixth'))
-    } else if (localStorage.getItem('seventh') === null) {
-      businesses = JSON.parse(localStorage.getItem('seventh'))
-    }
-    
-    if (
-      type === 'cheap' || 
-      type === 'medium' || 
-      type === 'expensive' || 
-      type === 'luxury'
-    ) {
-      addBuz = this.props.businesses.filter(business => {
-        return business.price_range === type;
+    this.props.businesses.map(business => {
+      if (filterAttrs.every(
+        sub => {
+          if (sub === 'cheap') {
+            business[price_rang] === 'cheap'
+          } else if (sub === 'medium') {
+            business[price_rang] === 'medium'
+          } else if (sub === 'expensive') {
+            business[price_rang] === 'expensive'
+          } else if (sub === 'luxury') {
+            business[price_rang] === 'luxury'
+          } else {
+            business[sub] === 'Yes'
+          }
+        })) {
+        selectedBusinesses.push(business)
+      }
+    })
+
+    let removeBusi = this.state.filtered.filter(business => {
+      return !selectedBusinesses.includes(business);
+    })
+
+    let removeAttr = this.state.attrs.filter(attr => {
+      return attr !== type;
+    })
+
+    const priceTag = document.querySelector(`.${type}`)
+    if (!$(`.${type}`).hasClass('toggled')) {
+      priceTag.classList.add('toggled')
+      // let addFilter = selectedBusinesses.filter(business => {
+      //   return business.price_range === type
+      // })
+      this.setState({
+        filtered: this.state.filtered.concat(selectedBusinesses),
+        attrs: filterAttrs
       })
     } else {
-      addBuz = this.props.businesses.filter(business => {
-        return business.type === 'Yes';
+      priceTag.classList.remove('toggled')
+      this.setState({
+        filtered: removeBusi,
+        attrs: removeAttr
       })
     }
   }
