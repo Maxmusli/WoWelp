@@ -19,6 +19,45 @@ export default class BusinessIndex extends React.Component {
     this.handleFilter = this.handleFilter.bind(this);
   }
 
+  handleFilter(e, type) {
+    e.preventDefault();
+    
+    let addBuz;
+    let businesses;
+    let that = this;
+
+    if (localStorage.getItem('first') === null) {
+      businesses = that.props.busniesses;
+    } else if (localStorage.getItem('second') === null) {
+      businesses = JSON.parse(localStorage.getItem('first'))
+    } else if (localStorage.getItem('third') === null) {
+      businesses = JSON.parse(localStorage.getItem('second'))
+    } else if (localStorage.getItem('fourth') === null) {
+      businesses = JSON.parse(localStorage.getItem('fourth'))
+    } else if (localStorage.getItem('fifth') === null) {
+      businesses = JSON.parse(localStorage.getItem('fifth'))
+    } else if (localStorage.getItem('sixth') === null) {
+      businesses = JSON.parse(localStorage.getItem('sixth'))
+    } else if (localStorage.getItem('seventh') === null) {
+      businesses = JSON.parse(localStorage.getItem('seventh'))
+    }
+    
+    if (
+      type === 'cheap' || 
+      type === 'medium' || 
+      type === 'expensive' || 
+      type === 'luxury'
+    ) {
+      addBuz = this.props.businesses.filter(business => {
+        return business.price_range === type;
+      })
+    } else {
+      addBuz = this.props.businesses.filter(business => {
+        return business.type === 'Yes';
+      })
+    }
+  }
+
   handlePrice(e, type) {
     e.preventDefault();
     let that = this;
@@ -62,89 +101,89 @@ export default class BusinessIndex extends React.Component {
     }
   }
 
-  handleFilter(e, type) {
-    e.preventDefault();
-    let that = this;
-    let addBusi;
+  // handleFilter(e, type) {
+  //   e.preventDefault();
+  //   let that = this;
+  //   let addBusi;
 
-    if (that.state.priceArr.length > 0) {
-      addBusi = that.state.filtered.filter(business => {
-        if (type === 'reservation') {
-          return business.reservation === 'Yes';
-        } else if (type === 'take_out') {
-          return business.take_out === 'Yes';
-        } else if (type === 'parking') {
-          return business.parking === 'Yes';
-        }
-      })
-    } else {
-      addBusi = this.props.businesses.filter(business => {
-        if (type === 'reservation') {
-          return business.reservation === 'Yes';
-        } else if (type === 'take_out') {
-          return business.take_out === 'Yes';
-        } else if (type === 'parking') {
-          return business.parking === 'Yes';
-        }
-      })
-    }
-    console.log(addBusi)
+  //   if (that.state.priceArr.length > 0) {
+  //     addBusi = that.state.filtered.filter(business => {
+  //       if (type === 'reservation') {
+  //         return business.reservation === 'Yes';
+  //       } else if (type === 'take_out') {
+  //         return business.take_out === 'Yes';
+  //       } else if (type === 'parking') {
+  //         return business.parking === 'Yes';
+  //       }
+  //     })
+  //   } else {
+  //     addBusi = this.props.businesses.filter(business => {
+  //       if (type === 'reservation') {
+  //         return business.reservation === 'Yes';
+  //       } else if (type === 'take_out') {
+  //         return business.take_out === 'Yes';
+  //       } else if (type === 'parking') {
+  //         return business.parking === 'Yes';
+  //       }
+  //     })
+  //   }
+  //   console.log(addBusi)
     
-    let removeBusi = this.state.filtered.filter(business => {
-      return !addBusi.includes(business);
-    })
+  //   let removeBusi = this.state.filtered.filter(business => {
+  //     return !addBusi.includes(business);
+  //   })
 
-    const priceTag = document.querySelector(`.${type}`);
+  //   const priceTag = document.querySelector(`.${type}`);
 
-    if (!$(`.${type}`).hasClass('toggled')) {
-      priceTag.classList.add('toggled')
-      // let that = this;
+  //   if (!$(`.${type}`).hasClass('toggled')) {
+  //     priceTag.classList.add('toggled')
+  //     // let that = this;
       
-      if (type === 'reservation') {
+  //     if (type === 'reservation') {
 
-        this.setState({
-          filtered: addBusi,
-          reservation: 'active'
-        })
-      } else if (type === 'take_out') {
-        addBusi.filter(business => {
-          return !that.state.filtered.includes(business)
-        })
+  //       this.setState({
+  //         filtered: addBusi,
+  //         reservation: 'active'
+  //       })
+  //     } else if (type === 'take_out') {
+  //       addBusi.filter(business => {
+  //         return !that.state.filtered.includes(business)
+  //       })
 
-        this.setState({
-          filtered: addBusi,
-          take_out: 'active'
-        })
-      } else if (type === 'parking') {
-        addBusi.filter(business => {
-          return !that.state.filtered.includes(business)
-        })
+  //       this.setState({
+  //         filtered: addBusi,
+  //         take_out: 'active'
+  //       })
+  //     } else if (type === 'parking') {
+  //       addBusi.filter(business => {
+  //         return !that.state.filtered.includes(business)
+  //       })
 
-        this.setState({
-          filtered: addBusi,
-          parking: 'active'
-        })
-      }
-    } else {
-      priceTag.classList.remove('toggled')
-      if (type === 'reservation') {
-        this.setState({
-          filtered: removeBusi,
-          reservation: 'inactive'
-        })
-      } else if (type === 'take_out') {
-        this.setState({
-          filtered: removeBusi,
-          take_out: 'inactive'
-        })
-      } else if (type === 'parking') {
-        this.setState({
-          filtered: removeBusi,
-          parking: 'inactive'
-        })
-      }
-    }
-  }
+  //       this.setState({
+  //         filtered: addBusi,
+  //         parking: 'active'
+  //       })
+  //     }
+  //   } else {
+  //     priceTag.classList.remove('toggled')
+  //     if (type === 'reservation') {
+  //       this.setState({
+  //         filtered: removeBusi,
+  //         reservation: 'inactive'
+  //       })
+  //     } else if (type === 'take_out') {
+  //       this.setState({
+  //         filtered: removeBusi,
+  //         take_out: 'inactive'
+  //       })
+  //     } else if (type === 'parking') {
+  //       this.setState({
+  //         filtered: removeBusi,
+  //         parking: 'inactive'
+  //       })
+  //     }
+  //   }
+  // }
   
   componentDidMount() {
     window.scrollTo(0, 0);
