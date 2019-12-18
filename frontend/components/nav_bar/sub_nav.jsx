@@ -13,7 +13,8 @@ class NavBar extends React.Component {
       near: this.props.near,
     };
 
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInput(type) {
@@ -35,6 +36,25 @@ class NavBar extends React.Component {
       menuNav.classList.remove('show');
       navItems.forEach(item => item.classList.remove('show'));
     }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    let find = this.state.find.split(' ').join('-');
+    // let near = this.state.near.split(' ').join('-');
+    let near;
+    if (!this.state.near) {
+      near = 'Dalaran';
+    } else {
+      near = this.state.near.split(' ').join('-');
+    }
+
+    this.props.changeFilter('near', near)
+      .then(() => {
+        this.props.changeFilter('find', this.state.find)
+          .then(() => { this.props.history.push(`/search?find=${find}&near=${near}`) })
+      });
   }
 
   render() {
@@ -91,9 +111,9 @@ class NavBar extends React.Component {
                 <div>
                   <input className="input-body"
                     type="text"
-                    onChange={this.handleInput('searchBody')}
-                    value={this.state.searchBody}
-                    placeholder="beer, ramen, blacksmithing, action house..."
+                    onChange={this.handleInput('find')}
+                    value={this.state.find}
+                    placeholder="beer, inn, blacksmithing, action house..."
                   />
                 </div>
                 <div className="split-line"></div>
@@ -110,7 +130,7 @@ class NavBar extends React.Component {
               </div>
               <div className="search-btn-wrapper">
                 <button className="search-btn"
-                  // onClick={}
+                  onClick={this.handleSubmit}
                 >
                   <i className="fas fa-search"></i>
                 </button>
