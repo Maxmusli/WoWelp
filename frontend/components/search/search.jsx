@@ -12,6 +12,7 @@ class Search extends React.Component {
     };
 
     this.handleFilter = this.handleFilter.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInput(type) {
@@ -34,6 +35,25 @@ class Search extends React.Component {
       });
   };
 
+  handleSubmit(e) {
+    e.preventDefault();
+
+    let find = this.state.find.split(' ').join('-');
+    // let near = this.state.near.split(' ').join('-');
+    let near;
+    if (!this.state.near) {
+      near = 'Dalaran';
+    } else {
+      near = this.state.near.split(' ').join('-');
+    }
+
+    this.props.changeFilter('near', near)
+      .then(() => {
+        this.props.changeFilter('find', this.state.find)
+          .then(() => { this.props.history.push(`/search?find=${find}&near=${near}`) })
+      });
+  }
+
   render() {
     
     return (
@@ -44,9 +64,9 @@ class Search extends React.Component {
             <div>
               <input className="input-body" 
                 type="text"
-                onChange={this.handleInput('searchBody')}
-                value={this.state.searchBody}
-                placeholder= "beer, ramen, blacksmithing, action house..."
+                onChange={this.handleInput('find')}
+                value={this.state.find}
+                placeholder= "beer, inn, blacksmithing, action house..."
               />
             </div>
             <div className="split-line"></div>
@@ -62,7 +82,10 @@ class Search extends React.Component {
             </div>
           </div>
           <div className="search-btn-wrapper">
-            <button className="search-btn" type="submit">
+            <button 
+              className="search-btn"
+              onClick={this.handleSubmit}
+            >
               <i className="fas fa-search"></i>
             </button>
           </div>

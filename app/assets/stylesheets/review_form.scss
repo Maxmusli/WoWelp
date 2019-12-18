@@ -125,14 +125,16 @@
     // padding: 14px 20px 13px;
     background-color: #D79D0E;
     width: 8%;
-    margin-right: 12px;;
+    margin-right: 12px;
 
     .search-btn {
       background-color: #D79D0E;
       border: none;
+      border-radius: 0 4px 4px 0;
       font-size: 18px;
       color: rgba(12, 8, 5, 0.7);
-
+      cursor: pointer;
+      width: 100%;
     }
   }
 }

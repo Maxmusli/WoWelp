@@ -197,11 +197,13 @@
   width: 8%;
 
   .search-btn {
+    cursor: pointer;
     background-color: #D79D0E;
     border: none;
+    border-radius: 0 4px 4px 0;
     font-size: 22px;
     color: rgba(12, 8, 5, 0.7);
-
+    width: 100%;
   }
 }
 
