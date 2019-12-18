@@ -81,11 +81,11 @@ class SubNavCategories extends Component {
               </a >
               <div className="dropdown-content">
                 <a onClick={e => this.handleFilter(e, 'Bars')}>
-                  <i className="fas fa-beer"></i>
+                  {/* <i className="fas fa-beer"></i> */}
                   <p>Bars</p> 
                 </a>
                 <a onClick={e => this.handleFilter(e, 'Inn')}>
-                  <i className="fas fa-home"></i>
+                  {/* <i className="fas fa-home"></i> */}
                   <p>Inn</p> 
                 </a>
               </div>
