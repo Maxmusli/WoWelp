@@ -134,22 +134,22 @@ export default class BusinessIndex extends React.Component {
 
     let selectedBusinesses;
 
-    if (
-      this.state.attrs.length > 0 
-    ) {
-      
-      selectedBusinesses = this.state.filtered;
-    } else {
-      selectedBusinesses = businesses;
-    }
     // if (
-    //   this.state.priceArr.length > 0 
+    //   this.state.attrs.length > 0 
     // ) {
       
     //   selectedBusinesses = this.state.filtered;
     // } else {
     //   selectedBusinesses = businesses;
     // }
+    if (
+      this.state.priceArr.length > 0 
+    ) {
+      
+      selectedBusinesses = this.state.filtered;
+    } else {
+      selectedBusinesses = businesses;
+    }
 
     return (
       <div>
