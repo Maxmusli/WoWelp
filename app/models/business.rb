@@ -31,6 +31,13 @@ class Business < ApplicationRecord
 
   has_many_attached :pictures
 
+  def self.in_bounds(bounds)
+    self.where("lat < ?", bounds[:northEast][:lat])
+      .where("lat > ?", bounds[:southWest][:lat])
+      .where("lng > ?", bounds[:southWest][:lng])
+      .where("lng < ?", bounds[:northEast][:lng])
+  end
+
   def self.near_location(location)
     Business.where(
       "lower(city) LIKE ? or lower(address) LIKE ?", 
