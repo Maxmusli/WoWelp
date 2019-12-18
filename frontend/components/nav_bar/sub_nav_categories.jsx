@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 class SubNavCategories extends Component {
   constructor(props) {
@@ -148,20 +148,12 @@ class SubNavCategories extends Component {
             </div>
 
             <div className="category">
-              <a href="">
-                <div className="header-wrapper">
-                  <i className="fas fa-feather-alt"></i>
-                  <h3>Write a Review</h3>
-                </div>
-              </a>
-            </div>
-            <div className="category">
-              <a href="">
+              <Link to='/underconstruction'>
                 <div className="header-wrapper business">
                   <i className="fas fa-briefcase"></i>
                   <h3>For Businesses</h3>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

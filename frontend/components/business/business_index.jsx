@@ -2,17 +2,19 @@ import React from 'react';
 import BusinessIndexItem from './business_index_item';
 import SubNavContainer from '../nav_bar/sub_nav_container';
 import FooterNav from '../nav_bar/footer_nav';
+import { selectBusiness } from '../../reducers/selectors';
 
 export default class BusinessIndex extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
+      initial: this.props.businesses,
       filtered: [],
       priceArr: [],
-      reservation: 'inactive',
-      take_out: 'inactive',
-      parking: 'inactive',
+      // reservation: 'inactive',
+      // take_out: 'inactive',
+      // parking: 'inactive',
       attrs: []
     }
 
@@ -22,7 +24,7 @@ export default class BusinessIndex extends React.Component {
 
   handleFilter(e, type) {
     e.preventDefault();
-    debugger
+    
     let selectedBusinesses = [];
     let filterAttrs = this.state.attrs.concat(type);
 
@@ -67,7 +69,7 @@ export default class BusinessIndex extends React.Component {
     } else {
       priceTag.classList.remove('toggled')
       this.setState({
-        filtered: removeBusi,
+        filtered: selectedBusinesses,
         attrs: removeAttr
       })
     }
@@ -134,22 +136,23 @@ export default class BusinessIndex extends React.Component {
 
     let selectedBusinesses;
 
-    // if (
-    //   this.state.attrs.length > 0 
-    // ) {
-      
-    //   selectedBusinesses = this.state.filtered;
-    // } else {
-    //   selectedBusinesses = businesses;
-    // }
     if (
-      this.state.priceArr.length > 0 
+      this.state.attrs.length > 0 ||
+      this.state.priceArr.length > 0
     ) {
       
       selectedBusinesses = this.state.filtered;
     } else {
       selectedBusinesses = businesses;
     }
+    // if (
+    //   this.state.priceArr.length > 0 
+    // ) {
+      
+    //   selectedBusinesses = this.state.filtered;
+    // } else {
+    //   selectedBusinesses = businesses;
+    // }
 
     return (
       <div>
