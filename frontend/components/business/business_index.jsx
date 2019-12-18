@@ -22,25 +22,24 @@ export default class BusinessIndex extends React.Component {
 
   handleFilter(e, type) {
     e.preventDefault();
-    // debugger
+    debugger
     let selectedBusinesses = [];
     let filterAttrs = this.state.attrs.concat(type);
 
     this.props.businesses.map(business => {
       if (filterAttrs.every(
         sub => {
-          if (sub === 'cheap') {
-            debugger
-            business['price_range'] === sub
-          } else if (sub === 'medium') {
-            business['price_range'] === sub
-          } else if (sub === 'expensive') {
-            business['price_range'] === sub
-          } else if (sub === 'luxury') {
-            business['price_range'] === sub
-          } else {
-            business[sub] === 'Yes'
-          }
+          // if (sub === 'cheap') {
+          //   business['price_range'] === sub
+          // } else if (sub === 'medium') {
+          //   business['price_range'] === sub
+          // } else if (sub === 'expensive') {
+          //   business['price_range'] === sub
+          // } else if (sub === 'luxury') {
+          //   business['price_range'] === sub
+          // } else {
+            return business[sub] === 'Yes'
+          // }
         })) {
         // console.log('true')
         selectedBusinesses.push(business)
@@ -62,7 +61,7 @@ export default class BusinessIndex extends React.Component {
       //   return business.price_range === type
       // })
       this.setState({
-        filtered: this.state.filtered.concat(selectedBusinesses),
+        filtered: selectedBusinesses,
         attrs: filterAttrs
       })
     } else {
@@ -135,22 +134,22 @@ export default class BusinessIndex extends React.Component {
 
     let selectedBusinesses;
 
-    // if (
-    //   this.state.attrs.length > 0 
-    // ) {
-      
-    //   selectedBusinesses = this.state.filtered;
-    // } else {
-    //   selectedBusinesses = businesses;
-    // }
     if (
-      this.state.priceArr.length > 0 
+      this.state.attrs.length > 0 
     ) {
       
       selectedBusinesses = this.state.filtered;
     } else {
       selectedBusinesses = businesses;
     }
+    // if (
+    //   this.state.priceArr.length > 0 
+    // ) {
+      
+    //   selectedBusinesses = this.state.filtered;
+    // } else {
+    //   selectedBusinesses = businesses;
+    // }
 
     return (
       <div>
