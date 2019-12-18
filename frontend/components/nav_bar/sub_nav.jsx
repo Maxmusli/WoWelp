@@ -109,7 +109,9 @@ class NavBar extends React.Component {
                 </div>
               </div>
               <div className="search-btn-wrapper">
-                <button className="search-btn">
+                <button className="search-btn"
+                  // onClick={}
+                >
                   <i className="fas fa-search"></i>
                 </button>
               </div>

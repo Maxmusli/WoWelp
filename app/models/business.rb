@@ -33,18 +33,18 @@ class Business < ApplicationRecord
 
   def self.near_location(location)
     Business.where(
-      "city LIKE ? or address LIKE ?", 
-      "%#{location}%", 
-      "%#{location}%"
+      "lower(city) LIKE ? or lower(address) LIKE ?", 
+      "%#{location.downcase}%", 
+      "%#{location.downcase}%"
     )
   end
 
   def self.find_business(category)
     Business.where(
-      "category LIKE ? or sub_category LIKE ? or name LIKE ?",
-      "%#{category}%", 
-      "%#{category}%", 
-      "%#{category}%"
+      "lower(category) LIKE ? or lower(sub_category) LIKE ? or lower(name) LIKE ?",
+      "%#{category.downcase}%", 
+      "%#{category.downcase}%", 
+      "%#{category.downcase}%"
     )
   end
 

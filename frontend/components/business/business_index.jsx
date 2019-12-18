@@ -69,7 +69,7 @@ export default class BusinessIndex extends React.Component {
       if (filterAttrs.every(
         sub => {
           if (sub === 'cheap') {
-            console.log('NOOOOO')
+            debugger
             business['price_range'] === sub
           } else if (sub === 'medium') {
             business['price_range'] === sub
@@ -78,7 +78,7 @@ export default class BusinessIndex extends React.Component {
           } else if (sub === 'luxury') {
             business['price_range'] === sub
           } else {
-            console.log(business[sub] === 'Yes')
+            business[sub] === 'Yes'
           }
         })) {
         // console.log('true')
@@ -258,8 +258,16 @@ export default class BusinessIndex extends React.Component {
 
     let selectedBusinesses;
 
+    // if (
+    //   this.state.attrs.length > 0 
+    // ) {
+      
+    //   selectedBusinesses = this.state.filtered;
+    // } else {
+    //   selectedBusinesses = businesses;
+    // }
     if (
-      this.state.attrs.length > 0
+      this.state.priceArr.length > 0 
     ) {
       
       selectedBusinesses = this.state.filtered;
