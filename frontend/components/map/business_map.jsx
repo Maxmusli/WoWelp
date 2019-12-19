@@ -17,9 +17,11 @@ const mapOptions = {
 
 class BusinessMap extends Component {
   componentDidMount() {
+    
     const map = this.refs.map;
     this.map = new google.maps.Map(map, mapOptions);
-    this.MapMapMarker = new MapMarker(this.map, this.handleMarkerClick.bind(this));
+    this.MapMarker = new MapMarker(this.map, this.handleMarkerClick.bind(this));
+    this.MapMarker.updateMarkers(this.props.businesses);
   }
 
   handleMarkerClick(business) {
@@ -27,7 +29,8 @@ class BusinessMap extends Component {
   }
 
   render() {
-    
+    if (!this.props.businesses) return null;
+
     return (
       <div className="map" ref="map">
         Map

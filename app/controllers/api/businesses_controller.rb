@@ -14,9 +14,9 @@ class Api::BusinessesController < ApplicationController
     end
     
     if near != "" && find != ""
-      busniess = Busniess.near_location(cookies[:near])
+      @business = Business.near_location(cookies[:near])
       @matches = Business.find_business(cookies[:find])
-      @businesses = business.select { |business| @matches.include?(business) }
+      @businesses = @business.select { |business| @matches.include?(business) }
 
       if bound_filter
         @businesses = @businesses.select { |business| bound_filter.include?(business) }
@@ -30,7 +30,7 @@ class Api::BusinessesController < ApplicationController
     elsif near == ""
       @matches = Business.find_business(cookies[:find])
       @businesses = Business.select { |business| @matches.include?(business) }
-      
+
       if bound_filter
         @businesses = @businesses.select { |business| bound_filter.include?(business) }
       end

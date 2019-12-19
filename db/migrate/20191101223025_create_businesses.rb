@@ -10,8 +10,8 @@ class CreateBusinesses < ActiveRecord::Migration[5.2]
       t.string :sub_category
       t.string :description
       t.string :business_hour
-      t.float :latitude
-      t.float :longitude
+      t.float :lat
+      t.float :lng
       t.string :phone, null: false
       t.string :parking
       t.string :take_out
