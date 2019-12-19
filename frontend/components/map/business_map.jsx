@@ -1,23 +1,29 @@
-import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import MapMarker from '../../util/map_marker';
 
-let getCoordsObj = latLng => ({
-  lat: latLng.lat(),
-  lng: latLng.lng()
-});
+// let getCoordsObj = latLng => ({
+//   lat: latLng.lat(),
+//   lng: latLng.lng()
+// });
 
 const mapOptions = {
   center: {
     lat: 37.773972,
     lng: -122.431297
   }, // SF coords
-  zoom: 10
+  zoom: 11
 }
 
-export default class BusinessMap extends Component {
+class BusinessMap extends Component {
   componentDidMount() {
     const map = this.refs.map;
     this.map = new google.maps.Map(map, mapOptions);
+    this.MapMapMarker = new MapMarker(this.map, this.handleMarkerClick.bind(this));
+  }
+
+  handleMarkerClick(business) {
+    this.props.history.push(`businesses/${business.id}`);
   }
 
   render() {
@@ -29,3 +35,5 @@ export default class BusinessMap extends Component {
     )
   }
 }
+
+export default withRouter(BusinessMap)
