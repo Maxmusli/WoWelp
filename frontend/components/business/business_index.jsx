@@ -3,6 +3,7 @@ import BusinessIndexItem from './business_index_item';
 import SubNavContainer from '../nav_bar/sub_nav_container';
 import FooterNav from '../nav_bar/footer_nav';
 import { selectBusiness } from '../../reducers/selectors';
+import BusinessMap from '../map/business_map';
 
 export default class BusinessIndex extends React.Component {
   constructor(props) {
@@ -247,7 +248,7 @@ export default class BusinessIndex extends React.Component {
                 ))}
               </div>
               <div className="map">
-                
+                <BusinessMap />
               </div>
             </div>
           </div>
