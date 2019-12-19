@@ -6,16 +6,17 @@
   display: flex;
   min-height: 450px;
   flex-direction: row;
+  justify-content: space-between;
 
-  .map {
-    display: block;
-    position: sticky;
-    border: 1px solid gray;
-    border-radius: 4px;
-    width: 35%;
-    height: 300px;
-    margin-left: 5px;
-  }
+  // .map {
+  //   display: block;
+  //   position: sticky;
+  //   border: 1px solid gray;
+  //   border-radius: 4px;
+  //   width: 35%;
+  //   height: 300px;
+  //   margin-left: 5px;
+  // }
 }
 
 .business-info-wrapper {

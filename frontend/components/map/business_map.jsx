@@ -11,7 +11,7 @@ const mapOptions = {
     lat: 37.773972,
     lng: -122.431297
   }, // SF coords
-  zoom: 13
+  zoom: 10
 }
 
 export default class BusinessMap extends Component {
