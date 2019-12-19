@@ -247,7 +247,7 @@ export default class BusinessIndex extends React.Component {
                   />
                 ))}
               </div>
-              <div className="map">
+              <div className="map-container">
                 <BusinessMap 
                 businesses={selectedBusinesses}
                 
