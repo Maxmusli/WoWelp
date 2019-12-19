@@ -16,13 +16,15 @@ const mapOptions = {
 
 export default class BusinessMap extends Component {
   componentDidMount() {
-    this.map = new google.maps.Map(this.mapNode, mapOptions)
+    const map = this.refs.map;
+    this.map = new google.maps.Map(map, mapOptions);
   }
 
   render() {
+    
     return (
-      <div ref={map => this.mapNode = map}>
-        
+      <div className="map" ref="map">
+        Map
       </div>
     )
   }
