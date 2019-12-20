@@ -29,7 +29,7 @@ class BusinessMap extends Component {
   }
 
   handleMarkerClick(business) {
-    this.props.history.push(`businesses/${business.id}`);
+    this.props.history.push(`search/${business.id}`);
   }
 
   render() {
