@@ -9,6 +9,11 @@ import ReviewListContainer from '../reviews/review_list_container';
 import BusinessMap from '../map/business_map';
 
 class BusinessDetail extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleBack = this.handleBack.bind(this);
+  }
   componentDidMount() {
     fetchBusiness(this.props.match.params.businessId)
   }
@@ -23,6 +28,11 @@ class BusinessDetail extends Component {
     } else if (this.props.business.price_range === 'luxury') {
       return '$$$$';
     }
+  }
+
+  handleBack(e) {
+    e.preventDefault();
+    this.props.history.goBack();
   }
 
   render() {
@@ -140,7 +150,9 @@ class BusinessDetail extends Component {
                   </div>
 
                   <div className="business-index">
-                    <a href="">All Businesses</a>
+                    <a onClick={this.handleBack}>
+                      All Businesses
+                    </a>
                   </div>
                 </div>
               </div>
