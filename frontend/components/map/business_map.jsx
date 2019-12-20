@@ -24,6 +24,10 @@ class BusinessMap extends Component {
     this.MapMarker.updateMarkers(this.props.businesses);
   }
 
+  componentDidUpdate() {
+    this.MapMarker.updateMarkers(this.props.businesses);
+  }
+
   handleMarkerClick(business) {
     this.props.history.push(`businesses/${business.id}`);
   }

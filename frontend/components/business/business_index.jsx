@@ -250,7 +250,7 @@ export default class BusinessIndex extends React.Component {
               <div className="map-container">
                 <BusinessMap 
                 businesses={selectedBusinesses}
-                
+                changeFilter={this.props.changeFilter}
                 />
               </div>
             </div>
