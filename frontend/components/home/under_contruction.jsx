@@ -26,7 +26,7 @@ class UnderConstruction extends Component {
           <div className="under-const-container">
             <div className="under-const-message">
               <p>Under Construction</p>
-              <button>
+              <button onClick={this.handleBack}>
                 <h3>Back</h3>
               </button>
             </div>

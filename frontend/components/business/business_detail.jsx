@@ -91,19 +91,19 @@ class BusinessDetail extends Component {
                     </ReviewLink>
                   </div>
                   <div className="function-btn">
-                    <a>
+                    <Link to='/underconstruction'>
                       Add Photo
-                    </a>
+                    </Link>
                   </div>
                   <div className="function-btn">
-                    <a>
+                    <Link to='/underconstruction'>
                       Share
-                    </a>  
+                    </Link>  
                   </div>
                   <div className="function-btn">
-                    <a>
+                    <Link to='/underconstruction'>
                       Save
-                    </a>  
+                    </Link>  
                   </div>
                 </div>
 
