@@ -7,19 +7,10 @@
   min-height: 450px;
   flex-direction: row;
   justify-content: space-between;
-
-  // .map {
-  //   display: block;
-  //   position: sticky;
-  //   border: 1px solid gray;
-  //   border-radius: 4px;
-  //   width: 35%;
-  //   height: 300px;
-  //   margin-left: 5px;
-  // }
 }
 
 .map-container {
+  width: 300px;
   height: 330px;
   position: sticky;
   top: 10px;

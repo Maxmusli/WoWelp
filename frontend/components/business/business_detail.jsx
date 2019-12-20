@@ -4,8 +4,9 @@ import ReviewFormContainer from '../reviews/review_form_container';
 import { ReviewLink } from '../../util/link_util';
 import { fetchBusiness } from '../../actions/business_actions';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom'
-import ReviewListContainer from '../reviews/review_list_container'
+import { withRouter } from 'react-router-dom';
+import ReviewListContainer from '../reviews/review_list_container';
+import BusinessMap from '../map/business_map';
 
 class BusinessDetail extends Component {
   componentDidMount() {
@@ -120,8 +121,11 @@ class BusinessDetail extends Component {
               </div>
 
               <div className="right-section">
-                <div className="map">
-
+                <div className="map-show-container">
+                  <BusinessMap
+                    businesses={[this.props.business]}
+                    changeFilter={this.props.changeFilter}
+                  />
                 </div>
 
                 <div className="info">
