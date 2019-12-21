@@ -37,12 +37,14 @@ export default class NavBar extends React.Component {
         </div>
         <ul className="menu-nav">
           <li>
-            {/* <Link>About Me</Link> */}
-            <p className="menu-nav-btn">About Me</p>
+            <Link className="topleft" to='/underconstruction'>
+              About Me
+            </Link>
           </li>
           <li>
-            {/* <Link>My Reviews</Link> */}
-            <p className="menu-nav-btn">My Reviews</p>
+            <Link className="topleft" to='/underconstruction'>
+              My Reviews
+            </Link>
           </li>
           <li>
             <button className="menu-nav-btn" onClick={logout}>Log Out</button>
@@ -65,15 +67,15 @@ export default class NavBar extends React.Component {
         <div className="nav-bar">
           <div className="topbar">
             <div className="topleft-wrapper">
-              <a className="topleft" href="">
+              <Link className="topleft" to='/underconstruction'>
                 Write a Review
-              </a>
-              <a className="topleft" href="">
+              </Link>
+              <Link className="topleft" to='/underconstruction'>
                 News
-              </a>
-              <a className="topleft" href="">
+              </Link>
+              <Link className="topleft" to='/underconstruction'>
                 Forum
-              </a>
+              </Link>
             </div>
             {display}
           </div>
