@@ -135,6 +135,8 @@ class BusinessDetail extends Component {
                   <BusinessMap
                     businesses={[this.props.business]}
                     changeFilter={this.props.changeFilter}
+                    find={this.props.find}
+                    near={this.props.near}
                   />
                 </div>
 

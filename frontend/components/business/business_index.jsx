@@ -243,6 +243,8 @@ export default class BusinessIndex extends React.Component {
                 <BusinessMap 
                 businesses={selectedBusinesses}
                 changeFilter={this.props.changeFilter}
+                find={this.props.find}
+                near={this.props.near}
                 />
               </div>
             </div>
