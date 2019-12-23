@@ -5,8 +5,30 @@ import SearchContainer from '../search/search_container';
 export default class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      near: 'Dalaran'
+    };
 
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this);
+    this.handleCity = this.handleCity.bind(this);
+  }
+
+  handleCity(e, city) {
+    e.preventDefault();
+    
+    let location;
+
+    if (!this.props.near) {
+      location = city
+    } else {
+      location = this.props.near
+    }
+
+    this.props.changeFilter('near', location)
+      .then(() => {
+        this.props.changeFilter('find', '')
+          .then(() => { this.props.history.push(`/search?near=${location}`) })
+      })
   }
 
   handleClick(e) {
@@ -67,9 +89,9 @@ export default class NavBar extends React.Component {
         <div className="nav-bar">
           <div className="topbar">
             <div className="topleft-wrapper">
-              <Link className="topleft" to='/underconstruction'>
+              <a className="topleft" onClick={e => this.handleCity(e, this.state.near)}>
                 Write a Review
-              </Link>
+              </a>
               <Link className="topleft" to='/underconstruction'>
                 News
               </Link>

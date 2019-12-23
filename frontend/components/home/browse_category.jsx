@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class BrowseCategory extends React.Component {
   constructor(props) {
@@ -76,10 +76,10 @@ class BrowseCategory extends React.Component {
               </a>
             </li>
             <li className="browse-nav-category">
-              <a className="more-cate" href="">
+              <Link className="more-cate" to='/underconstruction'>
                 <i className="fas fa-ellipsis-h"></i>
                 <h3>More Categories</h3>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
