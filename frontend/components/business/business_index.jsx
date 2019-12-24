@@ -10,12 +10,8 @@ export default class BusinessIndex extends React.Component {
     super(props)
 
     this.state = {
-      // initial: this.props.businesses,
       filtered: [],
       priceArr: [],
-      // reservation: 'inactive',
-      // take_out: 'inactive',
-      // parking: 'inactive',
       attrs: []
     }
 
@@ -27,62 +23,113 @@ export default class BusinessIndex extends React.Component {
     e.preventDefault();
     
     let selectedBusinesses = [];
-    let filterAttrs;
+    let filterAttrs = [];
+    let priceAttrs = [];
+    let businesses;
+
     if (this.state.attrs.includes(type)) {
       filterAttrs = this.state.attrs.filter(attr => {
         return attr !== type;
       })
-    } else {
+    } else if (['reservation', 'take_out', 'parking'].includes(type)) {
+      
       filterAttrs = this.state.attrs.concat(type);
+    } 
+    
+    if (this.state.priceArr.includes(type)) {
+      priceAttrs = this.state.priceArr.filter(attr => {
+        return attr !== type;
+      })
+    } else if (['cheap', 'medium', 'expensive', 'luxury'].includes(type)) {
+      priceAttrs = this.state.priceArr.concat(type);
+    } 
+
+    // if (this.state.filtered.length > 0) {
+    //   businesses = this.state.filtered;
+    // } else {
+      businesses = this.props.businesses
+    // }
+
+    if (this.state.attrs.length > 0 || filterAttrs.length > 0) {
+      businesses.map(business => {
+        if (filterAttrs.every(
+          sub => {
+            return business[sub] === 'Yes'
+          }) && !selectedBusinesses.includes(business)) {
+          selectedBusinesses.push(business)
+        }
+      })
     }
 
-    this.props.businesses.map(business => {
-      
-      if (filterAttrs.every(
-        sub => {
-            return business[sub] === 'Yes'
-        })) {
-        // console.log('true')
-        selectedBusinesses.push(business)
-      }
-    })
+    if (this.state.priceArr.length > 0 || priceAttrs.length > 0) {
+      businesses.map(business => {
+        priceAttrs.forEach(attr => {
+          if (business.price_range === attr && !selectedBusinesses.includes(business)) {
+            selectedBusinesses.push(business)
+          }
+        })
+      })
+    }
 
     const priceTag = document.querySelector(`.${type}`)
     if (!$(`.${type}`).hasClass('toggled')) {
       priceTag.classList.add('toggled')
-     
-      this.setState({
-        filtered: selectedBusinesses,
-        attrs: filterAttrs
-      })
+      
+      if (['reservation', 'take_out', 'parking'].includes(type)) {
+        this.setState({
+          filtered: selectedBusinesses,
+          attrs: filterAttrs
+        })
+      } else {
+        this.setState({
+          filtered: selectedBusinesses,
+          priceArr: priceAttrs
+        })
+      }
     } else {
       priceTag.classList.remove('toggled')
-      
-      this.setState({
-        filtered: selectedBusinesses,
-        attrs: filterAttrs
-      })
+
+      if (['reservation', 'take_out', 'parking'].includes(type)) {
+        this.setState({
+          filtered: selectedBusinesses,
+          attrs: filterAttrs
+        })
+      } else {
+        this.setState({
+          filtered: selectedBusinesses,
+          priceArr: priceAttrs
+        })
+      }
     }
   }
 
   handlePrice(e, type) {
     e.preventDefault();
-    let that = this;
-    let addBusi;
 
-    if (this.state.attrs.length > 0) {
-      addBusi = that.state.filtered.filter(business => {
-        return business.price_range === type;
+    let selectedBusinesses = [];
+    let priceAttrs;
+    let businesses;
+
+    if (this.state.priceArr.includes(type)) {
+      priceAttrs = this.state.priceArr.filter(attr => {
+        return attr !== type;
       })
     } else {
-      addBusi = this.props.businesses.filter(business => {
-        return business.price_range === type;
-      }) 
+      priceAttrs = this.state.priceArr.concat(type);
     }
 
+    if (this.state.attrs.length > 0) {
+      businesses = this.state.filtered;
+    } else {
+      businesses = this.props.businesses
+    }
 
-    let removeBusi = this.state.filtered.filter(business => {
-      return !addBusi.includes(business)
+    businesses.map(business => {
+      priceAttrs.forEach(attr => {
+        if (business.price_range === attr) {
+          selectedBusinesses.push(business)
+        }
+      })
     })
 
     const priceTag = document.querySelector(`.${type}`)
@@ -90,19 +137,19 @@ export default class BusinessIndex extends React.Component {
       priceTag.classList.add('toggled')
 
       this.setState({
-        filtered: this.state.filtered.concat(addBusi),
-        priceArr: this.state.priceArr.concat(type)
+        filtered: selectedBusinesses,
+        priceArr: priceAttrs
       })
     } else {
       priceTag.classList.remove('toggled')
 
       this.setState({
-        filtered: removeBusi,
-        priceArr: this.state.priceArr.slice(0, -1)
+        filtered: selectedBusinesses,
+        priceArr: priceAttrs
       })
     }
   }
-  
+
   componentDidMount() {
     window.scrollTo(0, 0);
     if (this.props.businesses.length === 0) {
@@ -163,25 +210,25 @@ export default class BusinessIndex extends React.Component {
                 <div className="price-range">
                   <button 
                     className="cheap"
-                    onClick={e => this.handlePrice(e, 'cheap')}
+                    onClick={e => this.handleFilter(e, 'cheap')}
                   >
                     $
                   </button>
                   <button 
                     className="medium"
-                    onClick={e => this.handlePrice(e, 'medium')}
+                    onClick={e => this.handleFilter(e, 'medium')}
                   >
                     $$
                   </button>
                   <button
                     className="expensive"
-                    onClick={e => this.handlePrice(e, 'expensive')}
+                    onClick={e => this.handleFilter(e, 'expensive')}
                   >
                     $$$
                   </button>
                   <button 
                     className="luxury"
-                    onClick={e => this.handlePrice(e, 'luxury')}
+                    onClick={e => this.handleFilter(e, 'luxury')}
                   >
                     $$$$
                   </button>
