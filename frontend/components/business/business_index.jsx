@@ -23,8 +23,8 @@ export default class BusinessIndex extends React.Component {
     e.preventDefault();
     
     let selectedBusinesses = [];
-    let filterAttrs = [];
-    let priceAttrs = [];
+    let filterAttrs = this.state.attrs;
+    let priceAttrs = this.state.priceArr;
     let businesses;
 
     if (this.state.attrs.includes(type)) {
@@ -44,11 +44,11 @@ export default class BusinessIndex extends React.Component {
       priceAttrs = this.state.priceArr.concat(type);
     } 
 
-    // if (this.state.filtered.length > 0) {
-    //   businesses = this.state.filtered;
-    // } else {
+    if (filterAttrs.length > 0 && priceAttrs.length > 0) {
+      businesses = this.state.filtered;
+    } else {
       businesses = this.props.businesses
-    // }
+    }
 
     if (this.state.attrs.length > 0 || filterAttrs.length > 0) {
       businesses.map(business => {
@@ -60,7 +60,7 @@ export default class BusinessIndex extends React.Component {
         }
       })
     }
-
+    
     if (this.state.priceArr.length > 0 || priceAttrs.length > 0) {
       businesses.map(business => {
         priceAttrs.forEach(attr => {
@@ -70,7 +70,7 @@ export default class BusinessIndex extends React.Component {
         })
       })
     }
-
+    
     const priceTag = document.querySelector(`.${type}`)
     if (!$(`.${type}`).hasClass('toggled')) {
       priceTag.classList.add('toggled')
