@@ -92,7 +92,7 @@ class SubNavCategories extends Component {
             </div>
             
             <div className="dropdown">
-              <a href="">
+              <a>
                 <div className="header-wrapper">
                   <i className="fas fa-hammer"></i>
                   <h3>Services</h3>
@@ -108,7 +108,7 @@ class SubNavCategories extends Component {
               </div>
             </div>
             <div className="dropdown">
-              <a href="">
+              <a>
                 <div className="header-wrapper">
                   <i className="fas fa-chess-rook"></i>
                   <h3>Cities</h3>
@@ -128,7 +128,7 @@ class SubNavCategories extends Component {
               </div>
             </div>
             <div className="dropdown">
-              <a href="">
+              <a>
                 <div className="header-wrapper">
                   <h3>More</h3>
                   <i className="fas fa-caret-down"></i>
