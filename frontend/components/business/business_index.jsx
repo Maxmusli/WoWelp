@@ -10,7 +10,7 @@ export default class BusinessIndex extends React.Component {
     super(props)
 
     this.state = {
-      initial: this.props.businesses,
+      // initial: this.props.businesses,
       filtered: [],
       priceArr: [],
       // reservation: 'inactive',
@@ -27,51 +27,40 @@ export default class BusinessIndex extends React.Component {
     e.preventDefault();
     
     let selectedBusinesses = [];
-    let filterAttrs = this.state.attrs.concat(type);
+    let filterAttrs;
+    if (this.state.attrs.includes(type)) {
+      filterAttrs = this.state.attrs.filter(attr => {
+        return attr !== type;
+      })
+    } else {
+      filterAttrs = this.state.attrs.concat(type);
+    }
 
     this.props.businesses.map(business => {
+      
       if (filterAttrs.every(
         sub => {
-          // if (sub === 'cheap') {
-          //   business['price_range'] === sub
-          // } else if (sub === 'medium') {
-          //   business['price_range'] === sub
-          // } else if (sub === 'expensive') {
-          //   business['price_range'] === sub
-          // } else if (sub === 'luxury') {
-          //   business['price_range'] === sub
-          // } else {
             return business[sub] === 'Yes'
-          // }
         })) {
         // console.log('true')
         selectedBusinesses.push(business)
       }
     })
 
-    let removeBusi = this.state.filtered.filter(business => {
-      return !selectedBusinesses.includes(business);
-    })
-
-    let removeAttr = this.state.attrs.filter(attr => {
-      return attr !== type;
-    })
-
     const priceTag = document.querySelector(`.${type}`)
     if (!$(`.${type}`).hasClass('toggled')) {
       priceTag.classList.add('toggled')
-      // let addFilter = selectedBusinesses.filter(business => {
-      //   return business.price_range === type
-      // })
+     
       this.setState({
         filtered: selectedBusinesses,
         attrs: filterAttrs
       })
     } else {
       priceTag.classList.remove('toggled')
+      
       this.setState({
         filtered: selectedBusinesses,
-        attrs: removeAttr
+        attrs: filterAttrs
       })
     }
   }
@@ -81,11 +70,7 @@ export default class BusinessIndex extends React.Component {
     let that = this;
     let addBusi;
 
-    if (
-      that.state.reservation === 'active' || 
-      that.state.take_out === 'active' ||
-      that.state.parking === 'active'
-    ) {
+    if (this.state.attrs.length > 0) {
       addBusi = that.state.filtered.filter(business => {
         return business.price_range === type;
       })
@@ -103,15 +88,14 @@ export default class BusinessIndex extends React.Component {
     const priceTag = document.querySelector(`.${type}`)
     if (!$(`.${type}`).hasClass('toggled')) {
       priceTag.classList.add('toggled')
-      let addFilter = addBusi.filter(business => {
-        return business.price_range === type
-      })
+
       this.setState({
-        filtered: this.state.filtered.concat(addFilter),
+        filtered: this.state.filtered.concat(addBusi),
         priceArr: this.state.priceArr.concat(type)
       })
     } else {
       priceTag.classList.remove('toggled')
+
       this.setState({
         filtered: removeBusi,
         priceArr: this.state.priceArr.slice(0, -1)
@@ -223,7 +207,7 @@ export default class BusinessIndex extends React.Component {
                     className="parking"
                     onClick={e => this.handleFilter(e, 'parking')}
                   >
-                    Stable
+                    Parking
                   </button>
                 </div>
               </div>
