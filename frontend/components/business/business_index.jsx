@@ -44,13 +44,35 @@ export default class BusinessIndex extends React.Component {
       priceAttrs = this.state.priceArr.concat(type);
     } 
 
-    if (filterAttrs.length > 0 && priceAttrs.length > 0) {
-      businesses = this.state.filtered;
-    } else {
+    // if (filterAttrs.length > 0 && priceAttrs.length > 0) {
+    //   businesses = this.state.filtered;
+    // } else {
       businesses = this.props.businesses
-    }
+    // }
 
-    if (this.state.attrs.length > 0 || filterAttrs.length > 0) {
+    // if (this.state.priceArr.length > 0 || priceAttrs.length > 0) {
+      businesses.map(business => {
+        
+
+          priceAttrs.forEach(attr => {
+            if (business.price_range === attr && !selectedBusinesses.includes(business)) {
+              if (filterAttrs.every(
+                sub => {
+                  return business[sub] === 'Yes'
+                }
+              )) {
+                selectedBusinesses.push(business)
+              }
+            }
+          })
+      })
+    // }
+    
+    if (
+      (this.state.attrs.length > 0 || filterAttrs.length > 0) &&
+      (priceAttrs.length === 0)
+    ) {
+      debugger
       businesses.map(business => {
         if (filterAttrs.every(
           sub => {
@@ -60,17 +82,7 @@ export default class BusinessIndex extends React.Component {
         }
       })
     }
-    
-    if (this.state.priceArr.length > 0 || priceAttrs.length > 0) {
-      businesses.map(business => {
-        priceAttrs.forEach(attr => {
-          if (business.price_range === attr && !selectedBusinesses.includes(business)) {
-            selectedBusinesses.push(business)
-          }
-        })
-      })
-    }
-    
+
     const priceTag = document.querySelector(`.${type}`)
     if (!$(`.${type}`).hasClass('toggled')) {
       priceTag.classList.add('toggled')
