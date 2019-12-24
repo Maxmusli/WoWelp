@@ -92,12 +92,12 @@ export default class NavBar extends React.Component {
               <a className="topleft" onClick={e => this.handleCity(e, this.state.near)}>
                 Write a Review
               </a>
-              <Link className="topleft" to='/underconstruction'>
-                News
-              </Link>
-              <Link className="topleft" to='/underconstruction'>
-                Forum
-              </Link>
+              <a className="topleft" href='https://github.com/Maxmusli'>
+                Github
+              </a>
+              <a className="topleft" href='https://www.linkedin.com/in/maxmus-li/'>
+                LinkedIn
+              </a>
             </div>
             {display}
           </div>

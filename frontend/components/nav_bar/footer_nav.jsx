@@ -13,10 +13,10 @@ export default class FooterNav extends Component {
             <a href="#!">
               <i className="fab fa-facebook fa-2x"></i>
             </a>
-            <a href="#!">
+            <a href="https://www.linkedin.com/in/maxmus-li/">
               <i className="fab fa-linkedin fa-2x"></i>
             </a>
-            <a href="https://github.com/Maxmusli/WoWelp">
+            <a href="https://github.com/Maxmusli">
               <i className="fab fa-github fa-2x"></i>
             </a>
           </div>
