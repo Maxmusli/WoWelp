@@ -58,6 +58,7 @@ class ReviewForm extends React.Component {
 
   render() {
     const { currentUser, logout } = this.props;
+    let placeholder = "Your review helps others learn about great local businesses. \n \nPlease don’t review this business if you received a freebie for writing this review, or if you’re connected in any way to the owner or employees.";
 
     const display = currentUser ? (
       <div>
@@ -132,7 +133,7 @@ class ReviewForm extends React.Component {
                     rows="10"
                     value={this.state.body} 
                     onChange={this.handleInput('body')}
-                    placeholder="Your review helps others learn about great local businesses. Please don’t review this business if you received a freebie for writing this review, or if you’re connected in any way to the owner or employees."
+                    placeholder={placeholder}
                   />
                 </div>
               </div>

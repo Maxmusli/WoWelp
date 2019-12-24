@@ -2,7 +2,6 @@ import React from 'react';
 import BusinessIndexItem from './business_index_item';
 import SubNavContainer from '../nav_bar/sub_nav_container';
 import FooterNav from '../nav_bar/footer_nav';
-import { selectBusiness } from '../../reducers/selectors';
 import BusinessMap from '../map/business_map';
 
 export default class BusinessIndex extends React.Component {
@@ -15,7 +14,6 @@ export default class BusinessIndex extends React.Component {
       attrs: []
     }
 
-    this.handlePrice = this.handlePrice.bind(this);
     this.handleFilter = this.handleFilter.bind(this);
   }
 
@@ -72,7 +70,7 @@ export default class BusinessIndex extends React.Component {
       (this.state.attrs.length > 0 || filterAttrs.length > 0) &&
       (priceAttrs.length === 0)
     ) {
-      debugger
+      
       businesses.map(business => {
         if (filterAttrs.every(
           sub => {
@@ -112,53 +110,6 @@ export default class BusinessIndex extends React.Component {
           priceArr: priceAttrs
         })
       }
-    }
-  }
-
-  handlePrice(e, type) {
-    e.preventDefault();
-
-    let selectedBusinesses = [];
-    let priceAttrs;
-    let businesses;
-
-    if (this.state.priceArr.includes(type)) {
-      priceAttrs = this.state.priceArr.filter(attr => {
-        return attr !== type;
-      })
-    } else {
-      priceAttrs = this.state.priceArr.concat(type);
-    }
-
-    if (this.state.attrs.length > 0) {
-      businesses = this.state.filtered;
-    } else {
-      businesses = this.props.businesses
-    }
-
-    businesses.map(business => {
-      priceAttrs.forEach(attr => {
-        if (business.price_range === attr) {
-          selectedBusinesses.push(business)
-        }
-      })
-    })
-
-    const priceTag = document.querySelector(`.${type}`)
-    if (!$(`.${type}`).hasClass('toggled')) {
-      priceTag.classList.add('toggled')
-
-      this.setState({
-        filtered: selectedBusinesses,
-        priceArr: priceAttrs
-      })
-    } else {
-      priceTag.classList.remove('toggled')
-
-      this.setState({
-        filtered: selectedBusinesses,
-        priceArr: priceAttrs
-      })
     }
   }
 
