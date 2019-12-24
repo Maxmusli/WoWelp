@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 const Review = ({ review, author, deleteReview }) => {
   const { rating, body, id } = review;
-  debugger
+  
   return (
     <div className="review-wrapper">
       <div className="author-info-wrapper">
