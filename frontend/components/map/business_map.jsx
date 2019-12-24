@@ -24,8 +24,8 @@ class BusinessMap extends Component {
     // let center;
     // let zoom;
     
-    if (this.props.businesses.length >= 1) {
-      debugger
+    if (this.props.businesses.length > 1) {
+      
       let lats = this.props.businesses.map(business => (business.lat));
       let sumLats = lats.reduce((acc, ele) => acc + ele);
       let avgLat = sumLats / this.props.businesses.length;
@@ -36,6 +36,9 @@ class BusinessMap extends Component {
 
       center = { lat: avgLat, lng: avgLng };
       zoom = 11;
+    } else if (this.props.businesses.length === 1) {
+      center = { lat: this.props.businesses[0].lat, lng: this.props.businesses[0].lng };
+      zoom = 15;
     } else {
       if (this.props.near === 'Dalaran') {
        
