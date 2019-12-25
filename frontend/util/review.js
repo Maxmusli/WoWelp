@@ -6,6 +6,14 @@ export const createReview = review => (
   })
 )
 
+export const updateReview = review => (
+  $.ajax({
+    method: 'patch',
+    url: `api/reviews/${review.id}`,
+    data: { review }
+  })
+)
+
 export const removeReview = reviewId => (
   $.ajax({
     method: 'delete',
