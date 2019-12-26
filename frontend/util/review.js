@@ -6,6 +6,13 @@ export const createReview = review => (
   })
 )
 
+export const fetchReview = reviewId => (
+  $.ajax({
+    method: 'get',
+    url: `api/reviews/${reviewId}`
+  })
+)
+
 export const updateReview = review => (
   $.ajax({
     method: 'patch',

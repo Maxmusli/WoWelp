@@ -6,10 +6,7 @@ class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      rating: 5,
-      body: ''
-    }
+    this.state = this.props.review
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.redirectToShow = this.redirectToShow.bind(this);

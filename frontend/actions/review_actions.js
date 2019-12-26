@@ -21,6 +21,13 @@ const updateReview = (review) => ({
   review,
 })
 
+export const fetchReview = reviewId => dispatch => (
+  APIUtil.fetchReview(reviewId)
+    .then(review => (
+      dispatch(receiveReview(review))
+    ))
+);
+
 export const createReview = review => dispatch => (
   APIUtil.createReview(review)
     .then(review => (
