@@ -19,12 +19,13 @@ const mapStateToProps = (state, ownProps) => {
     businessId,
     business,
     currentUser: state.entities.users[state.session.id],
-    review
+    review,
+    formType: 'Post Review'
   })
 };
 
 const mapDispatchToProps = dispatch => ({
-  createReview: review => dispatch(createReview(review)),
+  submitReview: review => dispatch(createReview(review)),
   fetchBusiness: id => dispatch(fetchBusiness(id)),
   logout: () => dispatch(logout()),
 });

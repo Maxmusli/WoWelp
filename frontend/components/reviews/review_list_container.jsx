@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { deleteReview } from '../../actions/review_actions';
 
 const Review = ({ review, author, deleteReview }) => {
   const { rating, body, id } = review;
@@ -22,7 +24,10 @@ const Review = ({ review, author, deleteReview }) => {
           {body}
         </div>
         <div>
-          <button>Edit Review</button>
+          <Link to={`/search/reviews/${id}/edit`}>
+            Edit Review
+          </Link>
+          
         </div>
         <div>
           <button onClick={() => deleteReview(id)}>Delete Review</button>

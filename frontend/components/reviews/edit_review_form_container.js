@@ -1,3 +1,4 @@
+import React from 'react'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchReview, editReview } from '../../actions/review_actions';
@@ -16,14 +17,13 @@ class EditReviewForm extends React.Component {
   }
 
   render() {
-    const { review, formType, submitReview, openModal, authorId } = this.props;
+    const { review, formType, submitReview, authorId } = this.props;
 
     return (
       <ReviewForm
         review={review}
         formType={formType}
         submitReview={submitReview}
-        openModal={openModal}
         authorId={authorId}
       />
     );
@@ -46,13 +46,14 @@ const mapStateToProps = (state, ownProps) => {
     businessId,
     business,
     currentUser: state.entities.users[state.session.id],
-    review
+    review,
+    formType: 'Update Review'
   })
 };
 
 const mapDispatchToProps = dispatch => ({
   fetchReview: reviewId => dispatch(fetchReview(reviewId)),
-  editReview: review => dispatch(editReview(review)),
+  submitReview: review => dispatch(editReview(review)),
   fetchBusiness: id => dispatch(fetchBusiness(id)),
   logout: () => dispatch(logout()),
 });

@@ -43,7 +43,7 @@ class ReviewForm extends React.Component {
     
     const businessId = parseInt(this.props.match.params.businessId);
     const review = Object.assign({}, this.state, { business_id: businessId });
-    this.props.createReview(review);
+    this.props.submitReview(review);
     this.redirectToShow();
   }
 
@@ -135,7 +135,7 @@ class ReviewForm extends React.Component {
                 </div>
               </div>
               <div className="post-review">
-                <input type="submit" value="Post Review" className="btn" />
+                <input type="submit" value={this.props.formType} className="btn" />
               </div>
             </form>
           </div>
