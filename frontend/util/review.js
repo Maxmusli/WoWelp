@@ -14,8 +14,6 @@ export const fetchReview = reviewId => (
 )
 
 export const updateReview = review => {
-  debugger
-
   return (
     $.ajax({
       method: 'patch',

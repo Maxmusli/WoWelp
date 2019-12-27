@@ -18,6 +18,8 @@ class EditReviewForm extends React.Component {
 
   render() {
     const { review, formType, submitReview, business, fetchBusiness } = this.props;
+
+    if (!review) return null;
     
     return (
       <ReviewForm
@@ -37,13 +39,6 @@ const mapStateToProps = (state, ownProps) => {
   const business = selectBusiness(state.entities, businessId);
   const reviewId = parseInt(ownProps.match.params.reviewId);
   const review = state.entities.reviews[reviewId];
-  // debugger
-  // if (state.entities.reviews.length > 0) {
-  //   review = state.entities.reviews.find(review => {
-  //     debugger
-  //     return review.id === ownProps.match.params.reviewId;
-  //   })
-  // }
   
   return ({
     businessId,

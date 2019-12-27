@@ -23,14 +23,15 @@ const Review = ({ review, author, deleteReview, businessId }) => {
         <div className="review-body">
           {body}
         </div>
-        <div>
-          <Link to={`/search/${businessId}/reviews/${id}/edit`}>
-            Edit Review
-          </Link>
-          
-        </div>
-        <div>
-          <button onClick={() => deleteReview(id)}>Delete Review</button>
+        <div className="edit-delete-wrapper">
+          <div>
+            <Link className="edit-review" to={`/search/${businessId}/reviews/${id}/edit`}>
+              Edit Review
+            </Link>
+          </div>
+          <div>
+            <button className="delete-review" onClick={() => deleteReview(id)}>Delete Review</button>
+          </div>
         </div>
       </div>
     </div>
@@ -39,7 +40,8 @@ const Review = ({ review, author, deleteReview, businessId }) => {
 
 const mapStateToProps = ({ entities: { users } }, { review }) => {
   return {
-    author: users[review.author_id]
+    author: users[review.author_id],
+    review
   };
 };
 

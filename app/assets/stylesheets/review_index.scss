@@ -40,3 +40,50 @@
   margin-bottom: 6px;
   color: #f8b700;
 }
+
+.edit-delete-wrapper {
+  display: flex;
+  margin-top: 25px;
+}
+
+.edit-review {
+  display: block;
+  padding: 3px 6px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5em;
+  text-decoration: none;
+  border: 1px solid #8f1a1a;
+  border-radius: 4px;
+  background-color: #581C10;
+  color: #f8b700;
+  cursor: pointer;
+  margin-right: 10px;
+
+  &:hover {
+    background-color: rgb(143, 30, 13);
+    color: white;
+    @include easeOut();
+  }
+}
+
+.delete-review {
+  display: block;
+  padding: 3px 6px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.5em;
+  text-decoration: none;
+  border: 1px solid #8f1a1a;
+  border-radius: 4px;
+  background-color: #581C10;
+  color: #f8b700;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(143, 30, 13);
+    color: white;
+    @include easeOut();
+  }
+}
