@@ -47,6 +47,7 @@ class BusinessDetail extends Component {
           if (review) {
             return (
               <ReviewListContainer
+                businessId={id}
                 review={review}
                 deleteReview={this.props.deleteReview}
                 key={review.id}

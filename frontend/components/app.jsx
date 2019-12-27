@@ -17,7 +17,7 @@ export default () => {
     <div>
       <Switch>
         <ProtectedRoute path="/search/:businessId/review" component={ReviewFormContainer}/>
-        <ProtectedRoute path="/search/reviews/:reviewId/edit" component={EditReviewFormContainer}/>
+        <ProtectedRoute path="/search/:businessId/reviews/:reviewId/edit" component={EditReviewFormContainer}/>
         <Route exact path="/search/:businessId" component={BusinessShowContainer} />
         <Route exact path="/search" component={BusinessIndexContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />

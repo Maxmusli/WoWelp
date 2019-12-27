@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteReview } from '../../actions/review_actions';
 
-const Review = ({ review, author, deleteReview }) => {
+const Review = ({ review, author, deleteReview, businessId }) => {
   const { rating, body, id } = review;
   
   return (
@@ -24,7 +24,7 @@ const Review = ({ review, author, deleteReview }) => {
           {body}
         </div>
         <div>
-          <Link to={`/search/reviews/${id}/edit`}>
+          <Link to={`/search/${businessId}/reviews/${id}/edit`}>
             Edit Review
           </Link>
           

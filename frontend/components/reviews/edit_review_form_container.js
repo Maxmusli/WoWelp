@@ -5,7 +5,7 @@ import { fetchReview, editReview } from '../../actions/review_actions';
 import { selectBusiness } from '../../reducers/selectors';
 import { fetchBusiness } from '../../actions/business_actions';
 import { logout } from '../../actions/session_action'
-import ReviewForm from './edit_review_form';
+import ReviewForm from './review_form';
 
 class EditReviewForm extends React.Component {
   constructor(props) {
@@ -17,14 +17,15 @@ class EditReviewForm extends React.Component {
   }
 
   render() {
-    const { review, formType, submitReview, authorId } = this.props;
-
+    const { review, formType, submitReview, business, fetchBusiness } = this.props;
+    
     return (
       <ReviewForm
         review={review}
         formType={formType}
         submitReview={submitReview}
-        authorId={authorId}
+        business={business}
+        fetchBusiness={fetchBusiness}
       />
     );
   }
@@ -34,14 +35,16 @@ const mapStateToProps = (state, ownProps) => {
 
   const businessId = parseInt(ownProps.match.params.businessId);
   const business = selectBusiness(state.entities, businessId);
-  let review;
-
-  if (state.entities.reviews.lenght > 0) {
-    review = state.entities.reviews.find(review => {
-      return review.id === ownProps.match.params.reviewId;
-    })
-  }
-
+  const reviewId = parseInt(ownProps.match.params.reviewId);
+  const review = state.entities.reviews[reviewId];
+  // debugger
+  // if (state.entities.reviews.length > 0) {
+  //   review = state.entities.reviews.find(review => {
+  //     debugger
+  //     return review.id === ownProps.match.params.reviewId;
+  //   })
+  // }
+  
   return ({
     businessId,
     business,
