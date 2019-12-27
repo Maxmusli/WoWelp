@@ -28,11 +28,6 @@ class ReviewForm extends React.Component {
     }
   }
 
-  componentDidMount() {
-    window.scrollTo(0, 0);
-    this.props.fetchBusiness(this.props.match.params.businessId)
-  }
-
   redirectToShow() {
     const url = `/search/${this.props.match.params.businessId}`
     this.props.history.push(url);

@@ -1,10 +1,38 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { createReview } from '../../actions/review_actions';
 import ReviewForm from './review_form';
 import { selectBusiness } from '../../reducers/selectors';
 import { fetchBusiness } from '../../actions/business_actions';
-import { logout } from '../../actions/session_action'
+import { logout } from '../../actions/session_action';
+
+class CreateReviewForm extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    this.props.fetchBusiness(this.props.match.params.businessId)
+  }
+
+  render() {
+    const { review, formType, submitReview, business, fetchBusiness } = this.props;
+
+    if (!review) return null;
+
+    return (
+      <ReviewForm
+        review={review}
+        formType={formType}
+        submitReview={submitReview}
+        business={business}
+        fetchBusiness={fetchBusiness}
+      />
+    );
+  }
+}
 
 const mapStateToProps = (state, ownProps) => {
 
@@ -33,4 +61,4 @@ const mapDispatchToProps = dispatch => ({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ReviewForm));
+)(CreateReviewForm));

@@ -13,11 +13,12 @@ class EditReviewForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchReview(this.props.match.params.reviewId)
+    window.scrollTo(0, 0);
+    this.props.fetchBusiness(this.props.match.params.businessId)
   }
 
   render() {
-    const { review, formType, submitReview, business, fetchBusiness } = this.props;
+    const { review, formType, submitReview, business, fetchBusiness, fetchReview } = this.props;
 
     if (!review) return null;
     
@@ -28,6 +29,7 @@ class EditReviewForm extends React.Component {
         submitReview={submitReview}
         business={business}
         fetchBusiness={fetchBusiness}
+        fetchReview={fetchReview}
       />
     );
   }
@@ -50,9 +52,9 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  fetchBusiness: id => dispatch(fetchBusiness(id)),
   fetchReview: reviewId => dispatch(fetchReview(reviewId)),
   submitReview: review => dispatch(editReview(review)),
-  fetchBusiness: id => dispatch(fetchBusiness(id)),
   logout: () => dispatch(logout()),
 });
 
