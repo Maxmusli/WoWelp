@@ -43,13 +43,17 @@ class BusinessDetail extends Component {
     } = this.props.business
     
     const reviewList = (reviews) => (
-      reviews.map(review => (
-        <ReviewListContainer
-          review={review}
-          deleteReview={this.props.deleteReview}
-          key={review.id}
-        />
-      ))
+        reviews.map(review => {
+          if (review) {
+            return (
+              <ReviewListContainer
+                review={review}
+                deleteReview={this.props.deleteReview}
+                key={review.id}
+              />
+            )
+          }
+        })
     )
     
     if (!this.props.business.name) return null;
