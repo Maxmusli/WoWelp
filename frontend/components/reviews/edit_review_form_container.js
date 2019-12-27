@@ -36,8 +36,8 @@ const mapStateToProps = (state, ownProps) => {
   const business = selectBusiness(state.entities, businessId);
   let review;
 
-  if (state.entities.review.lenght > 0) {
-    review = state.entities.review.find(review => {
+  if (state.entities.reviews.lenght > 0) {
+    review = state.entities.reviews.find(review => {
       return review.id === ownProps.match.params.reviewId;
     })
   }
