@@ -14,6 +14,7 @@ class BusinessDetail extends Component {
 
     this.handleBack = this.handleBack.bind(this);
   }
+  
   componentDidMount() {
     fetchBusiness(this.props.match.params.businessId)
   }

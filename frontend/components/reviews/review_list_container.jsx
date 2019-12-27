@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteReview } from '../../actions/review_actions';
 
-const Review = ({ review, author, deleteReview, businessId }) => {
-  const { rating, body, id } = review;
+const Review = ({ review, currentUser, deleteReview, businessId }) => {
+  const { rating, body, id, username, author_id } = review;
   
   return (
     <div className="review-wrapper">
@@ -13,7 +13,7 @@ const Review = ({ review, author, deleteReview, businessId }) => {
           picture
         </div>
         <div className="username">
-          {review.username}
+          {username}
         </div>
       </div>
       <div className="review-info-wrapper">
@@ -23,24 +23,30 @@ const Review = ({ review, author, deleteReview, businessId }) => {
         <div className="review-body">
           {body}
         </div>
-        <div className="edit-delete-wrapper">
-          <div>
-            <Link className="edit-review" to={`/search/${businessId}/reviews/${id}/edit`}>
-              Edit Review
-            </Link>
-          </div>
-          <div>
-            <button className="delete-review" onClick={() => deleteReview(id)}>Delete Review</button>
-          </div>
+          { 
+            currentUser.id === author_id ? 
+            <div className="edit-delete-wrapper">
+              <div>
+                <Link className="edit-review" to={`/search/${businessId}/reviews/${id}/edit`}>
+                  Edit Review
+                </Link>
+              </div>
+              <div>
+                <button className="delete-review" onClick={() => deleteReview(id)}>Delete Review</button>
+              </div> 
+            </div>
+            :
+            null
+          }
         </div>
-      </div>
     </div>
   );
 };
 
-const mapStateToProps = ({ entities: { users } }, { review }) => {
+const mapStateToProps = ( state, { review }) => {
+    
   return {
-    author: users[review.author_id],
+    currentUser: state.session,
     review
   };
 };
