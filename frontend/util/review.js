@@ -13,13 +13,17 @@ export const fetchReview = reviewId => (
   })
 )
 
-export const updateReview = review => (
-  $.ajax({
-    method: 'patch',
-    url: `api/reviews/${review.id}`,
-    data: { review }
-  })
-)
+export const updateReview = review => {
+  debugger
+
+  return (
+    $.ajax({
+      method: 'patch',
+      url: `api/reviews/${review.id}`,
+      data: { review }
+    })
+  )
+}
 
 export const removeReview = reviewId => (
   $.ajax({

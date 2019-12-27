@@ -20,9 +20,9 @@ class Api::ReviewsController < ApplicationController
   end
 
   def update
-    @review = current_user.reviews.find(params[:id])
+    @review = Review.find_by(id: params[:id])
 
-    if @review.update
+    if @review.update(review_params)
       render :show
     else
       render json: @review, status: :unprocessable_entity
