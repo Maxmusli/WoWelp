@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { ReviewLink } from '../../util/link_util';
 import { fetchBusiness } from '../../actions/business_actions';
-import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import ReviewFormContainer from '../reviews/review_form_container';
 import ReviewListContainer from '../reviews/review_list_container';
@@ -14,7 +13,7 @@ class BusinessDetail extends Component {
 
     this.handleBack = this.handleBack.bind(this);
   }
-  
+
   componentDidMount() {
     fetchBusiness(this.props.match.params.businessId)
   }

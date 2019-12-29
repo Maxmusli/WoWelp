@@ -10,7 +10,6 @@ const mapStateToProps = state => {
     businesses: businesses,
     find: state.filters.find,
     near: state.filters.near,
-    // filterBusinesses: selectBusinesses(businesses, )
   })
 };
 
@@ -18,7 +17,6 @@ const mapDispatchToProps = dispatch => ({
   changeFilter: (filter, value) => dispatch(
     changeFilter(filter, value)
   ),
-  // fetchBusinesses: (filters) => dispatch(fetchBusinesses(filters))
 });
 
 export default connect(
