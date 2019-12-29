@@ -42,29 +42,23 @@ export default class BusinessIndex extends React.Component {
       priceAttrs = this.state.priceArr.concat(type);
     } 
 
-    // if (filterAttrs.length > 0 && priceAttrs.length > 0) {
-    //   businesses = this.state.filtered;
-    // } else {
-      businesses = this.props.businesses
-    // }
 
-    // if (this.state.priceArr.length > 0 || priceAttrs.length > 0) {
-      businesses.map(business => {
-        
+    businesses = this.props.businesses
 
-          priceAttrs.forEach(attr => {
-            if (business.price_range === attr && !selectedBusinesses.includes(business)) {
-              if (filterAttrs.every(
-                sub => {
-                  return business[sub] === 'Yes'
-                }
-              )) {
-                selectedBusinesses.push(business)
-              }
+    businesses.map(business => {
+      priceAttrs.forEach(attr => {
+        if (business.price_range === attr && !selectedBusinesses.includes(business)) {
+          if (filterAttrs.every(
+            sub => {
+              return business[sub] === 'Yes'
             }
-          })
+          )) {
+            selectedBusinesses.push(business)
+          }
+        }
       })
-    // }
+    })
+
     
     if (
       (this.state.attrs.length > 0 || filterAttrs.length > 0) &&

@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { changeFilter } from '../../actions/filter_actions';
 import BusinessIndex from './business_index';
-import { selectBusinesses } from '../../reducers/selectors';
 
 const mapStateToProps = state => {
   let businesses = Object.values(state.entities.businesses)
