@@ -29,6 +29,31 @@ export default class MapMarker {
       businessId: business.id
     });
 
+    let businessInfo = '<div class="business-info-container">' +
+      '<div class="business-info-details">' +
+      `<p>${business.name}</p>` +
+      `<p>${business.category}</p>` +
+      `<p>${business.city}</p>` +
+      '</div>' +
+      // `<img src="${business.profPic}"/>` +
+      '</div>'
+
+
+    const infowindow = new google.maps.InfoWindow({
+      content: businessInfo,
+      disableAutoPan: true
+    });
+
+    marker.addListener('mouseover', () => {
+      infowindow.open(this.map, marker);
+    })
+
+    marker.addListener('mouseout', () => {
+      infowindow.close(this.map, marker);
+    })
+
+    this.markers[business.id] = marker; 
+
     marker.addListener('click', () => this.handleClick(business));
     this.markers[marker.businessId] = marker;
   }
