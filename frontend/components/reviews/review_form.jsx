@@ -151,33 +151,25 @@ class ReviewForm extends React.Component {
                 <div className="select-rating">
                   <Ratings
                     rating={this.state.rating}
-                    widgetRatedColors="blue"
+                    widgetRatedColors="#0B86CA"
+                    widgetHoverColor="red"
+                    widgetSpacings="3px"
                     changeRating={this.changeRating}
                   >
                     <Ratings.Widget 
-                      widgetDimension="30px"
-                      widgetHoverColor="red"
-                      widgetRatedColor="#0B86CA" 
+                      widgetDimension="30px"                      
                     />
                     <Ratings.Widget
                       widgetDimension="30px"
-                      widgetHoverColor="red" 
-                      widgetRatedColor="#0B86CA" 
                     />
                     <Ratings.Widget
                       widgetDimension="30px"
-                      widgetHoverColor="red" 
-                      widgetRatedColor="#0B86CA" 
-                    />
-                    <Ratings.Widget 
-                      widgetHoverColor="red" 
-                      widgetDimension="30px"
-                      widgetRatedColor="#0B86CA" 
                     />
                     <Ratings.Widget 
                       widgetDimension="30px"
-                      widgetHoverColor="red" 
-                      widgetRatedColor="#0B86CA" 
+                    />
+                    <Ratings.Widget 
+                      widgetDimension="30px"
                     />
                   </Ratings>
                   <label> Select your rating</label>

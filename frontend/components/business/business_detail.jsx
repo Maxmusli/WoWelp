@@ -59,6 +59,29 @@ class BusinessDetail extends Component {
     )
     
     if (!this.props.business.name) return null;
+
+    const starRating = () => {
+      if (average_rating) {
+        
+        return (
+          <Ratings
+            rating={parseFloat(average_rating)}
+            // rating={3.40504212313}
+            widgetDimensions="40px"
+            widgetSpacings="5px"
+            widgetRatedColors="#f8b700"
+          >
+            <Ratings.Widget />
+            <Ratings.Widget />
+            <Ratings.Widget />
+            <Ratings.Widget />
+            <Ratings.Widget />
+          </Ratings>
+        )
+      } else {
+        return 'no review yet'
+      }
+    }
      
     return (
       <div className="business-show-container">
@@ -82,7 +105,10 @@ class BusinessDetail extends Component {
                     {name}
                   </div>
                   <div className="business-rating">
-                    {average_rating || 'no review yet'}
+                    {
+                      // average_rating || 'no review yet'
+                      starRating()
+                    }
                   </div>
                   <div className="business-category">
                     <div>
