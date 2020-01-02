@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import ReviewFormContainer from '../reviews/review_form_container';
 import ReviewListContainer from '../reviews/review_list_container';
 import BusinessMap from '../map/business_map';
+import Ratings from 'react-ratings-declarative';
 
 class BusinessDetail extends Component {
   constructor(props) {

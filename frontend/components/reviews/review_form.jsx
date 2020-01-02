@@ -154,17 +154,33 @@ class ReviewForm extends React.Component {
                     widgetRatedColors="blue"
                     changeRating={this.changeRating}
                   >
-                    <Ratings.Widget />
-                    <Ratings.Widget />
-                    <Ratings.Widget
-                      widgetDimension="60px"
-                      svgIconViewBox="0 0 5 5"
-                      svgIconPath="M2 1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z"
+                    <Ratings.Widget 
+                      widgetDimension="30px"
+                      widgetHoverColor="red"
+                      widgetRatedColor="#0B86CA" 
                     />
-                    <Ratings.Widget widgetHoverColor="black" />
-                    <Ratings.Widget />
+                    <Ratings.Widget
+                      widgetDimension="30px"
+                      widgetHoverColor="red" 
+                      widgetRatedColor="#0B86CA" 
+                    />
+                    <Ratings.Widget
+                      widgetDimension="30px"
+                      widgetHoverColor="red" 
+                      widgetRatedColor="#0B86CA" 
+                    />
+                    <Ratings.Widget 
+                      widgetHoverColor="red" 
+                      widgetDimension="30px"
+                      widgetRatedColor="#0B86CA" 
+                    />
+                    <Ratings.Widget 
+                      widgetDimension="30px"
+                      widgetHoverColor="red" 
+                      widgetRatedColor="#0B86CA" 
+                    />
                   </Ratings>
-                  <label>Select your rating</label>
+                  <label> Select your rating</label>
                 </div>
                 <div className="write-review">
                   <textarea
