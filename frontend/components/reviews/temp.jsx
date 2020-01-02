@@ -42,59 +42,60 @@ export default class temp extends Component {
   render() {
     return (
       <div>
-        <p className="rating-msg">{ratingMsg}</p>
-        
         <input
-          type="radio" name="rating" className="five"
+          type="radio" name="rating" className="one"
           value={5} onChange={this.handleInput('rating')}
           checked={this.state.rating === 5 ? true : false}
-          onMouseOver={e => this.handleEventListener(e, 'mouseover', five)}
+          onMouseOver={e => this.handleEventListener(e, 'mouseover', one)}
+          onMouseOut={e => this.handleEventListener(e, 'mouseout', one)}
         />
-        <label id="five" >
-          <i class="far fa-star"></i>
-        </label>
-
-        <input
-          type="radio" name="rating" className="four"
-          value={4} onChange={this.handleInput('rating')}
-          checked={this.state.rating === 4 ? true : false}
-          onMouseOver={e => this.handleEventListener(e, 'mouseover', five)}
-        />
-        <label id="four" >
-          <i class="far fa-star"></i>
-        </label>
-
-        <input
-          type="radio" name="rating" className="three" 
-          value={3} onChange={this.handleInput('rating')}
-          checked={this.state.rating === 3 ? true : false}
-          onMouseOver={e => this.handleEventListener(e, 'mouseover', five)}
-        />
-        <label id="three" >
-          <i class="far fa-star"></i>
+        <label id="one" >
+          <i className="far fa-star"></i>
         </label>
 
         <input
           type="radio" name="rating" className="two"
-          value={2} onChange={this.handleInput('rating')}
-          checked={this.state.rating === 2 ? true : false}
-          onMouseOver={e => this.handleEventListener(e, 'mouseover', five)}
+          value={4} onChange={this.handleInput('rating')}
+          checked={this.state.rating === 4 ? true : false}
+          onMouseOver={e => this.handleEventListener(e, 'mouseover', two)}
+          onMouseOut={e => this.handleEventListener(e, 'mouseout', two)}
         />
         <label id="two" >
-          <i class="far fa-star"></i>
+          <i className="far fa-star"></i>
         </label>
 
         <input
-          type="radio" name="rating" className="one"
+          type="radio" name="rating" className="three"
+          value={3} onChange={this.handleInput('rating')}
+          checked={this.state.rating === 3 ? true : false}
+          onMouseOver={e => this.handleEventListener(e, 'mouseover', three)}
+          onMouseOut={e => this.handleEventListener(e, 'mouseout', three)}
+        />
+        <label id="three" >
+          <i className="far fa-star"></i>
+        </label>
+
+        <input
+          type="radio" name="rating" className="four"
+          value={2} onChange={this.handleInput('rating')}
+          checked={this.state.rating === 2 ? true : false}
+          onMouseOver={e => this.handleEventListener(e, 'mouseover', four)}
+          onMouseOut={e => this.handleEventListener(e, 'mouseout', four)}
+        />
+        <label id="four" >
+          <i className="far fa-star"></i>
+        </label>
+
+        <input
+          type="radio" name="rating" className="five"
           value={1} onChange={this.handleInput('rating')}
           checked={this.state.rating === 1 ? true : false}
           onMouseOver={e => this.handleEventListener(e, 'mouseover', five)}
+          onMouseOut={e => this.handleEventListener(e, 'mouseout', five)}
         />
-        <label id="one" >
-          <i class="far fa-star"></i>
+        <label id="five" >
+          <i className="far fa-star"></i>
         </label>
-
-        
       </div>
     )
   }

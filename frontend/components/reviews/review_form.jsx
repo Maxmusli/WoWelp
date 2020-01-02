@@ -12,6 +12,7 @@ class ReviewForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.redirectToShow = this.redirectToShow.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.changeRating = this.changeRating.bind(this);
   }
 
   handleClick(e) {
@@ -49,34 +50,40 @@ class ReviewForm extends React.Component {
     }
   }
 
-  handleEventListener(e, type, star) {
-    e.preventDefault()
+  // handleEventListener(e, type, star) {
+  //   e.preventDefault()
 
-    let five = document.getElementById('five');
-    let four = document.getElementById('four');
-    let three = document.getElementById('three');
-    let two = document.getElementById('two');
-    let one = document.getElementById('one');
+  //   let five = document.getElementById('five');
+  //   let four = document.getElementById('four');
+  //   let three = document.getElementById('three');
+  //   let two = document.getElementById('two');
+  //   let one = document.getElementById('one');
 
-    if (type === 'mouseover') {
-      // star.addEventListener('mouseover', () => {
-        five.style.backgroundColor = '#dd050b';
-        four.style.backgroundColor = '#dd050b';
-        three.style.backgroundColor = '#dd050b';
-        two.style.backgroundColor = '#dd050b';
-        one.style.backgroundColor = '#dd050b';
-      // })
-    }
+  //   if (type === 'mouseover') {
+  //     // star.addEventListener('mouseover', () => {
+  //       five.style.backgroundColor = '#dd050b';
+  //       four.style.backgroundColor = '#dd050b';
+  //       three.style.backgroundColor = '#dd050b';
+  //       two.style.backgroundColor = '#dd050b';
+  //       one.style.backgroundColor = '#dd050b';
+  //     // })
+  //   }
 
-    if (type === 'mouseout') {
-      // star.addEventListener('mouseout', () => {
-        five.style.backgroundColor = '';
-        four.style.backgroundColor = '';
-        three.style.backgroundColor = '';
-        two.style.backgroundColor = '';
-        one.style.backgroundColor = '';
-      // })
-    }
+  //   if (type === 'mouseout') {
+  //     // star.addEventListener('mouseout', () => {
+  //       five.style.backgroundColor = '';
+  //       four.style.backgroundColor = '';
+  //       three.style.backgroundColor = '';
+  //       two.style.backgroundColor = '';
+  //       one.style.backgroundColor = '';
+  //     // })
+  //   }
+  // }
+
+  changeRating(newRating) {
+    this.setState({
+      rating: newRating
+    });
   }
 
   render() {
@@ -142,62 +149,21 @@ class ReviewForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <div className="text-box">
                 <div className="select-rating">
-                  <div>
-                    <input
-                      type="radio" name="rating" className="one"
-                      value={5} onChange={this.handleInput('rating')}
-                      checked={this.state.rating === 5 ? true : false}
-                      onMouseOver={e => this.handleEventListener(e, 'mouseover', one)}
-                      onMouseOut={e => this.handleEventListener(e, 'mouseout', one)}
+                  <Ratings
+                    rating={this.state.rating}
+                    widgetRatedColors="blue"
+                    changeRating={this.changeRating}
+                  >
+                    <Ratings.Widget />
+                    <Ratings.Widget />
+                    <Ratings.Widget
+                      widgetDimension="60px"
+                      svgIconViewBox="0 0 5 5"
+                      svgIconPath="M2 1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z"
                     />
-                    <label id="one" >
-                      <i className="far fa-star"></i>
-                    </label>
-
-                    <input
-                      type="radio" name="rating" className="two"
-                      value={4} onChange={this.handleInput('rating')}
-                      checked={this.state.rating === 4 ? true : false}
-                      onMouseOver={e => this.handleEventListener(e, 'mouseover', two)}
-                      onMouseOut={e => this.handleEventListener(e, 'mouseout', two)}
-                    />
-                    <label id="two" >
-                      <i className="far fa-star"></i>
-                    </label>
-
-                    <input
-                      type="radio" name="rating" className="three"
-                      value={3} onChange={this.handleInput('rating')}
-                      checked={this.state.rating === 3 ? true : false}
-                      onMouseOver={e => this.handleEventListener(e, 'mouseover', three)}
-                      onMouseOut={e => this.handleEventListener(e, 'mouseout', three)}
-                    />
-                    <label id="three" >
-                      <i className="far fa-star"></i>
-                    </label>
-
-                    <input
-                      type="radio" name="rating" className="four"
-                      value={2} onChange={this.handleInput('rating')}
-                      checked={this.state.rating === 2 ? true : false}
-                      onMouseOver={e => this.handleEventListener(e, 'mouseover', four)}
-                      onMouseOut={e => this.handleEventListener(e, 'mouseout', four)}
-                    />
-                    <label id="four" >
-                      <i className="far fa-star"></i>
-                    </label>
-
-                    <input
-                      type="radio" name="rating" className="five"
-                      value={1} onChange={this.handleInput('rating')}
-                      checked={this.state.rating === 1 ? true : false}
-                      onMouseOver={e => this.handleEventListener(e, 'mouseover', five)}
-                      onMouseOut={e => this.handleEventListener(e, 'mouseout', five)}
-                    />
-                    <label id="five" >
-                      <i className="far fa-star"></i>
-                    </label>
-                  </div>
+                    <Ratings.Widget widgetHoverColor="black" />
+                    <Ratings.Widget />
+                  </Ratings>
                   <label>Select your rating</label>
                 </div>
                 <div className="write-review">
