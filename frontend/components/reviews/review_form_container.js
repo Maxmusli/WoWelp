@@ -39,7 +39,7 @@ const mapStateToProps = (state, ownProps) => {
   const businessId = parseInt(ownProps.match.params.businessId);
   const business = selectBusiness(state.entities, businessId);
   const review = {
-    rating: 5,
+    rating: 0,
     body: ''
   };
 
