@@ -4,18 +4,18 @@ export const RECEIVE_BUSINESSES = 'RECEIVE_BUSINESSES';
 export const RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
 export const CLEAR_BUSINESSES = 'CLEAR_BUSINESSES'
 
-export const receiveBusinesses = businesses => ({
+const receiveBusinesses = businesses => ({
   type: RECEIVE_BUSINESSES,
   businesses
 });
 
-export const receiveBusiness = business => {
+const receiveBusiness = business => {
   return ({
-  type: RECEIVE_BUSINESS,
-  business,
-  reviews: business.reviews,
-  author: business.author,
-})
+    type: RECEIVE_BUSINESS,
+    business,
+    reviews: business.reviews,
+    author: business.author,
+  })
 };
 
 export const clearBusinesses = () => ({
