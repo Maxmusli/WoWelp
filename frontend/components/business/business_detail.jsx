@@ -82,7 +82,7 @@ class BusinessDetail extends Component {
         return 'no review yet'
       }
     }
-    debugger
+    
     return (
       <div className="business-show-container">
         <div className="business-show-img">
