@@ -238,7 +238,7 @@ business_15 = Business.create!(
   city: "Orgrimmar", 
   state: "Kalimdor", 
   zipcode: "123123", 
-  category: "Hord", 
+  category: "Horde", 
   sub_category: "Horde",
   phone: "(412)000-0001",
   parking: "Yes",
@@ -268,88 +268,88 @@ business_11 = Business.create!(
 )
 
 business_16 = Business.create!(
-  name: "Golden Keg",
-  address: "111 Dwarven District", 
+  name: "Blue Recluse",
+  address: "155 Mage Quarter", 
   city: "Stormwind", 
   state: "Eastern Kingdom", 
   zipcode: "123123", 
-  category: "Inn", 
-  sub_category: "Restaurant",
+  category: "Restaurant", 
+  sub_category: "Bar",
   faction: "Alliance",
-  phone: "(855)334-1002",
+  phone: "(855)577-8486",
   parking: "Yes",
-  take_out: "No",
+  take_out: "Yes",
   reservation: "Yes",
-  price_range: "medium",
-  description: "The Golden Keg is the inn and tavern located in the Dwarven District of Stormwind City."
+  price_range: "expensive",
+  description: "The Blue Recluse is a restaurant in the Mage Quarter of Stormwind City. According to Thassarian, this inn is known for its food, drinks and good conversations. It's also renowned around the world for its apparent classy atmosphere. While not being mentioned by the guards as being one of the most popular bar, it certainly has the most reputation in the entire city. Many hunters come here for a drink just like Hemet Nesingwary, he came here once and told the story to Flint Broadshot of how he found himself guarding three Frostsaber cubs from unscrupulous human hunters in Winterspring, which earned him his fame. Thassarian, the first Death Knight to rejoin the Alliance also came here to have an ale as soon as he spoke with King Varian."
 )
 
 business_17 = Business.create!(
-  name: "Golden Keg",
-  address: "111 Dwarven District", 
+  name: "Great Forge",
+  address: "120 Trade District", 
   city: "Stormwind", 
   state: "Eastern Kingdom", 
   zipcode: "123123", 
-  category: "Inn", 
-  sub_category: "Restaurant",
+  category: "Blacksmithing", 
+  sub_category: "Tailoring",
   faction: "Alliance",
-  phone: "(855)334-1002",
+  phone: "(855)757-2453",
   parking: "Yes",
   take_out: "No",
   reservation: "Yes",
-  price_range: "medium",
-  description: "The Golden Keg is the inn and tavern located in the Dwarven District of Stormwind City."
+  price_range: "expensive",
+  description: "The Great Forge is the heart and soul of dwarven culture, where ingenious creations and weapons are made. Located at the center of the city, it gave the ancient dwarf capital its name. At its center is the famed Great Anvil, where most of the best dwarven blacksmithing trainers can be found. Ringed around the Great Forge are several foundries pouring molten slag and a great deal of shops and guild offices, including trainers for cooking, mining, first aid, tailoring and leatherworking, as well as the High Seat, the court of the King Magni Bronzebeard. Ironforge's gryphon master is also located here. The current keeper of the Great Forge is Myolor Sunderfury."
 )
 
 business_18 = Business.create!(
-  name: "Golden Keg",
-  address: "111 Dwarven District", 
+  name: "Craftsmen's Terrace",
+  address: "100 Night Elf District", 
   city: "Stormwind", 
   state: "Eastern Kingdom", 
   zipcode: "123123", 
-  category: "Inn", 
-  sub_category: "Restaurant",
+  category: "Jewelry Shop", 
+  sub_category: "Mechanic",
   faction: "Alliance",
-  phone: "(855)334-1002",
+  phone: "(855)767-1000",
   parking: "Yes",
   take_out: "No",
   reservation: "Yes",
-  price_range: "medium",
-  description: "The Golden Keg is the inn and tavern located in the Dwarven District of Stormwind City."
+  price_range: "luxury",
+  description: "The Craftsmen's Terrace is a major district in the north of the Stormwind. The terrace is home to most of Darnassus's profession trainers and shops, and contains one of the city's primary inns. Guild services are available here, while an embassy of the Argent Dawn faction is also present. The Craftsmen's Terrace can be accessed from the Warrior's Terrace to the south, and the Cenarion Enclave and Howling Oak to the west and northwest."
 )
 
 business_19 = Business.create!(
-  name: "Golden Keg",
-  address: "111 Dwarven District", 
+  name: "Stormwind Barber Shop",
+  address: "150 Trade District", 
   city: "Stormwind", 
   state: "Eastern Kingdom", 
   zipcode: "123123", 
-  category: "Inn", 
-  sub_category: "Restaurant",
+  category: "Barber", 
+  sub_category: "Alliance",
   faction: "Alliance",
-  phone: "(855)334-1002",
+  phone: "(855)205-1212",
   parking: "Yes",
   take_out: "No",
   reservation: "Yes",
-  price_range: "medium",
-  description: "The Golden Keg is the inn and tavern located in the Dwarven District of Stormwind City."
+  price_range: "cheap",
+  description: "The Stormwind Barber Shop is a barbershop located in the Trade District of Stormwind City."
 )
 
 business_20 = Business.create!(
-  name: "Golden Keg",
-  address: "111 Dwarven District", 
+  name: "Royal Library",
+  address: "110 Mage Quarter", 
   city: "Stormwind", 
   state: "Eastern Kingdom", 
   zipcode: "123123", 
-  category: "Inn", 
-  sub_category: "Restaurant",
+  category: "Library", 
+  sub_category: "Alliance",
   faction: "Alliance",
-  phone: "(855)334-1002",
-  parking: "Yes",
+  phone: "(855)354-0032",
+  parking: "No",
   take_out: "No",
-  reservation: "Yes",
+  reservation: "No",
   price_range: "medium",
-  description: "The Golden Keg is the inn and tavern located in the Dwarven District of Stormwind City."
+  description: "The Royal Library (or the Stormwind Library) of Stormwind is located inside Stormwind Keep. There is an extensive collection of scrolls, tomes, books, and texts on anything of historical, religious, cultural, or bureaucratic significance here, and adventurers from all races of the Alliance come here to peruse the lore. Milton Sheaf seems to be the head librarian."
 )
 
 file1 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/inn/aheroswelcome.jpg')
