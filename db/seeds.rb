@@ -247,25 +247,95 @@ business_15 = Business.create!(
   price_range: "luxury",
   description: "Grommash Hold is an enormous fortress located in the Valley of Strength in the orc capital of Orgrimmar. It is named after the orcish hero Grommash Hellscream, it is the seat of the Warchief of the Horde. Delegations from Silvermoon and the Undercity reside within, including paladin and priest trainers, as well as the trainer for archaeology."
 )
-business_16 = Business.create!(
-  name: "Burning Anvil",
-  address: "110 Valley of Honor", 
-  city: "Orgrimmar", 
-  state: "Kalimdor", 
-  zipcode: "123123", 
-  category: "Blacksmithing", 
-  sub_category: "Horde",
-  phone: "(412)253-3524",
-  parking: "Yes",
-  take_out: "No",
-  reservation: "No",
-  price_range: "medium",
-  description: "The Burning Anvil is a blacksmithing shop found in the Valley of Honor in Orgrimmar. There is an Anvil inside and an Anvil & Forge on the outside to the right."
-)
 
 # Stormwind Businesses
 
 business_11 = Business.create!(
+  name: "Golden Keg",
+  address: "111 Dwarven District", 
+  city: "Stormwind", 
+  state: "Eastern Kingdom", 
+  zipcode: "123123", 
+  category: "Inn", 
+  sub_category: "Restaurant",
+  faction: "Alliance",
+  phone: "(855)334-1002",
+  parking: "Yes",
+  take_out: "No",
+  reservation: "Yes",
+  price_range: "medium",
+  description: "The Golden Keg is the inn and tavern located in the Dwarven District of Stormwind City."
+)
+
+business_16 = Business.create!(
+  name: "Golden Keg",
+  address: "111 Dwarven District", 
+  city: "Stormwind", 
+  state: "Eastern Kingdom", 
+  zipcode: "123123", 
+  category: "Inn", 
+  sub_category: "Restaurant",
+  faction: "Alliance",
+  phone: "(855)334-1002",
+  parking: "Yes",
+  take_out: "No",
+  reservation: "Yes",
+  price_range: "medium",
+  description: "The Golden Keg is the inn and tavern located in the Dwarven District of Stormwind City."
+)
+
+business_17 = Business.create!(
+  name: "Golden Keg",
+  address: "111 Dwarven District", 
+  city: "Stormwind", 
+  state: "Eastern Kingdom", 
+  zipcode: "123123", 
+  category: "Inn", 
+  sub_category: "Restaurant",
+  faction: "Alliance",
+  phone: "(855)334-1002",
+  parking: "Yes",
+  take_out: "No",
+  reservation: "Yes",
+  price_range: "medium",
+  description: "The Golden Keg is the inn and tavern located in the Dwarven District of Stormwind City."
+)
+
+business_18 = Business.create!(
+  name: "Golden Keg",
+  address: "111 Dwarven District", 
+  city: "Stormwind", 
+  state: "Eastern Kingdom", 
+  zipcode: "123123", 
+  category: "Inn", 
+  sub_category: "Restaurant",
+  faction: "Alliance",
+  phone: "(855)334-1002",
+  parking: "Yes",
+  take_out: "No",
+  reservation: "Yes",
+  price_range: "medium",
+  description: "The Golden Keg is the inn and tavern located in the Dwarven District of Stormwind City."
+)
+
+business_19 = Business.create!(
+  name: "Golden Keg",
+  address: "111 Dwarven District", 
+  city: "Stormwind", 
+  state: "Eastern Kingdom", 
+  zipcode: "123123", 
+  category: "Inn", 
+  sub_category: "Restaurant",
+  faction: "Alliance",
+  phone: "(855)334-1002",
+  parking: "Yes",
+  take_out: "No",
+  reservation: "Yes",
+  price_range: "medium",
+  description: "The Golden Keg is the inn and tavern located in the Dwarven District of Stormwind City."
+)
+
+business_20 = Business.create!(
   name: "Golden Keg",
   address: "111 Dwarven District", 
   city: "Stormwind", 
