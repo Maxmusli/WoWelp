@@ -4,7 +4,7 @@ import BusinessIndex from './business_index';
 
 const mapStateToProps = state => {
   let businesses = Object.values(state.entities.businesses)
-
+  
   return ({
     businesses: businesses,
     find: state.filters.find,
