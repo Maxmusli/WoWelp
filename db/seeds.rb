@@ -44,7 +44,7 @@ business_2 = Business.create!(
   faction: "Alliance",
   phone: "(512)359-7532",
   parking: "Yes",
-  take_out: "No",
+  take_out: "Yes",
   reservation: "Yes",
   price_range: "expensive",
   description: "A Hero's Welcome is an inn located at the Silver Enclave of Dalaran. Isirami Fairwind is the innkeeper here, and Caliel Brightwillow is assistant innkeeper. Inzi and Marcella are the bar maidens that serve drinks to the patrons inside. Katherine and Derek are the chefs of the inn and cook food for hungry people."
@@ -168,7 +168,7 @@ business_9 = Business.create!(
   parking: "No",
   take_out: "No",
   reservation: "No",
-  price_range: "cheap",
+  price_range: "medium",
   description: "The Broken Tusk is the one of several inns of Orgrimmar, this one located within the Valley of Strength near the Orgrimmar General Store and Auction House. Its most famous resident is Gamon, long beset by members of his own faction due to his formerly low level."
 )
 
@@ -183,7 +183,7 @@ business_10 = Business.create!(
   phone: "(412)253-3524",
   parking: "Yes",
   take_out: "No",
-  reservation: "No",
+  reservation: "Yes",
   price_range: "medium",
   description: "The Burning Anvil is a blacksmithing shop found in the Valley of Honor in Orgrimmar. There is an Anvil inside and an Anvil & Forge on the outside to the right."
 )
@@ -197,7 +197,7 @@ business_12 = Business.create!(
   sub_category: "Restaurant",
   phone: "(412)355-1922",
   parking: "Yes",
-  take_out: "No",
+  take_out: "Yes",
   reservation: "Yes",
   price_range: "expensive",
   description: "Miwana's Longhouse is the inn run by Miwana in the Valley of Wisdom of Orgrimmar. Hiwahi Three-Feathers, a tailoring trainer, can also be found inside the inn. An innkeeper and tailoring trainer can be found inside, while shaman trainers and a skinning trainer can be found outside, the shaman trainers standing around the bonfire."
@@ -214,38 +214,38 @@ business_13 = Business.create!(
   parking: "Yes",
   take_out: "No",
   reservation: "No",
-  price_range: "cheap",
+  price_range: "expensive",
   description: "The Hall of Legends is the officer's barracks for the Horde. It is in the Valley of Strength, in Orgrimmar. In the center of the Hall is a table surrounded by four Horde: Chieftain Earthbind of Thunder Bluff, Advisor Willington of the Undercity, Blood Guard Hini'wana of the Darkspear Trolls, and Councilor Arial D'Anastasis of Silvermoon City. On the table are several maps of Azeroth, as well as an open book titled 'Military Ranks of the Horde & Alliance', which lists the old PvP ranks and accompanying insignias."
 )
 business_14 = Business.create!(
-  name: "Burning Anvil",
-  address: "110 Valley of Honor", 
+  name: "Goblin Slums",
+  address: "255 Valley of Spirits", 
   city: "Orgrimmar", 
   state: "Kalimdor", 
   zipcode: "123123", 
-  category: "Blacksmithing", 
-  sub_category: "Horde",
-  phone: "(412)253-3524",
+  category: "Mechanic", 
+  sub_category: "Inn",
+  phone: "(412)777-5135",
   parking: "Yes",
   take_out: "No",
   reservation: "No",
-  price_range: "medium",
-  description: "The Burning Anvil is a blacksmithing shop found in the Valley of Honor in Orgrimmar. There is an Anvil inside and an Anvil & Forge on the outside to the right."
+  price_range: "cheap",
+  description: "The Goblin Slums was a district in Orgrimmar for the Bilgewater goblin refugees of Kezan opened after the Cataclysm. It connected to the Valley of Spirits, and was an oily, dirty place - similar to areas in Bilgewater Port. In addition to class and profession trainers, the area had its own innkeeper, auctioneer, and bankers."
 )
 business_15 = Business.create!(
-  name: "Burning Anvil",
-  address: "110 Valley of Honor", 
+  name: "Grommash Hold",
+  address: "1 Valley of Strength", 
   city: "Orgrimmar", 
   state: "Kalimdor", 
   zipcode: "123123", 
-  category: "Blacksmithing", 
+  category: "Hord", 
   sub_category: "Horde",
-  phone: "(412)253-3524",
+  phone: "(412)000-0001",
   parking: "Yes",
   take_out: "No",
   reservation: "No",
-  price_range: "medium",
-  description: "The Burning Anvil is a blacksmithing shop found in the Valley of Honor in Orgrimmar. There is an Anvil inside and an Anvil & Forge on the outside to the right."
+  price_range: "luxury",
+  description: "Grommash Hold is an enormous fortress located in the Valley of Strength in the orc capital of Orgrimmar. It is named after the orcish hero Grommash Hellscream, it is the seat of the Warchief of the Horde. Delegations from Silvermoon and the Undercity reside within, including paladin and priest trainers, as well as the trainer for archaeology."
 )
 business_16 = Business.create!(
   name: "Burning Anvil",
