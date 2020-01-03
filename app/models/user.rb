@@ -13,7 +13,7 @@
 #
 
 class User < ApplicationRecord
-    attr_reader :password
+  attr_reader :password
 
   validates :email, presence: true, uniqueness: true
   validates :fname, :lname, presence: true
