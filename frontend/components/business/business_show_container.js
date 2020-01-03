@@ -13,6 +13,8 @@ const mapStateToProps = (state, ownProps) => {
     businessId,
     business,
     reviews,
+    find: state.filters.find,
+    near: state.filters.near,
   })
 };
 

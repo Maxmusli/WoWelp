@@ -10,7 +10,7 @@ export default class BusinessShow extends Component {
   }
 
   render() {
-    const { business, reviews, deleteReview } = this.props
+    const { business, reviews, deleteReview, find, near } = this.props
     
     if (!business) return null;
     
@@ -25,6 +25,8 @@ export default class BusinessShow extends Component {
             business={business}
             reviews={reviews}
             deleteReview={deleteReview}
+            find={find}
+            near={near}
           />
         </div>
         <div className="bar-2"></div>

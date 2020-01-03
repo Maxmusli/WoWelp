@@ -1,7 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import ReviewFormContainer from '../reviews/review_form_container';
 import { ReviewLink } from '../../util/link_util';
+import ReviewFormContainer from '../reviews/review_form_container';
+import Ratings from 'react-ratings-declarative';
 
 class BusinessIndexItem extends React.Component {
   constructor(props) {
@@ -33,6 +34,28 @@ class BusinessIndexItem extends React.Component {
       price_range, reservation, take_out, address, average_rating,
       id
     } = this.props.business
+
+    const starRating = () => {
+      if (average_rating) {
+
+        return (
+          <Ratings
+            rating={parseFloat(average_rating)}
+            widgetDimensions="20px"
+            widgetSpacings="1px"
+            widgetRatedColors="#f8b700"
+          >
+            <Ratings.Widget />
+            <Ratings.Widget />
+            <Ratings.Widget />
+            <Ratings.Widget />
+            <Ratings.Widget />
+          </Ratings>
+        )
+      } else {
+        return 'no review yet'
+      }
+    }
     
     return (
       <div className="business-container">
@@ -50,7 +73,7 @@ class BusinessIndexItem extends React.Component {
                 </a>
               </div>
               <div className="business-rating">
-                {average_rating || 'no reviews yet'}
+                {starRating()}
               </div>
               <div className="business-category">
                 <div>

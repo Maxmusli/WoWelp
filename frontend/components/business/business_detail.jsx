@@ -33,7 +33,8 @@ class BusinessDetail extends Component {
 
   handleBack(e) {
     e.preventDefault();
-    this.props.history.goBack();
+    // this.props.history.goBack();
+    this.props.history.push(`/search?find=${this.props.find}&near=${this.props.near}`);
   }
 
   render() {
@@ -66,7 +67,6 @@ class BusinessDetail extends Component {
         return (
           <Ratings
             rating={parseFloat(average_rating)}
-            // rating={3.40504212313}
             widgetDimensions="40px"
             widgetSpacings="5px"
             widgetRatedColors="#f8b700"
@@ -82,7 +82,7 @@ class BusinessDetail extends Component {
         return 'no review yet'
       }
     }
-     
+    debugger
     return (
       <div className="business-show-container">
         <div className="business-show-img">
