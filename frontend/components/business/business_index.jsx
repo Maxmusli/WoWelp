@@ -136,7 +136,19 @@ export default class BusinessIndex extends React.Component {
     const allTags = document.querySelectorAll(
       '#filter'
     )
-    console.log(allTags)
+    
+    allTags.forEach(tag => {
+      
+      if ($(tag).hasClass('toggled')) {
+        tag.classList.remove('toggled')
+      }
+    })
+
+    this.setState({
+      filtered: [],
+      priceArr: [],
+      attrs: [],
+    })
   }
 
   render() {
