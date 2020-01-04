@@ -90,7 +90,7 @@
     }
 
     .right-section {
-      width: 50%;
+      width: 45%;
       display: block;
       text-align: right;
       padding: 4px 0 0 12px;
@@ -114,6 +114,11 @@
     font-size: 15px;
     line-height: 1.38462em;
     color: #D5DDE6;
+  }
+
+  a {
+    cursor: pointer;
+    color: #0b98e4;
   }
 }
 

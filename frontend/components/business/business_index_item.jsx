@@ -56,6 +56,14 @@ class BusinessIndexItem extends React.Component {
         return 'no review yet'
       }
     }
+
+    let businessTextContent = '';
+
+    if (description.length > 360) {
+      businessTextContent = description.slice(0, 360) + '.....\xa0\xa0\xa0'
+    } else {
+      businessTextContent = description
+    }
     
     return (
       <div className="business-container">
@@ -99,7 +107,16 @@ class BusinessIndexItem extends React.Component {
 
           <div className="mid-section">
             <div>
-              {description}
+              {businessTextContent}
+            {
+              description.length > 360 ? 
+              <span className="read-more">
+                <a onClick={this.handleClick}>
+                  read more
+                </a>
+              </span> :
+              null
+            }
             </div>
           </div>
 

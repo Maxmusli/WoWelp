@@ -10,7 +10,7 @@ const Review = ({ review, currentUser, deleteReview, businessId }) => {
     <div className="review-wrapper">
       <div className="author-info-wrapper">
         <div className="profile-pic">
-          picture
+          <img src="user_avatar.jpg" alt=""/>
         </div>
         <div className="username">
           {username}
