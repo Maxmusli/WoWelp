@@ -162,6 +162,8 @@ business_9 = Business.create!(
   city: "Orgrimmar", 
   state: "Kalimdor", 
   zipcode: "123123", 
+  lat: 34.032088, 
+  lng: -118.252713,
   category: "Bars", 
   sub_category: "Horde",
   phone: "(412)694-3624",
@@ -178,6 +180,8 @@ business_10 = Business.create!(
   city: "Orgrimmar", 
   state: "Kalimdor", 
   zipcode: "123123", 
+  lat: 34.046191, 
+  lng: -118.242447,
   category: "Blacksmithing", 
   sub_category: "Horde",
   phone: "(412)253-3524",
@@ -193,6 +197,8 @@ business_12 = Business.create!(
   city: "Orgrimmar", 
   state: "Kalimdor", 
   zipcode: "123123", 
+  lat: 34.063984, 
+  lng: -118.239746,
   category: "Inn", 
   sub_category: "Restaurant",
   phone: "(412)355-1922",
@@ -208,6 +214,8 @@ business_13 = Business.create!(
   city: "Orgrimmar", 
   state: "Kalimdor", 
   zipcode: "123123", 
+  lat: 34.079984, 
+  lng: -118.258116,
   category: "Barrack", 
   sub_category: "Horde",
   phone: "(412)123-1111",
@@ -223,8 +231,10 @@ business_14 = Business.create!(
   city: "Orgrimmar", 
   state: "Kalimdor", 
   zipcode: "123123", 
+  lat: 34.061075, 
+  lng: -118.297692,
   category: "Mechanic", 
-  sub_category: "Inn",
+  sub_category: "Jewelry Shop",
   phone: "(412)777-5135",
   parking: "Yes",
   take_out: "No",
@@ -237,7 +247,9 @@ business_15 = Business.create!(
   address: "1 Valley of Strength", 
   city: "Orgrimmar", 
   state: "Kalimdor", 
-  zipcode: "123123", 
+  zipcode: "123123",
+  lat: 34.048877, 
+  lng: -118.195847,
   category: "Horde", 
   sub_category: "Horde",
   phone: "(412)000-0001",
@@ -256,6 +268,8 @@ business_11 = Business.create!(
   city: "Stormwind", 
   state: "Eastern Kingdom", 
   zipcode: "123123", 
+  lat: 40.775890, 
+  lng: -73.957580,
   category: "Inn", 
   sub_category: "Restaurant",
   faction: "Alliance",
@@ -273,6 +287,8 @@ business_16 = Business.create!(
   city: "Stormwind", 
   state: "Eastern Kingdom", 
   zipcode: "123123", 
+  lat: 40.785151, 
+  lng: -73.972205,
   category: "Restaurant", 
   sub_category: "Bar",
   faction: "Alliance",
@@ -290,6 +306,8 @@ business_17 = Business.create!(
   city: "Stormwind", 
   state: "Eastern Kingdom", 
   zipcode: "123123", 
+  lat: 40.764913, 
+  lng: -73.993526,
   category: "Blacksmithing", 
   sub_category: "Tailoring",
   faction: "Alliance",
@@ -307,6 +325,8 @@ business_18 = Business.create!(
   city: "Stormwind", 
   state: "Eastern Kingdom", 
   zipcode: "123123", 
+  lat: 40.756355, 
+  lng: -73.969160,
   category: "Jewelry Shop", 
   sub_category: "Mechanic",
   faction: "Alliance",
@@ -324,6 +344,8 @@ business_19 = Business.create!(
   city: "Stormwind", 
   state: "Eastern Kingdom", 
   zipcode: "123123", 
+  lat: 40.745041, 
+  lng: -73.993526,
   category: "Barber", 
   sub_category: "Alliance",
   faction: "Alliance",
@@ -341,6 +363,8 @@ business_20 = Business.create!(
   city: "Stormwind", 
   state: "Eastern Kingdom", 
   zipcode: "123123", 
+  lat: 40.803003, 
+  lng: -73.955110,
   category: "Library", 
   sub_category: "Alliance",
   faction: "Alliance",
@@ -403,22 +427,51 @@ business_4.pictures.attach(io: file_busi04_05, filename: 'tanksforeverthing_05.p
 file17 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/barber/barbershop_dalaran.jpg')
 file18 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/barber/barbershop_dalaran_02.jpg')
 file19 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/barber/barbershop_dalaran_03.jpg')
+file_busi05_04 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/barber/barbershop_dalaran_04.jpg')
+file_busi05_05 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/barber/barbershop_dalaran_05.jpg')
 
 business_5.pictures.attach(io: file17, filename: 'barbershop_dalaran.jpg')
 business_5.pictures.attach(io: file18, filename: 'barbershop_dalaran_02.jpg')
 business_5.pictures.attach(io: file19, filename: 'barbershop_dalaran_03.jpg')
+business_5.pictures.attach(io: file_busi05_04, filename: 'barbershop_dalaran_04.jpg')
+business_5.pictures.attach(io: file_busi05_05, filename: 'barbershop_dalaran_05.jpg')
 
 file20 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/mechanic/Like_Clockwork_01.jpg')
+file_busi06_02 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/mechanic/Like_Clockwork_02.jpg')
+file_busi06_03 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/mechanic/Like_Clockwork_03.jpg')
+file_busi06_04 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/mechanic/Like_Clockwork_04.jpg')
+file_busi06_05 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/mechanic/Like_Clockwork_05.jpg')
+
 
 business_6.pictures.attach(io: file20, filename: 'Like_Clockwork_01.jpg')
+business_6.pictures.attach(io: file_busi06_02, filename: 'Like_Clockwork_02.jpg')
+business_6.pictures.attach(io: file_busi06_03, filename: 'Like_Clockwork_03.jpg')
+business_6.pictures.attach(io: file_busi06_04, filename: 'Like_Clockwork_04.jpg')
+business_6.pictures.attach(io: file_busi06_05, filename: 'Like_Clockwork_05.jpg')
 
 file21 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/jewelry/Cartier_Jewelry_01.jpg')
+file_busi07_02 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/jewelry/Cartier_Jewelry_02.jpg')
+file_busi07_03 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/jewelry/Cartier_Jewelry_03.jpg')
+file_busi07_04 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/jewelry/Cartier_Jewelry_04.jpg')
+file_busi07_05 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/jewelry/Cartier_Jewelry_05.jpg')
 
 business_7.pictures.attach(io: file21, filename: 'Cartier_Jewelry_01.jpg')
+business_7.pictures.attach(io: file_busi07_02, filename: 'Cartier_Jewelry_02.jpg')
+business_7.pictures.attach(io: file_busi07_03, filename: 'Cartier_Jewelry_03.jpg')
+business_7.pictures.attach(io: file_busi07_04, filename: 'Cartier_Jewelry_04.jpg')
+business_7.pictures.attach(io: file_busi07_05, filename: 'Cartier_Jewelry_05.jpg')
 
 file22 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/tailoring/Talismanic_Textiles_01.jpg')
+file_busi08_02 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/tailoring/Talismanic_Textiles_02.jpg')
+file_busi08_03 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/tailoring/Talismanic_Textiles_03.jpg')
+file_busi08_04 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/tailoring/Talismanic_Textiles_04.jpg')
+file_busi08_05 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/dalaran/tailoring/Talismanic_Textiles_05.jpg')
 
 business_8.pictures.attach(io: file22, filename: 'Talismanic_Textiles_01.jpg')
+business_8.pictures.attach(io: file_busi08_02, filename: 'Talismanic_Textiles_02.jpg')
+business_8.pictures.attach(io: file_busi08_03, filename: 'Talismanic_Textiles_03.jpg')
+business_8.pictures.attach(io: file_busi08_04, filename: 'Talismanic_Textiles_04.jpg')
+business_8.pictures.attach(io: file_busi08_05, filename: 'Talismanic_Textiles_05.jpg')
 
 file23 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/blacksmithing/The_Burning_Anvil_02.jpg')
 file24 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/blacksmithing/The_Burning_Anvil_01.jpg')
@@ -434,9 +487,16 @@ business_10.pictures.attach(io: file_busi10_05, filename: 'The_Burning_Anvil_06.
 
 file26 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/bar/The_Broken_Tusk_01.jpg')
 file27 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/bar/The_Broken_Tusk_Interior_02.jpg')
+file_busi09_03 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/bar/The_Broken_Tusk_03.jpg')
+file_busi09_04 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/bar/The_Broken_Tusk_04.jpg')
+file_busi09_05 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/bar/The_Broken_Tusk_05.jpg')
+
 
 business_9.pictures.attach(io: file26, filename: 'The_Broken_Tusk_01.jpg')
 business_9.pictures.attach(io: file27, filename: 'The_Broken_Tusk_Interior_02.jpg')
+business_9.pictures.attach(io: file_busi09_03, filename: 'The_Broken_Tusk_03.jpg')
+business_9.pictures.attach(io: file_busi09_04, filename: 'The_Broken_Tusk_04.jpg')
+business_9.pictures.attach(io: file_busi09_05, filename: 'The_Broken_Tusk_05.jpg')
 
 file_busi11_01 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/Inn/golden_keg_01.jpg')
 file_busi11_02 = open('https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/Inn/golden_keg_02.jpg')
@@ -449,6 +509,114 @@ business_11.pictures.attach(io: file_busi11_02, filename: 'golden_keg_02.jpg')
 business_11.pictures.attach(io: file_busi11_03, filename: 'golden_keg_03.jpg')
 business_11.pictures.attach(io: file_busi11_04, filename: 'golden_keg_04.png')
 business_11.pictures.attach(io: file_busi11_05, filename: 'golden_keg_05.jpg')
+
+file_busi12_01 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/Inn/Miwana's_Longhouse01.jpg")
+file_busi12_02 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/Inn/Miwana's_Longhouse02.jpg")
+file_busi12_03 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/Inn/Miwana's_Longhouse03.jpg")
+file_busi12_04 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/Inn/Miwana's_Longhouse04.jpg")
+file_busi12_05 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/Inn/Miwana's_Longhouse05.jpg")
+
+business_12.pictures.attach(io: file_busi12_01, filename: "Miwana's_Longhouse01.jpg")
+business_12.pictures.attach(io: file_busi12_02, filename: "Miwana's_Longhouse02.jpg")
+business_12.pictures.attach(io: file_busi12_03, filename: "Miwana's_Longhouse03.jpg")
+business_12.pictures.attach(io: file_busi12_04, filename: "Miwana's_Longhouse04.jpg")
+business_12.pictures.attach(io: file_busi12_05, filename: "Miwana's_Longhouse05.jpg")
+
+file_busi13_01 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/hall_of_legends/Hall_of_Legends01.jpg")
+file_busi13_02 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/hall_of_legends/Hall_of_Legends02.jpg")
+file_busi13_03 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/hall_of_legends/Hall_of_Legends03.jpg")
+file_busi13_04 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/hall_of_legends/Hall_of_Legends04.jpg")
+file_busi13_05 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/hall_of_legends/Hall_of_Legends05.jpg")
+
+business_13.pictures.attach(io: file_busi13_01, filename: "Hall_of_Legends01.jpg")
+business_13.pictures.attach(io: file_busi13_02, filename: "Hall_of_Legends02.jpg")
+business_13.pictures.attach(io: file_busi13_03, filename: "Hall_of_Legends03.jpg")
+business_13.pictures.attach(io: file_busi13_04, filename: "Hall_of_Legends04.jpg")
+business_13.pictures.attach(io: file_busi13_05, filename: "Hall_of_Legends05.jpg")
+
+file_busi14_01 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/goblin_slums/Goblin_slums01.jpg")
+file_busi14_02 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/goblin_slums/Goblin_slums02.jpg")
+file_busi14_03 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/goblin_slums/Goblin_slums03.jpg")
+file_busi14_04 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/goblin_slums/Goblin_slums04.jpg")
+file_busi14_05 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/goblin_slums/Goblin_slums05.jpg")
+
+business_14.pictures.attach(io: file_busi14_01, filename: "Goblin_slums01.jpg")
+business_14.pictures.attach(io: file_busi14_02, filename: "Goblin_slums02.jpg")
+business_14.pictures.attach(io: file_busi14_03, filename: "Goblin_slums03.jpg")
+business_14.pictures.attach(io: file_busi14_04, filename: "Goblin_slums04.jpg")
+business_14.pictures.attach(io: file_busi14_05, filename: "Goblin_slums05.jpg")
+
+file_busi15_01 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/grommash_hold/Grommash_Hold1.jpg")
+file_busi15_02 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/grommash_hold/Grommash_Hold2.jpg")
+file_busi15_03 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/grommash_hold/Grommash_Hold3.jpg")
+file_busi15_04 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/grommash_hold/Grommash_Hold4.jpg")
+file_busi15_05 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/orgrimmar/grommash_hold/Grommash_Hold5.jpg")
+
+business_15.pictures.attach(io: file_busi15_01, filename: "Grommash_Hold1.jpg")
+business_15.pictures.attach(io: file_busi15_02, filename: "Grommash_Hold2.jpg")
+business_15.pictures.attach(io: file_busi15_03, filename: "Grommash_Hold3.jpg")
+business_15.pictures.attach(io: file_busi15_04, filename: "Grommash_Hold4.jpg")
+business_15.pictures.attach(io: file_busi15_05, filename: "Grommash_Hold5.jpg")
+
+file_busi16_01 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/Inn/Blue_recluse01.jpg")
+file_busi16_02 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/Inn/Blue_recluse02.jpg")
+file_busi16_03 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/Inn/Blue_recluse03.jpg")
+file_busi16_04 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/Inn/Blue_recluse04.jpg")
+file_busi16_05 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/Inn/Blue_recluse05.jpg")
+
+business_16.pictures.attach(io: file_busi16_01, filename: "Blue_recluse01.jpg")
+business_16.pictures.attach(io: file_busi16_02, filename: "Blue_recluse02.jpg")
+business_16.pictures.attach(io: file_busi16_03, filename: "Blue_recluse03.jpg")
+business_16.pictures.attach(io: file_busi16_04, filename: "Blue_recluse04.jpg")
+business_16.pictures.attach(io: file_busi16_05, filename: "Blue_recluse05.jpg")
+
+file_busi17_01 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/blacksmithing/The_Great_Forge01.jpg")
+file_busi17_02 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/blacksmithing/The_Great_Forge02.jpg")
+file_busi17_03 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/blacksmithing/The_Great_Forge03.jpg")
+file_busi17_04 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/blacksmithing/The_Great_Forge04.jpg")
+file_busi17_05 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/blacksmithing/The_Great_Forge05.jpg")
+
+business_17.pictures.attach(io: file_busi17_01, filename: "The_Great_Forge01.jpg")
+business_17.pictures.attach(io: file_busi17_02, filename: "The_Great_Forge02.jpg")
+business_17.pictures.attach(io: file_busi17_03, filename: "The_Great_Forge03.jpg")
+business_17.pictures.attach(io: file_busi17_04, filename: "The_Great_Forge04.jpg")
+business_17.pictures.attach(io: file_busi17_05, filename: "The_Great_Forge05.jpg")
+
+file_busi18_01 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/mechanic/Craftsmen's_Terrace01.jpg")
+file_busi18_02 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/mechanic/Craftsmen's_Terrace02.jpg")
+file_busi18_03 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/mechanic/Craftsmen's_Terrace03.jpg")
+file_busi18_04 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/mechanic/Craftsmen's_Terrace04.jpg")
+file_busi18_05 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/mechanic/Craftsmen's_Terrace05.jpg")
+
+business_18.pictures.attach(io: file_busi18_01, filename: "Craftsmen's_Terrace01.jpg")
+business_18.pictures.attach(io: file_busi18_02, filename: "Craftsmen's_Terrace02.jpg")
+business_18.pictures.attach(io: file_busi18_03, filename: "Craftsmen's_Terrace03.jpg")
+business_18.pictures.attach(io: file_busi18_04, filename: "Craftsmen's_Terrace04.jpg")
+business_18.pictures.attach(io: file_busi18_05, filename: "Craftsmen's_Terrace05.jpg")
+
+file_busi19_01 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/barber/Stormwind_Barber_Shop01.jpg")
+file_busi19_02 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/barber/Stormwind_Barber_Shop02.jpg")
+file_busi19_03 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/barber/Stormwind_Barber_Shop03.jpg")
+file_busi19_04 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/barber/Stormwind_Barber_Shop04.jpg")
+file_busi19_05 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/barber/Stormwind_Barber_Shop05.jpg")
+
+business_19.pictures.attach(io: file_busi19_01, filename: "Stormwind_Barber_Shop01.jpg")
+business_19.pictures.attach(io: file_busi19_02, filename: "Stormwind_Barber_Shop02.jpg")
+business_19.pictures.attach(io: file_busi19_03, filename: "Stormwind_Barber_Shop03.jpg")
+business_19.pictures.attach(io: file_busi19_04, filename: "Stormwind_Barber_Shop04.jpg")
+business_19.pictures.attach(io: file_busi19_05, filename: "Stormwind_Barber_Shop05.jpg")
+
+file_busi20_01 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/royal_library/Royal_Library01.jpg")
+file_busi20_02 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/royal_library/Royal_Library02.jpg")
+file_busi20_03 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/royal_library/Royal_Library03.jpg")
+file_busi20_04 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/royal_library/Royal_Library04.jpg")
+file_busi20_05 = open("https://wowelp-seeds.s3-us-west-1.amazonaws.com/stormwind/royal_library/Royal_Library05.jpg")
+
+business_20.pictures.attach(io: file_busi20_01, filename: "Royal_Library01.jpg")
+business_20.pictures.attach(io: file_busi20_02, filename: "Royal_Library02.jpg")
+business_20.pictures.attach(io: file_busi20_03, filename: "Royal_Library03.jpg")
+business_20.pictures.attach(io: file_busi20_04, filename: "Royal_Library04.jpg")
+business_20.pictures.attach(io: file_busi20_05, filename: "Royal_Library05.jpg")
 
 demo_user = User.create!(
   email: "guest123@gmail.com",
