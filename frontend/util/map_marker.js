@@ -32,9 +32,9 @@ export default class MapMarker {
       '<div class="business-info-details">' +
       `<p>${business.name}</p>` +
       `<p>${business.category}</p>` +
-      `<p>${business.city}</p>` +
+      // `<p>${business.city}</p>` +
       '</div>' +
-      // `<img src="${business.profPic}"/>` +
+      // `<img src="${business.pictures[0]}"/>` +
       '</div>'
 
 
