@@ -18,7 +18,7 @@ class BusinessMap extends Component {
   }
 
   handleMap() {
-    if (this.props.businesses.length > 1) {
+    if (this.props.businesses.length > 0 && this.props.show !== true) {
 
       let lats = this.props.businesses.map(business => (business.lat));
       let sumLats = lats.reduce((acc, ele) => acc + ele);
