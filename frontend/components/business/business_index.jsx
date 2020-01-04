@@ -11,10 +11,13 @@ export default class BusinessIndex extends React.Component {
     this.state = {
       filtered: [],
       priceArr: [],
-      attrs: []
+      attrs: [],
+      find: this.props.find
     }
 
     this.handleFilter = this.handleFilter.bind(this);
+    this.handleCity = this.handleCity.bind(this);
+    this.handleClear = this.handleClear.bind(this);
   }
 
   handleFilter(e, type) {
@@ -112,9 +115,28 @@ export default class BusinessIndex extends React.Component {
     if (this.props.businesses.length === 0) {
       this.props.changeFilter('near', this.props.near)
       .then(() => {
-        this.props.changeFilter('find', this.props.find)
+        this.props.changeFilter('find', this.state.find)
       });
     }
+  }
+  
+  handleCity(e) {
+    e.preventDefault();
+
+    this.props.changeFilter('near', this.props.near)
+      .then(() => {
+        this.props.changeFilter('find', '')
+          .then(() => { this.props.history.push(`/search?near=${this.props.near}`) })
+      })
+  }
+
+  handleClear(e) {
+    e.preventDefault();
+
+    const allTags = document.querySelectorAll(
+      '#filter'
+    )
+    console.log(allTags)
   }
 
   render() {
@@ -149,7 +171,10 @@ export default class BusinessIndex extends React.Component {
             <div className="filter-bar-container">
               <div className="filter-bar-info">
                 <div>
-                  {this.props.near}
+                  <a onClick={this.handleCity}>
+                    {this.props.near}
+                  </a>
+
                 </div>
                 <div>
                   >
@@ -160,31 +185,35 @@ export default class BusinessIndex extends React.Component {
               </div>
               <div className="filter-bar">
                 <div className="all-filter">
-                  <button className="filter-btn">
-                    All Filters
+                  <button className="filter-btn" onClick={this.handleClear}>
+                    Clear Filters
                   </button>
                 </div>
                 <div className="price-range">
                   <button 
                     className="cheap"
+                    id="filter"
                     onClick={e => this.handleFilter(e, 'cheap')}
                   >
                     $
                   </button>
                   <button 
                     className="medium"
+                    id="filter"
                     onClick={e => this.handleFilter(e, 'medium')}
                   >
                     $$
                   </button>
                   <button
                     className="expensive"
+                    id="filter"
                     onClick={e => this.handleFilter(e, 'expensive')}
                   >
                     $$$
                   </button>
                   <button 
                     className="luxury"
+                    id="filter"
                     onClick={e => this.handleFilter(e, 'luxury')}
                   >
                     $$$$
@@ -193,6 +222,7 @@ export default class BusinessIndex extends React.Component {
                 <div>
                   <button 
                     className="reservation"
+                    id="filter"
                     onClick={e => this.handleFilter(e, 'reservation')}
                   >
                     Reservation
@@ -201,6 +231,7 @@ export default class BusinessIndex extends React.Component {
                 <div>
                   <button 
                     className="take_out" 
+                    id="filter"
                     onClick={e => this.handleFilter(e, 'take_out')}
                   >
                     Takeout
@@ -209,6 +240,7 @@ export default class BusinessIndex extends React.Component {
                 <div>
                   <button 
                     className="parking"
+                    id="filter"
                     onClick={e => this.handleFilter(e, 'parking')}
                   >
                     Parking
