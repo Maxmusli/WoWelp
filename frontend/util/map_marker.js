@@ -6,7 +6,6 @@ export default class MapMarker {
   }
 
   updateMarkers(businesses) {
-    
     const businessesObj = {};
     businesses.forEach(business => businessesObj[business.id] = business);
 

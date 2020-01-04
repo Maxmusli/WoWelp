@@ -169,6 +169,7 @@ class BusinessDetail extends Component {
                     changeFilter={this.props.changeFilter}
                     find={this.props.find}
                     near={this.props.near}
+                    show={true}
                   />
                 </div>
 
