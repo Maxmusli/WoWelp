@@ -132,7 +132,7 @@ class BusinessDetail extends Component {
                     >
                     </ReviewLink>
                   </div>
-                  <div className="function-btn">
+                  {/* <div className="function-btn">
                     <Link to='/underconstruction'>
                       Add Photo
                     </Link>
@@ -146,7 +146,7 @@ class BusinessDetail extends Component {
                     <Link to='/underconstruction'>
                       Save
                     </Link>  
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="about-business">
