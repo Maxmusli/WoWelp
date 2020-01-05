@@ -14,6 +14,7 @@ export default class SessionForm extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
+    this.handleOpenModal = this.handleOpenModal.bind(this);
   }
 
   componentDidMount() {
@@ -61,12 +62,16 @@ export default class SessionForm extends Component {
       .then(() => this.props.history.goBack());
   }
 
+  handleOpenModal() {
+    this.props.openModal('oAuth')
+  }
+
   render() {
     const display = this.props.formType === 'login' ? (
       <div className="login">
         <div className="header">Log In to WoWelp</div>
         <div className="social">
-          <button className="fb-btn">
+          <button className="fb-btn" onClick={this.handleOpenModal}>
             <i className="fab fa-facebook-square"></i>
             <p>Facebook</p>
           </button>

@@ -169,6 +169,8 @@ export default class BusinessIndex extends React.Component {
       selectedBusinesses = businesses;
     }
 
+    const noResults = `No business found under ${this.props.find} in ${this.props.near}` 
+    
     return (
       <div>
         <div>
@@ -263,14 +265,21 @@ export default class BusinessIndex extends React.Component {
           </div>
           <div>
             <div className="business-index-wrapper">
-              <div className="business-info-wrapper">
-                {selectedBusinesses.map(business => (
-                  <BusinessIndexItem
-                  business={business}
-                  key={business.id}
-                  />
-                ))}
-              </div>
+              {businesses.length === 0 ?
+                <div className="no-results">
+                  {noResults}
+                </div> :
+                <div className="business-info-wrapper">
+                  {selectedBusinesses.map(business => (
+                    <BusinessIndexItem
+                    business={business}
+                    key={business.id}
+                    />
+                  ))}
+                </div>
+
+              }
+
               <div className="map-container">
                 <BusinessMap 
                 businesses={selectedBusinesses}

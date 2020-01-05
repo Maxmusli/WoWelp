@@ -66,7 +66,7 @@ class Search extends React.Component {
                 type="text"
                 onChange={this.handleInput('find')}
                 value={this.state.find}
-                placeholder= "beer, inn, blacksmithing, action house..."
+                placeholder= "beer, inn, blacksmithing, mechanic..."
               />
             </div>
             <div className="split-line"></div>
