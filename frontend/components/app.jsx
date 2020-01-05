@@ -10,11 +10,13 @@ import BusinessIndexContainer from './business/business_index_container'
 import ReviewFormContainer from './reviews/review_form_container';
 import UnderConstruction from './home/under_contruction';
 import EditReviewFormContainer from './reviews/edit_review_form_container';
+import Modal from "./modal/modal";
 
 export default () => {
   
   return (
     <div>
+      <Modal />
       <Switch>
         <ProtectedRoute path="/search/:businessId/review" component={ReviewFormContainer}/>
         <ProtectedRoute path="/search/:businessId/reviews/:reviewId/edit" component={EditReviewFormContainer}/>
