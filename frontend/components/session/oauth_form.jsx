@@ -27,10 +27,10 @@ class OAuth extends Component {
         <div>
           <p>Sorry, this functionality is under construction</p>
         </div>
-        <div>
+        {/* <div>
           <span>Want to try demo login?</span>
           <a onClick={this.guestLogin}> Demo Login</a>
-        </div>
+        </div> */}
       </div>
     )
   }
