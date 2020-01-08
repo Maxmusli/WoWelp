@@ -4,7 +4,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(34, 17, 15, 0.7);
   z-index: 10;
 }
 
@@ -13,4 +13,22 @@
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.oauth-modal-container {
+  font-family: "Calibre", Helvetica, Arial, sans-serif;
+  background: #2A5D99;
+  width: 340px;
+  height: 140px;
+  box-shadow: 1px 1px 10px 6px #0B86CA;
+  margin-top: 130px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    color: white;
+    font-size: 16px;
+  }
 }

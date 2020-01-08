@@ -75,7 +75,7 @@ export default class SessionForm extends Component {
             <i className="fab fa-facebook-square"></i>
             <p>Facebook</p>
           </button>
-          <button className="google-btn">
+          <button className="google-btn" onClick={this.handleOpenModal}>
             <img src="https://i.imgur.com/4KIne8b.jpg" />
             <p>Google</p>
           </button>

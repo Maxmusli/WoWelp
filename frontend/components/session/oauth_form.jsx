@@ -23,7 +23,7 @@ class OAuth extends Component {
 
   render() {
     return (
-      <div>
+      <div className="oauth-modal-container">
         <div>
           <p>Sorry, this functionality is under construction</p>
         </div>
