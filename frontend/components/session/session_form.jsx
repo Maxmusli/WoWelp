@@ -121,11 +121,11 @@ export default class SessionForm extends Component {
         <div className="signup">
           <div className="header">Sign Up for WoWelp</div>
           <div className="social">
-            <button className="fb-btn">
+            <button className="fb-btn" onClick={this.handleOpenModal}>
               <i className="fab fa-facebook-square"></i>
               <p>Facebook</p>
             </button>
-            <button className="google-btn">
+            <button className="google-btn" onClick={this.handleOpenModal}>
               <img src="https://i.imgur.com/4KIne8b.jpg" />
               <p>Google</p>
             </button>
