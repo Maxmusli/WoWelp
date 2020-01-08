@@ -7,12 +7,12 @@ export default class FooterNav extends Component {
       <div className="footer">
         <div className="footer-nav">
           <div className="icons">
-            <a href="#!">
+            {/* <a href="#!">
               <i className="fab fa-twitter fa-2x"></i>
             </a>
             <a href="#!">
               <i className="fab fa-facebook fa-2x"></i>
-            </a>
+            </a> */}
             <a href="https://www.linkedin.com/in/maxmus-li/">
               <i className="fab fa-linkedin fa-2x"></i>
             </a>
