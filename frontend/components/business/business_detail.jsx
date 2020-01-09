@@ -149,6 +149,36 @@ class BusinessDetail extends Component {
                   </div> */}
                 </div>
 
+                <div className="map-show-container">
+                  <BusinessMap
+                    businesses={[this.props.business]}
+                    changeFilter={this.props.changeFilter}
+                    find={this.props.find}
+                    near={this.props.near}
+                    show={true}
+                  />
+                  <div className="business-hour">
+                    <div className="weeks">
+                      <p>Mon</p>
+                      <p>Tue</p>
+                      <p>Wed</p>
+                      <p>Thu</p>
+                      <p>Fri</p>
+                      <p>Sat</p>
+                      <p>Sun</p>
+                    </div>
+                    <div className="hours">
+                      <p>9:00 am - 10:00 pm</p>
+                      <p>9:00 am - 10:00 pm</p>
+                      <p>9:00 am - 10:00 pm</p>
+                      <p>9:00 am - 10:00 pm</p>
+                      <p>9:00 am - 10:00 pm</p>
+                      <p>9:00 am - 10:00 pm</p>
+                      <p>9:00 am - 10:00 pm</p>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="about-business">
                   <h2>About the Business</h2>
                   <p>{description}</p>
@@ -163,7 +193,7 @@ class BusinessDetail extends Component {
               </div>
 
               <div className="right-section">
-                <div className="map-show-container">
+                {/* <div className="map-show-container">
                   <BusinessMap
                     businesses={[this.props.business]}
                     changeFilter={this.props.changeFilter}
@@ -171,7 +201,7 @@ class BusinessDetail extends Component {
                     near={this.props.near}
                     show={true}
                   />
-                </div>
+                </div> */}
 
                 <div className="info">
                   <div>
