@@ -67,7 +67,7 @@ class BusinessDetail extends Component {
         return (
           <Ratings
             rating={parseFloat(average_rating)}
-            widgetDimensions="40px"
+            widgetDimensions="25px"
             widgetSpacings="5px"
             widgetRatedColors="#f8b700"
           >
