@@ -189,10 +189,10 @@
 .map {
   display: block;
   border-radius: 4px;
-  width: 100%;
+  width: 60%;
   height: 300px;
-  margin-bottom: 18px;
   color: #0b98e4;
+  margin-right: 40px;
 }
 
 .map-show-container {
@@ -200,4 +200,29 @@
   border-top: 1px solid rgba(204, 204, 204, 0.4);
   padding-top: 24px;
   color: #ccc;
+
+  h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ebdec2;
+  }
+}
+
+.map-show-wrapper {
+  display: flex;
+}
+
+.business-hour {
+  display: flex;
+  widows: 40%;
+
+  p {
+    margin-bottom: 5px;
+  }
+
+  .weeks {
+    margin-right: 15px;
+    font-weight: 700;
+  }
 }

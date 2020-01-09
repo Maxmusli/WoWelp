@@ -150,6 +150,8 @@ class BusinessDetail extends Component {
                 </div>
 
                 <div className="map-show-container">
+                <h2>{'Location & Hours'}</h2>
+                <div className="map-show-wrapper">
                   <BusinessMap
                     businesses={[this.props.business]}
                     changeFilter={this.props.changeFilter}
@@ -177,6 +179,7 @@ class BusinessDetail extends Component {
                       <p>9:00 am - 10:00 pm</p>
                     </div>
                   </div>
+                </div>
                 </div>
 
                 <div className="about-business">
