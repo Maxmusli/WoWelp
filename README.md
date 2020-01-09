@@ -25,10 +25,14 @@ On the backend, there are two attributes, near and find, taken from filter param
 
 ## Business Index Page
 
-A list of businesses that matches the search attributes will be displayed on the index page.
+A list of businesses that matches the search attributes will be displayed on the index page. Users filter the list of businesses with price range and other attributes such as reservation.
 
-
+Local state was used to keep track of the selected filter attributes. Once filter attribute is selected, function `handleFilter` will be used to select the matching businesses and update the list of businesses to only contain the matching businesses. 
 
 ## Business Show Page
 
-## Reviews
+Show page will display informations about the specific business. 
+
+## Write/Edit/Delete Review
+
+Users can read reviews about the business and write a review for the business. Users can also edit or delete their own reviews. Edit/delete review button will only appear when the current user matches the author of that review.
