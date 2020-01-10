@@ -23,7 +23,28 @@ Users can search businesses by name, location, or categories. They can also view
 
 On the backend, there are two attributes, near and find, taken from filter params. Near representing location and find representing category. When user enters a location or catergory, business will be selected if it has the matching attribute. Attributes are stored on the client's computer with cookies so that search results remain the same when user refreshes the page.
 
-![Imgur](https://i.imgur.com/GR4VT98.png)
+```javascript
+Business.where(
+  "lower(city) LIKE ? or lower(address) LIKE ?", 
+  "%#{location.downcase}%", 
+  "%#{location.downcase}%"
+)
+
+Business.where(
+  "lower(category) LIKE ? or lower(sub_category) LIKE ? or lower(name) LIKE ?",
+  "%#{category[1..3].downcase}%", 
+  "%#{category[1..3].downcase}%", 
+  "%#{category[1..3].downcase}%"
+)
+```
+```javascript
+cookies[:near] = params[:filters][:near]
+cookies[:find] = params[:filters][:find]
+
+@business = Business.near_location(cookies[:near])
+@matches = Business.find_business(cookies[:find])
+@businesses = @business.select { |business| @matches.include?(business) }
+```
 
 ## Business Index Page
 
