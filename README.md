@@ -52,6 +52,30 @@ A list of businesses that matches the search attributes will be displayed on the
 
 Local state was used to keep track of the selected filter attributes. Once filter attribute is selected, function `handleFilter` will be used to select the matching businesses and update the list of businesses to only contain the matching businesses. 
 
+```javascript
+handleFilter(e, type) {
+  e.preventDefault();
+
+  let selectedBusinesses = [];
+  let filterAttrs = this.state.attrs;
+  let priceAttrs = this.state.priceArr;
+  
+  businesses.map(business => {
+  priceAttrs.forEach(attr => {
+    if (business.price_range === attr && !selectedBusinesses.includes(business)) {
+      if (filterAttrs.every(
+        sub => {
+          return business[sub] === 'Yes'
+        }
+      )) {
+        selectedBusinesses.push(business)
+        }
+     }
+    })
+  })
+ }
+```
+
 ## Business Show Page
 
 Show page will display informations about the specific business. 
