@@ -6,6 +6,9 @@ import CityNavContainer from '../nav_bar/city_nav_container';
 
 
 export default class Home extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
   render() {
     
