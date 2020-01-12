@@ -21,7 +21,7 @@ WoWelp is a web application clone of Yelp with World of Warcraft theme that help
 
 Users can search businesses by name, location, or categories. They can also view businesses by clicking categories or cities.
 
-![homepage](https://i.imgur.com/2DYRJY2.gif)
+![homepage](gifs/homepage.gif | width=100%)
 
 On the backend, there are two attributes, near and find, taken from filter params. Near representing location and find representing category. When user enters a location or catergory, business will be selected if it has the matching attribute. Attributes are stored on the client's computer with cookies so that search results remain the same when user refreshes the page.
 
@@ -51,6 +51,8 @@ cookies[:find] = params[:filters][:find]
 ## Business Index Page
 
 A list of businesses that matches the search attributes will be displayed on the index page. Users filter the list of businesses with price range and other attributes such as reservation.
+
+![indexpage](gifs/indexpage.gif)
 
 Local state was used to keep track of the selected filter attributes. Once filter attribute is selected, function `handleFilter` will be used to select the matching businesses and update the list of businesses to only contain the matching businesses. 
 
@@ -82,6 +84,10 @@ handleFilter(e, type) {
 
 Show page will display informations about the specific business. 
 
+![showpage](gifs/show_page.gif)
+
 ## Write/Edit/Delete Review
 
 Users can read reviews about the business and write a review for the business. Users can also edit or delete their own reviews. Edit/delete review button will only appear when the current user matches the author of that review.
+
+![review](gifs/review.gif)
