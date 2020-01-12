@@ -45,7 +45,6 @@ export default class BusinessIndex extends React.Component {
       priceAttrs = this.state.priceArr.concat(type);
     } 
 
-
     businesses = this.props.businesses
 
     businesses.map(business => {
@@ -61,7 +60,6 @@ export default class BusinessIndex extends React.Component {
         }
       })
     })
-
     
     if (
       (this.state.attrs.length > 0 || filterAttrs.length > 0) &&
