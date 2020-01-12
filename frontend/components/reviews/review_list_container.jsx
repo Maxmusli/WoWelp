@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteReview } from '../../actions/review_actions';
+import Ratings from 'react-ratings-declarative';
 
 const Review = ({ review, currentUser, deleteReview, businessId }) => {
   const { rating, body, id, username, author_id } = review;
@@ -18,7 +19,18 @@ const Review = ({ review, currentUser, deleteReview, businessId }) => {
       </div>
       <div className="review-info-wrapper">
         <div className="review-rating">
-          {rating}
+          <Ratings
+            rating={parseFloat(rating)}
+            widgetDimensions="18px"
+            widgetSpacings="1px"
+            widgetRatedColors="#f8b700"
+          >
+            <Ratings.Widget />
+            <Ratings.Widget />
+            <Ratings.Widget />
+            <Ratings.Widget />
+            <Ratings.Widget />
+          </Ratings>
         </div>
         <div className="review-body">
           {body}
