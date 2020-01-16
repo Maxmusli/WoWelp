@@ -2,7 +2,7 @@
 
 [Live Demo!](https://wowelp.herokuapp.com/#/)
 
-WoWelp is a web application clone of Yelp with World of Warcraft theme that helps users to find businesses based on categoried and location, and allows user to write reviews for the businesses.
+WoWelp is a web application clone of Yelp with World of Warcraft theme that helps users to find businesses based on categories and location and allows users to write reviews for the businesses.
 
 ## Technologies
 
