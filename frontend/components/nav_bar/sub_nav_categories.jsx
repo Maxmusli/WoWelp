@@ -57,7 +57,7 @@ class SubNavCategories extends Component {
     this.state.near = city
     this.props.changeFilter('near', city)
       .then(() => {
-        this.props.changeFilter('find', this.state.find)
+        this.props.changeFilter('find', this.props.find)
           .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${city}`) })
       });
   };
