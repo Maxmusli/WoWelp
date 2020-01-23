@@ -21,6 +21,26 @@ export default class FooterNav extends Component {
             </a>
           </div>
         </div>
+        <div className="links">
+            <div className="about">
+              <h2>About</h2>
+              <div className="line"></div>
+              <div className="about-links">
+                <a href="">Facebook</a>
+                <a href="">Portfolio</a>
+                <a href="">Resume</a>
+                <a href="">AngelList</a>
+              </div>
+            </div>
+            <div className="projects">
+              <h2>Other Projects</h2>
+              <div className="line"></div>
+              <div className="project-links">
+                <a href="">CampList</a>
+                <a href="">Super Mario</a>
+              </div>
+            </div>
+        </div>
       </div>
     )
   }

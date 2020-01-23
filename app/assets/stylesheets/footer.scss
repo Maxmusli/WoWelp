@@ -38,3 +38,19 @@
     font-size: 1.7em;
   }
 }
+
+.links {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.about-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-links {
+  display: flex;
+  flex-direction: column; 
+}

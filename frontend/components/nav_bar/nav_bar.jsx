@@ -93,7 +93,7 @@ export default class NavBar extends React.Component {
                 Write a Review
               </a>
               <a className="topleft" href='https://github.com/Maxmusli'>
-                Github
+                GitHub
               </a>
               <a className="topleft" href='https://www.linkedin.com/in/maxmus-li/'>
                 LinkedIn
