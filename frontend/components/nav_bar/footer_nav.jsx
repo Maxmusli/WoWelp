@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class FooterNav extends Component {
 
@@ -26,9 +26,8 @@ export default class FooterNav extends Component {
               <h2>About</h2>
               <div className="line"></div>
               <div className="about-links">
-                <a href="">Facebook</a>
                 <a href="">Portfolio</a>
-                <a href="">Resume</a>
+                <a href={window.resume} target = "_blank">Resume</a>
                 <a href="">AngelList</a>
               </div>
             </div>
