@@ -4,6 +4,10 @@ import BrowseCategoryContainer from './browse_category_container';
 import Footer from '../nav_bar/footer_nav';
 import CityNavContainer from '../nav_bar/city_nav_container';
 
+const http = require("http");
+setInterval(function () {
+  http.get("http://<your app name>.herokuapp.com");
+}, 300000);
 
 export default class Home extends React.Component {
   componentDidMount() {
