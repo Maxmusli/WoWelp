@@ -6,7 +6,7 @@ import CityNavContainer from '../nav_bar/city_nav_container';
 
 const http = require("http");
 setInterval(function () {
-  http.get("http://<your app name>.herokuapp.com");
+  http.get("http://wowelp.herokuapp.com");
 }, 300000);
 
 export default class Home extends React.Component {
