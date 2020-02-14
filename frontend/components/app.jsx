@@ -10,6 +10,7 @@ import BusinessIndexContainer from './business/business_index_container'
 import ReviewFormContainer from './reviews/review_form_container';
 import UnderConstruction from './home/under_contruction';
 import EditReviewFormContainer from './reviews/edit_review_form_container';
+import UserShowContainer from './user/user_show_container';
 import Modal from "./modal/modal";
 
 export default () => {
@@ -20,6 +21,7 @@ export default () => {
       <Switch>
         <ProtectedRoute path="/search/:businessId/review" component={ReviewFormContainer}/>
         <ProtectedRoute path="/search/:businessId/reviews/:reviewId/edit" component={EditReviewFormContainer}/>
+        <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
         <Route exact path="/search/:businessId" component={BusinessShowContainer} />
         <Route exact path="/search" component={BusinessIndexContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
