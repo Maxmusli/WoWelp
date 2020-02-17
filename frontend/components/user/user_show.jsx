@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SubNavContainer from '../nav_bar/sub_nav_container';
+import UserShowNavContainer from '../nav_bar/user_show_nav_container';
 import Footer from '../nav_bar/footer_nav';
 
 function UserShowPage() {
@@ -7,7 +7,7 @@ function UserShowPage() {
   return (
     <div>
       <div>
-        <SubNavContainer />
+        <UserShowNavContainer />
       </div>
       <div className="bar-2"></div>
       <div className="bar-2"></div>
