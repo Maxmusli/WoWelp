@@ -14,7 +14,7 @@ function UserShowPage(props) {
         <UserShowNavContainer />
       </div>
       <div className="bar-2"></div>
-      <div>
+      <div className="user-show">
         <div className="user-top-section-wrapper">
           <div className="top-content-container">
             <div className="profile-avatar">
