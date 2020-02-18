@@ -37,9 +37,11 @@ function UserShowPage(props) {
                 <div className="profile-action arrange_unit">
                   <ul className="action-link-list">
                     <li>
-                      <a href=""></a>
+                      <p>Add Profile Photos</p>
                     </li>
-                    <li></li>
+                    <li>
+                      <p>Update Your Profile</p>
+                    </li>
                     <li></li>
                   </ul>
                 </div>
@@ -48,7 +50,9 @@ function UserShowPage(props) {
           </div>
         </div>
         <div className="user-bottom-section-wrapper">
+          <div className="top-content-container">
 
+          </div>
         </div>
       </div>
       <div className="bar-2"></div>

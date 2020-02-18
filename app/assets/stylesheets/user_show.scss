@@ -3,6 +3,8 @@
 .user-show {
   min-width: 1020px;
 
+  // top section
+
   .user-top-section-wrapper {
     width: 100%;
     min-width: 1020px;
@@ -69,6 +71,37 @@
       padding: 0 0 6px 15px;
       margin: 0 0 0 -15px;
       border-left: 1px solid #e6e6e6;
+
+      li {
+        display: table;
+        min-width: 100%;
+        table-layout: auto;
+
+        p {
+          vertical-align: middle;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          color: #2A5D99;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
     }
+  }
+
+  // bottom section
+
+  .user-bottom-section-wrapper {
+    padding-top: 15px;
+    padding-bottom: 36px;
+
+  }
+
+  .top-content-container {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
   }
 }
