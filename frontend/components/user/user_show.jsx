@@ -17,18 +17,32 @@ function UserShowPage(props) {
       <div className="user-show">
         <div className="user-top-section-wrapper">
           <div className="top-content-container">
-            <div className="profile-avatar">
+            <div className="profile-content">
+              <div className="profile-avatar">
 
-            </div>
-            <div className="top-content">
-              <div className="avator-dummy"></div>
-              <div className="profile-info">
-                <div>
-                  {props.users[0].fname}
-                </div>
               </div>
-              <div className="profile-action">
+              <div className="top-content">
+                <div className="avatar-dummy arrange_unit"></div>
+                <div className="profile-info arrange_unit">
+                  <div className="username">
+                    {props.users[0].fname}
+                  </div>
+                  <div className="faction">
 
+                  </div>
+                  <div className="user-stats">
+
+                  </div>
+                </div>
+                <div className="profile-action arrange_unit">
+                  <ul className="action-link-list">
+                    <li>
+                      <a href=""></a>
+                    </li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(users_params)
     if @user.save
       login!(@user)
-      render :show
+      render 'api/users/show'
     else
       render json: @user.errors.full_messages, status: 422
       # flash.now[:errors] = @user.errors.full_messages
@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     if @user
-      render :show
+      render 'api/users/show'
     else
       render json: {message: "User not found"}, status: 404
     end
@@ -31,14 +31,14 @@ class Api::UsersController < ApplicationController
 
   # not sure about update user
 
-  # def update
-  #   @user = selected_user
-  #   if @user.update(users_params)
-  #     redirect_to user_url(@user)
-  #   else
-  #     render json: @user.errors.full_messages, status: 422
-  #   end
-  # end
+  def update
+    @user = selected_user
+    if @user.update(users_params)
+      render 'api/users/show'
+    else
+      render json: @user.errors.full_messages, status: 422
+    end
+  end
 
   private
 
@@ -47,6 +47,6 @@ class Api::UsersController < ApplicationController
   end
 
   def users_params
-    params.require(:user).permit(:email, :fname, :lname, :password)
+    params.require(:user).permit(:email, :fname, :lname, :password, :hobby, :gender, :faction)
   end
 end
