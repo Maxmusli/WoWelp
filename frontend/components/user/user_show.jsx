@@ -50,8 +50,13 @@ function UserShowPage(props) {
           </div>
         </div>
         <div className="user-bottom-section-wrapper">
-          <div className="top-content-container">
+          <div className="bottom-content-container">
+            <div className="left-column">
 
+            </div>
+            <div className="right-content">
+
+            </div>
           </div>
         </div>
       </div>
