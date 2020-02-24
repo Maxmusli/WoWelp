@@ -151,7 +151,7 @@ export default class BusinessIndex extends React.Component {
 
   render() {
     
-    const { businesses } = this.props;
+    const { businesses, loader } = this.props;
 
     if(!businesses) return null;
 
@@ -168,7 +168,7 @@ export default class BusinessIndex extends React.Component {
     }
 
     const noResults = `No business found under ${this.props.find} in ${this.props.near}` 
-    
+
     return (
       <div>
         <div>

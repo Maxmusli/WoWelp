@@ -9,6 +9,7 @@ const mapStateToProps = state => {
     businesses: businesses,
     find: state.filters.find,
     near: state.filters.near,
+    loader: state.ui.loader.indexLoader,
   })
 };
 
