@@ -11,7 +11,7 @@ const loaderState = {
 }
 
 const loaderReducer = (state = loaderState, action) => {
-  Object.freeze(state)
+  Object.freeze(state);
   switch(action.type) {
     case LOAD_BUSINESSES:
       return Object.assign({}, { indexLoader: true })
