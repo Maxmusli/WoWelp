@@ -121,7 +121,7 @@ export default class BusinessIndex extends React.Component {
   handleCity(e) {
     e.preventDefault();
 
-    this.props.changeFilter('near', this.props.near)
+    this.props.changeFilter('find', '')
       .then(() => { this.props.history.push(`/search?near=${this.props.near}`) })
   }
 
