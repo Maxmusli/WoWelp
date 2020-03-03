@@ -13,13 +13,16 @@ class BrowseCategory extends React.Component {
     
     if (!this.props.near) {
       this.props.near = 'Dalaran';
+      this.props.changeFilter('near', this.props.near)
+        .then(() => {
+          this.props.changeFilter('find', filter)
+            .then(() => { this.props.history.push(`/search?find=${filter}&near=${this.props.near}`) })
+        });
+    } else {
+      this.props.changeFilter('find', filter)
+        .then(() => { this.props.history.push(`/search?find=${filter}&near=${this.props.near}`) })
     }
     
-    this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', filter)
-          .then(() => { this.props.history.push(`/search?find=${filter}&near=${this.props.near}`) })
-      });
   };
 
   render () {

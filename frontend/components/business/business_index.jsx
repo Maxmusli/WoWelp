@@ -122,10 +122,7 @@ export default class BusinessIndex extends React.Component {
     e.preventDefault();
 
     this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', '')
-          .then(() => { this.props.history.push(`/search?near=${this.props.near}`) })
-      })
+      .then(() => { this.props.history.push(`/search?near=${this.props.near}`) })
   }
 
   handleClear(e) {

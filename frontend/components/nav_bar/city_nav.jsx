@@ -21,6 +21,8 @@ class CityNav extends React.Component {
         this.props.changeFilter('find', '')
           .then(() => { this.props.history.push(`/search?near=${city}`) })
       })
+    // this.props.changeFilter('near', city)
+    //   .then(() => { this.props.history.push(`/search?near=${city}`) })
   }
 
   render() {

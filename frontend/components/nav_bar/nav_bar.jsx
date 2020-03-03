@@ -25,10 +25,13 @@ export default class NavBar extends React.Component {
     }
 
     this.props.changeFilter('near', location)
+      // .then(() => {
+      //   this.props.changeFilter('find', '')
+      //     .then(() => { this.props.history.push(`/search?near=${location}`) })
+      // })
       .then(() => {
-        this.props.changeFilter('find', '')
-          .then(() => { this.props.history.push(`/search?near=${location}`) })
-      })
+        this.props.history.push(`/search?near=${location}`) })
+      
   }
 
   handleClick(e) {

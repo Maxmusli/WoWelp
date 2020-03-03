@@ -39,27 +39,32 @@ class SubNavCategories extends Component {
   handleFilter(e, filter) {
     e.preventDefault();
 
+    this.state.find = filter
     if (!this.props.near) {
       this.props.near = 'Dalaran';
+      this.props.changeFilter('near', this.props.near)
+        .then(() => {
+          this.props.changeFilter('find', filter)
+            .then(() => { this.props.history.push(`/search?find=${filter}&near=${this.props.near}`) })
+        });
+    } else {
+      this.props.changeFilter('find', filter)
+        .then(() => { this.props.history.push(`/search?find=${filter}&near=${this.props.near}`) })
     }
-    this.state.find = filter
-
-    this.props.changeFilter('near', this.props.near)
-      .then(() => {
-        this.props.changeFilter('find', filter)
-          .then(() => { this.props.history.push(`/search?find=${filter}&near=${this.props.near}`) })
-      });
   };
 
   handleCity(e, city) {
     e.preventDefault();
 
     this.state.near = city
+    // this.props.changeFilter('near', city)
+    //   .then(() => {
+    //     this.props.changeFilter('find', this.props.find)
+    //       .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${city}`) })
+    //   });
     this.props.changeFilter('near', city)
-      .then(() => {
-        this.props.changeFilter('find', this.props.find)
-          .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${city}`) })
-      });
+      .then(() => { this.props.history.push(`/search?find=${this.state.find}&near=${city}`) })
+
   };
 
   render() { 
