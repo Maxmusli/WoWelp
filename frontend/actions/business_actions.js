@@ -33,13 +33,13 @@ export const clearBusinesses = () => ({
 })
 
 export const fetchBusinesses = (filters) => dispatch => {
-  dispatch(loadBusinesses());
+  // dispatch(loadBusinesses());
   return APIUtil.fetchBusinesses(filters)
     .then(businesses => dispatch(receiveBusinesses(businesses)))
 };
 
 export const fetchBusiness = id => dispatch => {
-  dispatch(loadBusiness());
+  // dispatch(loadBusiness());
   return APIUtil.fetchBusiness(id)
     .then(payload => dispatch(receiveBusiness(payload)))
 };
