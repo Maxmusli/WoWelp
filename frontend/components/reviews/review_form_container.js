@@ -9,7 +9,7 @@ import { logout } from '../../actions/session_action';
 
 class CreateReviewForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   componentDidMount() {
