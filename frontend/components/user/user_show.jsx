@@ -51,12 +51,10 @@ function UserShowPage(props) {
           </div>
         </div>
         <div className="user-bottom-section-wrapper">
-          <div className="bottom-content-container">
-            <TabsContainer
-              userReviews = {props.users[0].reviews}
-              reviewBusinesses = {props.users[0].businesses}
-            />
-          </div>
+          <TabsContainer
+            userReviews = {props.users[0].reviews}
+            reviewBusinesses = {props.users[0].businesses}
+          />
         </div>
       </div>
       <div className="bar-2"></div>
