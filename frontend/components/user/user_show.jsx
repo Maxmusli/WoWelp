@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import UserShowNavContainer from '../nav_bar/user_show_nav_container';
+import TabsContainer from './tabs_container';
 import Footer from '../nav_bar/footer_nav';
 
 function UserShowPage(props) {
@@ -51,12 +52,10 @@ function UserShowPage(props) {
         </div>
         <div className="user-bottom-section-wrapper">
           <div className="bottom-content-container">
-            <div className="left-column">
-
-            </div>
-            <div className="right-content">
-
-            </div>
+            <TabsContainer
+              userReviews = {props.users[0].reviews}
+              reviewBusinesses = {props.users[0].businesses}
+            />
           </div>
         </div>
       </div>
