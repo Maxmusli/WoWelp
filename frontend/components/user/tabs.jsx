@@ -42,7 +42,10 @@ function Tabs(props) {
   return (
     <div className="bottom-content-container">
       <Header
-
+        activeTab={activeTab}
+        onTabChosen={handleClick}
+        tabs={props.tabSections}
+        username={props.username}
       />
       <div>
         {handleEmptyTab()}
