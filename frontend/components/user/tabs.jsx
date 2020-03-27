@@ -30,9 +30,9 @@ function Tabs(props) {
 
   function handleTabContent(displayTab) {
     if (displayTab.title === "Profile Overview") {
-      return <Overview reviews={displayTab.content} />;
+      return <Overview reviews={displayTab.content} businesses={displayTab.businesses} />;
     } else if (displayTab.title === "Reviews") {
-      return <UserReviews photos={displayTab.content} />;
+      return <UserReviews photos={displayTab.content} businesses={displayTab.businesses} />;
     }
   }
 
