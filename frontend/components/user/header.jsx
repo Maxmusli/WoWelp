@@ -14,8 +14,8 @@ function Header(props) {
   });
 
   return (
-    <ul className="tab-header">
-      <li>{props.username}'s profile</li>
+    <ul className="left-column">
+      <li>{props.username}'s Profile</li>
       {headers}
     </ul>
   )

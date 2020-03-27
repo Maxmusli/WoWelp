@@ -47,7 +47,7 @@ function Tabs(props) {
         tabs={props.tabSections}
         username={props.username}
       />
-      <div>
+      <div className="right-content">
         {handleEmptyTab()}
         {handleTabContent(displayTab)}
       </div>
