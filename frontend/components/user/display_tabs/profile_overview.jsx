@@ -1,36 +1,44 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Overview(props) {
-  let recentReviews = props.reviews.slice(-4)
-  var businesses = props.businesses
-  let content = []
+  let recentReviews = props.reviews.slice(-4);
+  var businesses = props.businesses;
+  let content = [];
   for (let i = recentReviews.length - 1; i >= 0; i--) {
-    let temp = {}
-    temp['review'] = recentReviews[i]
-    temp['business'] = businesses[recentReviews[i].business_id]
-    content.push(temp)
+    let temp = {};
+    temp['review'] = recentReviews[i];
+    temp['business'] = businesses[recentReviews[i].business_id];
+    content.push(temp);
   }
   let display = content.map((info, idx) => {
     return (
       <li key={idx}>
-        <div>
-          {info.business.name}
+        <div className="businessInfo">
+          <div className="left">
+
+          </div>
+          <div className="right">
+            <Link to={`/search/${info.business.id}`}>{info.business.name}</Link>
+            {info.business.category}
+            {info.business.address}
+          </div>
         </div>
-        <div>
+        <div className="reviewRating">
           {info.review.rating}
         </div>
-        <div>
+        <div className="reviewBody"> 
           {info.review.body}
         </div>
       </li>
     )
-  })
+  });
   return (
-    <ul>
+    <ul className="overviewContent">
       <li>Most Recent Activity</li>
       {display}
     </ul>
   )
 }
 
-export default Overview
+export default Overview;
