@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     tabSections: [
       { title: 'Profile Overview', content: reviews, businesses: ownProps.reviewBusinesses },
-      { title: 'Reviews', content: ownProps.userReviews, businesses: ownProps.reviewBusinesses }
+      { title: 'Reviews', content: reviews, businesses: ownProps.reviewBusinesses }
     ]
   }
 }

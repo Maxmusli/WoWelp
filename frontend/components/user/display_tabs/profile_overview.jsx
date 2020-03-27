@@ -16,7 +16,7 @@ function Overview(props) {
       <li key={idx}>
         <div className="businessInfo">
           <div className="left">
-
+            Pic
           </div>
           <div className="right">
             <Link to={`/search/${info.business.id}`}>{info.business.name}</Link>
@@ -34,10 +34,17 @@ function Overview(props) {
     )
   });
   return (
-    <ul className="overviewContent">
-      <li>Most Recent Activity</li>
-      {display}
-    </ul>
+    <div>
+      <ul className="overviewContent">
+        <li>Most Recent Activity</li>
+        {display}
+      </ul>
+      <div>
+        <div>
+          About 
+        </div>
+      </div>
+    </div>
   )
 }
 

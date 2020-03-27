@@ -32,7 +32,7 @@ function Tabs(props) {
     if (displayTab.title === "Profile Overview") {
       return <Overview reviews={displayTab.content} businesses={displayTab.businesses} />;
     } else if (displayTab.title === "Reviews") {
-      return <UserReviews photos={displayTab.content} businesses={displayTab.businesses} />;
+      return <UserReviews reviews={displayTab.content} businesses={displayTab.businesses} />;
     }
   }
 
