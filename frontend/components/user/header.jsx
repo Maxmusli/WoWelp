@@ -14,10 +14,14 @@ function Header(props) {
   });
 
   return (
-    <ul className="left-column">
-      <li>{props.username}'s Profile</li>
-      {headers}
-    </ul>
+    <div className="left-column">
+      <div className="header-title">
+        {props.username}'s Profile
+      </div>
+      <ul>
+        {headers}
+      </ul>
+    </div>
   )
 }
 
