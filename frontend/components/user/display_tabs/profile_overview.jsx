@@ -34,12 +34,14 @@ function Overview(props) {
     )
   });
   return (
-    <div>
-      <ul className="overviewContent">
-        <li>Most Recent Activity</li>
-        {display}
-      </ul>
-      <div>
+    <div className="overview-content">
+      <div className="main-section">
+        <ul>
+          <li>Most Recent Activity</li>
+          {display}
+        </ul>
+      </div>
+      <div className="side-bar">
         <div>
           About 
         </div>
