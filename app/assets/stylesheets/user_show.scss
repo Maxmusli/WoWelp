@@ -3,6 +3,11 @@
 .user-show {
   min-width: 1020px;
 
+  h2 {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
   // top section
 
   .user-top-section-wrapper {
@@ -57,7 +62,7 @@
     .username {
       font-weight: bold;
       margin-bottom: 6px;
-      font-size: 30px;
+      font-size: 32px;
       line-height: 1.2em;
     }
   }
@@ -156,12 +161,25 @@
           padding: 0 15px;
           min-height: 1px;
           width: 66.66667%;
+
+          .business-info {
+            display: flex;
+            padding: 18px 0 17px 0;
+            margin: 0 10px 0 10px;
+
+            .img{
+              width: 60px;
+              height: 60px;
+              border: 1px solid black;
+            }
+          }
         }
 
         .side-bar {
           padding: 0 15px;
           min-height: 1px;
           width: 33.33333%;
+          border-left: 1px solid #e6e6e6;
         }
       }
     }

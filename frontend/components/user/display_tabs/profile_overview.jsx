@@ -14,14 +14,18 @@ function Overview(props) {
   let display = content.map((info, idx) => {
     return (
       <li key={idx}>
-        <div className="businessInfo">
-          <div className="left">
+        <div className="business-info">
+          <div className="img">
             Pic
           </div>
-          <div className="right">
+          <div className="info">
             <Link to={`/search/${info.business.id}`}>{info.business.name}</Link>
-            {info.business.category}
-            {info.business.address}
+            <div>
+              {info.business.category}
+            </div>
+            <div>
+              {info.business.address}
+            </div>
           </div>
         </div>
         <div className="reviewRating">
@@ -36,8 +40,10 @@ function Overview(props) {
   return (
     <div className="overview-content">
       <div className="main-section">
+        <div>
+          <h2>Recent Activity</h2>
+        </div>
         <ul>
-          <li>Most Recent Activity</li>
           {display}
         </ul>
       </div>
