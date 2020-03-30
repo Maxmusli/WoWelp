@@ -151,7 +151,7 @@
       // temp
       border: 1px solid black;
 
-      .overview-content {
+      .user-show-content {
         display: flex;
         width: 100%;
 
@@ -179,6 +179,10 @@
             margin: 0 10px 0 0;
             border-top: 1px solid #e6e6e6;
           }
+
+          .rating {
+            padding: 5px 0 5px 0;
+          }
         }
 
         .side-bar {
@@ -186,6 +190,10 @@
           min-height: 1px;
           width: 33.33333%;
           border-left: 1px solid #e6e6e6;
+        }
+
+        .reviews-section {
+          width: 100%;
         }
       }
     }
