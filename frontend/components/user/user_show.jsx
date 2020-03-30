@@ -54,7 +54,7 @@ function UserShowPage(props) {
           <TabsContainer
             userReviews = {props.users[0].reviews}
             reviewBusinesses = {props.users[0].businesses}
-            username = {props.users[0].fname}
+            user = {props.users[0]}
           />
         </div>
       </div>

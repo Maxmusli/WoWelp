@@ -70,11 +70,18 @@ function Overview(props) {
       </div>
       <div className="side-bar">
         <div>
-          <h3>
-            About 
-          </h3>
+            About {props.user.fname}
           <div>
-            {}
+            <h3>Faction</h3>
+            {props.user.faction}
+          </div>
+          <div>
+            <h3>WoWelping Since</h3>
+            {props.user.created_at}
+          </div>
+          <div>
+            <h3>Things I Love</h3>
+            {props.user.hobby || "You haven't told us yet ... do tell!"}
           </div>
         </div>
       </div>

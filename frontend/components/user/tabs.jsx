@@ -30,7 +30,13 @@ function Tabs(props) {
 
   function handleTabContent(displayTab) {
     if (displayTab.title === "Profile Overview") {
-      return <Overview reviews={displayTab.content} businesses={displayTab.businesses} />;
+      return (
+        <Overview 
+          reviews={displayTab.content} 
+          businesses={displayTab.businesses} 
+          user = {displayTab.user}
+        />
+      );
     } else if (displayTab.title === "Reviews") {
       return <UserReviews reviews={displayTab.content} businesses={displayTab.businesses} />;
     }
@@ -45,7 +51,7 @@ function Tabs(props) {
         activeTab={activeTab}
         onTabChosen={handleClick}
         tabs={props.tabSections}
-        username={props.username}
+        username={props.user.fname}
       />
       <div className="right-content">
         {handleEmptyTab()}
