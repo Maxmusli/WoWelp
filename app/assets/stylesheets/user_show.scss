@@ -103,23 +103,22 @@
     width: 1000px;
     margin: 0 auto;
     // temp
-    height: 500px;
+    // height: 500px;
     border: 1px solid black;
   }
 
   .bottom-content-container {
     margin: 0 -15px;
     margin-top: 9px;
+    display: flex;
 
     .left-column {
-      float: left;
       padding: 0 15px;
       min-height: 1px;
       box-sizing: border-box;
       width: 25%;
       margin-top: 27px;
       // temp
-      height: 300px;
       border: 1px solid black;
 
       .header-title {
@@ -144,13 +143,11 @@
     }
 
     .right-content {
-      float: left;
       padding: 0 15px;
       min-height: 1px;
       box-sizing: border-box;
       width: 75%;
       // temp
-      height: 300px;
       border: 1px solid black;
 
       .overview-content {
