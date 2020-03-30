@@ -14,6 +14,25 @@ function Overview(props) {
     content.push(temp);
   }
 
+  const temp = props.user.created_at.split('-');
+  const dateTable = {
+    '01': 'January',
+    '02': 'February',
+    '03': 'March',
+    '04': 'Aprial',
+    '05': 'May',
+    '06': 'June',
+    '07': 'July',
+    '08': 'Auguest',
+    '09': 'September',
+    '10': 'October',
+    '11': 'November',
+    '12': 'December'
+  };
+
+  const createMonth = dateTable[temp[1]];
+  const createYear = temp[0];
+
   function starRating(rating) {
     return (
       <Ratings
@@ -69,21 +88,23 @@ function Overview(props) {
         </ul>
       </div>
       <div className="side-bar">
-        <div>
-            About {props.user.fname}
-          <div>
+        <div className="about-title">
+          About {props.user.fname}
+        </div>
+        <ul>
+          <li>
             <h3>Faction</h3>
-            {props.user.faction}
-          </div>
-          <div>
+            {props.user.faction || "You haven't choosen your side."}
+          </li>
+          <li>
             <h3>WoWelping Since</h3>
-            {props.user.created_at}
-          </div>
-          <div>
+            {createMonth + ' ' + createYear}
+          </li>
+          <li>
             <h3>Things I Love</h3>
             {props.user.hobby || "You haven't told us yet ... do tell!"}
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
   )

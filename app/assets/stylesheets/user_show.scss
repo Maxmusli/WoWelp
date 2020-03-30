@@ -167,6 +167,18 @@
 
             .info {
               margin-left: 7px;
+              font-size: 14px;
+
+              a {
+                cursor: pointer;
+                color: #0b98e4;
+                text-decoration: none;
+                font-size: 16px;
+              }
+
+              div {
+                margin: 5px 0 5px 0;
+              }
             }
           }
 
@@ -186,6 +198,23 @@
           min-height: 1px;
           width: 33.33333%;
           border-left: 1px solid #e6e6e6;
+          line-height: 1.28571em;
+
+          .about-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+          }
+
+          li {
+            margin-bottom: 14px;
+          }
+
+          h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
         }
 
         .reviews-section {
