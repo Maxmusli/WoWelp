@@ -35,8 +35,8 @@ function UserReview(props) {
     return (
       <li key={idx}>
         <div className="business-info">
-          <div className="img">
-            Pic
+          <div className="business-profile-pic">
+            <img src={info.business.pictureUrls[0]} alt="" />
           </div>
           <div className="info">
             <Link to={`/search/${info.business.id}`}>{info.business.name}</Link>

@@ -103,9 +103,6 @@
     padding: 15px 15px 36px 15px;
     width: 1000px;
     margin: 0 auto;
-    // temp
-    // height: 500px;
-    border: 1px solid black;
   }
 
   .bottom-content-container {
@@ -119,8 +116,6 @@
       box-sizing: border-box;
       width: 25%;
       margin-top: 27px;
-      // temp
-      border: 1px solid black;
 
       .header-title {
         padding: 12px 12px 12px 0;
@@ -148,8 +143,6 @@
       min-height: 1px;
       box-sizing: border-box;
       width: 75%;
-      // temp
-      border: 1px solid black;
 
       .user-show-content {
         display: flex;
@@ -163,10 +156,13 @@
           .business-info {
             display: flex;
 
-            .img{
-              width: 60px;
-              height: 60px;
-              border: 1px solid black;
+            .business-profile-pic{
+              img {
+                object-fit: cover;
+                width: 60px;
+                height: 60px;
+                border-radius: 4px;;
+              }
             }
 
             .info {

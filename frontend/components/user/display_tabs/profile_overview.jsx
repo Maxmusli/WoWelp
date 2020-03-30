@@ -35,8 +35,8 @@ function Overview(props) {
     return (
       <li key={idx}>
         <div className="business-info">
-          <div className="img">
-            Pic
+          <div className="business-profile-pic">
+            <img src={info.business.pictureUrls[0]} alt="" />
           </div>
           <div className="info">
             <Link to={`/search/${info.business.id}`}>{info.business.name}</Link>
@@ -57,7 +57,7 @@ function Overview(props) {
       </li>
     )
   });
-
+  
   return (
     <div className="user-show-content">
       <div className="main-section">
@@ -70,7 +70,12 @@ function Overview(props) {
       </div>
       <div className="side-bar">
         <div>
-          About 
+          <h3>
+            About 
+          </h3>
+          <div>
+            {}
+          </div>
         </div>
       </div>
     </div>

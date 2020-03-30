@@ -12,6 +12,7 @@ json.reviewIds @user.reviews.pluck(:id)
   json.businesses do
     json.set! review.business.id do
       json.extract! review.business, :id, :name, :address, :category, :average_rating
+      json.pictureUrls review.business.pictures.map { |file| url_for(file) }
     end
   end
 end

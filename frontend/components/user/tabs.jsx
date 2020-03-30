@@ -38,7 +38,7 @@ function Tabs(props) {
 
   let displayTab = props.tabSections[activeTab];
   if (displayTab.content.length < 0) return null;
-
+  
   return (
     <div className="bottom-content-container">
       <Header
