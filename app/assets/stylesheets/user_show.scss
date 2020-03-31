@@ -2,6 +2,10 @@
 
 .user-show {
   min-width: 1020px;
+  // background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), image-url("user-profile-background.jpg");
+  // background-size: cover;
+  // background-position: center;
+  background: rgba(0, 0, 0, 0.7)
 
   h2 {
     font-size: 24px;
