@@ -7,7 +7,7 @@ function UserShowPage(props) {
   
   useEffect(() => {
     props.fetchCurrentUser(props.match.params.userId)
-  }, [])
+  }, []);
   
   return (
     <div>
