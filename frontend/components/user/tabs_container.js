@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { deleteReview } from '../../actions/review_actions'
 import Tabs from './tabs.jsx';
 
 const mapStateToProps = (state, ownProps) => {
@@ -24,4 +25,8 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps)(Tabs)
+const mapDispatchToProps = dispatch => ({
+  deleteReview: reviewId => dispatch(deleteReview(reviewId))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Tabs)

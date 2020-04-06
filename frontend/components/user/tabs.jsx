@@ -38,7 +38,14 @@ function Tabs(props) {
         />
       );
     } else if (displayTab.title === "Reviews") {
-      return <UserReviews reviews={displayTab.content} businesses={displayTab.businesses} />;
+      
+      return (
+        <UserReviews 
+          reviews={displayTab.content}
+          businesses={displayTab.businesses} 
+          deleteReview={props.deleteReview}
+        />
+      );
     }
   }
 

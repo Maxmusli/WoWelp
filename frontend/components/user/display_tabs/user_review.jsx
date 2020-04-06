@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Ratings from 'react-ratings-declarative';
 
@@ -6,6 +6,7 @@ function UserReview(props) {
   let userReviews = props.reviews;
   var businesses = props.businesses;
   let content = [];
+  const [totalContent, setTotal] = useState(0)
 
   for (let i = userReviews.length - 1; i >= 0; i--) {
     let temp = {};
@@ -30,8 +31,9 @@ function UserReview(props) {
       </Ratings>
     )
   }
-
+  
   let display = content.map((info, idx) => {
+    
     return (
       <li key={idx}>
         <div className="business-info">
@@ -48,16 +50,28 @@ function UserReview(props) {
             </div>
           </div>
         </div>
-        <div className="rating">
-          {starRating(info.review.rating)}
-        </div>
-        <div className="body">
-          {info.review.body}
+        <div>
+          <div className="rating">
+            {starRating(info.review.rating)}
+          </div>
+          <div className="body">
+            {info.review.body}
+          </div>
+          <div className="edit-delete-review">
+            <div>
+              <Link className="edit-review" to={`/search/${info.business.id}/reviews/${info.review.id}/edit`}>
+                Edit Review
+              </Link>
+            </div>
+            <div>
+              <button className="delete-review" onClick={() => props.deleteReview(info.review.id).then(setTotal(info.review.lenght))}>Delete Review</button>
+            </div> 
+          </div>
         </div>
       </li>
     )
   });
-
+  
   return (
     <div className="user-show-content">
       <div className="main-section reviews-section">
