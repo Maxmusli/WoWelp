@@ -2,10 +2,9 @@
 
 .user-show {
   min-width: 1020px;
-  // background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), image-url("user-profile-background.jpg");
-  // background-size: cover;
-  // background-position: center;
-  background: rgba(0, 0, 0, 0.7)
+  background: image-url("profile-background.jpg");
+  background-position: top;
+  background-size: 150%;
 
   h2 {
     font-size: 24px;
@@ -133,6 +132,7 @@
         text-decoration: none;
         color: #333;
         border-top: 1px solid #e6e6e6;
+        cursor: pointer;
       }
 
       .active {
