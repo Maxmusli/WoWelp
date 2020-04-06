@@ -2,7 +2,8 @@
 
 .user-show {
   min-width: 1020px;
-  background: image-url("profile-background.jpg");
+  // background: image-url("profile-background.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), image-url("profile-background.jpg");
   background-position: top;
   background-size: 150%;
 
@@ -10,6 +11,7 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 6px;
+    color: rgb(248, 183, 0);
   }
 
   // top section
@@ -67,6 +69,7 @@
       margin-bottom: 6px;
       font-size: 32px;
       line-height: 1.2em;
+      color: #FFFFFF;
     }
   }
 
@@ -78,7 +81,7 @@
     .action-link-list {
       padding: 0 0 6px 15px;
       margin: 0 0 0 -15px;
-      border-left: 1px solid #e6e6e6;
+      border-left: 1px solid gray;
 
       li {
         display: table;
@@ -89,7 +92,7 @@
           vertical-align: middle;
           padding-top: 5px;
           padding-bottom: 5px;
-          color: #2A5D99;
+          color: #0b98e4;
 
           &:hover {
             cursor: pointer;
@@ -123,6 +126,7 @@
         padding: 12px 12px 12px 0;
         font-weight: bold;
         font-size: 16px;
+        color: #FFFFFF;
       }
 
       ul > li {
@@ -130,14 +134,15 @@
         padding: 12px;
         position: relative;
         text-decoration: none;
-        color: #333;
-        border-top: 1px solid #e6e6e6;
+        color: #ebdec2;
+        border-top: 1px solid gray;
         cursor: pointer;
       }
 
       .active {
         border-left: 4px solid #D79D0E;
-        background-color: #f5f5f5;
+        background-color: #581C10;
+        color: #FFFFFF;
       }
     }
 
@@ -177,10 +182,12 @@
                 color: #0b98e4;
                 text-decoration: none;
                 font-size: 16px;
+                font-weight: bold;
               }
 
               div {
                 margin: 5px 0 5px 0;
+                color: #D5DDE6;
               }
             }
           }
@@ -188,11 +195,16 @@
           li {
             padding: 18px 0 17px 0;
             margin: 0 10px 0 0;
-            border-top: 1px solid #e6e6e6;
+            border-top: 1px solid gray;
           }
 
           .rating {
             padding: 5px 0 5px 0;
+          }
+
+          .body {
+            line-height: 1.38462em;
+            color: #D5DDE6;
           }
         }
 
@@ -200,8 +212,9 @@
           padding: 0 15px;
           min-height: 1px;
           width: 33.33333%;
-          border-left: 1px solid #e6e6e6;
+          border-left: 1px solid gray;
           line-height: 1.28571em;
+          color: #ebdec2;
 
           .about-title {
             font-size: 18px;
