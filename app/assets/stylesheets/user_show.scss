@@ -6,6 +6,7 @@
   background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), image-url("profile-background.jpg");
   background-position: top;
   background-size: 150%;
+  min-height: 500px;
 
   h2 {
     font-size: 24px;
@@ -240,5 +241,16 @@
     }
   }
   
+  .empty-content {
+    color: #ebdec2;
 
+    div {
+      margin: 8px 0 8px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0b98e4;
+    }
+  }
 }

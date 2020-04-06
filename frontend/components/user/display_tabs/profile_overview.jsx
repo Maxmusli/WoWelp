@@ -50,6 +50,24 @@ function Overview(props) {
     )
   }
 
+  function handleEmptyTab() {
+    
+    const displayTab = props.reviews.length;
+    if (displayTab < 1) {
+      return (
+        <div className="empty-content">
+          <div>Get started today!</div>
+          <div>
+            <Link to="/campsites">Explore local businesses...</Link>
+          </div>
+          {/* <div>
+            <Link to="/campsites/new">Or establish your own!</Link>
+          </div> */}
+        </div>
+      );
+    }
+  }
+
   let display = content.map((info, idx) => {
     return (
       <li key={idx}>
@@ -82,6 +100,9 @@ function Overview(props) {
       <div className="main-section">
         <div>
           <h2>Recent Activity</h2>
+        </div>
+        <div>
+          {handleEmptyTab()}
         </div>
         <ul>
           {display}

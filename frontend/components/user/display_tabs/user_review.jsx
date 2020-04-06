@@ -31,6 +31,29 @@ function UserReview(props) {
       </Ratings>
     )
   }
+
+  function handleDelete(reviewId) {
+    props.deleteReview(reviewId)
+    setTotal(props.reviews.length)
+  }
+
+  function handleEmptyTab() {
+
+    const displayTab = props.reviews.length;
+    if (displayTab < 1) {
+      return (
+        <div className="empty-content">
+          <div>It’s your turn — review everything from your favorite burger to your favorite root canal. Write reviews to contribute to the WoWelp community and help your friends find all the local gems that you love.</div>
+          <div>
+            <Link to="/campsites">Explore local businesses...</Link>
+          </div>
+          {/* <div>
+            <Link to="/campsites/new">Or establish your own!</Link>
+          </div> */}
+        </div>
+      );
+    }
+  }
   
   let display = content.map((info, idx) => {
     
@@ -64,7 +87,7 @@ function UserReview(props) {
               </Link>
             </div>
             <div>
-              <button className="delete-review" onClick={() => props.deleteReview(info.review.id).then(setTotal(info.review.lenght))}>Delete Review</button>
+              <button className="delete-review" onClick={() => handleDelete(info.review.id)}>Delete Review</button>
             </div> 
           </div>
         </div>
@@ -77,6 +100,9 @@ function UserReview(props) {
       <div className="main-section reviews-section">
         <div>
           <h2>Reviews</h2>
+        </div>
+        <div>
+          {handleEmptyTab()}
         </div>
         <ul>
           {display}

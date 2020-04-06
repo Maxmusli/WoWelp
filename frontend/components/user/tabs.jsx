@@ -11,23 +11,6 @@ function Tabs(props) {
     setTab(num)
   }
 
-  function handleEmptyTab() {
-    const displayTab = props.tabSections[activeTab];
-    if (displayTab.content.length < 1) {
-      return (
-        <ul>
-          <li>Get started today!</li>
-          <li>
-            <Link to="/campsites">Explore campsites...</Link>
-          </li>
-          <li>
-            <Link to="/campsites/new">Or establish your own!</Link>
-          </li>
-        </ul>
-      );
-    }
-  }
-
   function handleTabContent(displayTab) {
     if (displayTab.title === "Profile Overview") {
       return (
@@ -61,7 +44,6 @@ function Tabs(props) {
         username={props.user.fname}
       />
       <div className="right-content">
-        {handleEmptyTab()}
         {handleTabContent(displayTab)}
       </div>
     </div>
