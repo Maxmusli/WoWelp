@@ -45,7 +45,7 @@ function UserReview(props) {
         <div className="empty-content">
           <div>It’s your turn — review everything from your favorite burger to your favorite root canal. Write reviews to contribute to the WoWelp community and help your friends find all the local gems that you love.</div>
           <div>
-            <Link to="/campsites">Explore local businesses...</Link>
+            <Link to="/search">Explore local businesses...</Link>
           </div>
           {/* <div>
             <Link to="/campsites/new">Or establish your own!</Link>

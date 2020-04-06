@@ -62,15 +62,15 @@ export default class NavBar extends React.Component {
         </div>
         <ul className="menu-nav">
           <li>
-            <Link className="topleft" to='/underconstruction'>
+            <Link className="topleft" to={`/users/${currentUser.id}`}>
               About Me
             </Link>
           </li>
-          <li>
-            <Link className="topleft" to='/underconstruction'>
+          {/* <li>
+            <Link className="topleft" to='/u'>
               My Reviews
             </Link>
-          </li>
+          </li> */}
           <li>
             <button className="menu-nav-btn" onClick={logout}>Log Out</button>
           </li>

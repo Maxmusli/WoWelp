@@ -58,7 +58,7 @@ function Overview(props) {
         <div className="empty-content">
           <div>Get started today!</div>
           <div>
-            <Link to="/campsites">Explore local businesses...</Link>
+            <Link to="/search">Explore local businesses...</Link>
           </div>
           {/* <div>
             <Link to="/campsites/new">Or establish your own!</Link>

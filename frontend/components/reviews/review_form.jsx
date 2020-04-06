@@ -50,36 +50,6 @@ class ReviewForm extends React.Component {
     }
   }
 
-  // handleEventListener(e, type, star) {
-  //   e.preventDefault()
-
-  //   let five = document.getElementById('five');
-  //   let four = document.getElementById('four');
-  //   let three = document.getElementById('three');
-  //   let two = document.getElementById('two');
-  //   let one = document.getElementById('one');
-
-  //   if (type === 'mouseover') {
-  //     // star.addEventListener('mouseover', () => {
-  //       five.style.backgroundColor = '#dd050b';
-  //       four.style.backgroundColor = '#dd050b';
-  //       three.style.backgroundColor = '#dd050b';
-  //       two.style.backgroundColor = '#dd050b';
-  //       one.style.backgroundColor = '#dd050b';
-  //     // })
-  //   }
-
-  //   if (type === 'mouseout') {
-  //     // star.addEventListener('mouseout', () => {
-  //       five.style.backgroundColor = '';
-  //       four.style.backgroundColor = '';
-  //       three.style.backgroundColor = '';
-  //       two.style.backgroundColor = '';
-  //       one.style.backgroundColor = '';
-  //     // })
-  //   }
-  // }
-
   changeRating(newRating) {
     this.setState({
       rating: newRating
@@ -89,7 +59,7 @@ class ReviewForm extends React.Component {
   render() {
     const { currentUser, logout } = this.props;
     let placeholder = "Your review helps others learn about great local businesses. \n \nPlease don’t review this business if you received a freebie for writing this review, or if you’re connected in any way to the owner or employees.";
-
+    
     const display = currentUser ? (
       <div>
         <div className="user-display">

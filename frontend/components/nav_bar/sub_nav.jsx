@@ -70,17 +70,16 @@ class NavBar extends React.Component {
         </div>
         <ul className="menu-nav">
           <li>
-            <Link className="menu-nav-btn" to='/underconstruction'>
+            <Link className="menu-nav-btn" to={`/users/${currentUser.id}`}>
               About Me
             </Link>
-            
           </li>
-          <li>
+          {/* <li>
             <Link className="menu-nav-btn" to='/underconstruction'>
               My Reviews
             </Link>
             
-          </li>
+          </li> */}
           <li>
             <button className="menu-nav-btn" onClick={logout}>Log Out</button>
           </li>

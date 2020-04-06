@@ -5,7 +5,7 @@ import { createReview } from '../../actions/review_actions';
 import ReviewForm from './review_form';
 import { selectBusiness } from '../../reducers/selectors';
 import { fetchBusiness } from '../../actions/business_actions';
-import { logout } from '../../actions/session_action';
+import { logout, fetchCurrentUser } from '../../actions/session_action';
 
 class CreateReviewForm extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class CreateReviewForm extends React.Component {
   }
 
   render() {
-    const { review, formType, submitReview, business, fetchBusiness } = this.props;
+    const { review, formType, submitReview, business, fetchBusiness, currentUser, logout } = this.props;
 
     if (!review) return null;
 
@@ -29,6 +29,8 @@ class CreateReviewForm extends React.Component {
         submitReview={submitReview}
         business={business}
         fetchBusiness={fetchBusiness}
+        currentUser={currentUser}
+        logout={logout}
       />
     );
   }
@@ -42,7 +44,7 @@ const mapStateToProps = (state, ownProps) => {
     rating: 0,
     body: ''
   };
-
+  
   return ({
     businessId,
     business,
@@ -56,6 +58,7 @@ const mapDispatchToProps = dispatch => ({
   submitReview: review => dispatch(createReview(review)),
   fetchBusiness: id => dispatch(fetchBusiness(id)),
   logout: () => dispatch(logout()),
+  // currentUser: () => dispatch(fetchCurrentUser()),
 });
 
 export default withRouter(connect(
