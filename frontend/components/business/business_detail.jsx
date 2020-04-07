@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { ReviewLink } from '../../util/link_util';
 import { fetchBusiness } from '../../actions/business_actions';
-import { withRouter } from 'react-router-dom';
 import ReviewFormContainer from '../reviews/review_form_container';
 import ReviewListContainer from '../reviews/review_list_container';
 import BusinessMap from '../map/business_map';

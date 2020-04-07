@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import Ratings from 'react-ratings-declarative';
 
 function UserReview(props) {
   let userReviews = props.reviews;
   var businesses = props.businesses;
   let content = [];
-  const [totalContent, setTotal] = useState(0)
 
   for (let i = userReviews.length - 1; i >= 0; i--) {
     let temp = {};
@@ -32,9 +31,14 @@ function UserReview(props) {
     )
   }
 
+  // const useForceUpdate = () => {
+  //   const [, setState] = useState()
+  //   return setState
+  // }
+  
   function handleDelete(reviewId) {
-    props.deleteReview(reviewId)
-    setTotal(props.reviews.length)
+    props.deleteReview(reviewId);
+    // props.history.push(`/users/${userReviews[0].author_id}`)
   }
 
   function handleEmptyTab() {
@@ -105,11 +109,52 @@ function UserReview(props) {
           {handleEmptyTab()}
         </div>
         <ul>
-          {display}
+          {/* {display} */}
+          {
+            content.map((info, idx) => {
+
+              return (
+                <li key={idx}>
+                  <div className="business-info">
+                    <div className="business-profile-pic">
+                      <img src={info.business.pictureUrls[0]} alt="" />
+                    </div>
+                    <div className="info">
+                      <Link to={`/search/${info.business.id}`}>{info.business.name}</Link>
+                      <div>
+                        {info.business.category}
+                      </div>
+                      <div>
+                        {info.business.address}
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="rating">
+                      {starRating(info.review.rating)}
+                    </div>
+                    <div className="body">
+                      {info.review.body}
+                    </div>
+                    <div className="edit-delete-review">
+                      <div>
+                        <Link className="edit-review" to={`/search/${info.business.id}/reviews/${info.review.id}/edit`}>
+                          Edit Review
+                        </Link>
+                      </div>
+                      <div>
+                        <button className="delete-review" onClick={() => handleDelete(info.review.id)}>Delete Review</button>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              )
+            })
+          }
         </ul>
       </div>
     </div>
   )
 }
 
-export default UserReview
+export default withRouter(UserReview)
