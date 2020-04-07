@@ -30,15 +30,9 @@ function UserReview(props) {
       </Ratings>
     )
   }
-
-  // const useForceUpdate = () => {
-  //   const [, setState] = useState()
-  //   return setState
-  // }
   
   function handleDelete(reviewId) {
     props.deleteReview(reviewId);
-    // props.history.push(`/users/${userReviews[0].author_id}`)
   }
 
   function handleEmptyTab() {
