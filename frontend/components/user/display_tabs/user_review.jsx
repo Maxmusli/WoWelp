@@ -45,9 +45,6 @@ function UserReview(props) {
           <div>
             <Link to="/search">Explore local businesses...</Link>
           </div>
-          {/* <div>
-            <Link to="/campsites/new">Or establish your own!</Link>
-          </div> */}
         </div>
       );
     }
